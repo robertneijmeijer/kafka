@@ -58,11 +58,6 @@ def parse_yaml(yaml_file: str) -> dict:
         data = yaml.safe_load(file)
     return data
 
-def validate_yaml(yaml_data):
-    schema = eval(open('./schema.py', 'r').read())
-    validator = Validator(schema)
-    log.info(validator.validate(yaml_data, schema))
-
 def write_ca_file(content: str, filename: str=DEFAULT_CA_FILE):
     with open(filename, mode='w', encoding='utf-8') as file:
         file.truncate()
@@ -146,8 +141,10 @@ def validate_yaml(yaml_data):
     try:
         validator.validate(yaml_data)
         print('YML valid')
+        return True
     except SchemaError as se:
         print(se)
+        return False
 
 def main():
     kafka_settings = parse_args()
@@ -157,15 +154,11 @@ def main():
     
     #ca_content = os.getenv(KAFKA_CA_ENV_VAR)
     #write_ca_file(ca_content, DEFAULT_CA_FILE)
-
-    try: 
-        validate_yaml(data)
-    except:
-        return
     
     try:
-        send_to_kafka(settings=kafka_settings, data=data)
-        log.info('Data successfully sent')
+        if(validate_yaml(data)):
+            send_to_kafka(settings=kafka_settings, data=data)
+            log.info('Data successfully sent')
     except:
         print('error')
         #os.remove(DEFAULT_CA_FILE)
