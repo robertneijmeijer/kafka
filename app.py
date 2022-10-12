@@ -77,12 +77,12 @@ def send_to_kafka(settings: dict, data: dict):
     producer.flush()
 
 def add_value(key):
-    match key:
-        case 'technology':
-            print(key)
+    # match key:
+    #     case 'technology':
+    #         print(key)
             
-        case 'hostedAt':
-            print(key)
+    #     case 'hostedAt':
+    #         print(key)
 
 schema_val = {
     "name": str,
