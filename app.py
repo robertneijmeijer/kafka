@@ -77,6 +77,7 @@ def send_to_kafka(settings: dict, data: dict):
     producer.flush()
 
 def add_value(key):
+    print(key)
     # match key:
     #     case 'technology':
     #         print(key)
