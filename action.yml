@@ -1,0 +1,12 @@
+# action.yml
+name: 'git-to-kafka-cmdb'
+description: 'Send application meta information to Kafka'
+inputs:
+  bootstrap-servers:
+    description: 'Kafka bootstrap servers and ports'
+    required: false
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - "--bootstrap-servers=${{ inputs.bootstrap-servers }}"

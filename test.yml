@@ -1,0 +1,44 @@
+name: 'poc-git-to-cmdb'
+description: 'POC to send information about the app to Kafka'
+status: pipelined
+consumers: 
+    name: Developer
+    description: A developer who keeps properties file up to date
+    type: PERSON
+
+containers:
+    name: poc-git-tocmdb
+    sysnonyms: poc-git-to-kafka-cmdb-sync
+    description: POC
+    technology: Kafka
+    parentSystem: CMDB
+    ciDataOwner: Aede van der Weij
+    productOwner: Thomas de Vries
+    applicationType: Tool
+    hostedAt: Azure
+    deploymentModel: On-Premise
+    personalData: False
+    confidentiality: Internal use
+    mcv: Not business critical
+    maxSeverityLevel: 4
+    sox: False
+    icfr: False
+    assignementGroup: AMS_ITOnline_L3_SRE_Infra
+    operationalStatus: Pipelined
+    environments: nl
+    relationships:
+        type: relBack
+        container:
+         name: Container Name
+    components:
+        name: Component name
+        description: what the system does
+        exposedAPIs:
+            name: Unique API name
+            description: What it can be used for
+            type: HTTP/JSON
+            status: TO_BE_IMPLEMENTED
+        consumedAPIs:
+            name: reference to API name
+            description: What is it used for
+            status: TO_BE_IMPLEMENTED
