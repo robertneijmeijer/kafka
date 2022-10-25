@@ -65,8 +65,12 @@ def write_ca_file(content: str, filename: str=DEFAULT_CA_FILE):
         file.write(content)
 
 def send_to_kafka(settings: dict, data: dict):
-    producer = prepare_producer(bootstrap_servers=["10.152.183.181:9094"], avro_schema_registry="http://10.152.183.242:8081", topic_name="topic1", value_schema=schema, num_partitions=1, replication_factor=1)
-    producer.send("topic1",data)
+    producer = KafkaProducer(
+                             value_serializer=lambda v: json.dumps(v).encode('utf-8'),
+                             bootstrap_servers=settings['bootstrap_servers'])
+    producer.send('topic1', value=data)
+    # producer = prepare_producer(bootstrap_servers=["10.152.183.181:9094"], avro_schema_registry="http://10.152.183.242:8081", topic_name="topic1", value_schema=schema, num_partitions=1, replication_factor=1)
+    # producer.send("topic1",data)
     print('send')
     producer.flush()
 
