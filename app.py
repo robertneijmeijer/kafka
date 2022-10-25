@@ -7,6 +7,7 @@ import logging
 import yaml
 from kafka import KafkaProducer
 from schema import Schema, SchemaError, Optional, Hook, Or
+from kafka_schema_registry import prepare_producer
 
 DEFAULT_DATA_FILE = 'system.yml'
 DEFAULT_CA_FILE = 'ca.crt'
@@ -64,10 +65,8 @@ def write_ca_file(content: str, filename: str=DEFAULT_CA_FILE):
         file.write(content)
 
 def send_to_kafka(settings: dict, data: dict):
-    producer = KafkaProducer(
-                             value_serializer=lambda v: json.dumps(v).encode('utf-8'),
-                             bootstrap_servers=settings['bootstrap_servers'])
-    producer.send('topic1', value=data)
+    producer = prepare_producer(bootstrap_servers=["10.152.183.181:9094"], avro_schema_registry="http://10.152.183.242:8081", topic_name="topic1", value_schema=schema, num_partitions=1, replication_factor=1)
+    producer.send("topic1",data)
     print('send')
     producer.flush()
 
@@ -133,6 +132,170 @@ schema_val = {
             }
         },
     }
+}
+
+schema = {
+  "type" : "record",
+  "name" : "SystemModel",
+  "namespace" : "com.test.avro",
+  "fields" : [ {
+    "name" : "name",
+    "type" : "string"
+  }, {
+    "name" : "description",
+    "type" : "string"
+  }, {
+    "name" : "status",
+    "type" : "string"
+  }, {
+    "name" : "consumers",
+    "type" : {
+      "type" : "record",
+      "name" : "consumers",
+      "fields" : [ {
+        "name" : "name",
+        "type" : "string"
+      }, {
+        "name" : "description",
+        "type" : "string"
+      }, {
+        "name" : "type",
+        "type" : "string"
+      } ]
+    }
+  }, {
+    "name" : "containers",
+    "type" : {
+      "type" : "record",
+      "name" : "containers",
+      "fields" : [ {
+        "name" : "name",
+        "type" : "string"
+      }, {
+        "name" : "sysnonyms",
+        "type" : "string"
+      }, {
+        "name" : "description",
+        "type" : "string"
+      }, {
+        "name" : "technology",
+        "type" : "string"
+      }, {
+        "name" : "parentSystem",
+        "type" : "string"
+      }, {
+        "name" : "ciDataOwner",
+        "type" : "string"
+      }, {
+        "name" : "productOwner",
+        "type" : "string"
+      }, {
+        "name" : "applicationType",
+        "type" : "string"
+      }, {
+        "name" : "hostedAt",
+        "type" : "string"
+      }, {
+        "name" : "deploymentModel",
+        "type" : "string"
+      }, {
+        "name" : "personalData",
+        "type" : "boolean"
+      }, {
+        "name" : "confidentiality",
+        "type" : "string"
+      }, {
+        "name" : "mcv",
+        "type" : "string"
+      }, {
+        "name" : "maxSeverityLevel",
+        "type" : "long"
+      }, {
+        "name" : "sox",
+        "type" : "boolean"
+      }, {
+        "name" : "icfr",
+        "type" : "boolean"
+      }, {
+        "name" : "assignementGroup",
+        "type" : "string"
+      }, {
+        "name" : "operationalStatus",
+        "type" : "string"
+      }, {
+        "name" : "environments",
+        "type" : "string"
+      }, {
+        "name" : "relationships",
+        "type" : {
+          "type" : "record",
+          "name" : "relationships",
+          "fields" : [ {
+            "name" : "type",
+            "type" : "string"
+          }, {
+            "name" : "container",
+            "type" : {
+              "type" : "record",
+              "name" : "container",
+              "fields" : [ {
+                "name" : "name",
+                "type" : "string"
+              } ]
+            }
+          } ]
+        }
+      }, {
+        "name" : "components",
+        "type" : {
+          "type" : "record",
+          "name" : "components",
+          "fields" : [ {
+            "name" : "name",
+            "type" : "string"
+          }, {
+            "name" : "description",
+            "type" : "string"
+          }, {
+            "name" : "exposedAPIs",
+            "type" : {
+              "type" : "record",
+              "name" : "exposedAPIs",
+              "fields" : [ {
+                "name" : "name",
+                "type" : "string"
+              }, {
+                "name" : "description",
+                "type" : "string"
+              }, {
+                "name" : "type",
+                "type" : "string"
+              }, {
+                "name" : "status",
+                "type" : "string"
+              } ]
+            }
+          }, {
+            "name" : "consumedAPIs",
+            "type" : {
+              "type" : "record",
+              "name" : "consumedAPIs",
+              "fields" : [ {
+                "name" : "name",
+                "type" : "string"
+              }, {
+                "name" : "description",
+                "type" : "string"
+              }, {
+                "name" : "status",
+                "type" : "string"
+              } ]
+            }
+          } ]
+        }
+      } ]
+    }
+  } ]
 }
 
 def validate_yaml(yaml_data):

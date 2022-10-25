@@ -1,0 +1,22 @@
+{
+    "type": "record",
+    "name": "Order",
+    "fields": [
+      {
+        "name": "orderId",
+        "type": "long"
+      },
+      {
+        "name": "orderDate",
+        "type": "string"
+      },
+      {
+        "name": "orderCustomerId",
+        "type": "long"
+      },
+      { 
+        "name": "orderStatus",
+        "type": "string"
+      }
+    ]
+  }

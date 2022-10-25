@@ -1,0 +1,163 @@
+{
+  "type" : "record",
+  "name" : "SystemModel",
+  "namespace" : "com.test.avro",
+  "fields" : [ {
+    "name" : "name",
+    "type" : "string"
+  }, {
+    "name" : "description",
+    "type" : "string"
+  }, {
+    "name" : "status",
+    "type" : "string"
+  }, {
+    "name" : "consumers",
+    "type" : {
+      "type" : "record",
+      "name" : "consumers",
+      "fields" : [ {
+        "name" : "name",
+        "type" : "string"
+      }, {
+        "name" : "description",
+        "type" : "string"
+      }, {
+        "name" : "type",
+        "type" : "string"
+      } ]
+    }
+  }, {
+    "name" : "containers",
+    "type" : {
+      "type" : "record",
+      "name" : "containers",
+      "fields" : [ {
+        "name" : "name",
+        "type" : "string"
+      }, {
+        "name" : "sysnonyms",
+        "type" : "string"
+      }, {
+        "name" : "description",
+        "type" : "string"
+      }, {
+        "name" : "technology",
+        "type" : "string"
+      }, {
+        "name" : "parentSystem",
+        "type" : "string"
+      }, {
+        "name" : "ciDataOwner",
+        "type" : "string"
+      }, {
+        "name" : "productOwner",
+        "type" : "string"
+      }, {
+        "name" : "applicationType",
+        "type" : "string"
+      }, {
+        "name" : "hostedAt",
+        "type" : "string"
+      }, {
+        "name" : "deploymentModel",
+        "type" : "string"
+      }, {
+        "name" : "personalData",
+        "type" : "boolean"
+      }, {
+        "name" : "confidentiality",
+        "type" : "string"
+      }, {
+        "name" : "mcv",
+        "type" : "string"
+      }, {
+        "name" : "maxSeverityLevel",
+        "type" : "long"
+      }, {
+        "name" : "sox",
+        "type" : "boolean"
+      }, {
+        "name" : "icfr",
+        "type" : "boolean"
+      }, {
+        "name" : "assignementGroup",
+        "type" : "string"
+      }, {
+        "name" : "operationalStatus",
+        "type" : "string"
+      }, {
+        "name" : "environments",
+        "type" : "string"
+      }, {
+        "name" : "relationships",
+        "type" : {
+          "type" : "record",
+          "name" : "relationships",
+          "fields" : [ {
+            "name" : "type",
+            "type" : "string"
+          }, {
+            "name" : "container",
+            "type" : {
+              "type" : "record",
+              "name" : "container",
+              "fields" : [ {
+                "name" : "name",
+                "type" : "string"
+              } ]
+            }
+          } ]
+        }
+      }, {
+        "name" : "components",
+        "type" : {
+          "type" : "record",
+          "name" : "components",
+          "fields" : [ {
+            "name" : "name",
+            "type" : "string"
+          }, {
+            "name" : "description",
+            "type" : "string"
+          }, {
+            "name" : "exposedAPIs",
+            "type" : {
+              "type" : "record",
+              "name" : "exposedAPIs",
+              "fields" : [ {
+                "name" : "name",
+                "type" : "string"
+              }, {
+                "name" : "description",
+                "type" : "string"
+              }, {
+                "name" : "type",
+                "type" : "string"
+              }, {
+                "name" : "status",
+                "type" : "string"
+              } ]
+            }
+          }, {
+            "name" : "consumedAPIs",
+            "type" : {
+              "type" : "record",
+              "name" : "consumedAPIs",
+              "fields" : [ {
+                "name" : "name",
+                "type" : "string"
+              }, {
+                "name" : "description",
+                "type" : "string"
+              }, {
+                "name" : "status",
+                "type" : "string"
+              } ]
+            }
+          } ]
+        }
+      } ]
+    }
+  } ]
+}
