@@ -142,7 +142,7 @@ schema_val = {
 schema = {
   "type" : "record",
   "name" : "SystemModel",
-  "namespace" : "com.test.avro",
+  "namespace" : "org.example.models.SystemModel",
   "fields" : [ {
     "name" : "name",
     "type" : "string"
