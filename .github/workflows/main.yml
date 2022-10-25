@@ -13,7 +13,7 @@ jobs:
         with:
           bootstrap-servers: 10.152.183.181:9094
         env:
-          KAFKA_TOPIC_NAME: topic1
+          KAFKA_TOPIC_NAME: topic2
           KAFKA_USERNAME: username
           KAFKA_PASSWORD: password
           KAFKA_CA_CONTENT: ${{ secrets.KAFKA_CA_CONTENT }}
