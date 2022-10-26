@@ -1,7 +1,7 @@
 {
   "type" : "record",
   "name" : "SystemModel",
-  "namespace" : "com.test.avro.SystemModel",
+  "namespace" : "org.example.models.SystemModel",
   "fields" : [ {
     "name" : "name",
     "type" : "string"
