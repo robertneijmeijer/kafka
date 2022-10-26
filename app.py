@@ -327,8 +327,9 @@ def main():
         if(validate_yaml(data)):
             send_to_kafka(settings=kafka_settings, data=data)
             log.info('Data successfully sent')
-    except:
+    except Exception as e:
         print('error')
+        print(e)
         #os.remove(DEFAULT_CA_FILE)
 
 
