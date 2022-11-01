@@ -16,6 +16,6 @@ RUN sed -i -e 's/v3\.4/edge/g' /etc/apk/repositories \
     && apk upgrade --update-cache --available \
     && apk --no-cache add librdkafka-dev
 
-RUN pip install confluent-kafka
+RUN pip install confluent-kafka==1.3.0
 
 ENTRYPOINT ["python3", "/app.py"]
