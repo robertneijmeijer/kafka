@@ -8,7 +8,7 @@ RUN pip install -r /requirements.txt
 # RUN apk update && apk add gcc \
 #                          libc-dev \
 #                          --no-cache librdkafka-dev
-RUN apk add gcc mono-mcs
+RUN apk add build-base
 
 RUN pip install Cmake
 
