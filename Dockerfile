@@ -14,7 +14,7 @@ RUN pip install Cmake
 
 RUN sed -i -e 's/v3\.4/edge/g' /etc/apk/repositories \
     && apk upgrade --update-cache --available \
-    && apk --no-cache add librdkafka-dev
+    && apk --no-cache add librdkafka
 
 RUN pip install confluent-kafka
 
