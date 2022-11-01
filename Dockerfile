@@ -8,6 +8,6 @@ RUN pip install -r /requirements.txt
 RUN apk update && apk add gcc \
                          libc-dev
 
-RUN pip install kafka-schema-registry 
+RUN pip install confluent-kafka
 
 ENTRYPOINT ["python3", "/app.py"]
