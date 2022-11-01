@@ -7,8 +7,7 @@ RUN pip install -r /requirements.txt
 
 RUN apk update && apk add gcc \
                          libc-dev \
-                         --no-cache librdkafka \
-                         --no-cache librdkafka-dev
+                         --no-cache librdkafka 
 
 RUN pip install confluent-kafka
 
