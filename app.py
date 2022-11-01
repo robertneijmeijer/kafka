@@ -7,7 +7,10 @@ import logging
 import yaml
 from kafka import KafkaProducer
 from schema import Schema, SchemaError, Optional, Hook, Or
-from kafka_schema_registry import prepare_producer
+from confluent_kafka import Producer
+from confluent_kafka.serialization import StringSerializer, SerializationContext, MessageField
+from confluent_kafka.schema_registry import SchemaRegistryClient
+from confluent_kafka.schema_registry.avro import AvroSerializer
 
 DEFAULT_DATA_FILE = 'system.yml'
 DEFAULT_CA_FILE = 'ca.crt'
@@ -69,10 +72,26 @@ def send_to_kafka(settings: dict, data: dict):
     #                          value_serializer=lambda v: json.dumps(v).encode('utf-8'),
     #                          bootstrap_servers=settings['bootstrap_servers'])
     # producer.send('topic2', value=data)
-    producer = prepare_producer(bootstrap_servers=["10.152.183.181:9094"], avro_schema_registry=f'http://10.152.183.242:8081', topic_name="topic2",value_schema=schema, num_partitions=1, replication_factor=1)
+    # producer = prepare_producer(bootstrap_servers=["10.152.183.181:9094"], avro_schema_registry=f'http://10.152.183.242:8081', topic_name="topic2",value_schema=schema, num_partitions=1, replication_factor=1)
 
-    producer.send("topic2",data)
-    print('send')
+    # producer.send("topic2",data)
+    # print('send')
+
+    topic = "topic5"
+
+    with open("avro_schema.avsc") as f:
+      schema_str = f.read()
+
+    schema_registry_client = SchemaRegistryClient({'url': 'http://10.152.183.242:8081'})
+
+    avro_serializer = AvroSerializer(schema_registry_client, schema_str)
+
+    string_serializer = StringSerializer('utf_8')
+
+    producer = Producer({'bootstrap.servers': '10.152.183.181:9094'})
+
+    producer.produce(topic=topic, key=string_serializer('testkey', None), value=avro_serializer(data, SerializationContext(topic, MessageField.VALUE)))
+
     producer.flush()
 
 def add_value(key):
