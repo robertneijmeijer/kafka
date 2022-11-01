@@ -8,6 +8,7 @@ RUN pip install -r /requirements.txt
 # RUN apk update && apk add gcc \
 #                          libc-dev \
 #                          --no-cache librdkafka-dev
+RUN pip install Cmake
 
 RUN sed -i -e 's/v3\.4/edge/g' /etc/apk/repositories \
     && apk upgrade --update-cache --available \
