@@ -79,7 +79,7 @@ def send_to_kafka(settings: dict, data: dict):
 
     topic = "topic5"
 
-    with open('./avro_schema.avsc') as f:
+    with open('/avro_schema.avsc') as f:
       schema_str = f.read()
 
     schema_registry_client = SchemaRegistryClient({'url': 'http://10.152.183.242:8081'})
