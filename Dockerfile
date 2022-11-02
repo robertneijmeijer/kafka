@@ -25,4 +25,4 @@ RUN sed -i -e 's/v3\.4/edge/g' /etc/apk/repositories \
 
 RUN pip install confluent-kafka==1.7.0
 
-ENTRYPOINT ["python3", "/app.py"]
+ENTRYPOINT ["python3", "/app.py", "/avro_schema.avsc"]
