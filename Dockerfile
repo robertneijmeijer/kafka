@@ -5,13 +5,8 @@ COPY app.py /
 COPY avro_schema.avsc /
 
 # Add this depenentcy seperatly since it's not released yet
-
-
-# RUN apk update && apk add gcc \
-#                          libc-dev \
-#                          --no-cache librdkafka-dev
 RUN apk add build-base
-
+# librdkafka-dev is needed for confluent-kafka
 RUN sed -i -e 's/v3\.4/edge/g' /etc/apk/repositories \
     && apk upgrade --update-cache --available \
     && apk --no-cache add librdkafka-dev
