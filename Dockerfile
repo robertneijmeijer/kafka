@@ -4,7 +4,7 @@ COPY requirements.txt /
 COPY app.py /
 COPY avro_schema.avsc /
 
-#RUN ls
+RUN ls
 # Add this depenentcy seperatly since it's not released yet
 RUN pip install -r /requirements.txt 
 
