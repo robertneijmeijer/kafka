@@ -117,7 +117,7 @@ schema_val = {
         "name": str,
         "sysnonyms": str,
         "description": str,
-        Optional("technology", default= lambda : add_value('technology')): str,
+        Optional("technology", default= lambda : add_value('technology')): Or(str, None),
         "parentSystem": str,
         "ciDataOwner": str,
         "productOwner": str,
