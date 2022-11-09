@@ -104,6 +104,7 @@ def add_value(key):
     if(key == 'technology'):
       value = str(find_main_language())
       YAML_DATA['technology'] = value
+      print(YAML_DATA)
 
 schema_val = {
     "name": str,
@@ -337,7 +338,6 @@ def validate_yaml(yaml_data):
 
 def find_main_language(full_output = False):
   languages = parse_yaml("/languages.yml")
-  print(languages.items())
   matches = defaultdict(int)
   for root, directory, filenames in os.walk(os.getcwd()):
       for filename in filenames:
