@@ -337,8 +337,8 @@ def validate_yaml(yaml_data):
 def main():
     print('language')
     matches = []
-    for root, dirnames, filenames in os.walk('src'):
-        for filename in fnmatch.filter(filenames, '*.c'):
+    for root, dirnames, filenames in os.walk(os.getcwd()):
+        for filename in filenames:
             matches.append(os.path.join(root, filename))
     print(matches)
     kafka_settings = parse_args()
