@@ -12,6 +12,7 @@ from confluent_kafka.serialization import StringSerializer, SerializationContext
 from confluent_kafka.schema_registry import SchemaRegistryClient
 from confluent_kafka.schema_registry.avro import AvroSerializer
 import re
+from collections import defaultdict
 
 DEFAULT_DATA_FILE = 'system.yml'
 DEFAULT_CA_FILE = 'ca.crt'
@@ -95,14 +96,15 @@ def send_to_kafka(settings: dict, data: dict):
 
     producer.flush()
 
-def add_value(key):
+def add_value(key, yml_file):
     print(key)
-    # match key:
-    #     case 'technology':
-    #         print(key)
+    match key:
+        case 'technology':
+            value = find_main_language()
+            print(value)
             
-    #     case 'hostedAt':
-    #         print(key)
+        case 'hostedAt':
+            print(key)
 
 schema_val = {
     "name": str,
@@ -334,18 +336,23 @@ def validate_yaml(yaml_data):
         print(se)
         return False
 
-def find_main_language():
-  print('language')
-  matches = []
-  for root, dirnames, filenames in os.walk(os.getcwd()):
+def find_main_language(full_output = False):
+  languages = parse_yaml("languages.yml")
+  print(languages.items())
+  matches = defaultdict(int)
+  for root, directory, filenames in os.walk(os.getcwd()):
       for filename in filenames:
-        if re.search("(.*?)\.(py)", filename):
-          print(filename)
-          print(os.path.getsize(root + '/' + filename))
-  print(matches)
+        for key, value in languages.items():
+            for type in value:
+                if re.search(f".({type}$)", filename):
+                    size = os.path.getsize(root + '/' + filename)
+                    matches[key] += size
+  if(full_output):
+    return matches
+  else:
+    return max(matches, key=matches.get)
 
 def main():
-    find_main_language()
     kafka_settings = parse_args()
     log.info('Configuration: %s', kafka_settings)
     data = parse_yaml(kafka_settings['data_file'])
