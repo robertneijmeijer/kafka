@@ -30,7 +30,7 @@ KAFKA_TOPIC_DEFAULT_KEY = 'topic2'
 KAFKA_SECURITY_PROTOCOL = 'PLAINTEXT'
 KAFKA_SASL_MECHANISM = 'SCRAM-SHA-512'
 
-YAML_DATA = {}
+global YAML_DATA
 
 log = logging.getLogger()
 logging.basicConfig(level=os.environ.get("LOGLEVEL", "INFO"))
@@ -99,12 +99,13 @@ def send_to_kafka(settings: dict, data: dict):
     producer.flush()
 
 def add_value(key):
+    global YAML_DATA
     print(key)
     # TODO: add key and value to yml
     if(key == 'technology'):
       print(YAML_DATA)
       value = str(find_main_language())
-      YAML_DATA['technology'] = value
+      YAML_DATA['containers.technology'] = value
       print(YAML_DATA)
 
 schema_val = {
@@ -356,6 +357,7 @@ def main():
     kafka_settings = parse_args()
     log.info('Configuration: %s', kafka_settings)
     data = parse_yaml(kafka_settings['data_file'])
+    global YAML_DATA 
     YAML_DATA = data
     print('first')
     print(YAML_DATA)
