@@ -357,6 +357,8 @@ def main():
     log.info('Configuration: %s', kafka_settings)
     data = parse_yaml(kafka_settings['data_file'])
     YAML_DATA = data
+    print('first')
+    print(YAML_DATA)
     log.info('Data: %s', data)
     
     #ca_content = os.getenv(KAFKA_CA_ENV_VAR)
