@@ -11,7 +11,7 @@ RUN sed -i -e 's/v3\.4/edge/g' /etc/apk/repositories \
     && apk upgrade --update-cache --available \
     && apk --no-cache add librdkafka-dev
 
-RUN apk add --no-install-recommends ruby-dev libssl-dev libicu-dev zlib1g-dev libcurl4-openssl-dev
+RUN apk add ruby-dev libssl-dev libicu-dev zlib1g-dev libcurl4-openssl-dev
 
 RUN gem update --system
 
