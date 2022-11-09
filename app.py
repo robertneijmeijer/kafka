@@ -30,6 +30,8 @@ KAFKA_TOPIC_DEFAULT_KEY = 'topic2'
 KAFKA_SECURITY_PROTOCOL = 'PLAINTEXT'
 KAFKA_SASL_MECHANISM = 'SCRAM-SHA-512'
 
+YAML_DATA = None
+
 log = logging.getLogger()
 logging.basicConfig(level=os.environ.get("LOGLEVEL", "INFO"))
 
@@ -98,9 +100,10 @@ def send_to_kafka(settings: dict, data: dict):
 
 def add_value(key):
     print(key)
+    # TODO: add key and value to yml
     if(key == 'technology'):
       value = str(find_main_language())
-      print(value)
+      YAML_DATA['technology'] = value
 
 schema_val = {
     "name": str,
@@ -352,6 +355,7 @@ def main():
     kafka_settings = parse_args()
     log.info('Configuration: %s', kafka_settings)
     data = parse_yaml(kafka_settings['data_file'])
+    YAML_DATA = data
     log.info('Data: %s', data)
     
     #ca_content = os.getenv(KAFKA_CA_ENV_VAR)
@@ -359,7 +363,7 @@ def main():
     
     try:
         if(validate_yaml(data)):
-            send_to_kafka(settings=kafka_settings, data=data)
+            send_to_kafka(settings=kafka_settings, data=YAML_DATA)
             log.info('Data successfully sent')
     except Exception as e:
         print('error')
