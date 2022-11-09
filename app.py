@@ -30,7 +30,7 @@ KAFKA_TOPIC_DEFAULT_KEY = 'topic2'
 KAFKA_SECURITY_PROTOCOL = 'PLAINTEXT'
 KAFKA_SASL_MECHANISM = 'SCRAM-SHA-512'
 
-YAML_DATA = None
+YAML_DATA = {}
 
 log = logging.getLogger()
 logging.basicConfig(level=os.environ.get("LOGLEVEL", "INFO"))
