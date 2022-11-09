@@ -105,6 +105,7 @@ def add_value(key):
     if(key == 'technology'):
       print(YAML_DATA)
       value = str(find_main_language())
+      YAML_DATA['containers'].append('technology')
       YAML_DATA['containers']['technology'] = value
       print(YAML_DATA)
 
