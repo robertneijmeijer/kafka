@@ -334,13 +334,16 @@ def validate_yaml(yaml_data):
         print(se)
         return False
 
+def find_main_language():
+  print('language')
+  matches = []
+  for root, dirnames, filenames in os.walk(os.getcwd()):
+      for filename in filenames:
+          print(filename)
+  print(matches)
+
 def main():
-    print('language')
-    matches = []
-    for root, dirnames, filenames in os.walk(os.getcwd()):
-        for filename in filenames:
-            matches.append(os.path.join(root, filename))
-    print(matches)
+    find_main_language()
     kafka_settings = parse_args()
     log.info('Configuration: %s', kafka_settings)
     data = parse_yaml(kafka_settings['data_file'])
