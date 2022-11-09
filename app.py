@@ -335,7 +335,7 @@ def validate_yaml(yaml_data):
 
 def main():
     print('language')
-    [x[0] for x in os.walk('')]
+    print([x[0] for x in os.walk('')])
     kafka_settings = parse_args()
     log.info('Configuration: %s', kafka_settings)
     data = parse_yaml(kafka_settings['data_file'])
