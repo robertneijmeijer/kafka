@@ -102,6 +102,7 @@ def add_value(key):
     print(key)
     # TODO: add key and value to yml
     if(key == 'technology'):
+      print(YAML_DATA)
       value = str(find_main_language())
       YAML_DATA['technology'] = value
       print(YAML_DATA)
