@@ -11,6 +11,7 @@ from confluent_kafka import Producer
 from confluent_kafka.serialization import StringSerializer, SerializationContext, MessageField
 from confluent_kafka.schema_registry import SchemaRegistryClient
 from confluent_kafka.schema_registry.avro import AvroSerializer
+import ghlinguist as ghl
 
 DEFAULT_DATA_FILE = 'system.yml'
 DEFAULT_CA_FILE = 'ca.crt'
@@ -335,7 +336,7 @@ def validate_yaml(yaml_data):
 
 def main():
     print('language')
-    print([x[0] for x in os.walk('')])
+    print(ghl.linguist('/home/runner/work/'))
     kafka_settings = parse_args()
     log.info('Configuration: %s', kafka_settings)
     data = parse_yaml(kafka_settings['data_file'])
