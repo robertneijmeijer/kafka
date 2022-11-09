@@ -99,7 +99,7 @@ def send_to_kafka(settings: dict, data: dict):
 def add_value(key, yml_file):
     print(key)
     if(key == 'technology'):
-      value = find_main_language()
+      value = str(find_main_language())
       print(value)
 
 schema_val = {
