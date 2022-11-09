@@ -341,6 +341,7 @@ def find_main_language():
       for filename in filenames:
         if re.search("(.*?)\.(py)", filename):
           print(filename)
+          print(os.path.getsize(root + filename))
   print(matches)
 
 def main():
