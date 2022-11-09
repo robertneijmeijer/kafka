@@ -333,7 +333,7 @@ def validate_yaml(yaml_data):
         return False
 
 def find_main_language(full_output = False):
-  languages = parse_yaml("languages.yml")
+  languages = parse_yaml("/languages.yml")
   print(languages.items())
   matches = defaultdict(int)
   for root, directory, filenames in os.walk(os.getcwd()):
