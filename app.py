@@ -96,7 +96,7 @@ def send_to_kafka(settings: dict, data: dict):
 
     producer.flush()
 
-def add_value(key, yml_file):
+def add_value(key):
     print(key)
     if(key == 'technology'):
       value = str(find_main_language())
@@ -117,7 +117,7 @@ schema_val = {
         "name": str,
         "sysnonyms": str,
         "description": str,
-        Optional("technology", default= lambda : add_value('technology')): Or(str, None),
+        Optional("technology", default= lambda : add_value('technology')): str,
         "parentSystem": str,
         "ciDataOwner": str,
         "productOwner": str,
