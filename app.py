@@ -11,7 +11,7 @@ from confluent_kafka import Producer
 from confluent_kafka.serialization import StringSerializer, SerializationContext, MessageField
 from confluent_kafka.schema_registry import SchemaRegistryClient
 from confluent_kafka.schema_registry.avro import AvroSerializer
-import fnmatch
+import re
 
 DEFAULT_DATA_FILE = 'system.yml'
 DEFAULT_CA_FILE = 'ca.crt'
@@ -339,6 +339,7 @@ def find_main_language():
   matches = []
   for root, dirnames, filenames in os.walk(os.getcwd()):
       for filename in filenames:
+        if re.search("(.*?)\.(py)", filename):
           print(filename)
   print(matches)
 
