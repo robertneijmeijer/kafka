@@ -1,5 +1,84 @@
+# Values come from the linguist repo: https://github.com/github/linguist/blob/master/lib/linguist/languages.yml
+# Also used by GitHub
 Python:
-    - tewst
     - py
+    - cgi
+    - fcgi
+    - gyp
+    - gypi
+    - lmi
+    - py3
+    - pyde
+    - pyi
+    - pyp
+    - pyt
+    - pyw
+    - rpy
+    - smk
+    - spec
+    - tac
+    - wsgi
+    - xpy
 Java:
     - java
+    - jav
+    - jsh
+Kotlin:
+    - kt
+    - ktm
+    - kts
+GO:
+    - go
+Ruby:
+    - rb
+    - builder
+    - eye
+    - fcgi
+    - gemspec
+    - god
+    - jbuilder
+    - mspec
+    - pluginspec
+    - podspec
+    - prawn
+    - rabl
+    - rake
+    - rbi
+    - rbuild
+    - rbw
+    - rbx
+    - ru
+    - ruby
+    - spec
+    - thor
+    - watchr
+Javascript: 
+    - js
+    - _js
+    - bones
+    - cjs
+    - es
+    - es6
+    - frag
+    - gs
+    - jake
+    - javascript
+    - jsb
+    - jscad
+    - jsfl
+    - jslib
+    - jsm
+    - jspre
+    - jss
+    - jsx
+    - mjs
+    - njs
+    - pac
+    - sjs
+    - ssjs
+    - xsjs
+    - xsjslib
+Typescript:
+    - ts
+    - ctl
+    - mts

@@ -366,7 +366,6 @@ def main():
     
     try:
         if(validate_yaml(YAML_DATA)):
-            YAML_DATA['containers']['technology'] = 'test'
             send_to_kafka(settings=kafka_settings, data=YAML_DATA)
             log.info('Data successfully sent')
             log.info("Data: %s", YAML_DATA)
