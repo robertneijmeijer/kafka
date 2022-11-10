@@ -358,6 +358,34 @@ def find_main_language(full_output = False):
   else:
     return max(matches, key=matches.get)
 
+def delete_keys_from_dict(d, to_delete):
+    if isinstance(to_delete, str):
+        to_delete = [to_delete]
+    if isinstance(d, dict):
+        for single_to_delete in set(to_delete):
+            if single_to_delete in d:
+                del d[single_to_delete]
+        for k, v in d.items():
+            delete_keys_from_dict(v, to_delete)
+    elif isinstance(d, list):
+        for i in d:
+            delete_keys_from_dict(i, to_delete)
+
+def filter_none(): 
+    global YAML_DATA
+    stack = list(YAML_DATA.items()) 
+    visited = set() 
+    while stack: 
+        k, v = stack.pop() 
+        if isinstance(v, dict): 
+            if k not in visited: 
+                stack.extend(v.items()) 
+        else: 
+            if v == None or v == '':
+                # print("%s: %s" % (k, v)) 
+                delete_keys_from_dict(YAML_DATA,'technology')
+        visited.add(k)
+
 def main():
     kafka_settings = parse_args()
     log.info('Configuration: %s', kafka_settings)
