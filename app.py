@@ -325,15 +325,17 @@ schema = {
   } ]
 }
 
-def validate_yaml(yaml_data):
+def validate_yaml(yaml_data, verbose = False):
     #schema = eval(open('./schema.yml', 'r').read())
     validator = Schema(schema_val)
     try:
         validator.validate(yaml_data)
-        print('YML valid')
+        if(verbose):
+          print('YML valid')
         return True
     except SchemaError as se:
-        print(se)
+        if(verbose):
+          print(se)
         return False
 
 def find_main_language(full_output = False):
@@ -365,7 +367,7 @@ def main():
     #write_ca_file(ca_content, DEFAULT_CA_FILE)
     
     try:
-        if(validate_yaml(YAML_DATA)):
+        if(validate_yaml(YAML_DATA, True)):
             send_to_kafka(settings=kafka_settings, data=YAML_DATA)
             log.info('Data successfully sent')
             log.info("Data: %s", YAML_DATA)
