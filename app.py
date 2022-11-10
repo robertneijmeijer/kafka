@@ -364,6 +364,7 @@ def main():
     data = parse_yaml(kafka_settings['data_file'])
     global YAML_DATA 
     YAML_DATA = data
+    filter_none()
     log.info('Data: %s', data)
     validate_yaml(YAML_DATA)
 
