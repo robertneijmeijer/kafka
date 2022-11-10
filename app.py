@@ -100,13 +100,11 @@ def send_to_kafka(settings: dict, data: dict):
 
 def add_value(key):
     global YAML_DATA
-    print(key)
     # TODO: add key and value to yml
     if(key == 'technology'):
-      print(YAML_DATA)
       value = str(find_main_language())
-      YAML_DATA['containers']['containers']['technology'] = value
-      print(YAML_DATA)
+
+      YAML_DATA['containers']['technology'] = value
 
 schema_val = {
     "name": str,
@@ -368,6 +366,7 @@ def main():
     
     try:
         if(validate_yaml(data)):
+            YAML_DATA['containers']['technology'] = 1
             send_to_kafka(settings=kafka_settings, data=YAML_DATA)
             log.info('Data successfully sent')
     except Exception as e:
