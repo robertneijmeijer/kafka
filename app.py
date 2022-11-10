@@ -357,16 +357,16 @@ def main():
     data = parse_yaml(kafka_settings['data_file'])
     global YAML_DATA 
     YAML_DATA = data
-    print('first')
-    print(YAML_DATA)
     log.info('Data: %s', data)
+    validate_yaml(YAML_DATA)
+
     
     #ca_content = os.getenv(KAFKA_CA_ENV_VAR)
     #write_ca_file(ca_content, DEFAULT_CA_FILE)
     
     try:
-        if(validate_yaml(data)):
-            YAML_DATA['containers']['technology'] = 1
+        if(validate_yaml(YAML_DATA)):
+            
             send_to_kafka(settings=kafka_settings, data=YAML_DATA)
             log.info('Data successfully sent')
     except Exception as e:
