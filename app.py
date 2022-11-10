@@ -369,6 +369,7 @@ def main():
             
             send_to_kafka(settings=kafka_settings, data=YAML_DATA)
             log.info('Data successfully sent')
+            log.info("Data: %s", YAML_DATA)
     except Exception as e:
         print('error')
         print(e)
