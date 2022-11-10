@@ -338,6 +338,11 @@ def validate_yaml(yaml_data, verbose = False):
           print(se)
         return False
 
+def filter_none():
+  global YAML_DATA
+  for key, value in YAML_DATA.items():
+    print('key: ' + key + ' value: ' + value)
+
 def find_main_language(full_output = False):
   languages = parse_yaml("/languages.yml")
   matches = defaultdict(int)
