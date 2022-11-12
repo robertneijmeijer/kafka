@@ -123,7 +123,7 @@
           }, {
             "name" : "exposedAPIs",
             "type" : {
-              "type" : "record",
+              "type" : "array",
               "name" : "exposedAPIs",
               "fields" : [ {
                 "name" : "name",
@@ -142,7 +142,7 @@
           }, {
             "name" : "consumedAPIs",
             "type" : {
-              "type" : "record",
+              "type" : "array",
               "name" : "consumedAPIs",
               "fields" : [ {
                 "name" : "name",
