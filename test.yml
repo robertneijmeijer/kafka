@@ -10,7 +10,7 @@ containers:
     name: poc-git-tocmdb
     sysnonyms: poc-git-to-kafka-cmdb-sync
     description: POC
-    technology: Kafka
+    technology: kafka
     parentSystem: CMDB
     ciDataOwner: Aede van der Weij
     productOwner: Thomas de Vries
@@ -34,11 +34,18 @@ containers:
         name: Component name
         description: what the system does
         exposedAPIs:
-            name: Unique API name
-            description: What it can be used for
-            type: HTTP/JSON
-            status: TO_BE_IMPLEMENTED
+            - name: Unique API name
+              description: What it can be used for
+              type: HTTP/JSON
+              status: TO_BE_IMPLEMENTED
+            - name: Unique API name2
+              description: What it can be used for2
+              type: HTTP/JSON2
+              status: TO_BE_IMPLEMENTED2
         consumedAPIs:
-            name: reference to API name
-            description: What is it used for
-            status: TO_BE_IMPLEMENTED
+            - name: reference to API name
+              description: What is it used for
+              status: TO_BE_IMPLEMENTED
+            - name: reference to API name
+              description: What is it used for
+              status: TO_BE_IMPLEMENTED

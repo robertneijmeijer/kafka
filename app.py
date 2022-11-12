@@ -146,17 +146,17 @@ schema_val = {
         "components": {
             "name": str,
             "description": str,
-            "exposedAPIs": {
+            "exposedAPIs": [{
                 "name": str,
                 "description": str,
                 "type": str,
                 "status": str,
-            },
-            "consumedAPIs": {
+            }],
+            "consumedAPIs": [{
                 "name": str,
                 "description": str,
                 "status": str
-            }
+            }]
         },
     }
 }
@@ -286,7 +286,7 @@ schema = {
           }, {
             "name" : "exposedAPIs",
             "type" : {
-              "type" : "record",
+              "type" : "array",
               "name" : "exposedAPIs",
               "fields" : [ {
                 "name" : "name",
@@ -305,7 +305,7 @@ schema = {
           }, {
             "name" : "consumedAPIs",
             "type" : {
-              "type" : "record",
+              "type" : "array",
               "name" : "consumedAPIs",
               "fields" : [ {
                 "name" : "name",
@@ -394,7 +394,7 @@ def main():
     YAML_DATA = data
     filter_none()
     log.info('Data: %s', data)
-    # validate_yaml(YAML_DATA)
+    validate_yaml(YAML_DATA)
 
     
     #ca_content = os.getenv(KAFKA_CA_ENV_VAR)
@@ -402,7 +402,7 @@ def main():
     
     try:
         if(validate_yaml(YAML_DATA, True)):
-            # send_to_kafka(settings=kafka_settings, data=YAML_DATA)
+            send_to_kafka(settings=kafka_settings, data=YAML_DATA)
             log.info('Data successfully sent')
             log.info("Data: %s", YAML_DATA)
     except Exception as e:
