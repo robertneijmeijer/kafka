@@ -407,7 +407,7 @@ def main():
             log.info("Data: %s", YAML_DATA)
     except Exception as e:
         print('error')
-        print(e)
+        raise e
         #os.remove(DEFAULT_CA_FILE)
 
 
