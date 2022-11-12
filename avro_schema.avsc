@@ -123,9 +123,9 @@
           }, {
             "name" : "exposedAPIs",
             "type" : {
-              "type" : "record",
+              "type" : "array",
               "name" : "exposedAPIs",
-              "fields" : [ {
+              "items" : [ {
                 "name" : "name",
                 "type" : "string"
               }, {
@@ -142,9 +142,9 @@
           }, {
             "name" : "consumedAPIs",
             "type" : {
-              "type" : "record",
+              "type" : "array",
               "name" : "consumedAPIs",
-              "fields" : [ {
+              "items" : [ {
                 "name" : "name",
                 "type" : "string"
               }, {
