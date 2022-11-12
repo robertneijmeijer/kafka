@@ -124,36 +124,13 @@
             "name" : "exposedAPIs",
             "type" : {
               "type" : "array",
-              "name" : "exposedAPIs",
-              "items" : [ {
-                "name" : "name",
-                "type" : "string"
-              }, {
-                "name" : "description",
-                "type" : "string"
-              }, {
-                "name" : "type",
-                "type" : "string"
-              }, {
-                "name" : "status",
-                "type" : "string"
-              } ]
+              "items" : "string"
             }
           }, {
             "name" : "consumedAPIs",
             "type" : {
               "type" : "array",
-              "name" : "consumedAPIs",
-              "items" : [ {
-                "name" : "name",
-                "type" : "string"
-              }, {
-                "name" : "description",
-                "type" : "string"
-              }, {
-                "name" : "status",
-                "type" : "string"
-              } ]
+              "items" : "string"
             }
           } ]
         }
