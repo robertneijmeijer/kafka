@@ -106,7 +106,7 @@ def add_value(key):
     elif(key == 'sox'):
       YAML_DATA['containers']['sox'] = False
     elif(key == 'icfr'):
-      YAML_DATA['containers']['sox'] = False
+      YAML_DATA['containers']['icfr'] = False
 
 schema_val = {
     "name": str,
