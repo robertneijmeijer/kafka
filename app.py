@@ -389,7 +389,7 @@ def filter_none():
                 key = key.replace(":","")
                 print("key")
                 print(key) 
-                delete_keys_from_dict(YAML_DATA,'technology')
+                delete_keys_from_dict(YAML_DATA,k)
         visited.add(k)
 
 def main():
