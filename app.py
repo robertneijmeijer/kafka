@@ -385,7 +385,7 @@ def filter_none():
                 print('start')
                 print("%s: %s" % (k, v))
                 print(k)
-                key = k.strip()
+                key = k.strip().replace(":", "")
                 key = key.replace(":","")
                 print("key")
                 print(key) 
