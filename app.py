@@ -384,7 +384,11 @@ def filter_none():
             if v == None or v == '':
                 print('start')
                 print("%s: %s" % (k, v))
-                print(k) 
+                print(k)
+                key = k.strip()
+                key = key.replace(":","")
+                print("key")
+                print(key) 
                 delete_keys_from_dict(YAML_DATA,'technology')
         visited.add(k)
 
