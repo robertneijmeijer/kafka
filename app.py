@@ -382,7 +382,8 @@ def filter_none():
                 stack.extend(v.items()) 
         else: 
             if v == None or v == '':
-                # print("%s: %s" % (k, v)) 
+                print("%s: %s" % (k, v))
+                print(k) 
                 delete_keys_from_dict(YAML_DATA,'technology')
         visited.add(k)
 
