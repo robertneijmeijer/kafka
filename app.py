@@ -81,7 +81,7 @@ def send_to_kafka(settings: dict, data: dict):
     # producer.send("topic2",data)
     # print('send')
 
-    topic = "topic8"
+    topic = "topic9"
 
     with open('/avro_schema.avsc') as f:
       schema_str = f.read()
