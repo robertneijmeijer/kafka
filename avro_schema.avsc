@@ -90,26 +90,6 @@
         "name" : "environments",
         "type" : "string"
       }, {
-        "name" : "relationships",
-        "type" : {
-          "type" : "record",
-          "name" : "relationships",
-          "fields" : [ {
-            "name" : "type",
-            "type" : "string"
-          }, {
-            "name" : "container",
-            "type" : {
-              "type" : "record",
-              "name" : "container",
-              "fields" : [ {
-                "name" : "name",
-                "type" : "string"
-              } ]
-            }
-          } ]
-        }
-      }, {
         "name" : "components",
         "type" : {
           "type" : "record",
