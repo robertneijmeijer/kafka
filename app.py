@@ -100,13 +100,14 @@ def send_to_kafka(settings: dict, data: dict):
 
 def add_value(key):
     global YAML_DATA
-    # TODO: add key and value to yml
     if(key == 'technology'):
       YAML_DATA['containers']['technology'] = str(find_main_language())
     elif(key == 'sox'):
       YAML_DATA['containers']['sox'] = False
     elif(key == 'icfr'):
       YAML_DATA['containers']['icfr'] = False
+    elif(key == 'hostedAt'):
+      YAML_DATA['containers']['hostedAt'] = 'Unknown'
 
 schema_val = {
     "name": str,
@@ -139,12 +140,7 @@ schema_val = {
         "assignementGroup": str,
         "operationalStatus": Or("Pipelined", "Operational", "Non-Operational", "Submitted for decommissioning", "Decommissioned", "In decommissioning process"),
         "environments": Or("nl", "be"),
-        "relationships": {
-            "type": str,
-            "container": {
-                "name": str,
-            },
-        },
+
         "components": {
             "name": str,
             "description": str,
@@ -254,27 +250,7 @@ schema = {
       }, {
         "name" : "environments",
         "type" : "string"
-      }, {
-        "name" : "relationships",
-        "type" : {
-          "type" : "record",
-          "name" : "relationships",
-          "fields" : [ {
-            "name" : "type",
-            "type" : "string"
-          }, {
-            "name" : "container",
-            "type" : {
-              "type" : "record",
-              "name" : "container",
-              "fields" : [ {
-                "name" : "name",
-                "type" : "string"
-              } ]
-            }
-          } ]
-        }
-      }, {
+      },  {
         "name" : "components",
         "type" : {
           "type" : "record",
