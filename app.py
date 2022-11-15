@@ -102,9 +102,11 @@ def add_value(key):
     global YAML_DATA
     # TODO: add key and value to yml
     if(key == 'technology'):
-      value = str(find_main_language())
-
-      YAML_DATA['containers']['technology'] = value
+      YAML_DATA['containers']['technology'] = str(find_main_language())
+    elif(key == 'sox'):
+      YAML_DATA['containers']['sox'] = False
+    elif(key == 'icfr'):
+      YAML_DATA['containers']['sox'] = False
 
 schema_val = {
     "name": str,
@@ -382,13 +384,6 @@ def filter_none():
                 stack.extend(v.items()) 
         else: 
             if v == None or v == '':
-                print('start')
-                print("%s: %s" % (k, v))
-                print(k)
-                key = k.strip().replace(":", "")
-                key = key.replace(":","")
-                print("key")
-                print(key) 
                 delete_keys_from_dict(YAML_DATA,k)
         visited.add(k)
 
