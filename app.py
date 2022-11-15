@@ -338,10 +338,10 @@ def validate_yaml(yaml_data, verbose = False):
           print(se)
         return False
 
-def filter_none():
-  global YAML_DATA
-  for key, value in YAML_DATA.items():
-    print('key: ' + key + ' value: ' + value)
+# def filter_none():
+#   global YAML_DATA
+#   for key, value in YAML_DATA.items():
+#     print('key: ' + key + ' value: ' + value)
 
 def find_main_language(full_output = False):
   languages = parse_yaml("/languages.yml")
@@ -382,6 +382,7 @@ def filter_none():
                 stack.extend(v.items()) 
         else: 
             if v == None or v == '':
+                print('start')
                 print("%s: %s" % (k, v))
                 print(k) 
                 delete_keys_from_dict(YAML_DATA,'technology')
