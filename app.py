@@ -72,14 +72,6 @@ def write_ca_file(content: str, filename: str=DEFAULT_CA_FILE):
         file.write(content)
 
 def send_to_kafka(settings: dict, data: dict):
-    # producer = KafkaProducer(
-    #                          value_serializer=lambda v: json.dumps(v).encode('utf-8'),
-    #                          bootstrap_servers=settings['bootstrap_servers'])
-    # producer.send('topic2', value=data)
-    # producer = prepare_producer(bootstrap_servers=["10.152.183.181:9094"], avro_schema_registry=f'http://10.152.183.242:8081', topic_name="topic2",value_schema=schema, num_partitions=1, replication_factor=1)
-
-    # producer.send("topic2",data)
-    # print('send')
 
     topic = "topic9"
 
@@ -160,7 +152,6 @@ schema_val = {
 }
 
 def validate_yaml(yaml_data, verbose = False):
-    #schema = eval(open('./schema.yml', 'r').read())
     validator = Schema(schema_val)
     try:
         validator.validate(yaml_data)
@@ -171,11 +162,6 @@ def validate_yaml(yaml_data, verbose = False):
         if(verbose):
           print(se)
         return False
-
-# def filter_none():
-#   global YAML_DATA
-#   for key, value in YAML_DATA.items():
-#     print('key: ' + key + ' value: ' + value)
 
 def find_main_language(full_output = False):
   languages = parse_yaml("/languages.yml")
