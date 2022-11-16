@@ -215,6 +215,8 @@ def main():
     filter_none()
     log.info('Data: %s', data)
     validate_yaml(YAML_DATA)
+    print('root')
+    print(os.getcwd())
 
     
     #ca_content = os.getenv(KAFKA_CA_ENV_VAR)
