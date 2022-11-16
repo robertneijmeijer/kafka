@@ -101,13 +101,13 @@ def send_to_kafka(settings: dict, data: dict):
 def add_value(key):
     global YAML_DATA
     if(key == 'technology'):
-      YAML_DATA['containers']['technology'] = str(find_main_language())
+      YAML_DATA['containers'][key] = str(find_main_language())
     elif(key == 'sox'):
-      YAML_DATA['containers']['sox'] = False
+      YAML_DATA['containers'][key] = False
     elif(key == 'icfr'):
-      YAML_DATA['containers']['icfr'] = False
+      YAML_DATA['containers'][key] = False
     elif(key == 'hostedAt'):
-      YAML_DATA['containers']['hostedAt'] = 'Unknown'
+      YAML_DATA['containers'][key] = 'Unknown'
 
 schema_val = {
     "name": str,
