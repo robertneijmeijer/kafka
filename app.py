@@ -72,6 +72,7 @@ def write_ca_file(content: str, filename: str=DEFAULT_CA_FILE):
         file.write(content)
 
 def send_to_kafka(settings: dict, data: dict):
+    global YAML_DATA
 
     topic = "topic9"
 
@@ -86,7 +87,7 @@ def send_to_kafka(settings: dict, data: dict):
 
     producer = Producer({'bootstrap.servers': '10.152.183.181:9094'})
 
-    producer.produce(topic=topic, key=string_serializer('testkey2', None), value=avro_serializer(data, SerializationContext(topic, MessageField.VALUE)))
+    producer.produce(topic=topic, key=string_serializer(YAML_DATA['name'], None), value=avro_serializer(data, SerializationContext(topic, MessageField.VALUE)))
 
     producer.flush()
 
