@@ -100,7 +100,7 @@ def add_value(key):
     elif(key == 'icfr'):
       YAML_DATA['containers'][key] = False
     elif(key == 'hostedAt'):
-      YAML_DATA['containers'][key] = 'Unknown'
+      YAML_DATA['containers'][key] = "Azure Cloud"
 
 schema_val = {
     "name": str,
