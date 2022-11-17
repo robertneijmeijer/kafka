@@ -95,6 +95,8 @@ def add_value(key):
     global YAML_DATA
     if(key == 'technology'):
       YAML_DATA['containers'][key] = str(find_main_language())
+      print('key')
+      print(YAML_DATA['containers'][key])
     elif(key == 'sox'):
       YAML_DATA['containers'][key] = False
     elif(key == 'icfr'):
