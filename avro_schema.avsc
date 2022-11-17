@@ -12,22 +12,6 @@
     "name" : "status",
     "type" : "string"
   }, {
-    "name" : "consumers",
-    "type" : {
-      "type" : "record",
-      "name" : "consumers",
-      "fields" : [ {
-        "name" : "name",
-        "type" : "string"
-      }, {
-        "name" : "description",
-        "type" : "string"
-      }, {
-        "name" : "type",
-        "type" : "string"
-      } ]
-    }
-  }, {
     "name" : "containers",
     "type" : {
       "type" : "record",
@@ -141,14 +125,13 @@
               }, {
                 "name" : "status",
                 "type" : "string"
-              },
-              {
+              }, {
                 "name" : "read",
                 "type" : "boolean"
-              },{
+              }, {
                 "name" : "write",
                 "type" : "boolean"
-              },{
+              }, {
                 "name" : "execute",
                 "type" : "boolean"
               }
