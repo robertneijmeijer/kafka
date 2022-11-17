@@ -169,6 +169,7 @@ def find_main_language(full_output = False):
   languages = parse_yaml("/languages.yml")
   matches = defaultdict(int)
   for root, directory, filenames in os.walk(os.getcwd()):
+      print(filenames)
       for filename in filenames:
         for key, value in languages.items():
             for type in value:
