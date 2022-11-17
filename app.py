@@ -97,6 +97,7 @@ def add_value(key):
       YAML_DATA['containers'][key] = str(find_main_language())
       print('key')
       print(YAML_DATA['containers'][key])
+      print('end key')
     elif(key == 'sox'):
       YAML_DATA['containers'][key] = False
     elif(key == 'icfr'):
