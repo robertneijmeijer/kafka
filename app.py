@@ -95,9 +95,6 @@ def add_value(key):
     global YAML_DATA
     if(key == 'technology'):
       YAML_DATA['containers'][key] = str(find_main_language())
-      print('key')
-      print(YAML_DATA['containers'][key])
-      print('end key')
     elif(key == 'sox'):
       YAML_DATA['containers'][key] = False
     elif(key == 'icfr'):
@@ -216,9 +213,6 @@ def main():
     filter_none()
     log.info('Data: %s', data)
     validate_yaml(YAML_DATA)
-    print('root')
-    print(os.getcwd())
-
     
     #ca_content = os.getenv(KAFKA_CA_ENV_VAR)
     #write_ca_file(ca_content, DEFAULT_CA_FILE)
