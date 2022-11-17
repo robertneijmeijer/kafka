@@ -170,10 +170,9 @@ def find_main_language(full_output = False):
   matches = defaultdict(int)
   for root, directory, filenames in os.walk(os.getcwd()):
       for filename in filenames:
-        print(filename)
         for key, value in languages.items():
             for type in value:
-                if re.search(f".({type}$)", filename):
+                if re.search(f"\.({type}$)", filename):
                     size = os.path.getsize(root + '/' + filename)
                     matches[key] += size
   if(full_output):
