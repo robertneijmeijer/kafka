@@ -173,12 +173,12 @@ C#:
 - linq
 C++:
 - cpp
-- c++
+- c\+\+
 - cc
 - cp
 - cxx
 - h
-- h++
+- h\+\+
 - hh
 - hpp
 - hxx
@@ -318,8 +318,8 @@ Coq:
 - v
 Cpp-ObjDump:
 - cppobjdump
-- c++-objdump
-- c++objdump
+- c\+\+-objdump
+- c\+\+objdump
 - cpp-objdump
 - cxx-objdump
 Creole:
