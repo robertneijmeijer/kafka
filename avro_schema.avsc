@@ -141,6 +141,16 @@
               }, {
                 "name" : "status",
                 "type" : "string"
+              },
+              {
+                "name" : "read",
+                "type" : "boolean"
+              },{
+                "name" : "write",
+                "type" : "boolean"
+              },{
+                "name" : "execute",
+                "type" : "boolean"
               }
                 ]
               }

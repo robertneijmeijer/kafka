@@ -74,7 +74,7 @@ def write_ca_file(content: str, filename: str=DEFAULT_CA_FILE):
 def send_to_kafka(settings: dict, data: dict):
     global YAML_DATA
 
-    topic = "topic9"
+    topic = "topic10"
 
     with open('/avro_schema.avsc') as f:
       schema_str = f.read()
@@ -107,12 +107,6 @@ schema_val = {
     "description": str,
     "status": str,
 
-    "consumers": {
-        "name": str,
-        "description": str,
-        "type" : str
-    },
-
     "containers": {
         "name": str,
         "sysnonyms": str,
@@ -131,6 +125,7 @@ schema_val = {
         Optional("sox", default= lambda : add_value('sox')): bool,
         Optional("icfr", default= lambda : add_value('icfr')): bool,
         "assignementGroup": str,
+        # operational = deployed to prod, pipelined = in development not yet released
         "operationalStatus": Or("Pipelined", "Operational", "Non-Operational", "Submitted for decommissioning", "Decommissioned", "In decommissioning process"),
         "environments": Or("nl", "be"),
 
@@ -146,7 +141,10 @@ schema_val = {
             "consumedAPIs": [{
                 "name": str,
                 "description": str,
-                "status": str
+                "status": str,
+                "read": bool,
+                "write": bool,
+                "execute": bool,
             }]
         },
     }
