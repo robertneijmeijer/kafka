@@ -209,20 +209,17 @@ def filter_none():
 def replace_key(data, keys, index = 0):
     temp_data = {}
     
-    if isinstance(data, Iterable):
-        try:
-            for i, old_key in enumerate(data):
-                list_data = list(data.values())
-                # try:
-                #     # print(keys[i])
-                #     if isinstance(list_data[i], dict):
-                #         replace_key(list_data[i], keys, i + index)
+    
+    for i, old_key in enumerate(data):
+        list_data = list(data.values())
+        # try:
+        #     # print(keys[i])
+        #     if isinstance(list_data[i], dict):
+        #         replace_key(list_data[i], keys, i + index)
 
-                # except:
-                #     print("index out of range")
-                temp_data[keys[i + index]] = list_data[i]
-        except Exception as e:
-            print(e)
+        # except:
+        #     print("index out of range")
+        temp_data[keys[i + index]] = list_data[i]
     return temp_data
 
 
@@ -238,6 +235,13 @@ def translate_keys(data):
     third_data = replace_key(second_data["containers"], schema_str, 4)
     fourth_data = replace_key(third_data["components"], ["name", "description", "exposedAPIs", "consumedAPIs"])
     fifth_data = list()
+    print("first")
+    print(first_data)
+    print("second")
+    print(second_data)
+    print("third")
+    print(third_data)
+    print("fourth")
     print(fourth_data)
     for value in fourth_data["exposedAPIs"]:
         fifth_data.append(replace_key(value, ["name", "description", "type", "status"]))
