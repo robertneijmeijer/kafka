@@ -13,6 +13,7 @@ from confluent_kafka.schema_registry import SchemaRegistryClient
 from confluent_kafka.schema_registry.avro import AvroSerializer
 import re
 from collections import defaultdict
+from itertools import islice
 
 DEFAULT_DATA_FILE = 'system.yml'
 DEFAULT_CA_FILE = 'ca.crt'
@@ -204,12 +205,56 @@ def filter_none():
                 delete_keys_from_dict(YAML_DATA,k)
         visited.add(k)
 
+def replace_key(data, keys, index = 0):
+    temp_data = {}
+    
+    for i, old_key in enumerate(data):
+        list_data = list(data.values())
+        # try:
+        #     # print(keys[i])
+        #     if isinstance(list_data[i], dict):
+        #         replace_key(list_data[i], keys, i + index)
+
+        # except:
+        #     print("index out of range")
+        temp_data[keys[i + index]] = list_data[i]
+    return temp_data
+
+
+def translate_keys(data):
+    with open('avro_schema.avsc') as f:
+      schema_str = f.read()
+
+    schema_str = re.findall('(?<=\"name"\ : ")(.*?)(?=\")',schema_str)
+    del schema_str[0]
+    del schema_str[4]
+    first_data = replace_key(dict(islice(data.items(), 3)), schema_str)
+    # print(first_data)
+    second_data = replace_key(dict(islice(data.items(), 3, 4)), schema_str, 3)
+    third_data = replace_key(second_data["containers"], schema_str, 4)
+    fourth_data = replace_key(third_data["components"], ["name", "description", "exposedAPIs", "consumedAPIs"])
+    fifth_data = list()
+    for value in fourth_data["exposedAPIs"]:
+        fifth_data.append(replace_key(value, ["name", "description", "type", "status"]))
+    fourth_data["exposedAPIs"] = fifth_data
+    sixth_data = list()
+    for value in fourth_data["consumedAPIs"]:
+        sixth_data.append(replace_key(value, ["name", "description", "status", "read", "write", "execute"]))
+    fourth_data["consumedAPIs"] = sixth_data
+
+    data = first_data 
+    data["containers"] = third_data
+    data["containers"]["components"] = fourth_data
+
+    return data
+
 def main():
     kafka_settings = parse_args()
     log.info('Configuration: %s', kafka_settings)
     data = parse_yaml(kafka_settings['data_file'])
     global YAML_DATA 
     YAML_DATA = data
+    YAML_DATA = translate_keys()
     filter_none()
     log.info('Data: %s', data)
     validate_yaml(YAML_DATA)
