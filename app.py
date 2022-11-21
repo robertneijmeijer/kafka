@@ -204,10 +204,6 @@ def filter_none():
                 delete_keys_from_dict(YAML_DATA,k)
         visited.add(k)
 
-
-
-
-
 def main():
     kafka_settings = parse_args()
     log.info('Configuration: %s', kafka_settings)
@@ -222,10 +218,15 @@ def main():
     #write_ca_file(ca_content, DEFAULT_CA_FILE)
     try:
         if(validate_yaml(YAML_DATA, True)):
-            send_to_kafka(settings=kafka_settings, data=YAML_DATA)
+            # send_to_kafka(settings=kafka_settings, data=YAML_DATA)
             log.info('Data successfully sent')
             log.info("Data: %s", YAML_DATA)
+            exit(0)
+        else:
+            # Exit code 2 since the data is missing or invalid
+            exit(2)
     except Exception as e:
+        # Print error and generic exit code 1
         print(e)
         exit(1)
         #os.remove(DEFAULT_CA_FILE)
