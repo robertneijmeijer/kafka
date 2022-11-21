@@ -220,15 +220,14 @@ def main():
     
     #ca_content = os.getenv(KAFKA_CA_ENV_VAR)
     #write_ca_file(ca_content, DEFAULT_CA_FILE)
-    exit(1)
     try:
         if(validate_yaml(YAML_DATA, True)):
             send_to_kafka(settings=kafka_settings, data=YAML_DATA)
             log.info('Data successfully sent')
             log.info("Data: %s", YAML_DATA)
     except Exception as e:
-        print('error')
-        raise e
+        print(e)
+        exit(1)
         #os.remove(DEFAULT_CA_FILE)
 
 
