@@ -208,18 +208,11 @@ def filter_none():
 
 def replace_key(data, keys, index = 0):
     temp_data = {}
-    
-    
+
     for i, old_key in enumerate(data):
         list_data = list(data.values())
-        # try:
-        #     # print(keys[i])
-        #     if isinstance(list_data[i], dict):
-        #         replace_key(list_data[i], keys, i + index)
-
-        # except:
-        #     print("index out of range")
         temp_data[keys[i + index]] = list_data[i]
+
     return temp_data
 
 
@@ -230,25 +223,22 @@ def translate_keys(data):
     schema_str = re.findall('(?<=\"name"\ : ")(.*?)(?=\")',schema_str)
     del schema_str[0]
     del schema_str[4]
+
     first_data = replace_key(dict(islice(data.items(), 3)), schema_str)
-    log.info("first")
-    log.info(first_data)
     second_data = replace_key(dict(islice(data.items(), 3, 4)), schema_str, 3)
-    log.info("second")
-    log.info(second_data)
     third_data = replace_key(second_data["containers"], schema_str, 4)
-    log.info("third")
-    log.info(third_data)
     fourth_data = replace_key(third_data["components"], ["name", "description", "exposedAPIs", "consumedAPIs"])
     fifth_data = list()
-    log.info("fourth")
-    log.info(fourth_data)
+
     for value in fourth_data["exposedAPIs"]:
         fifth_data.append(replace_key(value, ["name", "description", "type", "status"]))
     fourth_data["exposedAPIs"] = fifth_data
+
     sixth_data = list()
+
     for value in fourth_data["consumedAPIs"]:
         sixth_data.append(replace_key(value, ["name", "description", "status", "read", "write", "execute"]))
+        
     fourth_data["consumedAPIs"] = sixth_data
 
     data = first_data 
