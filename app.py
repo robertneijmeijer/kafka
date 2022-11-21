@@ -204,6 +204,10 @@ def filter_none():
                 delete_keys_from_dict(YAML_DATA,k)
         visited.add(k)
 
+
+
+
+
 def main():
     kafka_settings = parse_args()
     log.info('Configuration: %s', kafka_settings)
@@ -216,7 +220,7 @@ def main():
     
     #ca_content = os.getenv(KAFKA_CA_ENV_VAR)
     #write_ca_file(ca_content, DEFAULT_CA_FILE)
-    
+    exit(1)
     try:
         if(validate_yaml(YAML_DATA, True)):
             send_to_kafka(settings=kafka_settings, data=YAML_DATA)
