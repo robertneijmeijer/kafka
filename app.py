@@ -13,6 +13,7 @@ from confluent_kafka.schema_registry import SchemaRegistryClient
 from confluent_kafka.schema_registry.avro import AvroSerializer
 import re
 from collections import defaultdict
+from collections.abc import Iterable
 from itertools import islice
 
 DEFAULT_DATA_FILE = 'system.yml'
@@ -208,16 +209,17 @@ def filter_none():
 def replace_key(data, keys, index = 0):
     temp_data = {}
     
-    for i, old_key in enumerate(data):
-        list_data = list(data.values())
-        # try:
-        #     # print(keys[i])
-        #     if isinstance(list_data[i], dict):
-        #         replace_key(list_data[i], keys, i + index)
+    if isinstance(data, Iterable):
+        for i, old_key in enumerate(data):
+            list_data = list(data.values())
+            # try:
+            #     # print(keys[i])
+            #     if isinstance(list_data[i], dict):
+            #         replace_key(list_data[i], keys, i + index)
 
-        # except:
-        #     print("index out of range")
-        temp_data[keys[i + index]] = list_data[i]
+            # except:
+            #     print("index out of range")
+            temp_data[keys[i + index]] = list_data[i]
     return temp_data
 
 
