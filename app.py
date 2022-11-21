@@ -238,7 +238,7 @@ def translate_keys(data):
 
     for value in fourth_data["consumedAPIs"]:
         sixth_data.append(replace_key(value, ["name", "description", "status", "read", "write", "execute"]))
-        
+
     fourth_data["consumedAPIs"] = sixth_data
 
     data = first_data 
@@ -255,8 +255,9 @@ def main():
     YAML_DATA = data
     filter_none()
     log.info('Data: %s', data)
-    validate_yaml(YAML_DATA)
     YAML_DATA = translate_keys(YAML_DATA)
+    validate_yaml(YAML_DATA)
+
     
     #ca_content = os.getenv(KAFKA_CA_ENV_VAR)
     #write_ca_file(ca_content, DEFAULT_CA_FILE)
