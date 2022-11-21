@@ -231,16 +231,16 @@ def translate_keys(data):
     del schema_str[0]
     del schema_str[4]
     first_data = replace_key(dict(islice(data.items(), 3)), schema_str)
-    second_data = replace_key(dict(islice(data.items(), 3, 4)), schema_str, 3)
-    third_data = replace_key(second_data["containers"], schema_str, 4)
-    fourth_data = replace_key(third_data["components"], ["name", "description", "exposedAPIs", "consumedAPIs"])
-    fifth_data = list()
     log.info("first")
     log.info(first_data)
+    second_data = replace_key(dict(islice(data.items(), 3, 4)), schema_str, 3)
     log.info("second")
     log.info(second_data)
+    third_data = replace_key(second_data["containers"], schema_str, 4)
     log.info("third")
     log.info(third_data)
+    fourth_data = replace_key(third_data["components"], ["name", "description", "exposedAPIs", "consumedAPIs"])
+    fifth_data = list()
     log.info("fourth")
     log.info(fourth_data)
     for value in fourth_data["exposedAPIs"]:
