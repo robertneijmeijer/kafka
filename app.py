@@ -222,7 +222,7 @@ def replace_key(data, keys, index = 0):
 
 
 def translate_keys(data):
-    with open('avro_schema.avsc') as f:
+    with open('/avro_schema.avsc') as f:
       schema_str = f.read()
 
     schema_str = re.findall('(?<=\"name"\ : ")(.*?)(?=\")',schema_str)
