@@ -254,7 +254,7 @@ def main():
     data = parse_yaml(kafka_settings['data_file'])
     global YAML_DATA 
     YAML_DATA = data
-    YAML_DATA = translate_keys()
+    YAML_DATA = translate_keys(YAML_DATA)
     filter_none()
     log.info('Data: %s', data)
     validate_yaml(YAML_DATA)
