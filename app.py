@@ -40,10 +40,10 @@ logging.basicConfig(level=os.environ.get("LOGLEVEL", "INFO"))
 def include_constructor(loader, node):
   selector = loader.construct_sequence(node)
   name = selector.pop(0)
-  print(selector)
+
   with open(os.getcwd() + name ) as f:
     content = yaml.safe_load(f)
-  # walk over the selector items and descend into the loaded structure each time.
+  
   for item in selector:
     for key, value in content.items():
       if key == item:
