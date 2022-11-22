@@ -37,6 +37,24 @@ global YAML_DATA
 log = logging.getLogger()
 logging.basicConfig(level=os.environ.get("LOGLEVEL", "INFO"))
 
+def include_constructor(loader, node):
+  selector = loader.construct_sequence(node)
+  name = selector.pop(0)
+  print(selector)
+  with open(name) as f:
+    content = yaml.safe_load(f)
+  # walk over the selector items and descend into the loaded structure each time.
+  for item in selector:
+    for key, value in content.items():
+      if key == item:
+        for name in selector:
+          content = content[name] 
+        return content
+
+  return None
+
+yaml.add_constructor('!include', include_constructor, Loader=yaml.SafeLoader)
+
 def parse_args() -> dict:
     parser = argparse.ArgumentParser(description='Send system properties to Kafka topic')
     parser.add_argument('--bootstrap-servers', dest='bootstrap_servers',

@@ -1,0 +1,98 @@
+annotations:
+  devops.ah.it/area: Platform
+  devops.ah.it/documentation-url: https://scm.ecom.ahold.nl/stash/projects/RONIN/repos/order-service/browse/README.MD
+  devops.ah.it/git-repo: 'https://github.com/RoyalAholdDelhaize/order-service.git '
+  devops.ah.it/purpose: The service that get the information about the customer's order.
+  fluentbit.io/parser: json
+environmentVariables:
+  - name: JWT_SECRET
+    valueFrom:
+      secretKeyRef:
+        key: secret
+        name: oauth-jwt-secret
+  - name: FOFF_DB_USERNAME
+    valueFrom:
+      secretKeyRef:
+        key: username
+        name: foff-connection-properties
+  - name: FOFF_DB_PASSWORD
+    valueFrom:
+      secretKeyRef:
+        key: password
+        name: foff-connection-properties
+  - name: FOFF_DB_URL
+    valueFrom:
+      secretKeyRef:
+        key: jdbcUrl
+        name: foff-connection-properties
+extraArgs:
+  - -XshowSettings:vm
+helmVersion: 3
+image: albertheijn.azurecr.io/order-service
+imagePullPolicy: IfNotPresent
+imageTag: 1.231.0
+labels:
+  devops.ah.it/cluster: shopping
+  devops.ah.it/development-team: lists-orders-and-checkout-web
+  devops.ah.it/product-team: lists-orders-and-checkout
+  devops.ah.it/support-assignment-group: AMS_ITOnline_L3_Lists_and_Orders
+  support-level: 24x7
+  team-channel: team-ronin-notifications
+management:
+  enabled: true
+  livenessProbe:
+    failureThreshold: 8
+    initialDelaySeconds: 120
+    path: /manage/health
+    periodSeconds: 10
+    successThreshold: 1
+    timeoutSeconds: 5
+  port: 8081
+  prometheus:
+    enabled: true
+    path: /manage/prometheus
+  readinessProbe:
+    failureThreshold: 6
+    initialDelaySeconds: 45
+    path: /manage/health
+    periodSeconds: 10
+    successThreshold: 1
+    timeoutSeconds: 5
+podSecurityContext:
+  fsGroup: 1000
+  runAsNonRoot: true
+  supplementalGroups:
+    - 1000
+port: 8080
+securityContext:
+  allowPrivilegeEscalation: false
+  capabilities:
+    drop:
+      - ALL
+server:
+  shutdown:
+    grace-period: 5s
+service:
+  servicePort: 80
+  type: ClusterIP
+strategy:
+  rollingUpdate:
+    maxSurge: 2
+    maxUnavailable: 0
+  type: RollingUpdate
+gitops:
+  project: ah
+ingress:
+  annotations:
+    ingress.kubernetes.io/ssl-redirect: "false"
+    kubernetes.io/ingress.class: nginx
+    kubernetes.io/tls-acme: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+  enabled: true
+resources:
+  limits:
+    cpu: 1500m
+    memory: 1200Mi
+  requests:
+    cpu: 1500m
+    memory: 900Mi

@@ -19,7 +19,7 @@ scontainers:
     smaxSeverityLevel: 4
     ssox: 
     sicfr: 
-    sassignementGroup: AMS_ITOnline_L3_SRE_Infra
+    sassignementGroup: !include [helm/values.yml, labels, devops.ah.it/support-assignment-group]
     soperationalStatus: Pipelined
     senvironments: nl
     scomponents:
