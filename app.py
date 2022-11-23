@@ -280,8 +280,7 @@ def main():
     global YAML_DATA 
     YAML_DATA = data
     filter_none()
-    log.info("validationcheck " + str(kafka_settings['validation_check']))
-    log.info("validationcheck " + str(os.getenv(KAFKA_VALIDATION_CHECK_ENV_VAR)))
+    log.info("Validationcheck " + str(os.getenv(KAFKA_VALIDATION_CHECK_ENV_VAR)))
     log.info('Data: %s', data)
     # Validate before translate
     YAML_DATA = translate_keys(YAML_DATA)
