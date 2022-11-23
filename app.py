@@ -26,6 +26,7 @@ KAFKA_BOOTSTRAP_ENV_VAR = 'KAFKA_BOOTSTRAP_SERVERS'
 KAFKA_PASSWD_ENV_VAR = 'KAFKA_PASSWORD'
 KAFKA_USERNAME_ENV_VAR = 'KAFKA_USERNAME'
 KAFKA_CA_ENV_VAR = 'KAFKA_CA_CONTENT'
+KAFKA_VALIDATION_CHECK_ENV_VAR ='KAFKA_VALIDATION_CHECK' 
 
 # Kafka settings
 KAFKA_TOPIC_DEFAULT_KEY = 'topic2'
@@ -72,13 +73,17 @@ def parse_args() -> dict:
     parser.add_argument('--password', dest='password',
                         default=os.getenv(KAFKA_PASSWD_ENV_VAR), type=str,
                         help='kafka password')
+    parser.add_argument('--validation-check', dest='validation_check',
+                        default=os.getenv(KAFKA_VALIDATION_CHECK_ENV_VAR), type=bool,
+                        help='validation check')
     args = parser.parse_args()
     return {
         'bootstrap_servers': args.bootstrap_servers,
         'topic_name': args.topic_name,
         'data_file': args.data_file,
         'username': args.username,
-        'password': args.password
+        'password': args.password,
+        'validation_check': args.validation_check
     }
 
 def parse_yaml(yaml_file: str) -> dict:
@@ -245,7 +250,6 @@ def translate_keys(data):
     first_data = replace_key(dict(islice(data.items(), 3)), schema_str)
     second_data = replace_key(dict(islice(data.items(), 3, 4)), schema_str, 3)
     third_data = replace_key(second_data["containers"], schema_str, 4)
-    log.info('third_data: %s', third_data)
     fourth_data = replace_key(third_data["components"], ["name", "description", "exposedAPIs", "consumedAPIs"])
     fifth_data = list()
 
@@ -273,7 +277,9 @@ def main():
     global YAML_DATA 
     YAML_DATA = data
     filter_none()
+    log.info("validationcheck " + kafka_settings[])
     log.info('Data: %s', data)
+    # Validate before translate
     YAML_DATA = translate_keys(YAML_DATA)
     validate_yaml(YAML_DATA)
 
