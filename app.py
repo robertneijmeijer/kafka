@@ -174,8 +174,6 @@ schema_val = {
 
 def validate_yaml(yaml_data, verbose = False):
     validator = Schema(schema_val)
-    log.info('Validator: %s', schema_val)
-    log.info('Data: %s', yaml_data)
     try:
         validator.validate(yaml_data)
         if(verbose):
