@@ -244,7 +244,7 @@ def translate_keys(data):
 
     schema_str = re.findall('(?<=\"name"\ : ")(.*?)(?=\")',schema_str)
     del schema_str[0]
-    del schema_str[4]
+    del schema_str[3]
 
     first_data = replace_key(dict(islice(data.items(), 2)), schema_str)
     second_data = replace_key(dict(islice(data.items(), 2, 3)), schema_str, 2)
