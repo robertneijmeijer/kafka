@@ -7,7 +7,7 @@ import logging
 import yaml
 from kafka import KafkaProducer
 from schema import Schema, SchemaError, Optional, Hook, Or
-from confluent_kafka import Producer
+from confluent_kafka import Producer, Consumer
 from confluent_kafka.serialization import StringSerializer, SerializationContext, MessageField
 from confluent_kafka.schema_registry import SchemaRegistryClient
 from confluent_kafka.schema_registry.avro import AvroSerializer
@@ -112,7 +112,7 @@ def send_to_kafka(settings: dict, data: dict):
 
     producer = Producer({'bootstrap.servers': '10.152.183.181:9094'})
 
-    # producer.produce(topic=topic, key=string_serializer(YAML_DATA['name'], None), value=avro_serializer(data, SerializationContext(topic, MessageField.VALUE)))
+    producer.produce(topic=topic, key=string_serializer(YAML_DATA['name'], None), value=avro_serializer(data, SerializationContext(topic, MessageField.VALUE)))
 
     producer.flush()
 
@@ -268,6 +268,10 @@ def translate_keys(data):
     return data
 
 def validate_names():
+    config = {'bootstrap.servers': '10.152.183.181:9094',
+    'group.id': 'test',
+    'auto.offset.reset': 'smallest'}
+    consumer = Consumer(config)
 
     return True
 
@@ -293,7 +297,7 @@ def main():
     #write_ca_file(ca_content, DEFAULT_CA_FILE)
     try:
         if(validate_yaml(YAML_DATA, True)):
-            # send_to_kafka(settings=kafka_settings, data=YAML_DATA)
+            send_to_kafka(settings=kafka_settings, data=YAML_DATA)
             log.info('Data successfully sent')
             log.info("Data: %s", YAML_DATA)
             exit(0)
