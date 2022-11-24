@@ -282,6 +282,7 @@ def main():
     log.info('Data: %s', data)
     # Validate before translate
     YAML_DATA = translate_keys(YAML_DATA)
+    log.info('Data: %s', data)
     validate_yaml(YAML_DATA)
 
     if os.getenv(KAFKA_VALIDATION_CHECK_ENV_VAR):
