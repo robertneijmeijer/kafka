@@ -247,7 +247,7 @@ def translate_keys(data):
     del schema_str[4]
 
     first_data = replace_key(dict(islice(data.items(), 2)), schema_str)
-    second_data = replace_key(dict(islice(data.items(), 2, 3)), schema_str, 3)
+    second_data = replace_key(dict(islice(data.items(), 2, 3)), schema_str, 2)
     third_data = replace_key(second_data["containers"], schema_str, 4)
     fourth_data = replace_key(third_data["components"], ["name", "description", "exposedAPIs", "consumedAPIs"])
     fifth_data = list()
