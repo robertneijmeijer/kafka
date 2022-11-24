@@ -153,7 +153,6 @@ schema_val = {
         # operational = deployed to prod, pipelined = in development not yet released
         "operationalStatus": Or("Pipelined", "Operational", "Non-Operational", "Submitted for decommissioning", "Decommissioned", "In decommissioning process"),
         "environments": Or("nl", "be"),
-
         "components": {
             "name": str,
             "description": str,
@@ -271,7 +270,7 @@ def translate_keys(data):
     return data
 
 def validate_names():
-    return True;
+    return True
 
 def main():
     kafka_settings = parse_args()
