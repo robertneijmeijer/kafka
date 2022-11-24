@@ -248,7 +248,7 @@ def translate_keys(data):
 
     first_data = replace_key(dict(islice(data.items(), 2)), schema_str)
     second_data = replace_key(dict(islice(data.items(), 2, 3)), schema_str, 2)
-    third_data = replace_key(second_data["containers"], schema_str, 4)
+    third_data = replace_key(second_data["containers"], schema_str, 3)
     fourth_data = replace_key(third_data["components"], ["name", "description", "exposedAPIs", "consumedAPIs"])
     fifth_data = list()
 
@@ -283,7 +283,7 @@ def main():
     log.info("Validationcheck " + str(os.getenv(KAFKA_VALIDATION_CHECK_ENV_VAR)))
     log.info('Data: %s', data)
     # Validate before translate
-    # YAML_DATA = translate_keys(YAML_DATA)
+    YAML_DATA = translate_keys(YAML_DATA)
     validate_yaml(YAML_DATA)
 
     if os.getenv(KAFKA_VALIDATION_CHECK_ENV_VAR):

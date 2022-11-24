@@ -1,8 +1,8 @@
-name: &name 'poc-git-to-cmdb'
+name: 'poc-git-to-cmdb'
 description: 'POC to send information about the app to Kafka'
 
 containers:
-    name: *name
+    name:
     synonyms: poc-git-to-kafka-cmdb-sync
     description: POC
     # Technology used in this application e.g. Kotlin springboot or Java can be left empty
