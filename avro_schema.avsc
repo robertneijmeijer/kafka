@@ -9,9 +9,6 @@
     "name" : "description",
     "type" : "string"
   }, {
-    "name" : "status",
-    "type" : "string"
-  }, {
     "name" : "containers",
     "type" : {
       "type" : "record",
@@ -27,9 +24,6 @@
         "type" : "string"
       }, {
         "name" : "technology",
-        "type" : "string"
-      }, {
-        "name" : "parentSystem",
         "type" : "string"
       }, {
         "name" : "ciDataOwner",
@@ -58,9 +52,6 @@
       }, {
         "name" : "maxSeverityLevel",
         "type" : "long"
-      }, {
-        "name" : "sox",
-        "type" : "boolean"
       }, {
         "name" : "icfr",
         "type" : "boolean"
