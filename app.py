@@ -130,14 +130,12 @@ def add_value(key):
 schema_val = {
     "name": str,
     "description": str,
-    "status": str,
 
     "containers": {
         "name": str,
         "sysnonyms": str,
         "description": str,
         Optional("technology", default= lambda : add_value('technology')): str,
-        "parentSystem": str,
         "ciDataOwner": str,
         "productOwner": str,
         "applicationType": Or("Business", "Customer Facing", "External Service", "Infrastructure", "Interface", "Office", "Tool", "Unknown"),

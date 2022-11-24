@@ -18,7 +18,7 @@ containers:
     maxSeverityLevel: 4
     containsFinancialData: false
     # If the repository has a helm file leave like this, otherwise fill in
-    assignementGroup: !include [/helm/values.yml, labels, devops.ah.it/support-assignment-group]
+    assignementGroup: AMS_ITOnline_L3_Lists_and_Orders
     #Pipelined or operational
     operationalStatus: Pipelined
     #nl or be or both
