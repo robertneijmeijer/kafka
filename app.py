@@ -174,6 +174,8 @@ schema_val = {
 
 def validate_yaml(yaml_data, verbose = False):
     validator = Schema(schema_val)
+    log.info('Validator: %s', schema_val)
+    log.info('Data: %s', yaml_data)
     try:
         validator.validate(yaml_data)
         if(verbose):
@@ -282,7 +284,6 @@ def main():
     log.info('Data: %s', data)
     # Validate before translate
     YAML_DATA = translate_keys(YAML_DATA)
-    log.info('Data: %s', data)
     validate_yaml(YAML_DATA)
 
     if os.getenv(KAFKA_VALIDATION_CHECK_ENV_VAR):
