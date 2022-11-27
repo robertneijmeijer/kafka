@@ -110,7 +110,7 @@ def send_to_kafka(settings: dict, data: dict):
 
     string_serializer = StringSerializer('utf_8')
 
-    producer = Producer({'bootstrap.servers': '10.1.191.205:9094'})
+    producer = Producer({'bootstrap.servers': '10.152.183.52:9094'})
 
     producer.produce(topic=topic, key=string_serializer(YAML_DATA['name'], None), value=avro_serializer(data, SerializationContext(topic, MessageField.VALUE)))
 
