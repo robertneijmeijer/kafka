@@ -304,7 +304,8 @@ def validate_names():
             if message.error():
                 print(message)
             else:
-                log.info('Consumed data: %s', message.value())
+                # log.info('Consumed data: %s', message.value())
+                log.info(message.value() == YAML_DATA)
                 if message.value() == YAML_DATA:
                     log.info('Data is already present and validated')
                     exit(0)
