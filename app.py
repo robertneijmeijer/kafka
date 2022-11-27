@@ -11,6 +11,11 @@ from confluent_kafka import Producer, Consumer
 from confluent_kafka.serialization import StringSerializer, SerializationContext, MessageField
 from confluent_kafka.schema_registry import SchemaRegistryClient
 from confluent_kafka.schema_registry.avro import AvroSerializer
+from confluent_kafka import Producer, Consumer, DeserializingConsumer
+from confluent_kafka.serialization import StringSerializer, SerializationContext, MessageField, StringDeserializer
+from confluent_kafka.schema_registry import SchemaRegistryClient
+from confluent_kafka.schema_registry.avro import AvroSerializer, AvroDeserializer
+from confluent_kafka import Message
 import re
 from collections import defaultdict
 from collections.abc import Iterable
@@ -268,11 +273,38 @@ def translate_keys(data):
     return data
 
 def validate_names():
-    config = {'bootstrap.servers': '10.152.183.181:9094',
-    'group.id': 'test',
-    'auto.offset.reset': 'smallest'}
-    consumer = Consumer(config)
+    global YAML_DATA 
+    with open('avro_schema.avsc') as f:
+      schema_str = f.read()
 
+    schema_registry_client = SchemaRegistryClient({'url': 'http://10.152.183.242:8081'})
+
+    avro_deserializer = AvroDeserializer(schema_registry_client, schema_str)
+
+    string_deserializer = StringDeserializer('utf_8')
+
+
+    config = {'bootstrap.servers': '10.152.183.52:9094',
+    'group.id': 'aiufdsgdfjhdsagjhdsfjhfjdhajad;lkhkj',
+    'auto.offset.reset': 'earliest',
+    'value.deserializer': avro_deserializer,
+    'key.deserializer': string_deserializer}
+    consumer = DeserializingConsumer(config)
+    try:
+        consumer.subscribe(["topic10"])
+
+        while True:
+            message = consumer.poll(timeout=1.0)
+            
+            if message is None: continue
+            if message.error():
+                print(message)
+            else:
+                if message.value() == YAML_DATA:
+                    log.info('Data is already present and validated')
+                    exit(0)
+    finally:
+        consumer.close()
     return True
 
 def main():
