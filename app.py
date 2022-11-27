@@ -293,7 +293,7 @@ def validate_names():
     consumer = DeserializingConsumer(config)
     try:
         consumer.subscribe(["topic10"])
-        timeout = time.time() + 60
+        timeout = time.time() + 30
 
         log.info('Consuming data to see if data is already present')
         while time.time() < timeout:
@@ -303,6 +303,7 @@ def validate_names():
             if message.error():
                 print(message)
             else:
+                log.info('Consumed data: %s', message.value())
                 if message.value() == YAML_DATA:
                     log.info('Data is already present and validated')
                     exit(0)
