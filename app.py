@@ -21,6 +21,7 @@ from collections import defaultdict
 from collections.abc import Iterable
 from itertools import islice
 import time
+import uuid
 
 DEFAULT_DATA_FILE = 'system.yml'
 DEFAULT_CA_FILE = 'ca.crt'
@@ -286,7 +287,7 @@ def validate_names():
 
 
     config = {'bootstrap.servers': '10.152.183.52:9094',
-    'group.id': 'aiufdsgdfjhdsagjhdsfjhfjdhajad;lkhkj',
+    'group.id': str(uuid.uuid4()),
     'auto.offset.reset': 'earliest',
     'value.deserializer': avro_deserializer,
     'key.deserializer': string_deserializer}
