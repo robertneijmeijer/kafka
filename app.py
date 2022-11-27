@@ -127,8 +127,6 @@ def add_value(key):
     global YAML_DATA
     if(key == 'technology'):
       YAML_DATA['containers'][key] = str(find_main_language())
-    elif(key == 'sox'):
-      YAML_DATA['containers'][key] = False
     elif(key == 'icfr'):
       YAML_DATA['containers'][key] = False
     elif(key == 'hostedAt'):
@@ -152,7 +150,6 @@ schema_val = {
         "confidentiality": str,
         "mcv": Or("Highly business critical", "Business critical", "Not business critical", "Not applicable"),
         "maxSeverityLevel": Or(1,2,3,4, "Not applicable"),
-        Optional("sox", default= lambda : add_value('sox')): bool,
         Optional("icfr", default= lambda : add_value('icfr')): bool,
         "assignementGroup": str,
         # operational = deployed to prod, pipelined = in development not yet released
