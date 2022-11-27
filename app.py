@@ -323,12 +323,10 @@ def main():
     YAML_DATA = translate_keys(YAML_DATA)
     validate_yaml(YAML_DATA)
 
-    validate_names()
-
-    # if os.getenv(KAFKA_VALIDATION_CHECK_ENV_VAR):
-    #     validate_yaml(YAML_DATA)
-    #     validate_names()
-    #     exit(0)
+    if os.getenv(KAFKA_VALIDATION_CHECK_ENV_VAR):
+        validate_yaml(YAML_DATA)
+        validate_names()
+        exit(0)
     
     #ca_content = os.getenv(KAFKA_CA_ENV_VAR)
     #write_ca_file(ca_content, DEFAULT_CA_FILE)
