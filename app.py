@@ -275,7 +275,7 @@ def translate_keys(data):
 
 def validate_names():
     global YAML_DATA 
-    with open('avro_schema.avsc') as f:
+    with open('/avro_schema.avsc') as f:
       schema_str = f.read()
 
     schema_registry_client = SchemaRegistryClient({'url': 'http://10.152.183.242:8081'})
