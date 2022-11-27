@@ -20,6 +20,7 @@ import re
 from collections import defaultdict
 from collections.abc import Iterable
 from itertools import islice
+import time
 
 DEFAULT_DATA_FILE = 'system.yml'
 DEFAULT_CA_FILE = 'ca.crt'
@@ -292,8 +293,9 @@ def validate_names():
     consumer = DeserializingConsumer(config)
     try:
         consumer.subscribe(["topic10"])
+        timeout = time.time() + 60
 
-        while True:
+        while time.time() < timeout:
             message = consumer.poll(timeout=1.0)
             
             if message is None: continue
@@ -319,6 +321,8 @@ def main():
     # Validate before translate
     YAML_DATA = translate_keys(YAML_DATA)
     validate_yaml(YAML_DATA)
+
+    validate_names()
 
     # if os.getenv(KAFKA_VALIDATION_CHECK_ENV_VAR):
     #     validate_yaml(YAML_DATA)
