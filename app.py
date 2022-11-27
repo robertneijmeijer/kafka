@@ -295,6 +295,7 @@ def validate_names():
         consumer.subscribe(["topic10"])
         timeout = time.time() + 60
 
+        log.info('Consuming data to see if data is already present')
         while time.time() < timeout:
             message = consumer.poll(timeout=1.0)
             
