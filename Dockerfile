@@ -6,6 +6,7 @@ COPY avro_schema.avsc /
 COPY languages.yml /
 
 # Add this depenentcy seperatly since it's not released yet
+RUN apk add build-base
 # librdkafka-dev is needed for confluent-kafka
 RUN sed -i -e 's/v3\.4/edge/g' /etc/apk/repositories \
     && apk upgrade --update-cache --available \
