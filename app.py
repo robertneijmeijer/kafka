@@ -107,7 +107,7 @@ def write_ca_file(content: str, filename: str=DEFAULT_CA_FILE):
 def send_to_kafka(settings: dict, data: dict):
     global YAML_DATA
 
-    topic = "topic10"
+    topic = "topic11"
 
     with open('/avro_schema.avsc') as f:
       schema_str = f.read()
@@ -296,9 +296,9 @@ def validate_names():
     consumer = DeserializingConsumer(config)
 
     try:
-        consumer.subscribe(["topic10"])
+        consumer.subscribe(["topic11"])
 
-        topic_partition = TopicPartition("topic10", partition=0)
+        topic_partition = TopicPartition("topic11", partition=0)
         low, high = consumer.get_watermark_offsets(topic_partition)
         current_offset = 0
 
