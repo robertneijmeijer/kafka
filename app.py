@@ -294,7 +294,7 @@ def validate_names():
     'value.deserializer': avro_deserializer,
     'key.deserializer': string_deserializer}
     consumer = DeserializingConsumer(config)
-
+    explosedAPIs = list()
     try:
         consumer.subscribe(["topic11"])
 
@@ -314,7 +314,17 @@ def validate_names():
                 log.info(message.value() == YAML_DATA)
                 if message.value() == YAML_DATA:
                     log.info('Data is already present and validated')
-                    exit(0)
+                    return 
+                else:
+                    for conatiners in message.value()["containers"]:
+                        for exposed in containers["components"]["exposedAPIs"]:
+                            explosedAPIs.append(exposed)
+
+        # for containers in YAML_DATA:
+        #     for consumesAPIs in containers["components"]["consumedAPIs"]:
+        log.info("exposed: %s", explosedAPIs)
+                
+
     finally:
         consumer.close()
     return True
