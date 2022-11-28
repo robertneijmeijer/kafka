@@ -14,6 +14,4 @@ RUN sed -i -e 's/v3\.4/edge/g' /etc/apk/repositories \
 
 RUN pip install -r /requirements.txt 
 
-RUN ls /home/
-
 ENTRYPOINT ["python3", "/app.py"]
