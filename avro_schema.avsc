@@ -11,7 +11,7 @@
   }, {
     "name" : "containers",
     "type" : {
-      "type" : "record",
+      "type" : "array",
       "name" : "containers",
       "fields" : [ {
         "name" : "name",
