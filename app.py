@@ -21,6 +21,7 @@ import re
 from collections import defaultdict
 from collections.abc import Iterable
 from itertools import islice
+from pathlib import Path
 import time
 import uuid
 
@@ -49,6 +50,11 @@ logging.basicConfig(level=os.environ.get("LOGLEVEL", "INFO"))
 def include_constructor(loader, node):
   selector = loader.construct_sequence(node)
   name = selector.pop(0)
+
+  path = Path(os.getcwd() + name)
+  if not path.is_file():
+    log.error("Values could not be found at: " + name + " please add the correct path or fill the value in manually")
+    exit(1)
 
   with open(os.getcwd() + name ) as f:
     content = yaml.safe_load(f)
