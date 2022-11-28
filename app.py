@@ -16,6 +16,7 @@ from confluent_kafka.serialization import StringSerializer, SerializationContext
 from confluent_kafka.schema_registry import SchemaRegistryClient
 from confluent_kafka.schema_registry.avro import AvroSerializer, AvroDeserializer
 from confluent_kafka import Message
+from confluent_kafka import TopicPartition
 import re
 from collections import defaultdict
 from collections.abc import Iterable
@@ -289,14 +290,18 @@ def validate_names():
     'value.deserializer': avro_deserializer,
     'key.deserializer': string_deserializer}
     consumer = DeserializingConsumer(config)
+
     try:
         consumer.subscribe(["topic10"])
-        timeout = time.time() + 30
+
+        topic_partition = TopicPartition("topic10", partition=0)
+        low, high = consumer.get_watermark_offsets(topic_partition)
+        current_offset = 0
 
         log.info('Consuming data to see if data is already present')
-        while time.time() < timeout:
+        while current_offset < high:
             message = consumer.poll(timeout=1.0)
-            
+            current_offset += 1
             if message is None: continue
             if message.error():
                 print(message)
