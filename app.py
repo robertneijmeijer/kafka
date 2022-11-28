@@ -242,7 +242,7 @@ def replace_key(data, keys, index = 0):
 
 
 def translate_keys(data):
-    with open('/avro_schema.avsc') as f:
+    with open('avro_schema.avsc') as f:
       schema_str = f.read()
 
     schema_str = re.findall('(?<=\"name"\ : ")(.*?)(?=\")',schema_str)
@@ -251,24 +251,28 @@ def translate_keys(data):
 
     first_data = replace_key(dict(islice(data.items(), 2)), schema_str)
     second_data = replace_key(dict(islice(data.items(), 2, 3)), schema_str, 2)
-    third_data = replace_key(second_data["containers"], schema_str, 3)
-    fourth_data = replace_key(third_data["components"], ["name", "description", "exposedAPIs", "consumedAPIs"])
-    fifth_data = list()
+    containers = list()
+    for container in second_data["containers"]:
 
-    for value in fourth_data["exposedAPIs"]:
-        fifth_data.append(replace_key(value, ["name", "description", "type", "status"]))
-    fourth_data["exposedAPIs"] = fifth_data
+        third_data = replace_key(container, schema_str, 3)
+        fourth_data = replace_key(third_data["components"], ["name", "description", "exposedAPIs", "consumedAPIs"])
+        fifth_data = list()
 
-    sixth_data = list()
+        for value in fourth_data["exposedAPIs"]:
+            fifth_data.append(replace_key(value, ["name", "description", "type", "status"]))
+        fourth_data["exposedAPIs"] = fifth_data
 
-    for value in fourth_data["consumedAPIs"]:
-        sixth_data.append(replace_key(value, ["name", "description", "status", "read", "write", "execute"]))
+        sixth_data = list()
 
-    fourth_data["consumedAPIs"] = sixth_data
+        for value in fourth_data["consumedAPIs"]:
+            sixth_data.append(replace_key(value, ["name", "description", "status", "read", "write", "execute"]))
 
-    data = first_data 
-    data["containers"] = third_data
-    data["containers"]["components"] = fourth_data
+        fourth_data["consumedAPIs"] = sixth_data
+
+        data = first_data 
+        containers.append(third_data)
+        
+    data["containers"] = containers
 
     return data
 
