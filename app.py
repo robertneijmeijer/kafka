@@ -325,7 +325,8 @@ def main():
     # log.info("Validationcheck " + str(os.getenv(KAFKA_VALIDATION_CHECK_ENV_VAR)))
     log.info('Data: %s', data)
     # Validate before translate
-    YAML_DATA = translate_keys(YAML_DATA)
+    for container in YAML_DATA['containers']: 
+        YAML_DATA[container] = translate_keys(container)
     validate_yaml(YAML_DATA)
 
     if os.getenv(KAFKA_VALIDATION_CHECK_ENV_VAR):
