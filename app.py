@@ -311,7 +311,6 @@ def validate_names():
                 print(message)
             else:
                 # log.info('Consumed data: %s', message.value())
-                log.info(message.value() == YAML_DATA)
                 if message.value() == YAML_DATA:
                     log.info('Data is already present and validated')
                     return 
@@ -320,7 +319,7 @@ def validate_names():
                         for exposed in containers["components"]["exposedAPIs"]:
                             explosedAPIs.append(exposed)
 
-        for containers in YAML_DATA:
+        for containers in YAML_DATA["containers"]:
             for consumedAPI in containers["components"]["consumedAPIs"]:
                 found = False
                 for exposedAPI in explosedAPIs:

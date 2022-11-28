@@ -48,7 +48,7 @@ containers:
               read: true
               write: false
               execute: true
-  - kanker: 'poc-git-to-cmdb'
+  - name: 'poc-git-to-cmdb'
     synonyms: poc-git-to-kafka-cmdb-sync
     description: POC
     # Technology used in this application e.g. Kotlin springboot or Java can be left empty
