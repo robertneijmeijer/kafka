@@ -137,7 +137,7 @@ schema_val = {
     "name": str,
     "description": str,
 
-    "containers": {
+    "containers": [{
         "name": str,
         "sysnonyms": str,
         "description": str,
@@ -174,7 +174,7 @@ schema_val = {
                 "execute": bool,
             }]
         },
-    }
+    }]
 }
 
 def validate_yaml(yaml_data, verbose = False):
