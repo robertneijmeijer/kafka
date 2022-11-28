@@ -12,8 +12,6 @@ RUN sed -i -e 's/v3\.4/edge/g' /etc/apk/repositories \
     && apk upgrade --update-cache --available \
     && apk --no-cache add librdkafka-dev
 
-RUN apk update && apk add ruby
-
 RUN pip install -r /requirements.txt 
 
 RUN ls /home/
