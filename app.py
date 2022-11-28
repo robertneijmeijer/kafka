@@ -320,11 +320,15 @@ def validate_names():
                         for exposed in containers["components"]["exposedAPIs"]:
                             explosedAPIs.append(exposed)
 
-        # for containers in YAML_DATA:
-        #     for consumesAPIs in containers["components"]["consumedAPIs"]:
-        log.info("exposed: %s", explosedAPIs)
-                
-
+        for containers in YAML_DATA:
+            for consumedAPI in containers["components"]["consumedAPIs"]:
+                found = False
+                for exposedAPI in explosedAPIs:
+                    if consumedAPI["name"] == exposedAPI["name"]:
+                        found = True
+                        continue 
+                if not found:
+                    log.info(consumedAPI["name"] + " Not found in system")
     finally:
         consumer.close()
     return True
@@ -342,6 +346,7 @@ def main():
     YAML_DATA = translate_keys(YAML_DATA)
     validate_yaml(YAML_DATA)
     validate_names()
+
     if os.getenv(KAFKA_VALIDATION_CHECK_ENV_VAR):
         validate_yaml(YAML_DATA)
         
