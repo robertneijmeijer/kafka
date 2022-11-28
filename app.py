@@ -316,7 +316,7 @@ def validate_names():
                     log.info('Data is already present and validated')
                     return 
                 else:
-                    for conatiners in message.value()["containers"]:
+                    for containers in message.value()["containers"]:
                         for exposed in containers["components"]["exposedAPIs"]:
                             explosedAPIs.append(exposed)
 
@@ -341,10 +341,10 @@ def main():
     # Validate before translate 
     YAML_DATA = translate_keys(YAML_DATA)
     validate_yaml(YAML_DATA)
-
+    validate_names()
     if os.getenv(KAFKA_VALIDATION_CHECK_ENV_VAR):
         validate_yaml(YAML_DATA)
-        validate_names()
+        
         exit(0)
     
     #ca_content = os.getenv(KAFKA_CA_ENV_VAR)
