@@ -6,9 +6,8 @@ containers:
     synonyms: poc-git-to-kafka-cmdb-sync
     description: POC
     # Technology used in this application e.g. Kotlin springboot or Java can be left empty
-    technology: kafka
-    ciDataOwner: Aede van der Weij
-    productOwner: Thomas de Vries
+    technology: 
+    team: 
     applicationType: Tool
     hostedAt: Azure Cloud
     deploymentModel: On-Premise
@@ -18,7 +17,7 @@ containers:
     maxSeverityLevel: 4
     containsFinancialData: false
     # If the repository has a helm file leave like this, otherwise fill in
-    assignementGroup: test
+    assignementGroup: te
     #Pipelined or operational
     operationalStatus: Pipelined
     #nl or be or both
@@ -36,61 +35,15 @@ containers:
               type: HTTP/JSON2
               status: TO_BE_IMPLEMENTED2
         consumedAPIs:
-            - name: test1
+            - name: test100
               description: What is it used for
               status: TO_BE_IMPLEMENTED
               read: true
               write: true
               execute: false
-            - name: test2
+            - name: test2000
               description: What is it used for2
               status: TO_BE_IMPLEMENTED2
               read: true
               write: false
               execute: true
-  - name: 'poc-git-to-cmdb'
-    synonyms: poc-git-to-kafka-cmdb-sync
-    description: POC
-    # Technology used in this application e.g. Kotlin springboot or Java can be left empty
-    technology: kafka
-    ciDataOwner: Aede van der Weij
-    productOwner: Thomas de Vries
-    applicationType: Tool
-    hostedAt: Azure Cloud
-    deploymentModel: On-Premise
-    containsPersonalData: False
-    confidentiality: Internal use
-    mcv: Not business critical
-    maxSeverityLevel: 4
-    containsFinancialData: false
-    # If the repository has a helm file leave like this, otherwise fill in
-    assignementGroup: test
-    #Pipelined or operational
-    operationalStatus: Pipelined
-    #nl or be or both
-    environments: nl
-    components:
-        name: Component name
-        description: what the system does
-        exposedAPIs:
-            - name: Unique API name
-              description: What it can be used for
-              type: HTTP/JSON
-              status: TO_BE_IMPLEMENTED
-            - name: Unique API name2
-              description: What it can be used for2
-              type: HTTP/JSON2
-              status: TO_BE_IMPLEMENTED2
-        consumedAPIs:
-            - name: test1
-              description: What is it used for
-              status: TO_BE_IMPLEMENTED
-              read: true
-              write: true
-              execute: false
-            - name: test2
-              description: What is it used for2
-              status: TO_BE_IMPLEMENTED2
-              read: true
-              write: false
-              execute: false

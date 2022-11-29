@@ -254,6 +254,15 @@ def filter_none():
                 delete_keys_from_dict(YAML_DATA,k)
         visited.add(k)
 
+def remove_none(obj):
+  if isinstance(obj, (list, tuple, set)):
+    return type(obj)(remove_none(x) for x in obj if x is not None)
+  elif isinstance(obj, dict):
+    return type(obj)((remove_none(k), remove_none(v))
+      for k, v in obj.items() if k is not None and v is not None)
+  else:
+    return obj
+
 def replace_key(data, keys, index = 0):
     temp_data = {}
 
@@ -361,7 +370,7 @@ def main():
     data = parse_yaml(kafka_settings['data_file'])
     global YAML_DATA 
     YAML_DATA = data
-    filter_none()
+    YAML_DATA = remove_none(YAML_DATA)
     # log.info("Validationcheck " + str(os.getenv(KAFKA_VALIDATION_CHECK_ENV_VAR)))
     log.info('Data: %s', data)
     # Validate before translate 
