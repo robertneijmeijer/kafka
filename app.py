@@ -131,6 +131,7 @@ def send_to_kafka(settings: dict, data: dict):
     producer.flush()
 
 def add_value(key):
+    log.info('add value ' + str(key))
     global YAML_DATA
     if(key == 'technology'):
       YAML_DATA['containers'][key] = str(find_main_language())
