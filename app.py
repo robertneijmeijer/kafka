@@ -140,7 +140,7 @@ def add_value(key):
     elif(key == 'hostedAt'):
       YAML_DATA['containers'][key] = "Azure Cloud"
     elif(key == 'team'):
-      YAML_DATA['containers'][key] = str(find_team())
+      YAML_DATA['containers'][key] = find_team()
 
 def find_team():
     log.info('finding team')
@@ -165,7 +165,8 @@ schema_val = {
         "sysnonyms": str,
         "description": str,
         Optional("technology", default= lambda : add_value('technology')): str,
-        Optional("team", default= lambda : add_value('team')): str,
+        "ciDataOwner": str,
+        "productOwner": str,
         "applicationType": Or("Business", "Customer Facing", "External Service", "Infrastructure", "Interface", "Office", "Tool", "Unknown"),
         Optional("hostedAt", default = lambda : add_value('hostedAt')): Or("Amazon Web Services (AWS Cloud)", "AT&T", "Azure CF1", "Azure CF2", "Azure Cloud", "DXC", "Equinix", "Google Cloud Platform", "Hybric", "Inlumi", "Local server", "Multi-Cloud", "Not Applicable", "Other", "Salesforce", "ServiceNow", "Solvinity", "Unit4", "Unknown", "User device", "Azure"),
         "deploymentModel": Or("BPO", "CaaS", "IaaS", "On-Premise", "PaaS", "SaaS"),
