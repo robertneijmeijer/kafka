@@ -165,8 +165,7 @@ schema_val = {
         "sysnonyms": str,
         "description": str,
         Optional("technology", default= lambda : add_value('technology')): str,
-        "ciDataOwner": str,
-        "productOwner": str,
+        Optional("team", default= lambda : add_value('team')): str,
         "applicationType": Or("Business", "Customer Facing", "External Service", "Infrastructure", "Interface", "Office", "Tool", "Unknown"),
         Optional("hostedAt", default = lambda : add_value('hostedAt')): Or("Amazon Web Services (AWS Cloud)", "AT&T", "Azure CF1", "Azure CF2", "Azure Cloud", "DXC", "Equinix", "Google Cloud Platform", "Hybric", "Inlumi", "Local server", "Multi-Cloud", "Not Applicable", "Other", "Salesforce", "ServiceNow", "Solvinity", "Unit4", "Unknown", "User device", "Azure"),
         "deploymentModel": Or("BPO", "CaaS", "IaaS", "On-Premise", "PaaS", "SaaS"),
@@ -370,15 +369,16 @@ def main():
     data = parse_yaml(kafka_settings['data_file'])
     global YAML_DATA 
     YAML_DATA = data
-    YAML_DATA = remove_none(YAML_DATA)
+    
     # log.info("Validationcheck " + str(os.getenv(KAFKA_VALIDATION_CHECK_ENV_VAR)))
     log.info('Data: %s', data)
     log.info('YAML_DATA: %s', YAML_DATA)
     # Validate before translate 
-    validate_yaml(YAML_DATA)
     log.info('Data: %s', YAML_DATA)
     YAML_DATA = translate_keys(YAML_DATA)
+    YAML_DATA = remove_none(YAML_DATA)
     log.info('kk ' + str(YAML_DATA))
+    validate_yaml(YAML_DATA)
     
     # validate_names()
 
