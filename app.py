@@ -367,7 +367,7 @@ def main():
     # Validate before translate 
     YAML_DATA = translate_keys(YAML_DATA)
     validate_yaml(YAML_DATA)
-    validate_names()
+    # validate_names()
 
     if os.getenv(KAFKA_VALIDATION_CHECK_ENV_VAR):
         validate_yaml(YAML_DATA)
