@@ -29,12 +29,9 @@
             "name" : "technology",
             "type" : "string"
           }, {
-            "name" : "ciDataOwner",
+            "name" : "team",
             "type" : "string"
-          }, {
-            "name" : "productOwner",
-            "type" : "string"
-          }, {
+          },, {
             "name" : "applicationType",
             "type" : "string"
           }, {
