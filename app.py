@@ -256,10 +256,10 @@ def filter_none():
 
 def remove_none(obj):
   if isinstance(obj, (list, tuple, set)):
-    return type(obj)(remove_none(x) for x in obj if x is not None)
+    return type(obj)(remove_none(x) for x in obj if x is not None or '')
   elif isinstance(obj, dict):
     return type(obj)((remove_none(k), remove_none(v))
-      for k, v in obj.items() if k is not None and v is not None)
+      for k, v in obj.items() if k is not None and v is not None or '')
   else:
     return obj
 
@@ -373,8 +373,10 @@ def main():
     YAML_DATA = remove_none(YAML_DATA)
     # log.info("Validationcheck " + str(os.getenv(KAFKA_VALIDATION_CHECK_ENV_VAR)))
     log.info('Data: %s', data)
+    log.info('YAML_DATA: %s', YAML_DATA)
     # Validate before translate 
     validate_yaml(YAML_DATA)
+    log.info('Data: %s', data)
     YAML_DATA = translate_keys(YAML_DATA)
     log.info('kk ' + str(YAML_DATA))
     
