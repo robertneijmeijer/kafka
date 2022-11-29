@@ -376,7 +376,7 @@ def main():
     log.info('YAML_DATA: %s', YAML_DATA)
     # Validate before translate 
     validate_yaml(YAML_DATA)
-    log.info('Data: %s', data)
+    log.info('Data: %s', YAML_DATA)
     YAML_DATA = translate_keys(YAML_DATA)
     log.info('kk ' + str(YAML_DATA))
     
