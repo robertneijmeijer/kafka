@@ -1,0 +1,10 @@
+.github        @RoyalAholdDelhaize/team-sre-core
+CODEOWNERS     @RoyalAholdDelhaize/team-sre-core
+*              @RoyalAholdDelhaize/team-sre-core
+README.MD      @RoyalAholdDelhaize/team-sre-core
+.gitignore     @RoyalAholdDelhaize/team-sre-core
+.yamllint      @RoyalAholdDelhaize/team-sre-core
+.editorconfig  @RoyalAholdDelhaize/team-sre-core
+persons        @LevieodvAH @RoyalAholdDelhaize/team-sre-core
+roles          @LevieodvAH @RoyalAholdDelhaize/team-sre-core
+teams          @LevieodvAH @RoyalAholdDelhaize/team-sre-core

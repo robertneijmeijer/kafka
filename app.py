@@ -138,6 +138,22 @@ def add_value(key):
       YAML_DATA['containers'][key] = False
     elif(key == 'hostedAt'):
       YAML_DATA['containers'][key] = "Azure Cloud"
+    elif(key == 'team'):
+      YAML_DATA['containers'][key] = str(find_team())
+
+def find_team():
+
+    path = Path(os.getcwd() + '/CODEOWNERS')
+    if not path.is_file():
+        log.error("CODEOWNERS file could not be found, please manually fill in team")
+        exit(1)
+
+    with open(os.getcwd() + '/CODEOWNERS') as f:
+        code = f.read()
+
+    matches = re.findall(r"(CODEOWNERS|\*)[ \t]+(@RoyalAholdDelhaize\/)(.*)", code)
+
+    return matches[0][-1]
 
 schema_val = {
     "name": str,
