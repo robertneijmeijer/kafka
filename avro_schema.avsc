@@ -31,7 +31,7 @@
           }, {
             "name" : "team",
             "type" : "string"
-          },, {
+          }, {
             "name" : "applicationType",
             "type" : "string"
           }, {
