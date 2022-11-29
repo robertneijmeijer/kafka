@@ -134,13 +134,13 @@ def add_value(key):
     log.info('add value ' + str(key))
     global YAML_DATA
     if(key == 'technology'):
-      YAML_DATA['containers'][key] = str(find_main_language())
+      YAML_DATA['containers'][0][key] = str(find_main_language())
     elif(key == 'icfr'):
-      YAML_DATA['containers'][key] = False
+      YAML_DATA['containers'][0][key] = False
     elif(key == 'hostedAt'):
-      YAML_DATA['containers'][key] = "Azure Cloud"
+      YAML_DATA['containers'][0][key] = "Azure Cloud"
     elif(key == 'team'):
-      YAML_DATA['containers'][key] = find_team()
+      YAML_DATA['containers'][0][key] = find_team()
 
 def find_team():
     log.info('finding team')
