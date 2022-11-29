@@ -142,7 +142,7 @@ def add_value(key):
       YAML_DATA['containers'][key] = str(find_team())
 
 def find_team():
-
+    log.info('finding team')
     path = Path(os.getcwd() + '/CODEOWNERS')
     if not path.is_file():
         log.error("CODEOWNERS file could not be found, please manually fill in team")
