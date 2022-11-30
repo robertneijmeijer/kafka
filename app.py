@@ -314,9 +314,8 @@ def validate_names():
             current_offset += 1
             if message is None: continue
             if message.error():
-                print(message)
+                log.error('Error when handling message: ' + str(message))
             else:
-                # log.info('Consumed data: %s', message.value())
                 if message.value() == YAML_DATA:
                     log.info('Data is already present and validated')
                     return 
@@ -352,7 +351,6 @@ def main():
     YAML_DATA = remove_none(YAML_DATA)
     
     validate_yaml(YAML_DATA)
-    log.info('kk ' + str(YAML_DATA))
     
     # validate_names()
 
@@ -367,7 +365,6 @@ def main():
         if(validate_yaml(YAML_DATA, True)):
             send_to_kafka(settings=kafka_settings, data=YAML_DATA)
             log.info('Data successfully sent')
-            log.info("Data: %s", YAML_DATA)
             exit(0)
         else:
             # Exit code 2 since the data is missing or invalid
