@@ -42,6 +42,10 @@ KAFKA_TOPIC_DEFAULT_KEY = 'topic2'
 KAFKA_SECURITY_PROTOCOL = 'PLAINTEXT'
 KAFKA_SASL_MECHANISM = 'SCRAM-SHA-512'
 
+TOPIC_NAME = 'topic12'
+BOOTSTRAP_SERVERS_URL = '10.152.183.52:9094'
+SCHEMA_REGISTRY_URL = 'http://10.152.183.242:8081'
+
 global YAML_DATA
 
 log = logging.getLogger()
@@ -113,20 +117,18 @@ def write_ca_file(content: str, filename: str=DEFAULT_CA_FILE):
 def send_to_kafka(settings: dict, data: dict):
     global YAML_DATA
 
-    topic = "topic12"
-
     with open('/avro_schema.avsc') as f:
       schema_str = f.read()
 
-    schema_registry_client = SchemaRegistryClient({'url': 'http://10.152.183.242:8081'})
+    schema_registry_client = SchemaRegistryClient({'url': SCHEMA_REGISTRY_URL})
 
     avro_serializer = AvroSerializer(schema_registry_client, schema_str)
 
     string_serializer = StringSerializer('utf_8')
 
-    producer = Producer({'bootstrap.servers': '10.152.183.52:9094'})
+    producer = Producer({'bootstrap.servers': BOOTSTRAP_SERVERS_URL})
 
-    producer.produce(topic=topic, key=string_serializer(YAML_DATA['name'], None), value=avro_serializer(data, SerializationContext(topic, MessageField.VALUE)))
+    producer.produce(topic=TOPIC_NAME, key=string_serializer(YAML_DATA['name'], None), value=avro_serializer(data, SerializationContext(TOPIC_NAME, MessageField.VALUE)))
 
     producer.flush()
 
@@ -226,33 +228,6 @@ def find_main_language(full_output = False):
   else:
     return max(matches, key=matches.get)
 
-def delete_keys_from_dict(d, to_delete):
-    if isinstance(to_delete, str):
-        to_delete = [to_delete]
-    if isinstance(d, dict):
-        for single_to_delete in set(to_delete):
-            if single_to_delete in d:
-                del d[single_to_delete]
-        for k, v in d.items():
-            delete_keys_from_dict(v, to_delete)
-    elif isinstance(d, list):
-        for i in d:
-            delete_keys_from_dict(i, to_delete)
-
-def filter_none(): 
-    global YAML_DATA
-    stack = list(YAML_DATA.items()) 
-    visited = set() 
-    while stack: 
-        k, v = stack.pop() 
-        if isinstance(v, dict): 
-            if k not in visited: 
-                stack.extend(v.items()) 
-        else: 
-            if v == None or v == '':
-                delete_keys_from_dict(YAML_DATA,k)
-        visited.add(k)
-
 def remove_none(obj):
   if isinstance(obj, (list, tuple, set)):
     return type(obj)(remove_none(x) for x in obj if x is not None or '')
@@ -312,14 +287,14 @@ def validate_names():
     with open('/avro_schema.avsc') as f:
       schema_str = f.read()
 
-    schema_registry_client = SchemaRegistryClient({'url': 'http://10.152.183.242:8081'})
+    schema_registry_client = SchemaRegistryClient({'url': SCHEMA_REGISTRY_URL})
 
     avro_deserializer = AvroDeserializer(schema_registry_client, schema_str)
 
     string_deserializer = StringDeserializer('utf_8')
 
 
-    config = {'bootstrap.servers': '10.152.183.52:9094',
+    config = {'bootstrap.servers': BOOTSTRAP_SERVERS_URL,
     'group.id': str(uuid.uuid4()),
     'auto.offset.reset': 'earliest',
     'value.deserializer': avro_deserializer,
@@ -327,9 +302,9 @@ def validate_names():
     consumer = DeserializingConsumer(config)
     explosedAPIs = list()
     try:
-        consumer.subscribe(["topic12"])
+        consumer.subscribe([TOPIC_NAME])
 
-        topic_partition = TopicPartition("topic12", partition=0)
+        topic_partition = TopicPartition(TOPIC_NAME, partition=0)
         low, high = consumer.get_watermark_offsets(topic_partition)
         current_offset = 0
 
