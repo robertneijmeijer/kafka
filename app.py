@@ -158,7 +158,7 @@ def add_value(key):
 
 def find_product_owner():
 
-    return None
+    return 'test'
 
 def find_team():
     log.info('finding team')
