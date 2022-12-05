@@ -55,8 +55,8 @@
               "type": "string"
             },
             {
-              "name": "dataConfidentiality",
               "type": "record",
+              "name": "dataConfidentiality",
               "fields": [
                 {
                   "name": "containsPersonalData",
