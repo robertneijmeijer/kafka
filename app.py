@@ -268,20 +268,30 @@ def replace_key(data, keys, index = 0):
 
 
 def translate_keys(data):
-    with open('/avro_schema.avsc') as f:
+    with open('avro_schema.avsc') as f:
       schema_str = f.read()
 
     schema_str = re.findall('(?<=\"name"\ : ")(.*?)(?=\")',schema_str)
     del schema_str[0]
     del schema_str[3]
-
     first_data = replace_key(dict(islice(data.items(), 2)), schema_str)
     second_data = replace_key(dict(islice(data.items(), 2, 3)), schema_str, 2)
     containers = list()
     for container in second_data["containers"]:
 
-        third_data = replace_key(container, schema_str, 3)
-        fourth_data = replace_key(third_data["components"], ["name", "description", "exposedAPIs", "consumedAPIs"])
+        container_object = replace_key(container, schema_str, 3)
+        first_container = replace_key(dict(islice(container.items(), 0,10)), ['name', 'synonyms', 'description', 'technology', 'team', 'productOwner', 'applicationType', 'hostedAt', 'deploymentModel', 'dataConfidentiality'])
+        first_container['dataConfidentiality'] = replace_key(first_container['dataConfidentiality'], ['containsPersonalData','containsFinancialData','publiclyExposed','restrictedAccess'])
+        second_container = replace_key(dict(islice(container_object.items(), 10, 15)), ['missionCriticality','maxSeverityLevel', 'assignementGroup', 'operationalStatus', 'components'])
+
+        for key in first_container.keys():
+            container_object[key] = first_container[key]
+
+
+        for key in second_container.keys():
+            container_object[key] = second_container[key]
+        
+        fourth_data = replace_key(container_object["components"], ["name", "description", "exposedAPIs", "consumedAPIs"])
         fifth_data = list()
 
         for value in fourth_data["exposedAPIs"]:
@@ -296,7 +306,7 @@ def translate_keys(data):
         fourth_data["consumedAPIs"] = sixth_data
 
         data = first_data 
-        containers.append(third_data)
+        containers.append(container_object)
         
     data["containers"] = containers
 
