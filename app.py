@@ -282,7 +282,7 @@ def translate_keys(data):
         container_object = replace_key(container, schema_str, 3)
         first_container = replace_key(dict(islice(container.items(), 0,10)), ['name', 'synonyms', 'description', 'technology', 'team', 'productOwner', 'applicationType', 'hostedAt', 'deploymentModel', 'dataConfidentiality'])
         first_container['dataConfidentiality'] = replace_key(first_container['dataConfidentiality'], ['containsPersonalData','containsFinancialData','publiclyExposed','restrictedAccess'])
-        second_container = replace_key(dict(islice(container_object.items(), 10, 15)), ['missionCriticality','maxSeverityLevel', 'assignementGroup', 'operationalStatus', 'components'])
+        second_container = replace_key(dict(islice(container_object.items(), 10, 14)), ['missionCriticality', 'assignementGroup', 'operationalStatus', 'components'])
 
         for key in first_container.keys():
             container_object[key] = first_container[key]
