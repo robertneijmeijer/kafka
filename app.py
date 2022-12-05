@@ -146,7 +146,7 @@ def add_value(key):
     elif(key == 'productOwner'):
       YAML_DATA['containers'][0][key] = find_product_owner()
     elif(key == 'maxSeverityLevel'):
-        mcv = YAML_DATA['containers'][0]["mcv"]
+        mcv = YAML_DATA['containers'][0]["missionCriticality"]
         if mcv == "Highly business critical":
             YAML_DATA['containers'][0][key] = 1
         elif mcv == "Business critical":
