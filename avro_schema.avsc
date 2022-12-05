@@ -56,24 +56,28 @@
             },
             {
               "name": "dataConfidentiality",
-              "type": [
-                {
-                  "name": "containsPersonalData",
-                  "type": "boolean"
-                },
-                {
-                  "name": "containsFinancialData",
-                  "type": "boolean"
-                },
-                {
-                  "name": "publiclyExposed",
-                  "type": "boolean"
-                },
-                {
-                  "name": "restrictedAccess",
-                  "type": "boolean"
-                }
-              ]
+              "type": {
+                "type": "record",
+                "name": "dataConfidentiality",
+                "fields": [
+                  {
+                    "name": "containsPersonalData",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "containsFinancialData",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "publiclyExposed",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "restrictedAccess",
+                    "type": "boolean"
+                  }
+                ]
+              }
             },
             {
               "name": "missionCriticality",
