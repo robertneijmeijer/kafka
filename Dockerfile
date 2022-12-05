@@ -4,6 +4,7 @@ COPY requirements.txt /
 COPY app.py /
 COPY avro_schema.avsc /
 COPY languages.yml /
+COPY persons.yml /
 
 # Add this depenentcy seperatly since it's not released yet
 RUN apk add build-base
