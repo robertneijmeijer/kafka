@@ -6,22 +6,29 @@ containers:
     synonyms: poc-git-to-kafka-cmdb-sync
     description: POC
     # Technology used in this application e.g. Kotlin springboot or Java can be left empty
-    technology: 
-    team: 
-    applicationType: Tool
+    technology: tech
+    # Optional will be fetched from CODEOWNERS file
+    team: team
+    #Optional if not specified in SRE-Team config https://github.com/RoyalAholdDelhaize/sre-teams-configuration
+    productOwner: owner
+    # "Business", "Customer Facing", "External Service", "Infrastructure", "Interface", "Office", "Tool", "Unknown"
+    applicationType: Tool # Remame to make more sense/categorize to more fitting names
+    # Default value azure, only fill in if application is not hosted at azure
     hostedAt: Azure Cloud
-    deploymentModel: On-Premise
-    containsPersonalData: False
-    confidentiality: Internal use
-    mcv: Not business critical
-    maxSeverityLevel: 4
-    containsFinancialData: false
+    deploymentModel: On-Premise # rename on premise to custom software of iets en zet die als default
+    dataConfidentiality:
+        tcontainsPersonalData: false
+        tcontainsFinancialData: false
+        #application or data or both?
+        tpubliclyExposed: false
+        trestrictedAccess: true
+    #Highly business critical", "Business critical", "Not business critical", "Not applicable"
+    missionCriticality: Not business critical
+    maxSeverityLevel: 1
     # If the repository has a helm file leave like this, otherwise fill in
-    assignementGroup: te
+    assignementGroup: te # vanuit teams halen uiteindelijk
     #Pipelined or operational
     operationalStatus: Pipelined
-    #nl or be or both
-    environments: nl
     components:
         name: Component name
         description: what the system does
@@ -35,13 +42,13 @@ containers:
               type: HTTP/JSON2
               status: TO_BE_IMPLEMENTED2
         consumedAPIs:
-            - name: test100
+            - name: Unique API name
               description: What is it used for
               status: TO_BE_IMPLEMENTED
               read: true
               write: true
               execute: false
-            - name: test2000
+            - name: Unique API name2
               description: What is it used for2
               status: TO_BE_IMPLEMENTED2
               read: true
