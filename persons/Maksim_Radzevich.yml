@@ -1,0 +1,10 @@
+---
+person:
+  name: Maksim Radzevich
+  pnl: pnl0lj2e
+  teams:
+    - team-simplification
+    - team-bisons
+  roles:
+    - backend-developer
+    - opsgenie-standby

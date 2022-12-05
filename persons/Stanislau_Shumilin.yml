@@ -1,0 +1,9 @@
+---
+person:
+  name: Stanislau Shumilin
+  pnl: pnl0922p
+  teams:
+    - team-api-platform
+  roles:
+    - backend-developer
+    - opsgenie-standby

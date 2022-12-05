@@ -1,0 +1,10 @@
+---
+person:
+  name: Vera Matei
+  pnl: pnl0rq2j
+  teams:
+    - team-delivery
+  roles:
+    - database-developer
+    - backend-developer
+    - opsgenie-standby

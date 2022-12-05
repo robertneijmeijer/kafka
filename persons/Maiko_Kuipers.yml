@@ -1,0 +1,9 @@
+---
+person:
+  name: Maiko_Kuipers
+  pnl: pnl0kw51
+  teams:
+    - team-lists-orders-checkout
+  roles:
+    - frontend-developer
+    - opsgenie-standby

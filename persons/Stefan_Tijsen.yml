@@ -1,0 +1,9 @@
+---
+person:
+  name: Stefan Tijsen
+  pnl: pnl0r045
+  teams:
+    - team-management
+  roles:
+    - head-of-tech
+    - opsgenie-standby

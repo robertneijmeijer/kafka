@@ -1,0 +1,10 @@
+---
+person:
+  name: Vladimir Koptev
+  pnl: pnl0d999
+  teams:
+    - team-subscriptions
+  roles:
+    - ios-developer
+    - flutter-developer
+    - opsgenie-standby

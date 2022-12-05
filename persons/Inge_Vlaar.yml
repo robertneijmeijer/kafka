@@ -1,0 +1,11 @@
+---
+person:
+  name: Inge Vlaar
+  pnl: pnl04a9b
+  teams:
+    - team-assortment-and-search
+    - team-cms-platform
+  roles:
+    - scrum-master
+    - frontend-developer
+    - opsgenie-standby

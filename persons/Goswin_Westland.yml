@@ -1,0 +1,10 @@
+---
+person:
+  name: Goswin Westland
+  pnl: pnlgw144
+  teams:
+    - team-fulfillment-zaandam
+  roles:
+    - database-developer
+    - backend-developer
+    - opsgenie-standby

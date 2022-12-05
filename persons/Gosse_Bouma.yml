@@ -1,0 +1,10 @@
+---
+person:
+  name: Gosse Bouma
+  pnl: pnlgb313
+  teams:
+    - team-profile-and-onboarding
+  roles:
+    - backend-developer
+    - opsgenie-standby
+    - backend-core-developer

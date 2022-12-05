@@ -1,0 +1,11 @@
+---
+person:
+  name: Yan Lanna Alexandre
+  pnl: pnl0eh4k
+  teams:
+    - team-checkout-and-receipts
+    - team-payments
+    - team-checkout-and-payments
+  roles:
+    - backend-developer
+    - labs-developer

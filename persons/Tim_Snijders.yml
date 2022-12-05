@@ -1,0 +1,9 @@
+---
+person:
+  name: Tim Snijders
+  pnl: pnl07x9m
+  teams:
+    - team-boff-slicing
+  roles:
+    - database-developer
+    - opsgenie-standby

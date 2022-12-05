@@ -1,0 +1,10 @@
+---
+person:
+  name: Jan Verweij
+  pnl: ihwa025
+  teams:
+    - team-sre-incident-command
+  roles:
+    - incident-commander
+    - product-owner
+    - opsgenie-standby

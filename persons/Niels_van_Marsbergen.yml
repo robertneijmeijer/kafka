@@ -1,0 +1,12 @@
+---
+person:
+  name: Niels van Marsbergen
+  pnl: pnl0jt04
+  teams:
+    - team-labs
+    - team-checkout-and-receipts
+  roles:
+    - frontend-developer
+    - labs-ci-cd
+    - labs-developer
+    - opsgenie-standby

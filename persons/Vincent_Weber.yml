@@ -1,0 +1,10 @@
+---
+person:
+  name: Vincent Weber
+  pnl: pnl0kk1f
+  teams:
+    - team-profile-and-onboarding
+  roles:
+    - frontend-developer
+    - tech-lead
+    - opsgenie-standby

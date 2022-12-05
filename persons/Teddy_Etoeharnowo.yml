@@ -1,0 +1,9 @@
+---
+person:
+  name: Teddy Etoeharnowo
+  pnl: pnl0na1h
+  teams:
+    - team-sre
+    - team-sre-shc
+  roles:
+    - sre-engineer

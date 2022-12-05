@@ -1,0 +1,10 @@
+---
+person:
+  name: Ping Oei
+  pnl: pnl0na0c
+  teams:
+    - team-fulfillment-zaandam
+  roles:
+    - database-developer
+    - backend-developer
+    - opsgenie-standby

@@ -1,0 +1,9 @@
+---
+person:
+  name: Adam Abbas
+  pnl: pnl0mx92
+  teams:
+    - team-labs
+  roles:
+    - labs-developer
+    - flutter-developer

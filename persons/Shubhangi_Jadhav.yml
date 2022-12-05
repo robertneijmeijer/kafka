@@ -1,0 +1,11 @@
+---
+person:
+  name: Shubhangi Jadhav
+  pnl: pnl0q86f
+  teams:
+    - team-sre
+    - team-sre-pi
+    - team-sre-core
+  roles:
+    - sre-engineer
+    - opsgenie-standby

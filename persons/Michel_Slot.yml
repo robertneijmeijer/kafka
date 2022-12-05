@@ -1,0 +1,11 @@
+---
+person:
+  name: Michel Slot
+  pnl: pnl0mg4t
+  teams:
+    - team-checkout-and-receipts
+    - team-payments
+    - team-checkout-and-payments
+  roles:
+    - ios-developer
+    - opsgenie-standby

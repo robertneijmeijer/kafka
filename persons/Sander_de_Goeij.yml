@@ -1,0 +1,9 @@
+---
+person:
+  name: Sander de Goeij
+  pnl: pnl0ls82
+  teams:
+    - team-lists-orders-checkout
+  roles:
+    - backend-developer
+    - opsgenie-standby

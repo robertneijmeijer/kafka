@@ -1,0 +1,9 @@
+---
+person:
+  name: Maryna Halynskaya
+  pnl: pnl0u01z
+  teams:
+    - team-food-first-network
+  roles:
+    - test-engineer
+    - opsgenie-standby

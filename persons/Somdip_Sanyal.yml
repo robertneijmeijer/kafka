@@ -1,0 +1,9 @@
+---
+person:
+  name: Somdip Sanyal
+  pnl: pnl04n26
+  teams:
+    - team-waar
+  roles:
+    - backend-developer
+    - opsgenie-standby

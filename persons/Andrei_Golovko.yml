@@ -1,0 +1,9 @@
+---
+person:
+  name: Andrei Golovko
+  pnl: pnl0tf8g
+  teams:
+    - team-food-first-network
+  roles:
+    - backend-developer
+    - opsgenie-standby

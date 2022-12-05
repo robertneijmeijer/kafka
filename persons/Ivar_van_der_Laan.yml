@@ -1,0 +1,11 @@
+---
+person:
+  name: Ivar van der Laan
+  pnl: pnl00d6b
+  teams:
+    - team-sre-core
+  roles:
+    - sre-engineer
+    - product-owner
+    - database-developer
+    - opsgenie-standby

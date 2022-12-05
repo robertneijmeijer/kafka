@@ -1,0 +1,10 @@
+---
+person:
+  name: Anatolijs Lukjanskis
+  pnl: pnl0ru4i
+  teams:
+    - team-waar
+    - team-loyalty-connect
+  roles:
+    - backend-developer
+    - opsgenie-standby

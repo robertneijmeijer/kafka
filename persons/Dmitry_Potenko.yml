@@ -1,0 +1,10 @@
+---
+person:
+  name: Dmitry Potenko
+  pnl: pnl0an4c
+  teams:
+    - team-simplification
+    - team-bisons
+  roles:
+    - backend-developer
+    - opsgenie-standby

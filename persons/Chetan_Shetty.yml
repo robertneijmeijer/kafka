@@ -1,0 +1,9 @@
+---
+person:
+  name: Chetan Shetty
+  pnl: pnl0m54o
+  teams:
+    - team-salesforce-platform
+  roles:
+    - salesforce-developer
+    - opsgenie-standby

@@ -1,0 +1,9 @@
+---
+person:
+  name: Andrei Nemelouski
+  pnl: pnl0i780
+  teams:
+    - team-whats-for-dinner
+  roles:
+    - backend-developer
+    - opsgenie-standby

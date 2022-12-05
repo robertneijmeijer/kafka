@@ -1,0 +1,10 @@
+---
+person:
+  name: Joran Dob
+  pnl: pnl0qh1u
+  teams:
+    - team-ah-compact
+    - team-ah-compact-fe
+  roles:
+    - flutter-developer
+    - opsgenie-standby

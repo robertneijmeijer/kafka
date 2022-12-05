@@ -1,0 +1,11 @@
+---
+person:
+  name: Dzina Vasiliuk
+  pnl: pnl0qh45
+  teams:
+    - team-simplification
+    - team-bisons
+    - team-whats-for-dinner
+  roles:
+    - test-engineer
+    - opsgenie-standby

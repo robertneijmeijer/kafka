@@ -1,0 +1,10 @@
+---
+person:
+  name: Guyon Cornelissen
+  pnl: pnl0rm3k
+  teams:
+    - team-self-service
+    - team-self-service-backend
+  roles:
+    - backend-developer
+    - opsgenie-standby

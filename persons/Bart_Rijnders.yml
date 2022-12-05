@@ -1,0 +1,12 @@
+---
+person:
+  name: Bart Rijnders
+  pnl: pnl01x5j
+  teams:
+    - team-sre-pi
+    - team-sre
+    - team-sre-core
+  roles:
+    - sre-engineer
+    - incident-commander
+    - opsgenie-standby

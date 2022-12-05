@@ -1,0 +1,9 @@
+---
+person:
+  name: Jeffrey Maas
+  pnl: pnljm11x
+  teams:
+    - team-lists-orders-checkout
+  roles:
+    - backend-developer
+    - opsgenie-standby

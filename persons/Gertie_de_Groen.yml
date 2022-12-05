@@ -1,0 +1,11 @@
+---
+person:
+  name: Gertie de Groen
+  pnl: pnlgd154
+  teams:
+    - team-fulfillment-zaandam
+    - team-asgard
+  roles:
+    - database-developer
+    - backend-developer
+    - opsgenie-standby

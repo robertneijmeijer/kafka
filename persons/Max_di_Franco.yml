@@ -1,0 +1,10 @@
+---
+person:
+  name: Max di Franco
+  pnl: pnl0m68b
+  teams:
+    - team-whats-for-dinner
+  roles:
+    - backend-developer
+    - appsearch-developer
+    - opsgenie-standby

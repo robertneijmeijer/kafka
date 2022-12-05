@@ -1,0 +1,9 @@
+---
+person:
+  name: Chris Blom
+  pnl: pnl0ph5h
+  teams:
+    - team-replenishment
+  roles:
+    - database-developer
+    - backend-developer

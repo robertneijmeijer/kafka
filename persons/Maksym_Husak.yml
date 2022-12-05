@@ -1,0 +1,9 @@
+---
+person:
+  name: Maksym Husak
+  pnl: pnl0ek8f
+  teams:
+    - team-sre-cloud-migration
+  roles:
+    - sre-engineer
+    - opsgenie-standby

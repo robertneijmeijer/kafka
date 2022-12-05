@@ -1,0 +1,11 @@
+---
+person:
+  name: Roel van Lanen
+  pnl: pnlrl200
+  teams:
+    - team-subscriptions
+    - team-self-service
+    - team-self-service-frontend
+  roles:
+    - frontend-developer
+    - opsgenie-standby

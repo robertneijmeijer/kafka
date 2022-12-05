@@ -1,0 +1,9 @@
+---
+person:
+  name: Jacky To
+  pnl: pnl0mp51
+  teams:
+    - team-checkout-and-receipts
+  roles:
+    - backend-developer
+    - opsgenie-standby

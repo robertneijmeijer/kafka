@@ -1,0 +1,10 @@
+---
+person:
+  name: Tycho van Vondel
+  pnl: pnl0v140
+  teams:
+    - team-subscriptions
+    - team-loyalty-connect
+    - team-profile-and-onboarding
+  roles:
+    - scrum-master

@@ -1,0 +1,10 @@
+---
+person:
+  name: Erik Vingerhoed
+  pnl: pnl0lu0e
+  teams:
+    - team-finance-hr
+  roles:
+    - database-developer
+    - backend-developer
+    - opsgenie-standby

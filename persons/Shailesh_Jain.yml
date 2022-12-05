@@ -1,0 +1,9 @@
+---
+person:
+  name: Shailesh Jain
+  pnl: pnl05a8u
+  teams:
+    - team-pos
+  roles:
+    - opsgenie-standby
+    - backend-developer

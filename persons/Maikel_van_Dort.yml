@@ -1,0 +1,11 @@
+---
+person:
+  name: Maikel van Dort
+  pnl: pnl0jr24
+  teams:
+    - team-labs
+  roles:
+    - labs-ci-cd
+    - labs-developer
+    - frontend-developer
+    - opsgenie-standby

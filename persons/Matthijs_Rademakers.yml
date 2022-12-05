@@ -1,0 +1,10 @@
+---
+person:
+  name: Matthijs Rademakers
+  pnl: pnl0ss3u
+  teams:
+    - team-fulfillment-zaandam
+  roles:
+    - database-developer
+    - backend-developer
+    - opsgenie-standby

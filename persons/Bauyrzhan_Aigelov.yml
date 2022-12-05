@@ -1,0 +1,12 @@
+---
+person:
+  name: Bauyrzhan Aigelov
+  pnl: pnl0tb11
+  teams:
+    - team-fulfillment-minsk
+    - team-fulfillment-europe
+  roles:
+    - database-developer
+    - backend-developer
+    - backend-developer-logistics
+    - opsgenie-standby

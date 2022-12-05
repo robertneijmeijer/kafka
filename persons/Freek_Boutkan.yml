@@ -1,0 +1,11 @@
+---
+person:
+  name: Freek Boutkan
+  pnl: pnl0a01q
+  teams:
+    - team-fulfillment-zaandam
+    - team-assortment-and-search
+    - team-product-search
+  roles:
+    - backend-developer
+    - appsearch-developer

@@ -1,0 +1,11 @@
+---
+person:
+  name: Adriana Bassi Matsufuji
+  pnl: pnl0w55z
+  teams:
+    - team-checkout-and-payments
+    - team-payments
+    - team-checkout-and-receipts
+  roles:
+    - frontend-developer
+    - opsgenie-standby

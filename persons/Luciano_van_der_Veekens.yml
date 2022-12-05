@@ -1,0 +1,10 @@
+---
+person:
+  name: Luciano van der Veekens
+  pnl: pnl0w49h
+  teams:
+    - team-self-service
+    - team-self-service-backend
+  roles:
+    - backend-developer
+    - opsgenie-standby

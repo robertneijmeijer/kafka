@@ -1,0 +1,10 @@
+---
+person:
+  name: Valiantsin Danilau
+  pnl: pnl0lj2d
+  teams:
+    - team-simplification
+    - team-bisons
+  roles:
+    - backend-developer
+    - opsgenie-standby

@@ -1,0 +1,11 @@
+---
+person:
+  name: Yury Dolzhenko
+  pnl: pnl0mz74
+  teams:
+    - team-promotions-and-inspiration
+    - team-promotions-and-inspiration-backend
+  roles:
+    - backend-developer
+    - opsgenie-standby
+    - backend-core-developer

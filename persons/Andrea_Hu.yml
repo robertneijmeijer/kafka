@@ -1,0 +1,9 @@
+---
+person:
+  name: Andrea Hu
+  pnl: pnl0o402
+  teams:
+    - team-cms-platform
+  roles:
+    - backend-developer
+    - opsgenie-standby

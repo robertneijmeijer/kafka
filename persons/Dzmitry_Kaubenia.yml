@@ -1,0 +1,9 @@
+---
+person:
+  name: Dzmitry Kaubenia
+  pnl: pnl0ah69
+  teams:
+    - team-messaging
+  roles:
+    - backend-developer
+    - opsgenie-standby

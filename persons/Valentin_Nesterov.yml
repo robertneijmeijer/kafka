@@ -1,0 +1,11 @@
+---
+person:
+  name: Valentin Nesterov
+  pnl: pnl0ty4m
+  teams:
+    - team-checkout-and-receipts
+    - team-payments
+    - team-checkout-and-payments
+  roles:
+    - frontend-developer
+    - opsgenie-standby

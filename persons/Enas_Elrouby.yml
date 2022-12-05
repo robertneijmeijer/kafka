@@ -1,0 +1,11 @@
+---
+person:
+  name: Enas Elrouby
+  pnl: pnl0qv24
+  teams:
+    - team-checkout-and-receipts
+    - team-payments
+    - team-checkout-and-payments
+  roles:
+    - test-engineer
+    - opsgenie-standby

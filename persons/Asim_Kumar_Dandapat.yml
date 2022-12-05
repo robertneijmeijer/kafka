@@ -1,0 +1,10 @@
+---
+person:
+  name: Asim Kumar Dandapat
+  pnl: pnl0tg1t
+  teams:
+    - team-messaging
+  roles:
+    - sre-engineer
+    - backend-developer
+    - opsgenie-standby

@@ -1,0 +1,10 @@
+---
+person:
+  name: Dzmitry Charniauski
+  pnl: pnl0mq31
+  teams:
+    - team-boff-slicing
+  roles:
+    - database-developer
+    - backend-developer
+    - opsgenie-standby

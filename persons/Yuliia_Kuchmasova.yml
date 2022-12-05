@@ -1,0 +1,9 @@
+---
+person:
+  name: Yuliia Kuchmasova
+  pnl: pnl0sh2a
+  teams:
+    - team-order-management
+  roles:
+    - test-engineer
+    - opsgenie-standby

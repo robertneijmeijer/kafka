@@ -1,0 +1,9 @@
+---
+person:
+  name: Ionut Pruteanu
+  pnl: pnl0g45g
+  teams:
+    - team-pos
+  roles:
+    - backend-developer
+    - opsgenie-standby

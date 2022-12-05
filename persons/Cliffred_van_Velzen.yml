@@ -1,0 +1,9 @@
+---
+person:
+  name: Cliffred van Velzen
+  pnl: PNL0KT93
+  teams:
+    - team-food-first-network
+  roles:
+    - backend-developer
+    - opsgenie-standby

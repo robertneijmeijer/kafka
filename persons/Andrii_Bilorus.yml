@@ -1,0 +1,12 @@
+---
+person:
+  name: Andrii Bilorus
+  pnl: w1uaxb6
+  teams:
+    - team-sre-pi
+    - team-sre
+    - team-sre-core
+  roles:
+    - sre-engineer
+    - architect
+    - opsgenie-standby

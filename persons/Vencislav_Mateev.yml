@@ -1,0 +1,11 @@
+---
+person:
+  name: Vencislav Mateev
+  pnl: pnl0nt94
+  teams:
+    - team-fulfillment-minsk
+    - team-fulfillment-europe
+  roles:
+    - database-developer
+    - backend-developer
+    - opsgenie-standby

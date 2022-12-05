@@ -1,0 +1,9 @@
+---
+person:
+  name: Gerard Steur
+  pnl: ihwa981
+  teams:
+    - team-replenishment
+  roles:
+    - database-developer
+    - opsgenie-standby

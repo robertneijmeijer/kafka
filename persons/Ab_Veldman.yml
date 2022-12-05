@@ -1,0 +1,9 @@
+---
+person:
+  name: Ab Veldman
+  pnl: pnlav252
+  teams:
+    - team-replenishment
+  roles:
+    - database-developer
+    - opsgenie-standby

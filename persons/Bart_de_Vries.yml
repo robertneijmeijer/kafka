@@ -1,0 +1,13 @@
+---
+person:
+  name: Bart de Vries
+  pnl: pnl0l97j
+  teams:
+    - team-sre-cloud-migration
+    - team-sre
+    - team-sre-dxc
+    - team-sre-database-admins
+    - team-sre-db-and-streaming
+  roles:
+    - sre-engineer
+    - opsgenie-standby

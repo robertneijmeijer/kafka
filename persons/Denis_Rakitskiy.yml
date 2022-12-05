@@ -1,0 +1,9 @@
+---
+person:
+  name: Denis Rakitskiy
+  pnl: pnl0fb7q
+  teams:
+    - team-lists-orders-checkout
+  roles:
+    - scrum-master
+    - opsgenie-standby

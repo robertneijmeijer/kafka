@@ -1,0 +1,9 @@
+---
+person:
+  name: Lars Knitel
+  pnl: pnl0tb52
+  teams:
+    - team-customer-interaction-data
+  roles:
+    - technical-web-analyst
+    - opsgenie-standby

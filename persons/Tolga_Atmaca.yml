@@ -1,0 +1,10 @@
+---
+person:
+  name: Tolga Atmaca
+  pnl: pnl0r42l
+  teams:
+    - team-assortment-and-search
+    - team-product
+  roles:
+    - backend-developer
+    - opsgenie-standby

@@ -1,0 +1,9 @@
+---
+person:
+  name: Adi Ben Arieh
+  pnl: pnl0pc99
+  teams:
+    - team-lists-orders-checkout
+  roles:
+    - test-engineer
+    - opsgenie-standby

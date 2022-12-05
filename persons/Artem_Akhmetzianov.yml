@@ -1,0 +1,10 @@
+---
+person:
+  name: Artem Akhmetzianov
+  pnl: pnl0q357
+  teams:
+    - team-ah-compact
+    - team-ah-compact-fe
+  roles:
+    - flutter-developer
+    - opsgenie-standby

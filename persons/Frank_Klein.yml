@@ -1,0 +1,9 @@
+---
+person:
+  name: Frank Klein
+  pnl: pnlfk289
+  teams:
+    - team-boff-slicing
+  roles:
+    - database-developer
+    - opsgenie-standby

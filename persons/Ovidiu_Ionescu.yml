@@ -1,0 +1,11 @@
+---
+person:
+  name: Ovidiu Ionescu
+  pnl: pnl0ms35
+  teams:
+    - team-promotions-and-inspiration
+    - team-promotions-and-inspiration-backend
+  roles:
+    - backend-developer
+    - opsgenie-standby
+    - backend-core-developer

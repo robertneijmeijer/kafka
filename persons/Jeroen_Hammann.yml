@@ -1,0 +1,10 @@
+---
+person:
+  name: Jeroen Hammann
+  pnl: pnl0dt1f
+  teams:
+    - team-payments-and-subscriptions
+    - team-lists-orders-checkout
+  roles:
+    - frontend-developer
+    - opsgenie-standby

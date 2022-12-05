@@ -1,0 +1,9 @@
+---
+person:
+  name: Aede van der Weij
+  pnl: pnl0nh99
+  roles:
+    - architect
+    - sre-engineer
+  teams:
+    - team-sre

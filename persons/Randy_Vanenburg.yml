@@ -1,0 +1,9 @@
+---
+person:
+  name: Randy Vanenburg
+  pnl: pnlrv627
+  teams:
+    - team-lists-orders-checkout
+  roles:
+    - test-engineer
+    - opsgenie-standby

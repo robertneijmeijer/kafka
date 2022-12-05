@@ -1,0 +1,9 @@
+---
+person:
+  name: Suneel Kumar
+  pnl: pnl04y2t
+  teams:
+    - team-salesforce-platform
+  roles:
+    - salesforce-developer
+    - opsgenie-standby

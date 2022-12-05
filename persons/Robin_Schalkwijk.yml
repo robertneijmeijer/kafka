@@ -1,0 +1,9 @@
+---
+person:
+  name: Robin Schalkwijk
+  pnl: pnl09r11
+  teams:
+    - team-foff
+  roles:
+    - database-developer
+    - opsgenie-standby

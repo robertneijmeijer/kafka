@@ -1,0 +1,11 @@
+---
+person:
+  name: Viktor Utkin
+  pnl: pnl0d47w
+  teams:
+    - team-messaging
+    - team-sre-db-and-streaming
+  roles:
+    - backend-developer
+    - sre-engineer
+    - opsgenie-standby

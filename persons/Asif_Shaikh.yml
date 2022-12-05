@@ -1,0 +1,10 @@
+---
+person:
+  name: Asif Shaikh
+  pnl: pnl0tx5p
+  teams:
+    - team-fulfillment-zaandam
+  roles:
+    - database-developer
+    - backend-developer
+    - opsgenie-standby

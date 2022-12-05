@@ -1,0 +1,12 @@
+---
+person:
+  name: Quint van Zijl
+  pnl: pnlqz011
+  teams:
+    - team-whats-for-dinner
+    - team-labs
+  roles:
+    - labs-ci-cd
+    - labs-lead
+    - frontend-developer
+    - opsgenie-standby

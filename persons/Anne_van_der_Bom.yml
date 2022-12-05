@@ -1,0 +1,10 @@
+---
+person:
+  name: Anne van der Bom
+  pnl: IHWA435
+  teams:
+    - team-self-service
+    - team-self-service-backend
+  roles:
+    - backend-developer
+    - opsgenie-standby

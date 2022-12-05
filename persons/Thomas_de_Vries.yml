@@ -1,0 +1,12 @@
+---
+person:
+  name: Thomas de Vries
+  pnl: pnl0l756
+  teams:
+    - team-sre-dxc
+    - team-sre
+    - team-sre-pi
+    - team-sre-core
+  roles:
+    - sre-engineer
+    - opsgenie-standby

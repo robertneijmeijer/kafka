@@ -1,0 +1,10 @@
+---
+person:
+  name: Tuanjai Sampannon
+  pnl: pnl0mx93
+  teams:
+    - team-forms-migration
+  roles:
+    - database-developer
+    - outsystems-developer
+    - opsgenie-standby

@@ -1,0 +1,13 @@
+---
+person:
+  name: Tijmen Stor
+  pnl: pnl0414d
+  teams:
+    - team-labs
+    - team-sre
+    - team-sre-re
+  roles:
+    - labs-ci-cd
+    - labs-lead
+    - sre-engineer
+    - opsgenie-standby

@@ -1,0 +1,9 @@
+---
+person:
+  name: Bartel Kappers
+  pnl: pnl0l68g
+  teams:
+    - team-replenishment
+  roles:
+    - database-developer
+    - opsgenie-standby

@@ -1,0 +1,9 @@
+---
+person:
+  name: Nils Kulk
+  pnl: pnl04b66
+  teams:
+    - team-devices-apps
+  roles:
+    - backend-developer
+    - opsgenie-standby

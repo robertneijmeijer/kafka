@@ -1,0 +1,4 @@
+---
+role:
+  name: standby-area-loyalty
+  description: Second line standby group for Area Loyalty

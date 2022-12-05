@@ -1,0 +1,11 @@
+---
+person:
+  name: Bart Luik
+  pnl: pnl0sd7n
+  teams:
+    - team-profile-and-onboarding
+  roles:
+    - android-developer
+    - ios-developer
+    - flutter-developer
+    - opsgenie-standby

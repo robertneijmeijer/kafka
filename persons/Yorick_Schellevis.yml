@@ -1,0 +1,10 @@
+---
+person:
+  name: Yorick Schellevis
+  pnl: pnl07g50
+  teams:
+    - team-subscriptions
+  roles:
+    - backend-developer
+    - opsgenie-standby
+    - standby-area-loyalty

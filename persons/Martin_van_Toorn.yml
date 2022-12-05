@@ -1,0 +1,9 @@
+---
+person:
+  name: Martin van Toorn
+  pnl: pnl0kw50
+  teams:
+    - team-api-platform
+  roles:
+    - frontend-developer
+    - opsgenie-standby

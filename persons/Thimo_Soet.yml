@@ -1,0 +1,12 @@
+---
+person:
+  name: Thimo Soet
+  pnl: pnl0n18l
+  teams:
+    - team-labs
+    - team-subscriptions
+  roles:
+    - backend-developer
+    - labs-developer
+    - labs-ci-cd
+    - opsgenie-standby

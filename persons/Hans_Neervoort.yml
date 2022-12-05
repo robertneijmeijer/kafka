@@ -1,0 +1,11 @@
+---
+person:
+  name: Hans Neervoort
+  pnl: pnl0s50k
+  teams:
+    - team-sre
+    - team-sre-cloud-migration
+    - team-sre-database-admins
+    - team-sre-db-and-streaming
+  roles:
+    - sre-engineer

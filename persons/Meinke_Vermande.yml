@@ -1,0 +1,9 @@
+---
+person:
+  name: Meinke Vermande
+  pnl: pnl0wl0d
+  teams:
+    - team-devices-apps
+  roles:
+    - scrum-master
+    - opsgenie-standby

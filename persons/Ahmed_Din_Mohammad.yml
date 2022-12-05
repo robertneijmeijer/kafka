@@ -1,0 +1,13 @@
+---
+person:
+  name: Ahmed Din Mohammad
+  pnl: pnl0s74m
+  teams:
+    - team-sre
+    - team-sre-cloud-migration
+    - team-sre-database-admins
+    - team-sre-db-and-streaming
+    - team-asgard
+  roles:
+    - sre-engineer
+    - opsgenie-standby

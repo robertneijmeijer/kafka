@@ -1,0 +1,9 @@
+---
+person:
+  name: Ovidiu-Ion Pislaru
+  pnl: pnl0rb7d
+  teams:
+    - team-pos
+  roles:
+    - test-engineer
+    - opsgenie-standby

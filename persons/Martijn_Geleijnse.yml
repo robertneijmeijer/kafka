@@ -1,0 +1,9 @@
+---
+person:
+  name: Martijn Geleijnse
+  pnl: pnl04j8v
+  teams:
+    - team-lists-orders-checkout
+  roles:
+    - product-owner
+    - opsgenie-standby

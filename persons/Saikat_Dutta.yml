@@ -1,0 +1,9 @@
+---
+person:
+  name: Saikat Dutta
+  pnl: pnl09x1y
+  teams:
+    - team-pos
+  roles:
+    - opsgenie-standby
+    - test-engineer

@@ -1,0 +1,9 @@
+---
+person:
+  name: Sander van den Akker
+  pnl: pnl0ks0d
+  teams:
+    - team-assortment-and-search
+  roles:
+    - frontend-developer
+    - opsgenie-standby

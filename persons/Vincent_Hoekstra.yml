@@ -1,0 +1,9 @@
+---
+person:
+  name: Vincent Hoekstra
+  pnl: pnl0ne7y
+  teams:
+    - team-waar
+  roles:
+    - backend-developer
+    - opsgenie-standby

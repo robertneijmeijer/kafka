@@ -1,0 +1,9 @@
+---
+person:
+  name: Rene Molle
+  pnl: pnlrm084
+  teams:
+    - team-replenishment
+  roles:
+    - database-developer
+    - opsgenie-standby

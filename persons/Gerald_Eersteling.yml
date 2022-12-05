@@ -1,0 +1,10 @@
+---
+person:
+  name: Gerald Eersteling
+  pnl: pnl0n887
+  teams:
+    - team-cms-platform
+  roles:
+    - ios-developer
+    - backend-developer
+    - opsgenie-standby

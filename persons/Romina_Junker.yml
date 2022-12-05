@@ -1,0 +1,10 @@
+---
+person:
+  name: Romina Junker
+  pnl: pnl0bt28
+  teams:
+    - team-sre-pi
+    - team-sre-oma
+  roles:
+    - agile-lead
+    - scrum-master

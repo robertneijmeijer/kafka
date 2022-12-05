@@ -1,0 +1,9 @@
+---
+person:
+  name: Cosmin Stoian
+  pnl: pnl0rm2z
+  teams:
+    - team-salesforce-platform
+  roles:
+    - salesforce-developer
+    - opsgenie-standby

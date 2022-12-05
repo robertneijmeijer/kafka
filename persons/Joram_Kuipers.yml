@@ -1,0 +1,9 @@
+---
+person:
+  name: Joram Kuipers
+  pnl: pnl0ey6g
+  teams:
+    - team-lists-orders-checkout
+  roles:
+    - test-engineer
+    - opsgenie-standby

@@ -1,0 +1,9 @@
+---
+person:
+  name: Klaas Nijkes
+  pnl: pnl0c700
+  teams:
+    - team-pos
+  roles:
+    - frontend-developer
+    - opsgenie-standby

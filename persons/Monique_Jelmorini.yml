@@ -1,0 +1,9 @@
+---
+person:
+  name: Monique Jelmorini
+  pnl: pnlmj139
+  teams:
+    - team-foff
+  roles:
+    - database-developer
+    - opsgenie-standby

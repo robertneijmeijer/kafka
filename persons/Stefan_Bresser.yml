@@ -1,0 +1,13 @@
+---
+person:
+  name: Stefan Bresser
+  pnl: pnlsb09b
+  teams:
+    - team-self-service
+    - team-self-service-backend
+    - team-self-service-frontend
+  roles:
+    - backend-developer
+    - scrum-master
+    - opsgenie-standby
+    - backend-core-developer

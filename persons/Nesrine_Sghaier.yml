@@ -1,0 +1,9 @@
+---
+person:
+  name: Nesrine Sghaier
+  pnl: pnl0rp6e
+  teams:
+    - team-lists-orders-checkout
+  roles:
+    - backend-developer
+    - opsgenie-standby

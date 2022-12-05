@@ -1,0 +1,11 @@
+---
+person:
+  name: Leendert Ullersma
+  pnl: pnllu015
+  teams:
+    - team-labs
+    - team-finance-hr
+  roles:
+    - labs-ci-cd
+    - labs-lead
+    - opsgenie-standby

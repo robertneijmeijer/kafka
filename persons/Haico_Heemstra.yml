@@ -1,0 +1,9 @@
+---
+person:
+  name: Haico Heemstra
+  pnl: pnlhh147
+  teams:
+    - team-subscriptions
+  roles:
+    - frontend-developer
+    - opsgenie-standby

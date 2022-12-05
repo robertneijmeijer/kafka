@@ -1,0 +1,10 @@
+---
+person:
+  name: Trudy Noordkamp
+  pnl: pnltn108
+  teams:
+    - team-foff
+    - team-product
+  roles:
+    - database-developer
+    - opsgenie-standby

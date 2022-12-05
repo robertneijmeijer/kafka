@@ -1,0 +1,9 @@
+---
+person:
+  name: Jose Bustamante
+  pnl: pnl0rm9r
+  teams:
+    - team-whats-for-dinner
+  roles:
+    - frontend-developer
+    - opsgenie-standby

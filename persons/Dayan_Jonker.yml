@@ -1,0 +1,9 @@
+---
+person:
+  name: Dayan Jonker
+  pnl: pnl0n25y
+  teams:
+    - team-cms-platform
+  roles:
+    - frontend-developer
+    - opsgenie-standby

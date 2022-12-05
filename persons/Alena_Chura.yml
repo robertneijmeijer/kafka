@@ -1,0 +1,12 @@
+---
+person:
+  name: Alena Chura
+  pnl: pnl0u61n
+  teams:
+    - team-fulfillment-minsk
+    - team-fulfillment-europe
+  roles:
+    - database-developer
+    - backend-developer
+    - backend-developer-logistics
+    - opsgenie-standby

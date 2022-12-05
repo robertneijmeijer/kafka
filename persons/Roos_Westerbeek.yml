@@ -1,0 +1,9 @@
+---
+person:
+  name: Roos Westerbeek
+  pnl: pnl0ly1c
+  teams:
+    - team-waar
+  roles:
+    - backend-developer
+    - opsgenie-standby

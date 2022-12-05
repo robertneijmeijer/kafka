@@ -1,0 +1,9 @@
+---
+person:
+  name: Koen Bakker
+  pnl: pnl05t2m
+  teams:
+    - team-promotions-and-inspiration
+  roles:
+    - test-engineer
+    - opsgenie-standby

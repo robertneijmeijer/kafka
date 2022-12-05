@@ -1,0 +1,10 @@
+---
+person:
+  name: Rogier Fluitsma
+  pnl: pnl0jh64
+  teams:
+    - team-forms-migration
+  roles:
+    - database-developer
+    - outsystems-developer
+    - opsgenie-standby

@@ -1,0 +1,10 @@
+---
+person:
+  name: Patrick Koopman
+  pnl: pnlpk267
+  teams:
+    - team-forms-migration
+  roles:
+    - database-developer
+    - outsystems-developer
+    - opsgenie-standby

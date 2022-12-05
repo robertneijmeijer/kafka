@@ -1,0 +1,10 @@
+---
+person:
+  name: Stijn Bokhove
+  pnl: IHEC253
+  teams:
+    - team-simplification
+    - team-bisons
+  roles:
+    - product-owner
+    - backend-developer

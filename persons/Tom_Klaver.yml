@@ -1,0 +1,9 @@
+---
+person:
+  name: Tom Klaver
+  pnl: pnl0px3i
+  teams:
+    - team-api-platform
+  roles:
+    - frontend-developer
+    - opsgenie-standby

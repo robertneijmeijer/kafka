@@ -1,0 +1,10 @@
+---
+person:
+  name: Reintjan Panman
+  pnl: pnl0ds7t
+  teams:
+    - team-ah-compact
+    - team-ah-compact-qa
+  roles:
+    - test-engineer
+    - opsgenie-standby

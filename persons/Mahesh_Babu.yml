@@ -1,0 +1,9 @@
+---
+person:
+  name: Mahesh Babu
+  pnl: PNL06l4m
+  teams:
+    - team-pos
+  roles:
+    - opsgenie-standby
+    - test-engineer

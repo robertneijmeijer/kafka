@@ -1,0 +1,11 @@
+---
+person:
+  name: Anastasiya Viktarovich
+  pnl: pnl0ti3u
+  teams:
+    - team-fulfillment-minsk
+    - team-fulfillment-europe
+  roles:
+    - backend-developer
+    - backend-developer-logistics
+    - opsgenie-standby

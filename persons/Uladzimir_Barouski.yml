@@ -1,0 +1,13 @@
+---
+person:
+  name: Uladzimir Barouski
+  pnl: pnl0eq53
+  teams:
+    - team-fulfillment-minsk
+    - team-customer-interaction-data
+    - team-messaging
+  roles:
+    - database-developer
+    - backend-developer
+    - backend-developer-logistics
+    - opsgenie-standby

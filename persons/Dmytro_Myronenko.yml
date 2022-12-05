@@ -1,0 +1,11 @@
+---
+person:
+  name: Dmytro Myronenko
+  pnl: pnl0r72a
+  teams:
+    - team-checkout-and-receipts
+    - team-payments
+    - team-checkout-and-payments
+  roles:
+    - backend-developer
+    - opsgenie-standby

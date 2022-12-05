@@ -1,0 +1,10 @@
+---
+person:
+  name: Ari de Groot
+  pnl: pnlag264
+  teams:
+    - team-fulfillment-zaandam
+  roles:
+    - ops-engineer
+    - backend-developer
+    - opsgenie-standby

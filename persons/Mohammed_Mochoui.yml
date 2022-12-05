@@ -1,0 +1,9 @@
+---
+person:
+  name: Mohammed Mochoui
+  pnl: pnl0vc1s
+  teams:
+    - team-waar
+  roles:
+    - backend-developer
+    - opsgenie-standby

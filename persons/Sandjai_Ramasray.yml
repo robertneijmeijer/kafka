@@ -1,0 +1,9 @@
+---
+person:
+  name: Sandjai Ramasray
+  pnl: pnl09r13
+  teams:
+    - team-fulfillment-zaandam
+  roles:
+    - database-developer
+    - opsgenie-standby

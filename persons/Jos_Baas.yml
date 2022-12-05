@@ -1,0 +1,12 @@
+---
+person:
+  name: Jos Baas
+  pnl: pnl0nf4d
+  teams:
+    - team-sre
+    - team-sre-incident-command
+    - team-sre-security
+  roles:
+    - incident-commander
+    - security-engineer
+    - opsgenie-standby

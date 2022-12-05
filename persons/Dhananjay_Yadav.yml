@@ -1,0 +1,9 @@
+---
+person:
+  name: Dhananjay Yadav
+  pnl: pnl0mz77
+  teams:
+    - team-cms-platform
+  roles:
+    - test-engineer
+    - opsgenie-standby

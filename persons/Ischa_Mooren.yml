@@ -1,0 +1,12 @@
+---
+person:
+  name: Ischa Mooren
+  pnl: pnlim014
+  teams:
+    - team-sre
+    - team-management
+  roles:
+    - product-owner
+    - head-of-tech
+    - sre-engineer
+    - opsgenie-standby

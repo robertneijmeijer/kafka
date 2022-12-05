@@ -1,0 +1,12 @@
+---
+person:
+  name: Ahmad Muhsin
+  pnl: pnl0so9e
+  teams:
+    - team-checkout-and-receipts
+    - team-payments
+    - team-checkout-and-payments
+    - team-checkout-and-receipts
+  roles:
+    - android-developer
+    - opsgenie-standby

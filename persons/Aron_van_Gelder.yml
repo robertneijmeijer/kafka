@@ -1,0 +1,10 @@
+---
+person:
+  name: Aron van Gelder
+  pnl: pnl0k545
+  teams:
+    - team-replenishment
+    - team-asgard
+  roles:
+    - database-developer
+    - opsgenie-standby

@@ -1,0 +1,9 @@
+---
+person:
+  name: Atul Bhargava
+  pnl: IHWA209
+  teams:
+    - team-pos
+  roles:
+    - opsgenie-standby
+    - backend-developer

@@ -1,0 +1,10 @@
+---
+person:
+  name: Aliaksandr Berdnik
+  pnl: pnl0em60
+  teams:
+    - team-boff-slicing
+  roles:
+    - database-developer
+    - backend-developer
+    - opsgenie-standby

@@ -20,7 +20,7 @@
             "name" : "name",
             "type" : "string"
           }, {
-            "name" : "sysnonyms",
+            "name" : "synonyms",
             "type" : "string"
           }, {
             "name" : "description",
@@ -30,6 +30,9 @@
             "type" : "string"
           }, {
             "name" : "team",
+            "type" : "string"
+          },{
+            "name" : "productOwner",
             "type" : "string"
           }, {
             "name" : "applicationType",
@@ -41,17 +44,28 @@
             "name" : "deploymentModel",
             "type" : "string"
           }, {
-            "name" : "personalData",
+            "name" : "dataConfidentiality",
+            "type" : "record",
+            "fields": [
+              {
+            "name" : "containsPersonalData",
             "type" : "boolean"
-          }, {
-            "name" : "confidentiality",
+          },{
+            "name" : "containsFinancialData",
+            "type" : "boolean"
+          },{
+            "name" : "publiclyExposed",
+            "type" : "boolean"
+          },{
+            "name" : "restrictedAccess",
+            "type" : "boolean"
+          }]},
+          {
+            "name" : "missionCriticality",
             "type" : "string"
-          }, {
-            "name" : "mcv",
-            "type" : "string"
-          }, {
+          },{
             "name" : "maxSeverityLevel",
-            "type" : "long"
+            "type" : "string"
           }, {
             "name" : "icfr",
             "type" : "boolean"
@@ -60,9 +74,6 @@
             "type" : "string"
           }, {
             "name" : "operationalStatus",
-            "type" : "string"
-          }, {
-            "name" : "environments",
             "type" : "string"
           }, {
             "name" : "components",
@@ -136,5 +147,3 @@
       }
 } ]
 }
- 
-    

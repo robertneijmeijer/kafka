@@ -1,0 +1,10 @@
+---
+person:
+  name: Renee Schreuder
+  pnl: pnl0ni4d
+  teams:
+    - team-assortment-and-search
+    - team-product
+  roles:
+    - backend-developer
+    - opsgenie-standby

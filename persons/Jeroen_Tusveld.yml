@@ -1,0 +1,11 @@
+---
+person:
+  name: Jeroen Tusveld
+  pnl: pnl0lv0t
+  teams:
+    - team-fulfillment-minsk
+    - team-fulfillment-europe
+  roles:
+    - database-developer
+    - backend-developer
+    - opsgenie-standby

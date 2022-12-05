@@ -1,0 +1,9 @@
+---
+person:
+  name: Chloe Burger
+  pnl: pnl07x9n
+  teams:
+    - team-delivery
+  roles:
+    - scrum-master
+    - opsgenie-standby

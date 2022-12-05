@@ -1,0 +1,11 @@
+---
+person:
+  name: Patrick Schoenmakers
+  pnl: pnl0k52l
+  teams:
+    - team-fulfillment-zaandam
+    - team-asgard
+  roles:
+    - database-developer
+    - backend-developer
+    - opsgenie-standby

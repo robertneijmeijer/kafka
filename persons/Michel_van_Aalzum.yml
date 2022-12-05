@@ -1,0 +1,9 @@
+---
+person:
+  name: Michel van Aalzum
+  pnl: ispy218
+  teams:
+    - team-foff
+  roles:
+    - database-developer
+    - opsgenie-standby

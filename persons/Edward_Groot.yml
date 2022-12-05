@@ -1,0 +1,10 @@
+---
+person:
+  name: Edward Groot
+  pnl: pnl0kg0n
+  teams:
+    - team-sre
+    - team-sre-qa-enablement
+    - team-sre-core
+  roles:
+    - sre-engineer

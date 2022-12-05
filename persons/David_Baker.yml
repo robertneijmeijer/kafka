@@ -1,0 +1,9 @@
+---
+person:
+  name: David Baker
+  pnl: pnl0qq0j
+  teams:
+    - team-assortment-and-search
+  roles:
+    - frontend-developer
+    - opsgenie-standby

@@ -1,0 +1,9 @@
+---
+person:
+  name: Oksana Kartashova
+  pnl: pnl0tc0r
+  teams:
+    - team-assortment-and-search
+  roles:
+    - test-engineer
+    - opsgenie-standby    

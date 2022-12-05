@@ -1,0 +1,10 @@
+---
+person:
+  name: Kim Sing Cheng
+  pnl: pnl0un5g
+  teams:
+    - team-sre
+    - team-sre-core
+  roles:
+    - sre-engineer
+    - opsgenie-standby

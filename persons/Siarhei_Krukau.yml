@@ -1,0 +1,10 @@
+---
+person:
+  name: Siarhei Krukau
+  pnl: pnl0kw5b
+  teams:
+    - team-promotions-and-inspiration
+    - team-promotions-and-inspiration-backend
+  roles:
+    - backend-developer
+    - opsgenie-standby

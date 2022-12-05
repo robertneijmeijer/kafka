@@ -1,0 +1,9 @@
+---
+person:
+  name: Rik Teuben
+  pnl: pnl0p725
+  teams:
+    - team-delivery
+  roles:
+    - scrum-master
+    - opsgenie-standby

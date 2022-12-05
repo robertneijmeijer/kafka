@@ -1,0 +1,9 @@
+---
+person:
+  name: Frederik Muller
+  pnl: pnl05i56
+  teams:
+    - team-lists-orders-checkout
+  roles:
+    - backend-developer
+    - opsgenie-standby

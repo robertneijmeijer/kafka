@@ -1,0 +1,10 @@
+---
+person:
+  name: Frank Selhorst
+  pnl: pnl04z8b
+  teams:
+    - team-self-service
+    - team-self-service-frontend
+  roles:
+    - frontend-developer
+    - opsgenie-standby

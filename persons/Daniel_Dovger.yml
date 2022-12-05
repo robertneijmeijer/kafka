@@ -1,0 +1,9 @@
+---
+person:
+  name: Daniel Dovger
+  pnl: pnl0r27k
+  teams:
+    - team-labs
+  roles:
+    - labs-developer
+    - flutter-developer

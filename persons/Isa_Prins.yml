@@ -1,0 +1,9 @@
+---
+person:
+  name: Isa Prins
+  pnl: pnl0s47y
+  teams:
+    - team-subscriptions
+  roles:
+    - test-engineer
+    - opsgenie-standby

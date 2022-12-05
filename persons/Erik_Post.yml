@@ -1,0 +1,11 @@
+---
+person:
+  name: Erik Post
+  pnl: pnl0i34w
+  teams:
+    - team-sre
+    - team-sre-oma
+    - team-sre-core
+  roles:
+    - sre-engineer
+    - opsgenie-standby

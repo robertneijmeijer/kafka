@@ -1,0 +1,9 @@
+---
+person:
+  name: Raman Kobryn
+  pnl: pnl0cg5r
+  teams:
+    - team-messaging
+  roles:
+    - backend-developer
+    - opsgenie-standby

@@ -1,0 +1,10 @@
+---
+person:
+  name: Madelon Verheij
+  pnl: pnl0os43
+  teams:
+    - team-checkout-and-receipts
+    - team-payments
+    - team-checkout-and-payments
+  roles:
+    - agile-lead

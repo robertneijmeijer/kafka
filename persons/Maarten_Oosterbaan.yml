@@ -1,0 +1,12 @@
+---
+person:
+  name: Maarten Oosterbaan
+  pnl: pnlmo184
+  teams:
+    - team-sre
+    - team-sre-incident-command
+    - team-sre-security
+  roles:
+    - incident-commander
+    - security-engineer
+    - opsgenie-standby

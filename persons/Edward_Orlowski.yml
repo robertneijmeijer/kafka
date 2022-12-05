@@ -1,0 +1,10 @@
+---
+person:
+  name: Edward Orlowski
+  pnl: pnleo064
+  teams:
+    - team-delivery
+  roles:
+    - database-developer
+    - backend-developer
+    - opsgenie-standby

@@ -1,0 +1,9 @@
+---
+person:
+  name: Bas Van Rijen
+  pnl: IHWA827
+  teams:
+    - team-lists-orders-checkout
+  roles:
+    - product-owner
+    - opsgenie-standby

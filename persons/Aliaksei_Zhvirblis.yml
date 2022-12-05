@@ -1,0 +1,10 @@
+---
+person:
+  name: Aliaksei Zhvirblis
+  pnl: pnl0c62l
+  teams:
+    - team-boff-slicing
+  roles:
+    - database-developer
+    - backend-developer
+    - opsgenie-standby

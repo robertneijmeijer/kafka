@@ -1,0 +1,3735 @@
+AH_Digital_Service_Account:
+  roles:
+  - sre-automation
+  teams:
+  - team-sre
+Ab_Veldman:
+  roles:
+  - database-developer
+  - opsgenie-standby
+  teams:
+  - team-replenishment
+Adam_Abbas:
+  roles:
+  - labs-developer
+  - flutter-developer
+  teams:
+  - team-labs
+Adi_Ben_Arieh:
+  roles:
+  - test-engineer
+  - opsgenie-standby
+  teams:
+  - team-lists-orders-checkout
+Adriaan_ter_Velde:
+  roles:
+  - product-owner
+  teams:
+  - team-forms-migration
+Adrian_Ioana:
+  roles:
+  - salesforce-developer
+  teams:
+  - team-salesforce-platform
+Adriana_Bassi_Matsufuji:
+  roles:
+  - frontend-developer
+  - opsgenie-standby
+  teams:
+  - team-checkout-and-payments
+  - team-payments
+  - team-checkout-and-receipts
+Aede_van_der_Weij:
+  roles:
+  - architect
+  - sre-engineer
+  teams:
+  - team-sre
+Ahmad_Muhsin:
+  roles:
+  - android-developer
+  - opsgenie-standby
+  teams:
+  - team-checkout-and-receipts
+  - team-payments
+  - team-checkout-and-payments
+  - team-checkout-and-receipts
+Ahmed_Din_Mohammad:
+  roles:
+  - sre-engineer
+  - opsgenie-standby
+  teams:
+  - team-sre
+  - team-sre-cloud-migration
+  - team-sre-database-admins
+  - team-sre-db-and-streaming
+  - team-asgard
+Ahmet_Burak_Tasci:
+  roles:
+  - test-engineer
+  - opsgenie-standby
+  teams:
+  - team-waar
+Aidana_Boronbaeva:
+  roles:
+  - frontend-developer
+  - opsgenie-standby
+  teams:
+  - team-promotions-and-inspiration
+  - team-promotions-and-inspiration-frontend-web
+Aiso_Haikens:
+  roles:
+  - ios-developer
+  - ios-core-developer
+  - opsgenie-standby
+  teams:
+  - team-customer-interaction-data
+Alae_el_Hani:
+  roles:
+  - labs-developer
+  teams:
+  - team-labs
+Albert_Boor:
+  roles:
+  - product-owner
+  teams:
+  - team-cms-platform
+Aleksandr_Davydov:
+  roles:
+  - android-developer
+  - opsgenie-standby
+  teams:
+  - team-loyalty-and-savings
+Aleksandr_Gonchar:
+  roles:
+  - database-developer
+  - backend-developer
+  - backend-developer-logistics
+  - opsgenie-standby
+  teams:
+  - team-fulfillment-minsk
+  - team-fulfillment-europe
+Alena_Chura:
+  roles:
+  - database-developer
+  - backend-developer
+  - backend-developer-logistics
+  - opsgenie-standby
+  teams:
+  - team-fulfillment-minsk
+  - team-fulfillment-europe
+Alessio_Roberto:
+  roles:
+  - ios-developer
+  teams:
+  - team-assortment-and-search
+Alex_Sijm:
+  roles:
+  - test-engineer
+  - opsgenie-standby
+  teams:
+  - team-lists-orders-checkout
+  - team-customer-interaction-data
+Alexander_Altena:
+  roles:
+  - android-developer
+  - opsgenie-standby
+  teams:
+  - team-assortment-and-search
+Alexandr_Gontarev:
+  roles:
+  - ios-developer
+  - ios-core-developer
+  - opsgenie-standby
+  teams:
+  - team-assortment-and-search
+Alexey_Gorelik:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-payments-and-subscriptions
+Aliaksandr_Berdnik:
+  roles:
+  - database-developer
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-boff-slicing
+Aliaksei_Zhvirblis:
+  roles:
+  - database-developer
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-boff-slicing
+Amit_Miraje:
+  roles:
+  - sas-developer
+  teams:
+  - team-sasma-platform
+Anastasiya_Kernoga:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-ah-compact
+  - team-ah-compact-be
+Anastasiya_Viktarovich:
+  roles:
+  - backend-developer
+  - backend-developer-logistics
+  - opsgenie-standby
+  teams:
+  - team-fulfillment-minsk
+  - team-fulfillment-europe
+Anatolijs_Lukjanskis:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-waar
+  - team-loyalty-connect
+Andrea_Hu:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-cms-platform
+Andrei_Golovko:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-food-first-network
+Andrei_Kliashchonak:
+  roles:
+  - test-engineer
+  - opsgenie-standby
+  teams:
+  - team-simplification
+Andrei_Krukouski:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-lists-orders-checkout
+Andrei_Nemelouski:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-whats-for-dinner
+Andreia_Ferreira:
+  roles:
+  - android-developer
+  - opsgenie-standby
+  teams:
+  - team-checkout-and-receipts
+  - team-payments
+  - team-checkout-and-payments
+Andrii_Bilorus:
+  roles:
+  - sre-engineer
+  - architect
+  - opsgenie-standby
+  teams:
+  - team-sre-pi
+  - team-sre
+  - team-sre-core
+Andrii_Ohorodnyk:
+  roles:
+  - sre-engineer
+  teams:
+  - team-sre-cloud-migration
+Aneliya_Evtimova:
+  roles:
+  - agile-lead
+  - scrum-master
+  - opsgenie-standby
+  teams:
+  - team-loyalty-and-savings
+Anna_Moshchenok:
+  roles:
+  - test-engineer
+  - opsgenie-standby
+  teams:
+  - team-lists-orders-checkout
+Anne_van_der_Bom:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-self-service
+  - team-self-service-backend
+Annemarie_Niemeijer:
+  roles:
+  - product-owner
+  teams:
+  - team-ah-compact
+Anton_Shyrenkov:
+  roles:
+  - database-developer
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-delivery
+Anton_Steenvoorden:
+  roles:
+  - backend-developer
+  teams:
+  - team-fulfillment-zaandam
+Anton_Tarasiuk:
+  roles:
+  - flutter-developer
+  - opsgenie-standby
+  teams:
+  - team-ah-compact
+  - team-ah-compact-fe
+Ap_Lensink:
+  roles:
+  - database-developer
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-order-management
+Aparna_Puttegowda:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-checkout-and-receipts
+  - team-payments
+  - team-checkout-and-payments
+Ara_Periyan:
+  roles:
+  - flutter-developer
+  - opsgenie-standby
+  teams:
+  - team-ah-compact-fe
+  - team-ah-compact
+Aran_Arunakiri:
+  roles:
+  - android-developer
+  - opsgenie-standby
+  teams:
+  - team-promotions-and-inspiration
+  - team-promotions-and-inspiration-frontend-app
+Ari_de_Groot:
+  roles:
+  - ops-engineer
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-fulfillment-zaandam
+Arjen_Breur:
+  roles:
+  - product-owner
+  teams:
+  - team-api-platform
+  - team-customer-interaction-data
+Arjun_Mali:
+  roles:
+  - designer
+  teams:
+  - team-food-first-network
+Aron_Kool:
+  roles:
+  - ios-developer
+  - opsgenie-standby
+  teams:
+  - team-checkout-and-receipts
+  - team-payments
+  - team-checkout-and-payments
+Aron_van_Gelder:
+  roles:
+  - database-developer
+  - opsgenie-standby
+  teams:
+  - team-replenishment
+  - team-asgard
+Artem_Akhmetzianov:
+  roles:
+  - flutter-developer
+  - opsgenie-standby
+  teams:
+  - team-ah-compact
+  - team-ah-compact-fe
+Artem_Taraskin:
+  roles:
+  - backend-developer
+  teams:
+  - team-messaging
+Arti_Paschdag:
+  roles:
+  - database-developer
+  - opsgenie-standby
+  teams:
+  - team-foff
+Aryadna_Sauchyts:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-api-platform
+Asif_Shaikh:
+  roles:
+  - database-developer
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-fulfillment-zaandam
+Asim_Kumar_Dandapat:
+  roles:
+  - sre-engineer
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-messaging
+Asmit_Basu:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-waar
+Atul_Bhargava:
+  roles:
+  - opsgenie-standby
+  - backend-developer
+  teams:
+  - team-pos
+Auke_Groenenboom:
+  roles:
+  - product-owner
+  - opsgenie-standby
+  teams:
+  - team-boff-slicing
+  - team-mechanization
+Baidyanath_Nayak:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  - scrum-master
+  teams:
+  - team-waar
+  - team-loyalty-connect
+Bart_Luik:
+  roles:
+  - android-developer
+  - ios-developer
+  - flutter-developer
+  - opsgenie-standby
+  teams:
+  - team-profile-and-onboarding
+Bart_Rijnders:
+  roles:
+  - sre-engineer
+  - incident-commander
+  - opsgenie-standby
+  teams:
+  - team-sre-pi
+  - team-sre
+  - team-sre-core
+Bart_de_Vries:
+  roles:
+  - sre-engineer
+  - opsgenie-standby
+  teams:
+  - team-sre-cloud-migration
+  - team-sre
+  - team-sre-dxc
+  - team-sre-database-admins
+  - team-sre-db-and-streaming
+Bartel_Kappers:
+  roles:
+  - database-developer
+  - opsgenie-standby
+  teams:
+  - team-replenishment
+Bas_Stavenuiter:
+  roles:
+  - sre-engineer
+  - opsgenie-standby
+  teams:
+  - team-sre
+  - team-sre-cloud-migration
+  - team-sre-database-admins
+  - team-sre-db-and-streaming
+Bas_Van_Rijen:
+  roles:
+  - product-owner
+  - opsgenie-standby
+  teams:
+  - team-lists-orders-checkout
+Bas_van_der_Poel:
+  roles:
+  - sas-developer
+  teams:
+  - team-sasma-platform
+Bauyrzhan_Aigelov:
+  roles:
+  - database-developer
+  - backend-developer
+  - backend-developer-logistics
+  - opsgenie-standby
+  teams:
+  - team-fulfillment-minsk
+  - team-fulfillment-europe
+Bela_Boros:
+  roles:
+  - architect
+  - backend-developer-logistics
+  - opsgenie-standby
+  teams:
+  - team-messaging
+Bilell_Guissouma:
+  roles:
+  - business-analyst
+  teams:
+  - team-delivery
+Bora_Meester:
+  roles:
+  - labs-developer
+  teams:
+  - team-labs
+Boris_Duijndam:
+  roles:
+  - scrum-master
+  - opsgenie-standby
+  teams:
+  - team-forms-migration
+Borja_Jose_Sader_Neumann:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-checkout-and-payments
+  - team-payments
+  - team-checkout-and-receipts
+Boyd_van_Nobelen:
+  roles:
+  - labs-intern
+  teams:
+  - team-labs
+Bram_Sloots:
+  roles:
+  - agile-lead
+  - scrum-master
+  - opsgenie-standby
+  - database-developer
+  teams:
+  - team-fulfillment-zaandam
+Bram_Thielen:
+  roles:
+  - product-owner
+  teams:
+  - team-pos
+Bram_van_Rijen:
+  roles:
+  - labs-intern
+  teams:
+  - team-labs
+Brandon_Cchung:
+  roles:
+  - sre-engineer
+  - opsgenie-standby
+  teams:
+  - team-sre
+  - team-sre-pi
+  - team-sre-core
+Cagri_Yalcinsoy:
+  roles:
+  - android-developer
+  - opsgenie-standby
+  teams:
+  - team-lists-orders-checkout
+Canberk_Akduygu:
+  roles:
+  - test-engineer
+  teams:
+  - team-sre-qa-enablement
+Cara_van_Straten:
+  roles:
+  - backend-developer
+  teams:
+  - team-subscriptions
+Carmen_Laura_Pislariu:
+  roles:
+  - opsgenie-standby
+  - test-engineer
+  teams:
+  - team-pos
+Cas_de_Lang:
+  roles:
+  - product-owner
+  teams:
+  - team-labs
+Chanyu_Sheng:
+  roles:
+  - designer
+  teams:
+  - team-profile-and-onboarding
+  - team-subscriptions
+Chavala_Bharath:
+  roles:
+  - backend-developer
+  teams:
+  - team-waar
+Chetan_Shetty:
+  roles:
+  - salesforce-developer
+  - opsgenie-standby
+  teams:
+  - team-salesforce-platform
+Chloe_Burger:
+  roles:
+  - scrum-master
+  - opsgenie-standby
+  teams:
+  - team-delivery
+Chris_Blom:
+  roles:
+  - database-developer
+  - backend-developer
+  teams:
+  - team-replenishment
+Christiaan_Rademan:
+  roles:
+  - backend-developer
+  teams:
+  - team-product-search
+Christophe_Hesters:
+  roles:
+  - backend-developer
+  teams:
+  - team-assortment-and-search
+  - team-product
+Cliffred_van_Velzen:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-food-first-network
+Connor_Timmerman:
+  roles:
+  - labs-intern
+  teams:
+  - team-labs
+Cosmin_Stoian:
+  roles:
+  - salesforce-developer
+  - opsgenie-standby
+  teams:
+  - team-salesforce-platform
+Cristiana_Simina:
+  roles:
+  - salesforce-developer
+  - scrum-master
+  - opsgenie-standby
+  teams:
+  - team-salesforce-platform
+Csaba_Balint:
+  roles:
+  - sre-engineer
+  teams:
+  - team-sre
+Daan_Befort:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-self-service
+  - team-self-service-backend
+Daan_Spangenberg:
+  roles:
+  - designer
+  teams:
+  - team-lists-orders-checkout
+Daan_Veraart:
+  roles:
+  - database-developer
+  - opsgenie-standby
+  teams:
+  - team-replenishment
+Daniel_Dovger:
+  roles:
+  - labs-developer
+  - flutter-developer
+  teams:
+  - team-labs
+Daniel_Molenaar:
+  roles:
+  - backend-developer
+  - sre-engineer
+  - opsgenie-standby
+  - backend-core-developer
+  teams:
+  - team-api-platform
+  - team-sre
+Daniel_Moscoviter:
+  roles:
+  - flutter-developer
+  - opsgenie-standby
+  teams:
+  - team-food-first-network
+"Dani\xEBl_Schneiders":
+  roles:
+  - business-analyst
+  teams:
+  - team-business-technology
+"Dani\xEBl_de_Schipper":
+  roles:
+  - labs-developer
+  teams:
+  - team-labs
+Daphna_Bokhorst:
+  roles:
+  - business-analyst
+  teams:
+  - team-business-technology
+Dave_Earnshaw:
+  roles:
+  - outsystems-developer
+  teams:
+  - team-devices-apps
+Dave_Franken:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-profile-and-onboarding
+Dave_Kok:
+  roles:
+  - designer
+  teams:
+  - team-devices-apps
+Dave_van_der_Veen:
+  roles:
+  - ios-developer
+  - ios-core-developer
+  - opsgenie-standby
+  teams:
+  - team-whats-for-dinner
+David_Baker:
+  roles:
+  - frontend-developer
+  - opsgenie-standby
+  teams:
+  - team-assortment-and-search
+David_San_Martin_Torres:
+  roles:
+  - android-developer
+  - opsgenie-standby
+  teams:
+  - team-whats-for-dinner
+Dayan_Jonker:
+  roles:
+  - frontend-developer
+  - opsgenie-standby
+  teams:
+  - team-cms-platform
+Denis_Rakitskiy:
+  roles:
+  - scrum-master
+  - opsgenie-standby
+  teams:
+  - team-lists-orders-checkout
+Dennis_Anderson:
+  roles:
+  - android-developer
+  - flutter-developer
+  - opsgenie-standby
+  teams:
+  - team-subscriptions
+Dennis_Beck:
+  roles:
+  - database-developer
+  - opsgenie-standby
+  teams:
+  - team-foff
+Dennis_Eijkelenboom:
+  roles:
+  - head-of-tech
+  teams:
+  - team-management
+Derk_Dukker:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-checkout-and-receipts
+  - team-payments
+  - team-checkout-and-payments
+Dhananjay_Yadav:
+  roles:
+  - test-engineer
+  - opsgenie-standby
+  teams:
+  - team-cms-platform
+Dhrubojyoti_Das:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-waar
+Diederik_Perdok:
+  roles:
+  - backend-developer
+  teams:
+  - team-fulfillment-zaandam
+Dirk_de_Vries:
+  roles:
+  - product-owner
+  - opsgenie-standby
+  teams:
+  - team-fulfillment-minsk
+  - team-fulfillment-zaandam
+Dmitry_Potenko:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-simplification
+  - team-bisons
+Dmytro_Fesyk:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-simplification
+  - team-bisons
+Dmytro_Myronenko:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-checkout-and-receipts
+  - team-payments
+  - team-checkout-and-payments
+Do_Jacobson:
+  roles:
+  - product-owner
+  teams:
+  - team-whats-for-dinner
+Dominique_van_Slooten:
+  roles:
+  - product-owner
+  teams:
+  - team-labs
+Dragos-Costin_Mandu:
+  roles:
+  - ios-developer
+  - opsgenie-standby
+  teams:
+  - team-assortment-and-search
+Dragos_Avram:
+  roles:
+  - salesforce-developer
+  - opsgenie-standby
+  teams:
+  - team-salesforce-platform
+Dung_Manh_Chu:
+  roles:
+  - backend-developer
+  - appsearch-developer
+  teams:
+  - team-assortment-and-search
+  - team-product-search
+Dylan_Barteling:
+  roles:
+  - ios-developer
+  - opsgenie-standby
+  teams:
+  - team-loyalty-and-savings
+Dzina_Vasiliuk:
+  roles:
+  - test-engineer
+  - opsgenie-standby
+  teams:
+  - team-simplification
+  - team-bisons
+  - team-whats-for-dinner
+Dzmitry_Barsukou:
+  roles:
+  - database-developer
+  teams:
+  - team-boff-slicing
+Dzmitry_Charniauski:
+  roles:
+  - database-developer
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-boff-slicing
+Dzmitry_Kaubenia:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-messaging
+Dzmitry_Rubanau:
+  roles:
+  - agile-lead
+  - scrum-master
+  - opsgenie-standby
+  teams:
+  - team-messaging
+Dzmitry_Tabolich:
+  roles:
+  - business-analyst
+  teams:
+  - team-boff-slicing
+Dzmitryi_Rudkouski:
+  roles:
+  - backend-developer
+  - sre-engineer
+  teams:
+  - team-messaging
+  - team-sre-db-and-streaming
+Eduardo_Naveda_Sanchez:
+  roles:
+  - android-developer
+  - opsgenie-standby
+  teams:
+  - team-promotions-and-inspiration
+  - team-promotions-and-inspiration-frontend-app
+Edward_Bagwandas:
+  roles:
+  - database-developer
+  - outsystems-developer
+  - opsgenie-standby
+  teams:
+  - team-forms-migration
+Edward_Groot:
+  roles:
+  - sre-engineer
+  teams:
+  - team-sre
+  - team-sre-qa-enablement
+  - team-sre-core
+Edward_Orlowski:
+  roles:
+  - database-developer
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-delivery
+Ege_Kuzubasioglu:
+  roles:
+  - android-developer
+  - opsgenie-standby
+  teams:
+  - team-lists-orders-checkout
+Egor_Falkov:
+  roles:
+  - android-developer
+  - opsgenie-standby
+  teams:
+  - team-lists-orders-checkout
+Emanuele_Bordone:
+  roles:
+  - ios-developer
+  - opsgenie-standby
+  teams:
+  - team-lists-orders-checkout
+Emiel_Neefjes:
+  roles:
+  - business-analyst
+  teams:
+  - team-forms-migration
+Emma_Blanchard:
+  roles:
+  - product-owner
+  teams:
+  - team-loyalty-and-savings
+Emre_Muhlandiz:
+  roles:
+  - labs-intern
+  teams:
+  - team-labs
+Enas_Elrouby:
+  roles:
+  - test-engineer
+  - opsgenie-standby
+  teams:
+  - team-checkout-and-receipts
+  - team-payments
+  - team-checkout-and-payments
+Eric_Valk:
+  roles:
+  - database-developer
+  - backend-developer-logistics
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-fulfillment-zaandam
+Erik_Post:
+  roles:
+  - sre-engineer
+  - opsgenie-standby
+  teams:
+  - team-sre
+  - team-sre-oma
+  - team-sre-core
+Erik_Vingerhoed:
+  roles:
+  - database-developer
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-finance-hr
+Erik_Zeedijk:
+  roles:
+  - test-engineer
+  teams:
+  - team-sre-qa-enablement
+Esteban_Gagliardi:
+  roles:
+  - scrum-master
+  teams:
+  - team-promotions-and-inspiration-backend
+  - team-promotions-and-inspiration-frontend-web
+Etienne_Tremel:
+  roles:
+  - sre-engineer
+  teams:
+  - team-sre-re
+Eva_Gooijers:
+  roles:
+  - business-analyst
+  teams:
+  - team-self-service
+Evert_van_de_Braak:
+  roles:
+  - flutter-developer
+  - opsgenie-standby
+  teams:
+  - team-ah-compact
+  - team-ah-compact-fe
+Evi_Grijpink:
+  roles:
+  - product-owner
+  teams:
+  - team-labs
+Felipe_da_Cruz_Gabriel:
+  roles:
+  - labs-developer
+  - flutter-developer
+  teams:
+  - team-labs
+  - team-food-first-network
+Floor_van_der_Sluis:
+  roles:
+  - designer
+  teams: null
+Folkert_Mudde:
+  roles:
+  - technical-web-analyst
+  - opsgenie-standby
+  teams:
+  - team-customer-interaction-data
+Frank_Klein:
+  roles:
+  - database-developer
+  - opsgenie-standby
+  teams:
+  - team-boff-slicing
+Frank_Plattel:
+  roles:
+  - security-engineer
+  teams:
+  - team-sre-security
+Frank_Selhorst:
+  roles:
+  - frontend-developer
+  - opsgenie-standby
+  teams:
+  - team-self-service
+  - team-self-service-frontend
+Frank_Van_Eerden:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  - backend-core-developer
+  teams:
+  - team-promotions-and-inspiration
+  - team-promotions-and-inspiration-backend
+  - team-customer-interaction-data
+Frans_Wessels:
+  roles:
+  - backend-developer
+  - outsystems-developer
+  - opsgenie-standby
+  teams:
+  - team-devices-apps
+Frederik_Muller:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-lists-orders-checkout
+Freek_Boutkan:
+  roles:
+  - backend-developer
+  - appsearch-developer
+  teams:
+  - team-fulfillment-zaandam
+  - team-assortment-and-search
+  - team-product-search
+Galiel_Amouri:
+  roles:
+  - business-analyst
+  teams:
+  - team-boff-slicing
+Gerald_Eersteling:
+  roles:
+  - ios-developer
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-cms-platform
+Gerard_Pex:
+  roles:
+  - architect
+  teams:
+  - team-baldr
+Gerard_Steur:
+  roles:
+  - database-developer
+  - opsgenie-standby
+  teams:
+  - team-replenishment
+Gerard_de_Wit:
+  roles:
+  - backend-developer
+  - backend-developer-logistics
+  - opsgenie-standby
+  teams:
+  - team-devices-apps
+Gerarld_Arall:
+  roles:
+  - security-engineer
+  teams:
+  - team-sre-security
+Gertie_de_Groen:
+  roles:
+  - database-developer
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-fulfillment-zaandam
+  - team-asgard
+Gertjan_Schuurmans:
+  roles:
+  - head-of-tech
+  teams:
+  - team-management
+Geurt_van_Tuijl:
+  roles:
+  - business-analyst
+  teams:
+  - team-baldr
+Gillian_Fowler:
+  roles:
+  - labs-intern
+  teams:
+  - team-labs
+Gleb_Kabyshev:
+  roles:
+  - test-engineer
+  - opsgenie-standby
+  teams:
+  - team-food-first-network
+Glyn_Baker:
+  roles:
+  - test-engineer
+  - opsgenie-standby
+  teams:
+  - team-checkout-and-receipts
+  - team-payments
+  - team-checkout-and-payments
+Gosse_Bouma:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  - backend-core-developer
+  teams:
+  - team-profile-and-onboarding
+Goswin_Westland:
+  roles:
+  - database-developer
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-fulfillment-zaandam
+Grace_Sidharta:
+  roles:
+  - test-engineer
+  teams:
+  - team-self-service
+Guido_Slegtenhorst:
+  roles:
+  - product-owner
+  teams:
+  - team-promotions-and-inspiration
+Guilherme_Dantas:
+  roles:
+  - outsystems-developer
+  teams:
+  - team-devices-apps
+Gunilla_de_Wit:
+  roles:
+  - database-developer
+  - outsystems-developer
+  - opsgenie-standby
+  teams:
+  - team-forms-migration
+Guyon_Cornelissen:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-self-service
+  - team-self-service-backend
+Haico_Heemstra:
+  roles:
+  - frontend-developer
+  - opsgenie-standby
+  teams:
+  - team-subscriptions
+Hamid_Shafiekhani:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-demand-and-capacity
+Hanneke_Franken:
+  roles:
+  - product-owner
+  teams:
+  - team-assortment-and-search
+  - team-food-first-network
+Hans_Neervoort:
+  roles:
+  - sre-engineer
+  teams:
+  - team-sre
+  - team-sre-cloud-migration
+  - team-sre-database-admins
+  - team-sre-db-and-streaming
+Hans_Neufeglise:
+  roles:
+  - architect
+  teams: null
+Hans_Noom:
+  roles:
+  - database-developer
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-delivery
+Harianurag_Kanmanth:
+  roles:
+  - sas-developer
+  teams:
+  - team-sasma-platform
+Harish_Vashishth:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-payments
+Hessel_Bakker:
+  roles:
+  - product-owner
+  teams:
+  - team-sre-re
+  - team-sre
+Hessel_Hoogerhuis:
+  roles:
+  - designer
+  teams:
+  - team-payments-and-subscriptions
+Husam_Lahm_Alajanji:
+  roles:
+  - frontend-developer
+  - opsgenie-standby
+  teams:
+  - team-pos
+Ihor_Protasovytskyi:
+  roles:
+  - sre-engineer
+  teams:
+  - team-sre-cloud-migration
+Inge_Rolf:
+  roles:
+  - product-owner
+  - opsgenie-standby
+  teams:
+  - team-foff
+Inge_Vlaar:
+  roles:
+  - scrum-master
+  - frontend-developer
+  - opsgenie-standby
+  teams:
+  - team-assortment-and-search
+  - team-cms-platform
+Inna_Dolina:
+  roles:
+  - scrum-master
+  - test-engineer
+  teams:
+  - team-advendio
+Ionut_Pruteanu:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-pos
+Irene_Doodeman:
+  roles:
+  - labs-developer
+  - flutter-developer
+  teams:
+  - team-labs
+Isa_Prins:
+  roles:
+  - test-engineer
+  - opsgenie-standby
+  teams:
+  - team-subscriptions
+Ischa_Mooren:
+  roles:
+  - product-owner
+  - head-of-tech
+  - sre-engineer
+  - opsgenie-standby
+  teams:
+  - team-sre
+  - team-management
+Ivan_Davletshin:
+  roles:
+  - sre-engineer
+  teams:
+  - team-sre-re
+  - team-sre
+Ivar_van_der_Laan:
+  roles:
+  - sre-engineer
+  - product-owner
+  - database-developer
+  - opsgenie-standby
+  teams:
+  - team-sre-core
+Jacky_To:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-checkout-and-receipts
+Jacob_Ras:
+  roles:
+  - android-developer
+  - opsgenie-standby
+  teams:
+  - team-customer-interaction-data
+Jaiwan_Bindraban:
+  roles:
+  - test-engineer
+  teams:
+  - team-loyalty-and-savings
+Jan_Athmer:
+  roles:
+  - database-developer
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-fulfillment-minsk
+  - team-fulfillment-europe
+Jan_Dodemont:
+  roles:
+  - product-owner
+  teams:
+  - team-ah-compact
+Jan_Verweij:
+  roles:
+  - incident-commander
+  - product-owner
+  - opsgenie-standby
+  teams:
+  - team-sre-incident-command
+Jan_van_den_Berg:
+  roles:
+  - sre-engineer
+  - opsgenie-standby
+  teams:
+  - team-sre-pi
+  - team-sre
+  - team-sre-core
+Janine_Voerman:
+  roles:
+  - product-owner
+  teams:
+  - team-labs
+Jasper_Floor:
+  roles:
+  - backend-developer
+  teams:
+  - team-food-first-network
+Jasper_Prins:
+  roles:
+  - frontend-developer
+  - opsgenie-standby
+  teams:
+  - team-self-service
+  - team-self-service-frontend
+Jean-Luc_Truijens:
+  roles:
+  - architect
+  teams: null
+Jean_Paul_Ueberbach:
+  roles:
+  - sre-engineer
+  teams:
+  - team-sre-re
+  - team-sre-shc
+Jeffrey_Buik:
+  roles:
+  - technical-web-analyst
+  - opsgenie-standby
+  teams:
+  - team-customer-interaction-data
+Jeffrey_Maas:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-lists-orders-checkout
+Jeffrey_de_Graaf:
+  roles:
+  - architect
+  - opsgenie-standby
+  teams: null
+Jeffrey_van_der_Lingen:
+  roles:
+  - backend-developer
+  - scrum-master
+  - opsgenie-standby
+  - backend-core-developer
+  - standby-area-loyalty
+  teams:
+  - team-loyalty-and-savings
+  - team-ah-compact-be
+Jelle_Luijnenburg:
+  roles:
+  - scrum-master
+  teams:
+  - team-sre
+Jelle_van_Andel:
+  roles:
+  - business-analyst
+  teams:
+  - team-whats-for-dinner
+Jelmer_Keuzenkamp:
+  roles:
+  - backend-developer
+  teams:
+  - team-fulfillment-zaandam
+Jeremiah_Ogbomo:
+  roles:
+  - flutter-developer
+  - opsgenie-standby
+  teams:
+  - team-ah-compact
+  - team-ah-compact-fe
+Jeroen_Albers:
+  roles:
+  - technical-web-analyst
+  - opsgenie-standby
+  teams:
+  - team-customer-interaction-data
+Jeroen_Bouma:
+  roles:
+  - android-developer
+  - ios-developer
+  - flutter-developer
+  - opsgenie-standby
+  teams:
+  - team-profile-and-onboarding
+Jeroen_Buitenhuis:
+  roles:
+  - head-of-tech
+  teams:
+  - team-management
+Jeroen_Hammann:
+  roles:
+  - frontend-developer
+  - opsgenie-standby
+  teams:
+  - team-payments-and-subscriptions
+  - team-lists-orders-checkout
+Jeroen_Lanser:
+  roles:
+  - android-developer
+  - opsgenie-standby
+  teams:
+  - team-promotions-and-inspiration-frontend-app
+Jeroen_Tusveld:
+  roles:
+  - database-developer
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-fulfillment-minsk
+  - team-fulfillment-europe
+Jeroen_Van_Berkel:
+  roles:
+  - designer
+  teams:
+  - team-lists-orders-checkout
+Jerry_Geerts:
+  roles:
+  - labs-developer
+  teams:
+  - team-labs
+Jesse_Klijn:
+  roles:
+  - ios-developer
+  - opsgenie-standby
+  teams:
+  - team-loyalty-and-savings
+Jimmy_Arts:
+  roles:
+  - ios-developer
+  - ios-core-developer
+  - opsgenie-standby
+  teams:
+  - team-whats-for-dinner
+Jobbe_Maas:
+  roles:
+  - database-developer
+  - opsgenie-standby
+  teams:
+  - team-devices-apps
+Jochem_Budding:
+  roles:
+  - database-developer
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-delivery
+Johan_Brinkman:
+  roles:
+  - scrum-master
+  - opsgenie-standby
+  teams:
+  - team-lists-orders-checkout
+Johan_Pelgrim:
+  roles:
+  - architect
+  - opsgenie-standby
+  teams: null
+Johan_Tuit:
+  roles:
+  - database-developer
+  - opsgenie-standby
+  teams:
+  - team-foff
+  - team-simplification
+  - team-subscriptions
+Johan_van_Es:
+  roles:
+  - head-of-tech
+  teams:
+  - team-management
+Joost_Hofman:
+  roles:
+  - sre-engineer
+  - head-of-tech
+  - opsgenie-standby
+  teams:
+  - team-sre
+  - team-management
+Joost_Krijnen:
+  roles:
+  - designer
+  teams:
+  - team-ah-compact
+  - team-food-first-network
+  - team-promotions-and-inspiration
+  - team-whats-for-dinner
+Joram_Kuipers:
+  roles:
+  - test-engineer
+  - opsgenie-standby
+  teams:
+  - team-lists-orders-checkout
+Joran_Dob:
+  roles:
+  - flutter-developer
+  - opsgenie-standby
+  teams:
+  - team-ah-compact
+  - team-ah-compact-fe
+Joric_Koghee:
+  roles:
+  - designer
+  teams:
+  - team-food-first-network
+Joris_Schuit:
+  roles:
+  - incident-commander
+  - security-engineer
+  - opsgenie-standby
+  teams:
+  - team-sre
+  - team-sre-incident-command
+  - team-sre-security
+Joris_van_Gasteren:
+  roles:
+  - ios-developer
+  teams:
+  - team-promotions-and-inspiration-frontend-app
+Jos_Baas:
+  roles:
+  - incident-commander
+  - security-engineer
+  - opsgenie-standby
+  teams:
+  - team-sre
+  - team-sre-incident-command
+  - team-sre-security
+Jos_Rutten:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-checkout-and-receipts
+  - team-payments
+  - team-checkout-and-payments
+Jos_Schroten:
+  roles:
+  - scrum-master
+  teams:
+  - team-food-first-network
+Jose_Bustamante:
+  roles:
+  - frontend-developer
+  - opsgenie-standby
+  teams:
+  - team-whats-for-dinner
+Juanita_Bedaux:
+  roles:
+  - designer
+  teams:
+  - team-whats-for-dinner
+Judith_de_Ruijter:
+  roles:
+  - scrum-master
+  teams:
+  - team-sre
+Juliana_Novaes:
+  roles:
+  - backend-developer
+  teams:
+  - team-business-technology
+Julien_Alzein:
+  roles:
+  - product-owner
+  teams:
+  - team-salesforce-platform
+Jurgen_Kervezee:
+  roles:
+  - database-developer
+  - opsgenie-standby
+  teams:
+  - team-devices-apps
+Jurgen_van_Doorn:
+  roles:
+  - outsystems-developer
+  - opsgenie-standby
+  teams:
+  - team-devices-apps
+Kapil_Mohitkar:
+  roles:
+  - salesforce-developer
+  teams:
+  - team-advendio
+Karolien_van_Emden:
+  roles:
+  - scrum-master
+  - opsgenie-standby
+  teams:
+  - team-whats-for-dinner
+Kas_Groot:
+  roles:
+  - customer-service-agent
+  teams:
+  - team-app-reviews
+Keung_Yuen:
+  roles:
+  - database-developer
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-fulfillment-zaandam
+Kevin_Toms:
+  roles:
+  - flutter-developer
+  - opsgenie-standby
+  teams:
+  - team-food-first-network
+Kim_Sing_Cheng:
+  roles:
+  - sre-engineer
+  - opsgenie-standby
+  teams:
+  - team-sre
+  - team-sre-core
+Kimberley_van_de_Werve:
+  roles:
+  - product-owner
+  teams:
+  - team-customer-interaction-data
+Kimberly_Scharrenberg:
+  roles:
+  - scrum-master
+  teams:
+  - team-loyalty-and-savings
+Kiran_Sharma:
+  roles:
+  - scrum-master
+  teams:
+  - team-sasma-platform
+Klaas_Nijkes:
+  roles:
+  - frontend-developer
+  - opsgenie-standby
+  teams:
+  - team-pos
+Koen_Bakker:
+  roles:
+  - test-engineer
+  - opsgenie-standby
+  teams:
+  - team-promotions-and-inspiration
+Koen_Pelzer:
+  roles:
+  - product-owner
+  teams:
+  - team-replenishment
+Koustav_Samanta:
+  roles:
+  - test-engineer
+  - opsgenie-standby
+  teams:
+  - team-loyalty-connect
+Krasimir_Dimitrov:
+  roles:
+  - database-developer
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-fulfillment-minsk
+  - team-fulfillment-europe
+Lars_Knitel:
+  roles:
+  - technical-web-analyst
+  - opsgenie-standby
+  teams:
+  - team-customer-interaction-data
+Laszlo_Igaz:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  - standby-area-loyalty
+  teams:
+  - team-ah-compact
+  - team-ah-compact-be
+  - team-subscriptions
+Laura_Paap:
+  roles:
+  - project-management-officer
+  - scrum-master
+  teams:
+  - team-management
+Lavinia_Leahy:
+  roles:
+  - frontend-developer
+  - opsgenie-standby
+  teams:
+  - team-promotions-and-inspiration
+  - team-promotions-and-inspiration-frontend-web
+Leena_Dhanapal:
+  roles:
+  - sas-developer
+  teams:
+  - team-sasma-platform
+Leendert_Ullersma:
+  roles:
+  - labs-ci-cd
+  - labs-lead
+  - opsgenie-standby
+  teams:
+  - team-labs
+  - team-finance-hr
+Lennart_Kramer:
+  roles:
+  - database-developer
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-delivery
+Leonardo_Brandao:
+  roles:
+  - backend-developer
+  teams:
+  - team-business-technology
+Leonid_Bogouslavski:
+  roles:
+  - frontend-developer
+  - opsgenie-standby
+  teams:
+  - team-assortment-and-search
+Levi_Gibson:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-foff
+Levie_op_den_Velde:
+  roles: []
+  teams:
+  - team-iam-access-review
+Linda_Draijer:
+  roles:
+  - head-of-tech
+  teams:
+  - team-management
+Loes_Kroonen:
+  roles:
+  - product-owner
+  teams:
+  - team-food-first-network
+Lotte_Vos:
+  roles:
+  - designer
+  - opsgenie-standby
+  teams:
+  - team-demand-and-capacity
+Louise_Toussaint:
+  roles:
+  - project-manager
+  teams:
+  - team-sre
+Lucas_Geisink:
+  roles:
+  - sre-engineer
+  teams:
+  - team-sre
+  - team-sre-core
+Luciano_van_der_Veekens:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-self-service
+  - team-self-service-backend
+Luuk_Kaandorp:
+  roles:
+  - backend-developer
+  teams:
+  - team-product-search
+Luuk_Stevens:
+  roles:
+  - backend-developer
+  - labs-ci-cd
+  - labs-lead
+  - opsgenie-standby
+  teams:
+  - team-labs
+Lynn_van_Werkhoven:
+  roles:
+  - scrum-master
+  teams:
+  - team-checkout-and-payments
+Maarten_Oosterbaan:
+  roles:
+  - incident-commander
+  - security-engineer
+  - opsgenie-standby
+  teams:
+  - team-sre
+  - team-sre-incident-command
+  - team-sre-security
+Machiel_Dalebout:
+  roles:
+  - designer
+  teams:
+  - team-whats-for-dinner
+Madelon_Verheij:
+  roles:
+  - agile-lead
+  teams:
+  - team-checkout-and-receipts
+  - team-payments
+  - team-checkout-and-payments
+Mahesh_Babu:
+  roles:
+  - opsgenie-standby
+  - test-engineer
+  teams:
+  - team-pos
+Maikel_van_Dort:
+  roles:
+  - labs-ci-cd
+  - labs-developer
+  - frontend-developer
+  - opsgenie-standby
+  teams:
+  - team-labs
+Maiko_Kuipers:
+  roles:
+  - frontend-developer
+  - opsgenie-standby
+  teams:
+  - team-lists-orders-checkout
+Maksim_Gorodilov:
+  roles:
+  - frontend-developer
+  - opsgenie-standby
+  teams:
+  - team-promotions-and-inspiration
+  - team-simplification
+Maksim_Radzevich:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-simplification
+  - team-bisons
+Maksym_Husak:
+  roles:
+  - sre-engineer
+  - opsgenie-standby
+  teams:
+  - team-sre-cloud-migration
+Manon_Zorge:
+  roles:
+  - scrum-master
+  - opsgenie-standby
+  teams:
+  - team-baldr
+Marc_Buurman:
+  roles:
+  - product-owner
+  teams:
+  - team-salesforce-platform
+  - team-self-service
+Marcel_Somhorst:
+  roles:
+  - architect
+  teams: null
+Marcel_Wetzels:
+  roles:
+  - ops-engineer
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-fulfillment-zaandam
+Marcel_Wigman:
+  roles:
+  - sre-engineer
+  teams:
+  - team-sre-qa-enablement
+Marcel_van_de_Zande:
+  roles:
+  - incident-commander
+  - opsgenie-standby
+  teams:
+  - team-sre
+  - team-sre-incident-command
+Marco_Griffioen:
+  roles:
+  - database-developer
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-order-management
+Marcus_van_Winden:
+  roles:
+  - frontend-developer
+  - opsgenie-standby
+  teams:
+  - team-lists-orders-checkout
+Marharyta_Lytvynenko:
+  roles:
+  - ios-developer
+  - opsgenie-standby
+  - ios-core-developer
+  teams:
+  - team-lists-orders-checkout
+Maria_Prins:
+  roles: []
+  teams:
+  - team-iam-access-review
+Mariyam_Bohra:
+  roles:
+  - sas-developer
+  teams:
+  - team-sasma-platform
+Mark_Boon:
+  roles:
+  - test-engineer
+  - opsgenie-standby
+  teams:
+  - team-whats-for-dinner
+Mark_Rutter:
+  roles:
+  - test-engineer
+  - opsgenie-standby
+  teams:
+  - team-mechanization
+Mark_Visser:
+  roles:
+  - sre-engineer
+  - opsgenie-standby
+  teams:
+  - team-sre
+  - team-sre-oma
+  - team-sre-core
+Marlous_Tromp:
+  roles:
+  - product-owner
+  teams:
+  - team-profile-and-onboarding
+Mart_Hoogenhout:
+  roles:
+  - designer
+  teams:
+  - team-checkout-and-receipts
+  - team-payments
+Martijn_Geleijnse:
+  roles:
+  - product-owner
+  - opsgenie-standby
+  teams:
+  - team-lists-orders-checkout
+Martijn_Santen:
+  roles:
+  - sre-engineer
+  - opsgenie-standby
+  teams:
+  - team-sre-dxc
+  - team-sre
+  - team-sre-pi
+  - team-sre-core
+Martijn_van_de_Wetering:
+  roles:
+  - flutter-developer
+  - opsgenie-standby
+  teams:
+  - team-food-first-network
+Martin_Kovachev:
+  roles:
+  - flutter-developer
+  - opsgenie-standby
+  teams:
+  - team-food-first-network
+  - team-ah-compact-fe
+Martin_Walraven:
+  roles:
+  - database-developer
+  - opsgenie-standby
+  teams:
+  - team-replenishment
+Martin_van_Toorn:
+  roles:
+  - frontend-developer
+  - opsgenie-standby
+  teams:
+  - team-api-platform
+Maryna_Halynskaya:
+  roles:
+  - test-engineer
+  - opsgenie-standby
+  teams:
+  - team-food-first-network
+Mathieu_Nauleau:
+  roles:
+  - designer
+  teams:
+  - team-ah-compact
+Mathieu_van_der_Linden:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-finance-hr
+Matt_Aydin:
+  roles:
+  - ios-developer
+  - ios-core-developer
+  - opsgenie-standby
+  teams:
+  - team-loyalty-and-savings
+Matthias_Vaessen:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-waar
+Matthijs_Peters:
+  roles:
+  - backend-developer-logistics
+  teams:
+  - team-baldr
+Matthijs_Rademakers:
+  roles:
+  - database-developer
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-fulfillment-zaandam
+Matthijs_Tolkamp:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-cms-platform
+Maurice_Poot:
+  roles:
+  - business-analyst
+  teams:
+  - team-delivery
+Max_di_Franco:
+  roles:
+  - backend-developer
+  - appsearch-developer
+  - opsgenie-standby
+  teams:
+  - team-whats-for-dinner
+Maxim_Biyanov:
+  roles:
+  - flutter-developer
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-food-first-network
+Maxim_de_Groot:
+  roles:
+  - backend-developer
+  teams:
+  - team-profile-and-onboarding
+"Mehmet_Yal\xE7\u0131n_Delio\u011Flu":
+  roles:
+  - android-developer
+  - opsgenie-standby
+  teams:
+  - team-loyalty-and-savings
+Meinke_Vermande:
+  roles:
+  - scrum-master
+  - opsgenie-standby
+  teams:
+  - team-devices-apps
+Menno_Luiten:
+  roles:
+  - database-developer
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-delivery
+Merel_Rijsbosch:
+  roles:
+  - product-owner
+  teams:
+  - team-labs
+Merel_van_Huijstee:
+  roles:
+  - designer
+  teams:
+  - team-self-service
+Michael_Sui:
+  roles:
+  - frontend-developer
+  - opsgenie-standby
+  teams:
+  - team-subscriptions
+Michel_Slot:
+  roles:
+  - ios-developer
+  - opsgenie-standby
+  teams:
+  - team-checkout-and-receipts
+  - team-payments
+  - team-checkout-and-payments
+Michel_van_Aalzum:
+  roles:
+  - database-developer
+  - opsgenie-standby
+  teams:
+  - team-foff
+Michel_van_Gelderen:
+  roles:
+  - sre-engineer
+  - opsgenie-standby
+  teams:
+  - team-sre
+  - team-sre-dxc
+  - team-sre-database-admins
+  - team-sre-db-and-streaming
+Michele_Volpato:
+  roles:
+  - flutter-developer
+  - opsgenie-standby
+  teams:
+  - team-food-first-network
+Michelle_Vos:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-cms-platform
+Miguel_Cabrita:
+  roles:
+  - android-developer
+  - opsgenie-standby
+  teams:
+  - team-whats-for-dinner
+Miguel_Oliveira:
+  roles:
+  - outsystems-developer
+  - opsgenie-standby
+  teams:
+  - team-forms-migration
+Mik_De_Vries:
+  roles:
+  - frontend-developer
+  - opsgenie-standby
+  teams:
+  - team-promotions-and-inspiration
+  - team-promotions-and-inspiration-frontend-web
+Mika_Hollander:
+  roles:
+  - labs-intern
+  teams:
+  - team-labs
+Mikhail_Maksimiuk:
+  roles:
+  - android-developer
+  - opsgenie-standby
+  teams:
+  - team-lists-orders-checkout
+Milan_Vrskovy:
+  roles:
+  - salesforce-developer
+  teams:
+  - team-advendio
+Milorad_Stevanovic:
+  roles:
+  - android-developer
+  - opsgenie-standby
+  teams:
+  - team-promotions-and-inspiration
+  - team-promotions-and-inspiration-frontend-app
+Milton_Cardoso:
+  roles:
+  - database-developer
+  - outsystems-developer
+  - opsgenie-standby
+  teams:
+  - team-devices-apps
+Mitchell_Kalabogias:
+  roles: []
+  teams:
+  - team-iam-access-review
+Mitchell_van_Eenige:
+  roles:
+  - product-owner
+  teams:
+  - team-food-first-network
+Mo_Agca:
+  roles:
+  - designer
+  teams:
+  - team-promotions-and-inspiration
+Mohammad_Ammar_Anwar:
+  roles:
+  - test-engineer
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-finance-hr
+Mohammed_Mochoui:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-waar
+Monique_Jelmorini:
+  roles:
+  - database-developer
+  - opsgenie-standby
+  teams:
+  - team-foff
+Murilo_MacHado:
+  roles:
+  - test-engineer
+  teams: null
+Mustafa_Karci:
+  roles:
+  - sre-engineer
+  - opsgenie-standby
+  teams:
+  - team-sre
+  - team-sre-core
+Nasrat_Salehi:
+  roles:
+  - labs-intern
+  teams:
+  - team-labs
+Natalia_Brito_Ureta:
+  roles:
+  - backend-developer-logistics
+  teams:
+  - team-baldr
+Nazlican_Eren:
+  roles:
+  - labs-intern
+  teams:
+  - team-labs
+Nesrine_Sghaier:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-lists-orders-checkout
+Nico_Heemskerk:
+  roles:
+  - product-owner
+  teams:
+  - team-asgard
+Nico_de_Jong:
+  roles: null
+  teams:
+  - team-management
+Nicolas_Almonte_Carrasco:
+  roles:
+  - test-engineer
+  - opsgenie-standby
+  teams:
+  - team-checkout-and-receipts
+  - team-payments
+  - team-checkout-and-payments
+Niels_Mooren:
+  roles:
+  - labs-intern
+  teams:
+  - team-labs
+Niels_van_Marsbergen:
+  roles:
+  - frontend-developer
+  - labs-ci-cd
+  - labs-developer
+  - opsgenie-standby
+  teams:
+  - team-labs
+  - team-checkout-and-receipts
+Nik_Lebbe:
+  roles:
+  - product-owner
+  - opsgenie-standby
+  - test-engineer
+  teams:
+  - team-loyalty-connect
+Nika_Shkuratava:
+  roles:
+  - scrum-master
+  - opsgenie-standby
+  teams:
+  - team-ah-compact
+Nils_Kohrs:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-waar
+  - team-loyalty-connect
+Nils_Kulk:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-devices-apps
+Noortje_Philipsen:
+  roles: null
+  teams:
+  - team-demand-and-capacity
+Norman_van_Ameyden:
+  roles:
+  - product-owner
+  teams:
+  - team-ah-compact
+Oksana_Kartashova:
+  roles:
+  - test-engineer
+  - opsgenie-standby
+  teams:
+  - team-assortment-and-search
+Oleg_Kuzmin:
+  roles:
+  - android-developer
+  - opsgenie-standby
+  teams:
+  - team-whats-for-dinner
+Oleh_Bastun:
+  roles:
+  - sre-engineer
+  teams:
+  - team-sre-cloud-migration
+Oleksandr_Loushkin:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-assortment-and-search
+  - team-product
+Oleksii_Kostyliev:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-checkout-and-receipts
+  - team-payments
+  - team-checkout-and-payments
+Oleksii_Nadtochyi:
+  roles:
+  - architect
+  teams:
+  - team-management
+Olivia_Kasteel:
+  roles:
+  - product-owner
+  teams:
+  - team-advendio
+Onno_Beck:
+  roles:
+  - scrum-master
+  - opsgenie-standby
+  teams:
+  - team-fulfillment-zaandam
+Ovidiu-Ion_Pislaru:
+  roles:
+  - test-engineer
+  - opsgenie-standby
+  teams:
+  - team-pos
+Ovidiu_Ionescu:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  - backend-core-developer
+  teams:
+  - team-promotions-and-inspiration
+  - team-promotions-and-inspiration-backend
+Pablo_Rosa:
+  roles:
+  - outsystems-developer
+  - opsgenie-standby
+  teams:
+  - team-loyalty-connect
+Patrick_Koopman:
+  roles:
+  - database-developer
+  - outsystems-developer
+  - opsgenie-standby
+  teams:
+  - team-forms-migration
+Patrick_Schoenmakers:
+  roles:
+  - database-developer
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-fulfillment-zaandam
+  - team-asgard
+Paul_Hofstee:
+  roles:
+  - database-developer
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-delivery
+Paul_Schunck:
+  roles:
+  - ios-developer
+  - android-developer
+  - flutter-developer
+  - opsgenie-standby
+  teams:
+  - team-subscriptions
+Paul_Vos:
+  roles:
+  - test-engineer
+  teams:
+  - team-baldr
+Paul_van_Roosendaal:
+  roles:
+  - ios-developer
+  - ios-core-developer
+  - opsgenie-standby
+  teams:
+  - team-loyalty-and-savings
+Paulien_Lous:
+  roles:
+  - labs-intern
+  teams:
+  - team-labs
+Pavel_Davydzenka:
+  roles:
+  - android-developer
+  teams:
+  - team-assortment-and-search
+Pavel_Hanchuk:
+  roles:
+  - business-analyst
+  teams:
+  - team-food-first-network
+Pavel_Khudzik:
+  roles:
+  - database-developer
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-fulfillment-minsk
+  - team-fulfillment-europe
+Pavel_Sulimau:
+  roles:
+  - flutter-developer
+  - opsgenie-standby
+  teams:
+  - team-ah-compact
+  - team-ah-compact-fe
+Pedro_Abreu:
+  roles:
+  - outsystems-developer
+  - opsgenie-standby
+  teams:
+  - team-devices-apps
+Pedro_Vieira:
+  roles:
+  - outsystems-developer
+  - opsgenie-standby
+  teams:
+  - team-demand-and-capacity
+Peter_Schrijvers:
+  roles:
+  - database-developer
+  - opsgenie-standby
+  teams:
+  - team-foff
+Peter_Vermeulen:
+  roles:
+  - backend-developer
+  teams:
+  - team-product-search
+Philip_Ivanov:
+  roles:
+  - scrum-master
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-fulfillment-minsk
+Philip_Wong:
+  roles:
+  - android-developer
+  - opsgenie-standby
+  teams:
+  - team-assortment-and-search
+Philipp_Gayret:
+  roles:
+  - sre-engineer
+  - opsgenie-standby
+  teams:
+  - team-sre-re
+  - team-sre
+Pim_van_Kaam:
+  roles:
+  - product-owner
+  teams:
+  - team-loyalty-and-savings
+Ping_Oei:
+  roles:
+  - database-developer
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-fulfillment-zaandam
+Plamen_Todorov:
+  roles:
+  - business-analyst
+  teams:
+  - team-baldr
+  - team-business-technology
+Quint_van_Zijl:
+  roles:
+  - labs-ci-cd
+  - labs-lead
+  - frontend-developer
+  - opsgenie-standby
+  teams:
+  - team-whats-for-dinner
+  - team-labs
+Rafaela_Ellensburg:
+  roles:
+  - business-analyst
+  teams:
+  - team-cms-platform
+Rahul_Ranjan:
+  roles:
+  - security-engineer
+  teams:
+  - team-sre-security
+Rajdeep_Khan:
+  roles:
+  - test-engineer
+  teams:
+  - team-forms-migration
+Raman_Kobryn:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-messaging
+Randy_Vanenburg:
+  roles:
+  - test-engineer
+  - opsgenie-standby
+  teams:
+  - team-lists-orders-checkout
+Raoul_Flips:
+  roles:
+  - business-analyst
+  teams:
+  - team-labs
+Reinier_Timmer:
+  roles:
+  - sre-engineer
+  - opsgenie-standby
+  teams:
+  - team-sre-re
+  - team-sre
+  - team-sre-core
+Reinier_van_Petegem:
+  roles: null
+  teams:
+  - team-management
+  - team-business-technology
+Reino_Coppens:
+  roles:
+  - database-developer
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-fulfillment-zaandam
+Reinoud_van_Blankenstein:
+  roles:
+  - database-developer
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-finance-hr
+Reintjan_Panman:
+  roles:
+  - test-engineer
+  - opsgenie-standby
+  teams:
+  - team-ah-compact
+  - team-ah-compact-qa
+Remco_Nabuurs:
+  roles:
+  - head-of-tech
+  teams:
+  - team-management
+Remon_de_Wijngaert:
+  roles:
+  - database-developer
+  - opsgenie-standby
+  teams:
+  - team-foff
+Renate_Sportel:
+  roles:
+  - head-of-tech
+  teams:
+  - team-management
+Rene_Floor:
+  roles:
+  - flutter-developer
+  - opsgenie-standby
+  teams:
+  - team-ah-compact
+  - team-ah-compact-fe
+Rene_Molle:
+  roles:
+  - database-developer
+  - opsgenie-standby
+  teams:
+  - team-replenishment
+Renee_Schreuder:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-assortment-and-search
+  - team-product
+Resul_Ozcan:
+  roles:
+  - database-developer
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-demand-and-capacity
+Rewiesh_RamcHaran:
+  roles:
+  - database-developer
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-mechanization
+Richard_Knoester:
+  roles:
+  - business-analyst
+  teams:
+  - team-delivery
+Richard_van_Duijn:
+  roles:
+  - frontend-developer
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-checkout-and-receipts
+  - team-payments
+  - team-checkout-and-payments
+Richard_van_Scheppingen:
+  roles:
+  - scrum-master
+  - database-developer
+  - opsgenie-standby
+  teams:
+  - team-replenishment
+Rick_Boere:
+  roles:
+  - backend-developer
+  - appsearch-developer
+  - scrum-master
+  teams:
+  - team-fulfillment-zaandam
+  - team-assortment-and-search
+  - team-product-search
+Rick_de_Vries:
+  roles:
+  - frontend-developer
+  - opsgenie-standby
+  teams:
+  - team-profile-and-onboarding
+Rik_Kerkhoven:
+  roles:
+  - product-owner
+  teams:
+  - team-salesforce-platform
+Rik_Koning:
+  roles:
+  - database-developer
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-order-management
+Rik_Nooij:
+  roles:
+  - product-owner
+  - opsgenie-standby
+  teams:
+  - team-delivery
+Rik_Nuijen:
+  roles:
+  - ios-developer
+  - opsgenie-standby
+  teams:
+  - team-assortment-and-search
+Rik_Teuben:
+  roles:
+  - scrum-master
+  - opsgenie-standby
+  teams:
+  - team-delivery
+Robbert_van_der_Zon:
+  roles:
+  - database-developer
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-demand-and-capacity
+Robert_Neijmeijer:
+  roles:
+  - labs-developer
+  teams:
+  - team-labs
+Robert_Wan:
+  roles:
+  - database-developer
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-finance-hr
+Roberto_van_Houwelingen:
+  roles:
+  - architect
+  teams: null
+Robin_Schalkwijk:
+  roles:
+  - database-developer
+  - opsgenie-standby
+  teams:
+  - team-foff
+Robin_Zeilstra:
+  roles:
+  - outsystems-developer
+  teams:
+  - team-devices-apps
+Robin_van_Rijssel:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-subscriptions
+Roby_Owens:
+  roles:
+  - backend-developer
+  teams:
+  - team-lists-orders-checkout
+Rodolpho_Becker:
+  roles:
+  - backend-developer
+  teams:
+  - team-business-technology
+Rodrigo_de_Paiva_Gomes:
+  roles:
+  - sre-engineer
+  teams:
+  - team-sre
+  - team-sre-re
+Roel_Willems:
+  roles:
+  - technical-web-analyst
+  teams: null
+Roel_van_Lanen:
+  roles:
+  - frontend-developer
+  - opsgenie-standby
+  teams:
+  - team-subscriptions
+  - team-self-service
+  - team-self-service-frontend
+Rogier_Fluitsma:
+  roles:
+  - database-developer
+  - outsystems-developer
+  - opsgenie-standby
+  teams:
+  - team-forms-migration
+Rogier_van_de_Hoef:
+  roles:
+  - product-owner
+  teams:
+  - team-food-first-network
+Roman_Kulijev:
+  roles:
+  - database-developer
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-boff-slicing
+Roman_Nevolin:
+  roles:
+  - backend-developer
+  teams:
+  - team-mechanization
+Romina_Junker:
+  roles:
+  - agile-lead
+  - scrum-master
+  teams:
+  - team-sre-pi
+  - team-sre-oma
+Roos_Bakker:
+  roles:
+  - test-engineer
+  - opsgenie-standby
+  - standby-area-loyalty
+  teams:
+  - team-subscriptions
+Roos_Westerbeek:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-waar
+Roos_van_Liempt:
+  roles:
+  - product-owner
+  teams:
+  - team-checkout-and-receipts
+  - team-payments
+  - team-checkout-and-payments
+Ruben_de_Vries:
+  roles:
+  - database-developer
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-order-management
+Ruben_ter_Maten:
+  roles:
+  - test-engineer
+  teams:
+  - team-sre-qa-enablement
+Rutger_Cobben:
+  roles:
+  - agile-lead
+  - scrum-master
+  teams:
+  - team-promotions-and-inspiration
+Ruud_Keizer:
+  roles:
+  - agile-lead
+  - scrum-master
+  teams:
+  - team-promotions-and-inspiration
+SRE_Service_Account:
+  roles:
+  - sre-automation
+  teams:
+  - team-sre
+Saikat_Dutta:
+  roles:
+  - opsgenie-standby
+  - test-engineer
+  teams:
+  - team-pos
+Sam_Lock:
+  roles:
+  - backend-developer
+  teams:
+  - team-devices-apps
+Samme_Kleijn:
+  roles:
+  - android-developer
+  - opsgenie-standby
+  teams:
+  - team-loyalty-and-savings
+Sander_de_Goeij:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-lists-orders-checkout
+Sander_van_den_Akker:
+  roles:
+  - frontend-developer
+  - opsgenie-standby
+  teams:
+  - team-assortment-and-search
+Sandjai_Ramasray:
+  roles:
+  - database-developer
+  - opsgenie-standby
+  teams:
+  - team-fulfillment-zaandam
+Sean_Fabries:
+  roles:
+  - labs-intern
+  teams:
+  - team-labs
+Sebas_Hospes:
+  roles:
+  - business-analyst
+  teams:
+  - team-baldr
+Sebastiaan_Hendriks:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-food-first-network
+Sem_Shafiq:
+  roles:
+  - ios-developer
+  - opsgenie-standby
+  teams:
+  - team-assortment-and-search
+Sepehr_Aliakbari:
+  roles:
+  - frontend-developer
+  - tech-lead
+  - opsgenie-standby
+  teams:
+  - team-cms-platform
+Serafin_Constan_Cebrian:
+  roles:
+  - product-owner
+  - opsgenie-standby
+  teams:
+  - team-messaging
+Serdar_Cinar:
+  roles:
+  - ios-developer
+  - ios-core-developer
+  - opsgenie-standby
+  teams:
+  - team-lists-orders-checkout
+Shailesh_Jain:
+  roles:
+  - opsgenie-standby
+  - backend-developer
+  teams:
+  - team-pos
+Sharon_Kneepkens:
+  roles:
+  - designer
+  teams:
+  - team-whats-for-dinner
+Shashin_Parikh:
+  roles:
+  - backend-developer
+  teams:
+  - team-messaging
+Shinu_Sunny:
+  roles:
+  - opsgenie-standby
+  - backend-developer
+  teams:
+  - team-pos
+Shouvik_Paul:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-waar
+  - team-loyalty-connect
+Shreelalita_Savant:
+  roles:
+  - backend-developer
+  teams:
+  - team-advendio
+Shubhangi_Jadhav:
+  roles:
+  - sre-engineer
+  - opsgenie-standby
+  teams:
+  - team-sre
+  - team-sre-pi
+  - team-sre-core
+Siarhei_Ankuda:
+  roles:
+  - android-developer
+  - opsgenie-standby
+  teams:
+  - team-promotions-and-inspiration
+Siarhei_Azarau:
+  roles:
+  - android-developer
+  - flutter-developer
+  - opsgenie-standby
+  teams:
+  - team-profile-and-onboarding
+Siarhei_Bareika:
+  roles:
+  - sre-engineer
+  - opsgenie-standby
+  teams:
+  - team-sre-pi
+  - team-sre
+  - team-sre-core
+Siarhei_Krukau:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-promotions-and-inspiration
+  - team-promotions-and-inspiration-backend
+Simon_Borst:
+  roles:
+  - backend-developer
+  teams:
+  - team-business-technology
+Simon_Grest:
+  roles:
+  - backend-developer
+  teams:
+  - team-fulfillment-zaandam
+Simona_Istrate:
+  roles:
+  - salesforce-developer
+  - opsgenie-standby
+  teams:
+  - team-salesforce-platform
+Sofia_Melo:
+  roles:
+  - outsystems-developer
+  teams:
+  - team-devices-apps
+Somdip_Sanyal:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-waar
+Sonee_Jaiswal:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-mechanization
+Sophie_Schoordijk:
+  roles:
+  - product-owner
+  teams:
+  - team-labs
+Stanislau_Shumilin:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-api-platform
+Stefan_Bresser:
+  roles:
+  - backend-developer
+  - scrum-master
+  - opsgenie-standby
+  - backend-core-developer
+  teams:
+  - team-self-service
+  - team-self-service-backend
+  - team-self-service-frontend
+Stefan_Katers:
+  roles:
+  - database-developer
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-delivery
+Stefan_Tijsen:
+  roles:
+  - head-of-tech
+  - opsgenie-standby
+  teams:
+  - team-management
+Sten_Admiraal:
+  roles:
+  - designer
+  teams:
+  - team-labs
+Stephan_Ditmar:
+  roles:
+  - test-engineer
+  - opsgenie-standby
+  teams:
+  - team-checkout-and-receipts
+  - team-payments
+  - team-checkout-and-payments
+Steven_Vriesinga:
+  roles:
+  - outsystems-developer
+  - opsgenie-standby
+  teams:
+  - team-forms-migration
+Stijn_Bokhove:
+  roles:
+  - product-owner
+  - backend-developer
+  teams:
+  - team-simplification
+  - team-bisons
+Stijn_Daams:
+  roles:
+  - product-owner
+  teams:
+  - team-sasma-platform
+Stijn_Meijerink:
+  roles: null
+  teams:
+  - team-hackathon-2022
+Stijn_Verhoeven:
+  roles:
+  - product-owner
+  teams:
+  - team-self-service
+Stjepan_Pavuna:
+  roles:
+  - salesforce-developer
+  teams:
+  - team-advendio
+Stuart_Thomas:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-promotions-and-inspiration
+  - team-promotions-and-inspiration-backend
+Subhadeep_Mondal:
+  roles:
+  - backend-developer
+  teams:
+  - team-waar
+Suhrid_Sarkar:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-waar
+  - team-loyalty-connect
+Suneel_Kumar:
+  roles:
+  - salesforce-developer
+  - opsgenie-standby
+  teams:
+  - team-salesforce-platform
+Sunil_Shetty:
+  roles:
+  - android-developer
+  - opsgenie-standby
+  teams:
+  - team-cms-platform
+Sven_Moller:
+  roles:
+  - incident-commander
+  - security-engineer
+  - opsgenie-standby
+  teams:
+  - team-sre
+  - team-sre-incident-command
+  - team-sre-security
+Sven_Mollinga:
+  roles:
+  - sre-engineer
+  - opsgenie-standby
+  teams:
+  - team-sre
+  - team-sre-oma
+  - team-sre-core
+Syed_Shah:
+  roles:
+  - security-engineer
+  teams:
+  - team-sre-security
+Tadeu_Passos:
+  roles:
+  - backend-developer
+  teams:
+  - team-business-technology
+Tamas_Major:
+  roles:
+  - backend-developer
+  teams:
+  - team-advendio
+Tatsiana_Filimonava:
+  roles:
+  - business-analyst
+  teams:
+  - team-promotions-and-inspiration
+Teddy_Etoeharnowo:
+  roles:
+  - sre-engineer
+  teams:
+  - team-sre
+  - team-sre-shc
+Tessa_Kooiman:
+  roles:
+  - designer
+  teams:
+  - team-ah-compact
+Theo_Asma:
+  roles:
+  - database-developer
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-finance-hr
+Thijmen_de_Valk:
+  roles:
+  - product-owner
+  - opsgenie-standby
+  teams:
+  - team-whats-for-dinner
+Thijs_Kaper:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-api-platform
+Thijs_van_Tol:
+  roles:
+  - standby-area-loyalty
+  - labs-ci-cd
+  - backend-developer
+  - opsgenie-standby
+  - backend-core-developer
+  teams:
+  - team-subscriptions
+Thimo_Soet:
+  roles:
+  - backend-developer
+  - labs-developer
+  - labs-ci-cd
+  - opsgenie-standby
+  teams:
+  - team-labs
+  - team-subscriptions
+Thom_Overhand:
+  roles:
+  - backend-developer
+  - appsearch-developer
+  - opsgenie-standby
+  teams:
+  - team-assortment-and-search
+  - team-product-search
+Thomas_Krupers:
+  roles:
+  - frontend-developer
+  - tech-lead
+  - opsgenie-standby
+  teams:
+  - team-lists-orders-checkout
+  - team-promotions-and-inspiration
+  - team-promotions-and-inspiration-frontend-web
+Thomas_Tromp:
+  roles:
+  - outsystems-developer
+  teams:
+  - team-devices-apps
+Thomas_de_Vries:
+  roles:
+  - sre-engineer
+  - opsgenie-standby
+  teams:
+  - team-sre-dxc
+  - team-sre
+  - team-sre-pi
+  - team-sre-core
+Tibor_Kovacs:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  - standby-area-loyalty
+  teams:
+  - team-loyalty-and-savings
+  - team-ah-compact-be
+Tijmen_Stor:
+  roles:
+  - labs-ci-cd
+  - labs-lead
+  - sre-engineer
+  - opsgenie-standby
+  teams:
+  - team-labs
+  - team-sre
+  - team-sre-re
+Tijs_Groenendaal:
+  roles:
+  - labs-intern
+  teams:
+  - team-labs
+Tim_Rosen:
+  roles:
+  - product-owner
+  teams:
+  - team-assortment-and-search
+Tim_Snijders:
+  roles:
+  - database-developer
+  - opsgenie-standby
+  teams:
+  - team-boff-slicing
+Timo_de_Boer:
+  roles:
+  - labs-intern
+  teams:
+  - team-labs
+Toby_Nijman:
+  roles:
+  - backend-developer
+  teams:
+  - team-finance-hr
+Tolga_Atmaca:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-assortment-and-search
+  - team-product
+Tom_Kennes:
+  roles:
+  - sre-engineer
+  - opsgenie-standby
+  teams:
+  - team-sre-oma
+  - team-sre
+  - team-sre-core
+  - team-sre-shc
+Tom_Klaver:
+  roles:
+  - frontend-developer
+  - opsgenie-standby
+  teams:
+  - team-api-platform
+Tomas_Kotterer:
+  roles:
+  - test-engineer
+  - opsgenie-standby
+  teams:
+  - team-profile-and-onboarding
+Tommy_Bank:
+  roles:
+  - labs-intern
+  teams:
+  - team-labs
+Ton_Nijkes:
+  roles:
+  - frontend-developer
+  - opsgenie-standby
+  teams:
+  - team-pos
+Tonino_Catapano:
+  roles:
+  - backend-developer
+  - appsearch-developer
+  - opsgenie-standby
+  teams:
+  - team-assortment-and-search
+  - team-product-search
+Trudy_Noordkamp:
+  roles:
+  - database-developer
+  - opsgenie-standby
+  teams:
+  - team-foff
+  - team-product
+Tuanjai_Sampannon:
+  roles:
+  - database-developer
+  - outsystems-developer
+  - opsgenie-standby
+  teams:
+  - team-forms-migration
+Tycho_van_Vondel:
+  roles:
+  - scrum-master
+  teams:
+  - team-subscriptions
+  - team-loyalty-connect
+  - team-profile-and-onboarding
+Tyron_Rosheuvel:
+  roles:
+  - customer-service-agent
+  teams:
+  - team-app-reviews
+Uladzimir_Barouski:
+  roles:
+  - database-developer
+  - backend-developer
+  - backend-developer-logistics
+  - opsgenie-standby
+  teams:
+  - team-fulfillment-minsk
+  - team-customer-interaction-data
+  - team-messaging
+Uladzislau_Abramchuk:
+  roles:
+  - ios-developer
+  - opsgenie-standby
+  teams:
+  - team-promotions-and-inspiration
+  - team-promotions-and-inspiration-frontend-app
+Valentijn_van_Den_Bos:
+  roles:
+  - product-owner
+  teams:
+  - team-subscriptions
+Valentin_Nesterov:
+  roles:
+  - frontend-developer
+  - opsgenie-standby
+  teams:
+  - team-checkout-and-receipts
+  - team-payments
+  - team-checkout-and-payments
+Valiantsin_Danilau:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-simplification
+  - team-bisons
+Varghese_Cherian:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-waar
+Vasili_Shkleinik:
+  roles:
+  - android-developer
+  - opsgenie-standby
+  teams:
+  - team-lists-orders-checkout
+Vencislav_Mateev:
+  roles:
+  - database-developer
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-fulfillment-minsk
+  - team-fulfillment-europe
+Vera_Matei:
+  roles:
+  - database-developer
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-delivery
+Viacheslav_Antonenko:
+  roles:
+  - android-developer
+  - opsgenie-standby
+  teams:
+  - team-lists-orders-checkout
+Vijay_Poetai:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-checkout-and-receipts
+  - team-payments
+  - team-checkout-and-payments
+Viktar_Semianchuk:
+  roles:
+  - ios-developer
+  - opsgenie-standby
+  teams:
+  - team-promotions-and-inspiration
+  - team-promotions-and-inspiration-frontend-app
+Viktor_Krechetov:
+  roles:
+  - flutter-developer
+  - opsgenie-standby
+  teams:
+  - team-food-first-network
+  - team-ah-compact-fe
+Viktor_Utkin:
+  roles:
+  - backend-developer
+  - sre-engineer
+  - opsgenie-standby
+  teams:
+  - team-messaging
+  - team-sre-db-and-streaming
+Viktoriia_Sokolova:
+  roles:
+  - android-developer
+  - opsgenie-standby
+  teams:
+  - team-loyalty-and-savings
+Vincent_Hoekstra:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-waar
+Vincent_Weber:
+  roles:
+  - frontend-developer
+  - tech-lead
+  - opsgenie-standby
+  teams:
+  - team-profile-and-onboarding
+Vincent_de_Jong:
+  roles:
+  - flutter-developer
+  - opsgenie-standby
+  teams:
+  - team-food-first-network
+Vincent_van_Tilborg:
+  roles:
+  - frontend-developer
+  - opsgenie-standby
+  teams:
+  - team-self-service
+  - team-self-service-frontend
+Vitali_Kisil:
+  roles:
+  - business-analyst
+  teams:
+  - team-lists-orders-checkout
+Vitalii_Shvetsov:
+  roles:
+  - ios-developer
+  - opsgenie-standby
+  teams:
+  - team-lists-orders-checkout
+Vivek_Pandey:
+  roles:
+  - salesforce-developer
+  - opsgenie-standby
+  teams:
+  - team-salesforce-platform
+Vladimir_Koptev:
+  roles:
+  - ios-developer
+  - flutter-developer
+  - opsgenie-standby
+  teams:
+  - team-subscriptions
+Vladyslav_Maksymenko:
+  roles:
+  - database-developer
+  - backend-developer
+  teams:
+  - team-replenishment
+Volha_Mlionik:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-food-first-network
+Vyacheslav_Evglevsky:
+  roles:
+  - backend-developer-logistics
+  teams:
+  - team-baldr
+Wilbert_Muhlenbruch:
+  roles:
+  - database-developer
+  teams:
+  - team-foff
+Wilco_Brandt:
+  roles: null
+  teams:
+  - team-management
+Wilco_van_Gog:
+  roles:
+  - frontend-developer
+  - opsgenie-standby
+  teams:
+  - team-profile-and-onboarding
+Wim_van_Mourik:
+  roles:
+  - database-developer
+  - backend-developer
+  - opsgenie-standby
+  - test-engineer
+  teams:
+  - team-fulfillment-zaandam
+Wouter_Vermeij:
+  roles:
+  - ios-developer
+  - ios-core-developer
+  - opsgenie-standby
+  teams:
+  - team-whats-for-dinner
+Yan_Lanna_Alexandre:
+  roles:
+  - backend-developer
+  - labs-developer
+  teams:
+  - team-checkout-and-receipts
+  - team-payments
+  - team-checkout-and-payments
+Yaroslav_Shukevich:
+  roles:
+  - database-developer
+  - backend-developer
+  - backend-developer-logistics
+  - opsgenie-standby
+  teams:
+  - team-fulfillment-minsk
+  - team-fulfillment-europe
+Yorick_Schellevis:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  - standby-area-loyalty
+  teams:
+  - team-subscriptions
+Yuliia_Kuchmasova:
+  roles:
+  - test-engineer
+  - opsgenie-standby
+  teams:
+  - team-order-management
+Yuliya_Loika:
+  roles:
+  - test-engineer
+  - opsgenie-standby
+  teams:
+  - team-assortment-and-search
+Yurendy_Casimir:
+  roles:
+  - sre-engineer
+  - opsgenie-standby
+  teams:
+  - team-sre
+  - team-sre-cloud-migration
+  - team-sre-database-admins
+  - team-sre-db-and-streaming
+Yury_Dolzhenko:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  - backend-core-developer
+  teams:
+  - team-promotions-and-inspiration
+  - team-promotions-and-inspiration-backend
+Yury_Shalin:
+  roles:
+  - ios-developer
+  - opsgenie-standby
+  teams:
+  - team-promotions-and-inspiration
+  - team-promotions-and-inspiration-frontend-app
+Yury_Yasiukevich:
+  roles:
+  - backend-developer
+  - opsgenie-standby
+  teams:
+  - team-messaging
+Zahra_Ahmadi:
+  roles:
+  - designer
+  teams:
+  - team-labs
+Zakaria_Ben_Abdessadak:
+  roles:
+  - ios-developer
+  - opsgenie-standby
+  teams:
+  - team-whats-for-dinner
+Zakaria_L'Ghdas:
+  roles: []
+  teams:
+  - team-iam-access-review
+Zana_Fuad:
+  roles:
+  - database-developer
+  - opsgenie-standby
+  teams:
+  - team-foff
+Zana_Jaf:
+  roles:
+  - backend-developer
+  - appsearch-developer
+  - opsgenie-standby
+  teams:
+  - team-assortment-and-search
+  - team-product-search

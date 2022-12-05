@@ -1,0 +1,12 @@
+---
+person:
+  name: Frank Van Eerden
+  pnl: IHWA525
+  teams:
+    - team-promotions-and-inspiration
+    - team-promotions-and-inspiration-backend
+    - team-customer-interaction-data
+  roles:
+    - backend-developer
+    - opsgenie-standby
+    - backend-core-developer

@@ -1,0 +1,11 @@
+---
+person:
+  name: Joost Hofman
+  pnl: pnljh890
+  teams:
+    - team-sre
+    - team-management
+  roles:
+    - sre-engineer
+    - head-of-tech
+    - opsgenie-standby

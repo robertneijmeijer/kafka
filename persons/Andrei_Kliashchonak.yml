@@ -1,0 +1,9 @@
+---
+person:
+  name: Andrei Kliashchonak
+  pnl: pnl09r0z
+  teams:
+    - team-simplification
+  roles:
+    - test-engineer
+    - opsgenie-standby

@@ -1,0 +1,9 @@
+---
+person:
+  name: Ivan Davletshin
+  pnl: pnl0pr84
+  teams:
+    - team-sre-re
+    - team-sre
+  roles:
+    - sre-engineer

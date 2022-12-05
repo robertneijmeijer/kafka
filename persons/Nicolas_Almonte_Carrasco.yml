@@ -1,0 +1,11 @@
+---
+person:
+  name: Nicolas Almonte Carrasco
+  pnl: pnl0sp1k
+  teams:
+    - team-checkout-and-receipts
+    - team-payments
+    - team-checkout-and-payments
+  roles:
+    - test-engineer
+    - opsgenie-standby

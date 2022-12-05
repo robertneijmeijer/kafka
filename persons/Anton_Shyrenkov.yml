@@ -1,0 +1,10 @@
+---
+person:
+  name: Anton Shyrenkov
+  pnl: pnl0qo2r
+  teams:
+    - team-delivery
+  roles:
+    - database-developer
+    - backend-developer
+    - opsgenie-standby

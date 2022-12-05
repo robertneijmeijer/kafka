@@ -1,0 +1,10 @@
+---
+person:
+  name: Paul Hofstee
+  pnl: ihwa895
+  teams:
+    - team-delivery
+  roles:
+    - database-developer
+    - backend-developer
+    - opsgenie-standby

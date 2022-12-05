@@ -1,0 +1,9 @@
+---
+person:
+  name: Michelle Vos
+  pnl: pnl0v687
+  teams:
+    - team-cms-platform
+  roles:
+    - backend-developer
+    - opsgenie-standby

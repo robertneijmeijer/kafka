@@ -1,0 +1,11 @@
+---
+person:
+  name: Luuk Stevens
+  pnl: pnl08d2y
+  teams:
+    - team-labs
+  roles:
+    - backend-developer
+    - labs-ci-cd
+    - labs-lead
+    - opsgenie-standby

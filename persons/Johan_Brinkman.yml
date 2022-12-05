@@ -1,0 +1,9 @@
+---
+person:
+  name: Johan Brinkman
+  pnl: pnl0v72a
+  teams:
+    - team-lists-orders-checkout
+  roles:
+    - scrum-master
+    - opsgenie-standby

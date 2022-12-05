@@ -1,0 +1,10 @@
+---
+person:
+  name: Anastasiya Kernoga
+  pnl: pnl0qx5l
+  teams:
+    - team-ah-compact
+    - team-ah-compact-be
+  roles:
+    - backend-developer
+    - opsgenie-standby

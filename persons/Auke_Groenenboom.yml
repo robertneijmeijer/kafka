@@ -1,0 +1,10 @@
+---
+person:
+  name: Auke Groenenboom
+  pnl: pnl0oy2w
+  teams:
+    - team-boff-slicing
+    - team-mechanization
+  roles:
+    - product-owner
+    - opsgenie-standby

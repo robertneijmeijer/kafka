@@ -1,0 +1,12 @@
+---
+person:
+  name: Martijn Santen
+  pnl: pnl0lr70
+  teams:
+    - team-sre-dxc
+    - team-sre
+    - team-sre-pi
+    - team-sre-core
+  roles:
+    - sre-engineer
+    - opsgenie-standby

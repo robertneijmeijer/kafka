@@ -1,0 +1,11 @@
+---
+person:
+  name: Jan Athmer
+  pnl: pnlja171
+  teams:
+    - team-fulfillment-minsk
+    - team-fulfillment-europe
+  roles:
+    - database-developer
+    - backend-developer
+    - opsgenie-standby

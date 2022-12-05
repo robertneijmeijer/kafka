@@ -1,0 +1,10 @@
+---
+person:
+  name: Oleksandr Loushkin
+  pnl: pnl0r42u
+  teams:
+    - team-assortment-and-search
+    - team-product
+  roles:
+    - backend-developer
+    - opsgenie-standby

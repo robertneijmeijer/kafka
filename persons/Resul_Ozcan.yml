@@ -1,0 +1,10 @@
+---
+person:
+  name: Resul Ozcan
+  pnl: pnl0to3p
+  teams:
+    - team-demand-and-capacity
+  roles:
+    - database-developer
+    - backend-developer
+    - opsgenie-standby

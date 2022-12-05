@@ -1,0 +1,10 @@
+---
+person:
+  name: Roos Bakker
+  pnl: pnl0bg1z
+  teams:
+    - team-subscriptions
+  roles:
+    - test-engineer
+    - opsgenie-standby
+    - standby-area-loyalty

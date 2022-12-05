@@ -1,0 +1,12 @@
+---
+person:
+  name: Laszlo Igaz
+  pnl: pnl0e850
+  teams:
+    - team-ah-compact
+    - team-ah-compact-be
+    - team-subscriptions
+  roles:
+    - backend-developer
+    - opsgenie-standby
+    - standby-area-loyalty

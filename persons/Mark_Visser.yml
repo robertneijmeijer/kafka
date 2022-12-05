@@ -1,0 +1,11 @@
+---
+person:
+  name: Mark Visser
+  pnl: pnl0lz8t
+  teams:
+    - team-sre
+    - team-sre-oma
+    - team-sre-core
+  roles:
+    - sre-engineer
+    - opsgenie-standby

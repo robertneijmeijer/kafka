@@ -1,0 +1,10 @@
+---
+person:
+  name: Philip Ivanov
+  pnl: pnl0eu28
+  teams:
+    - team-fulfillment-minsk
+  roles:
+    - scrum-master
+    - backend-developer
+    - opsgenie-standby

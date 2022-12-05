@@ -1,0 +1,11 @@
+---
+person:
+  name: Borja Jose Sader Neumann
+  pnl: pnl0vv31
+  teams:
+    - team-checkout-and-payments
+    - team-payments
+    - team-checkout-and-receipts
+  roles:
+    - backend-developer
+    - opsgenie-standby

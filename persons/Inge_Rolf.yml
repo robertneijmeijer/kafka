@@ -1,0 +1,9 @@
+---
+person:
+  name: Inge Rolf
+  pnl: pnl0rl9l
+  teams:
+    - team-foff
+  roles:
+    - product-owner
+    - opsgenie-standby

@@ -1,0 +1,10 @@
+---
+person:
+  name: Stefan Katers
+  pnl: pnl0vh3s
+  teams:
+    - team-delivery
+  roles:
+    - database-developer
+    - backend-developer
+    - opsgenie-standby

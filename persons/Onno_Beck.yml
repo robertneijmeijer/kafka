@@ -1,0 +1,9 @@
+---
+person:
+  name: Onno Beck
+  pnl: pnl0nb6b
+  teams:
+    - team-fulfillment-zaandam
+  roles:
+    - scrum-master
+    - opsgenie-standby

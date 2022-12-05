@@ -1,0 +1,10 @@
+---
+person:
+  name: Robert Wan
+  pnl: ihwa186
+  teams:
+    - team-finance-hr
+  roles:
+    - database-developer
+    - backend-developer
+    - opsgenie-standby

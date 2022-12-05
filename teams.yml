@@ -1,0 +1,219 @@
+team-advendio:
+  area: Ad Tech cluster
+  description: Team Advendio
+team-ah-compact:
+  description: Team AH Compact
+team-ah-compact-be:
+  description: Team AH Compact (Back-End)
+team-ah-compact-fe:
+  description: Team AH Compact (Front-End)
+team-ah-compact-qa:
+  description: Team AH Compact (QA)
+team-api-platform:
+  area: Enablement
+  description: Team API platform (Enabling)
+team-app-reviews:
+  area: Customer and Loyalty
+  description: App Reviews Customer Service Agents
+team-asgard:
+  area: Enabling and eCommerce Backoffice
+  description: Team Asgard (platform team)
+team-assortment-and-search:
+  area: Shopping
+  description: Team Assortment and Search
+team-baldr:
+  area: Logistics
+  description: Team Baldr
+team-belgium:
+  description: Team Belgium (Web)
+team-bisons:
+  area: Marketing and Inspire
+  description: Team Bisons (Customer Messaging)
+team-boff-slicing:
+  area: Logistics
+  description: Team BOFF Slicing
+team-business-technology:
+  area: General
+  description: Team Business Technology Consultancy
+team-checkout-and-payments:
+  area: Checkout and Payments
+  description: Checkout and Payments
+team-checkout-and-receipts:
+  area: Checkout and Receipts
+  description: Team Checkout & Receipts
+team-cms-platform:
+  area: Inspire
+  description: Team CMS Platform
+team-comkal:
+  area: Marketing
+  description: Team ComKal
+team-communication:
+  area: Support
+  description: Team Communication
+team-customer-interaction-data:
+  area: Enablement
+  description: Team Customer Interaction Data
+team-delivery:
+  area: Logistics
+  description: Team Delivery
+team-demand-and-capacity:
+  area: Logistics
+  description: Team Demand and Capacity
+team-devices-apps:
+  area: Logistics
+  description: Team Devices and Apps
+team-finance-hr:
+  area: Logistics
+  description: Team Finance and HR
+team-foff:
+  area: Enablement
+  description: Team FOFF
+team-food-first-network:
+  area: Marketing and Inspire
+  description: Team Food First Network
+team-forms-migration:
+  area: Logistics
+  description: Team Forms migration
+team-fulfillment-europe:
+  area: Logistics
+  description: Team Fulfillment (Europe)
+team-fulfillment-minsk:
+  area: Logistics
+  description: Team Fulfillment (Minsk)
+team-fulfillment-zaandam:
+  area: Logistics
+  description: Team Fulfillment (Zaandam)
+team-hackathon-2022:
+  description: Temporary team for Hackathon 2022
+team-iam-access-review:
+  area: Customer Technology Platform
+  description: The team that owns the Identity Access Management / Role assignment
+    approval for teams as code.
+team-labs:
+  area: Labs
+  description: Team Labs
+team-lists-orders-checkout:
+  area: Shopping
+  description: Team Lists Orders Checkout
+team-loyalty-and-savings:
+  area: Customer and Loyalty
+  description: Team Loyalty and Savings
+team-loyalty-connect:
+  area: Loyalty and Customer
+  description: Team Loyalty Connect
+team-management:
+  area: General
+  description: Team Management
+team-mechanization:
+  area: Logistics
+  description: Team Mechanization
+team-messaging:
+  area: Enablement
+  description: Team Platform Messaging (Enabling)
+team-order-management:
+  area: Logistics
+  description: Team Order Management
+team-payments:
+  area: Payments
+  description: Team Payments
+team-payments-and-subscriptions:
+  area: Customer and Loyalty
+  description: Team Payments and Subscriptions
+team-pmo:
+  area: Enablers
+  description: Team Project Management Office
+team-pos:
+  area: Checkout and Payments
+  description: Team Point of Sale
+team-product:
+  area: Shopping
+  description: Team product
+team-product-search:
+  area: Shopping
+  description: Team product search
+team-profile-and-onboarding:
+  area: Customer and Loyalty
+  description: Team Profile & Onboarding
+team-promotions-and-inspiration:
+  area: Inspire
+  description: Team Promotions and Inspiration
+team-promotions-and-inspiration-backend:
+  area: Inspire
+  description: Team Promotions and Inspiration - Backend
+team-promotions-and-inspiration-frontend-app:
+  area: Inspire
+  description: Team Promotions and Inspiration - Frontend App
+team-promotions-and-inspiration-frontend-web:
+  area: Inspire
+  description: Team Promotions and Inspiration - Frontend Web
+team-replenishment:
+  area: Logistics
+  description: Team Replenishment (Logistics)
+team-salesforce-platform:
+  area: Customer and Loyalty
+  description: Team Salesforce platform
+team-sasma-platform:
+  area: Marketing and Inspire
+  description: Team SAS MA Platform
+team-self-service:
+  area: Customer and Loyalty
+  description: Team Self Service
+team-self-service-backend:
+  area: Customer and Loyalty
+  description: Team Self Service - Backend devs
+team-self-service-frontend:
+  area: Customer and Loyalty
+  description: Team Self Service - Frontend devs
+team-simplification:
+  area: Enablement
+  description: Team Simplification (Enabling)
+team-sre:
+  area: SRE
+  description: Team SRE
+team-sre-cloud-migration:
+  area: SRE
+  description: Team Cloud Migration (SRE)
+team-sre-core:
+  area: SRE
+  description: Team SRE Core
+team-sre-database-admins:
+  area: SRE
+  description: Team Database Administrators (SRE)
+team-sre-db-and-streaming:
+  area: SRE
+  description: Team Database and Streaming (SRE)
+team-sre-dxc:
+  area: SRE
+  description: Team DXC (SRE)
+team-sre-incident-command:
+  area: SRE
+  description: Team Incident Commander (SRE)
+team-sre-oma:
+  area: SRE
+  description: Team Observability, Monitoring and Alerting (SRE)
+team-sre-pi:
+  area: SRE
+  description: Team Platform & Infrastructure (SRE)
+team-sre-qa-enablement:
+  area: SRE
+  description: Team SRE QA Enablement
+team-sre-re:
+  area: SRE
+  description: Team Release Engineering (SRE)
+team-sre-security:
+  area: SRE
+  description: Team Security (SRE)
+team-sre-shc:
+  area: SRE
+  description: Team ShadowCat (SRE)
+team-subscriptions:
+  area: Customer and Loyalty
+  description: Team Subscriptions
+team-tools-sonarqube:
+  description: Team Tools Sonarqube
+team-waar:
+  area: Inspire
+  description: Team Waar
+team-whats-for-dinner:
+  area: Inspire
+  description: Team Whats for dinner

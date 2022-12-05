@@ -1,0 +1,10 @@
+---
+person:
+  name: Roman Kulijev
+  pnl: pnl0m98u
+  teams:
+    - team-boff-slicing
+  roles:
+    - database-developer
+    - backend-developer
+    - opsgenie-standby

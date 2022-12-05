@@ -1,0 +1,12 @@
+---
+person:
+  name: Aleksandr Gonchar
+  pnl: pnl0fq3j
+  teams:
+    - team-fulfillment-minsk
+    - team-fulfillment-europe
+  roles:
+    - database-developer
+    - backend-developer
+    - backend-developer-logistics
+    - opsgenie-standby

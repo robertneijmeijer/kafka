@@ -1,0 +1,10 @@
+---
+person:
+  name: Marcel Wetzels
+  pnl: icdb013
+  teams:
+    - team-fulfillment-zaandam
+  roles:
+    - ops-engineer
+    - backend-developer
+    - opsgenie-standby

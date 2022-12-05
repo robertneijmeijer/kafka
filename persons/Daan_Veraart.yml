@@ -1,0 +1,9 @@
+---
+person:
+  name: Daan Veraart
+  pnl: pnldv212
+  teams:
+    - team-replenishment
+  roles:
+    - database-developer
+    - opsgenie-standby

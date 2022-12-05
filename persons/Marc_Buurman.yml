@@ -1,0 +1,9 @@
+---
+person:
+  name: Marc Buurman
+  pnl: pnl0tb54
+  teams:
+    - team-salesforce-platform
+    - team-self-service
+  roles:
+    - product-owner

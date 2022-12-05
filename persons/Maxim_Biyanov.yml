@@ -1,0 +1,10 @@
+---
+person:
+  name: Maxim Biyanov
+  pnl: pnl0es0a
+  teams:
+    - team-food-first-network
+  roles:
+    - flutter-developer
+    - backend-developer
+    - opsgenie-standby

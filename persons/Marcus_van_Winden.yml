@@ -1,0 +1,9 @@
+---
+person:
+  name: Marcus van Winden
+  pnl: pnl0s86f
+  teams:
+    - team-lists-orders-checkout
+  roles:
+    - frontend-developer
+    - opsgenie-standby

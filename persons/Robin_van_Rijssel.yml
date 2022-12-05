@@ -1,0 +1,9 @@
+---
+person:
+  name: Robin van Rijssel
+  pnl: ihwa039
+  teams:
+    - team-subscriptions
+  roles:
+    - backend-developer
+    - opsgenie-standby

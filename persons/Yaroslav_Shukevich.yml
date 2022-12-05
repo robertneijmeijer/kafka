@@ -1,0 +1,12 @@
+---
+person:
+  name: Yaroslav Shukevich
+  pnl: pnl0pl0z
+  teams:
+    - team-fulfillment-minsk
+    - team-fulfillment-europe
+  roles:
+    - database-developer
+    - backend-developer
+    - backend-developer-logistics
+    - opsgenie-standby

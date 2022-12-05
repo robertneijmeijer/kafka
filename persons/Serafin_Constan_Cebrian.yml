@@ -1,0 +1,9 @@
+---
+person:
+  name: Serafin Constan Cebrian
+  pnl: pnlsc220
+  teams:
+    - team-messaging
+  roles:
+    - product-owner
+    - opsgenie-standby

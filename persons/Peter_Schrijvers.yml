@@ -1,0 +1,9 @@
+---
+person:
+  name: Peter Schrijvers
+  pnl: ILMM170
+  teams:
+    - team-foff
+  roles:
+    - database-developer
+    - opsgenie-standby

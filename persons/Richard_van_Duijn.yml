@@ -1,0 +1,12 @@
+---
+person:
+  name: Richard van Duijn
+  pnl: pnl0ns5l
+  teams:
+    - team-checkout-and-receipts
+    - team-payments
+    - team-checkout-and-payments
+  roles:
+    - frontend-developer
+    - backend-developer
+    - opsgenie-standby

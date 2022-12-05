@@ -1,0 +1,11 @@
+---
+person:
+  name: Zana Jaf
+  pnl: pnlzj011
+  teams:
+    - team-assortment-and-search
+    - team-product-search
+  roles:
+    - backend-developer
+    - appsearch-developer
+    - opsgenie-standby

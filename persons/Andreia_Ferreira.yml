@@ -1,0 +1,11 @@
+---
+person:
+  name: Andreia Ferreira
+  pnl: pnl0ss5v
+  teams:
+    - team-checkout-and-receipts
+    - team-payments
+    - team-checkout-and-payments
+  roles:
+    - android-developer
+    - opsgenie-standby

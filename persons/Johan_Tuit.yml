@@ -1,0 +1,11 @@
+---
+person:
+  name: Johan Tuit
+  pnl: pnljt231
+  teams:
+    - team-foff
+    - team-simplification
+    - team-subscriptions
+  roles:
+    - database-developer
+    - opsgenie-standby

@@ -1,0 +1,12 @@
+---
+person:
+  name: Bas Stavenuiter
+  pnl: pnl0l68h
+  teams:
+    - team-sre
+    - team-sre-cloud-migration
+    - team-sre-database-admins
+    - team-sre-db-and-streaming
+  roles:
+    - sre-engineer
+    - opsgenie-standby

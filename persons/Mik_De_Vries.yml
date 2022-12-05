@@ -1,0 +1,10 @@
+---
+person:
+  name: Mik De Vries
+  pnl: pnl0hb16
+  teams:
+    - team-promotions-and-inspiration
+    - team-promotions-and-inspiration-frontend-web
+  roles:
+    - frontend-developer
+    - opsgenie-standby

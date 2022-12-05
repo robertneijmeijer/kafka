@@ -1,0 +1,9 @@
+---
+person:
+  name: Thijmen de Valk
+  pnl: pnl0gq7e
+  teams:
+    - team-whats-for-dinner
+  roles:
+    - product-owner
+    - opsgenie-standby

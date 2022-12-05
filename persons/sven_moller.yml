@@ -1,0 +1,12 @@
+---
+person:
+  name: Sven Moller
+  pnl: pnl0vv41
+  teams:
+    - team-sre
+    - team-sre-incident-command
+    - team-sre-security
+  roles:
+    - incident-commander
+    - security-engineer
+    - opsgenie-standby

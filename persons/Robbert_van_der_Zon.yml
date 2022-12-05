@@ -1,0 +1,10 @@
+---
+person:
+  name: Robbert van der Zon
+  pnl: pnl0t215
+  teams:
+    - team-demand-and-capacity
+  roles:
+    - database-developer
+    - backend-developer
+    - opsgenie-standby

@@ -1,0 +1,9 @@
+---
+person:
+  name: Jurgen Kervezee
+  pnl: pnl0966w
+  teams:
+    - team-devices-apps
+  roles:
+    - database-developer
+    - opsgenie-standby

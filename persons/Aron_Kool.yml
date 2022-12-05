@@ -1,0 +1,11 @@
+---
+person:
+  name: Aron Kool
+  pnl: pnl0gi2r
+  teams:
+    - team-checkout-and-receipts
+    - team-payments
+    - team-checkout-and-payments
+  roles:
+    - ios-developer
+    - opsgenie-standby

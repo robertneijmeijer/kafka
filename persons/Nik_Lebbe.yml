@@ -1,0 +1,10 @@
+---
+person:
+  name: Nik Lebbe
+  pnl: pnl0854q
+  teams:
+    - team-loyalty-connect
+  roles:
+    - product-owner
+    - opsgenie-standby
+    - test-engineer

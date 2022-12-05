@@ -1,0 +1,10 @@
+---
+person:
+  name: Vincent van Tilborg
+  pnl: pnl0cd63
+  teams:
+    - team-self-service
+    - team-self-service-frontend
+  roles:
+    - frontend-developer
+    - opsgenie-standby

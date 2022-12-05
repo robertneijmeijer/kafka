@@ -1,0 +1,11 @@
+---
+person:
+  name: Baidyanath Nayak
+  pnl: pnl0da1c
+  teams:
+    - team-waar
+    - team-loyalty-connect
+  roles:
+    - backend-developer
+    - opsgenie-standby
+    - scrum-master

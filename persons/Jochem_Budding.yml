@@ -1,0 +1,10 @@
+---
+person:
+  name: Jochem Budding
+  pnl: pnl0lv2w
+  teams:
+    - team-delivery
+  roles:
+    - database-developer
+    - backend-developer
+    - opsgenie-standby

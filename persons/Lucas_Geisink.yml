@@ -1,0 +1,9 @@
+---
+person:
+  name: Lucas Geisink
+  pnl: pnl0mo8o
+  teams:
+    - team-sre
+    - team-sre-core
+  roles:
+    - sre-engineer

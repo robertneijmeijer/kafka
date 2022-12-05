@@ -1,0 +1,9 @@
+---
+person:
+  name: Miguel Cabrita
+  pnl: pnl0m00m
+  teams:
+    - team-whats-for-dinner
+  roles:
+    - android-developer
+    - opsgenie-standby

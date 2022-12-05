@@ -1,0 +1,11 @@
+---
+person:
+  name: Wim van Mourik
+  pnl: pnl0rv4w
+  teams:
+    - team-fulfillment-zaandam
+  roles:
+    - database-developer
+    - backend-developer
+    - opsgenie-standby
+    - test-engineer

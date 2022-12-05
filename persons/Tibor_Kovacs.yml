@@ -1,0 +1,11 @@
+---
+person:
+  name: Tibor Kovacs
+  pnl: pnl0s252
+  teams:
+    - team-loyalty-and-savings
+    - team-ah-compact-be
+  roles:
+    - backend-developer
+    - opsgenie-standby
+    - standby-area-loyalty

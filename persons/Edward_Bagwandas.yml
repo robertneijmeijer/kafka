@@ -1,0 +1,10 @@
+---
+person:
+  name: Edward Bagwandas
+  pnl: pnleb557
+  teams:
+    - team-forms-migration
+  roles:
+    - database-developer
+    - outsystems-developer
+    - opsgenie-standby

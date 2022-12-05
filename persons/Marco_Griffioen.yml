@@ -1,0 +1,10 @@
+---
+person:
+  name: Marco Griffioen
+  pnl: pnl07d9t
+  teams:
+    - team-order-management
+  roles:
+    - database-developer
+    - backend-developer
+    - opsgenie-standby

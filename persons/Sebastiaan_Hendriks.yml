@@ -1,0 +1,9 @@
+---
+person:
+  name: Sebastiaan Hendriks
+  pnl: PNL0S94T
+  teams:
+    - team-food-first-network
+  roles:
+    - backend-developer
+    - opsgenie-standby

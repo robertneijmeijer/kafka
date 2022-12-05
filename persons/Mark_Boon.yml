@@ -1,0 +1,9 @@
+---
+person:
+  name: Mark Boon
+  pnl: pnl0lt0y
+  teams:
+    - team-whats-for-dinner
+  roles:
+    - test-engineer
+    - opsgenie-standby

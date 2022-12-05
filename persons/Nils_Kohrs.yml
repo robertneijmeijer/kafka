@@ -1,0 +1,10 @@
+---
+person:
+  name: Nils Kohrs
+  pnl: pnl0tn2u
+  teams:
+    - team-waar
+    - team-loyalty-connect
+  roles:
+    - backend-developer
+    - opsgenie-standby

@@ -1,0 +1,10 @@
+---
+person:
+  name: Gunilla de Wit
+  pnl: pnl0c28m
+  teams:
+    - team-forms-migration
+  roles:
+    - database-developer
+    - outsystems-developer
+    - opsgenie-standby

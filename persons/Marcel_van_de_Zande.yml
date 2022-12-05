@@ -1,0 +1,10 @@
+---
+person:
+  name: Marcel van de Zande
+  pnl: pnl0vv44
+  teams:
+    - team-sre
+    - team-sre-incident-command
+  roles:
+    - incident-commander
+    - opsgenie-standby

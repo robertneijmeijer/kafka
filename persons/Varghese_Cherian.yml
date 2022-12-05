@@ -1,0 +1,9 @@
+---
+person:
+  name: Varghese Cherian
+  pnl: pnl00t6d
+  teams:
+    - team-waar
+  roles:
+    - backend-developer
+    - opsgenie-standby

@@ -1,0 +1,10 @@
+---
+person:
+  name: Wouter Vermeij
+  pnl: pnl0p88d
+  teams:
+    - team-whats-for-dinner
+  roles:
+    - ios-developer
+    - ios-core-developer
+    - opsgenie-standby

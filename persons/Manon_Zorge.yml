@@ -1,0 +1,9 @@
+---
+person:
+  name: Manon Zorge
+  pnl: pnl0n18z
+  teams:
+    - team-baldr
+  roles:
+    - scrum-master
+    - opsgenie-standby

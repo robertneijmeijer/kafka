@@ -1,0 +1,10 @@
+---
+person:
+  name: Rewiesh RamcHaran
+  pnl: pnl0v39f
+  teams:
+    - team-mechanization
+  roles:
+    - database-developer
+    - backend-developer
+    - opsgenie-standby

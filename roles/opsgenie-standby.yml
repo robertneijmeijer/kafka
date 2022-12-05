@@ -1,0 +1,4 @@
+---
+role:
+  name: opsgenie-standby
+  description: OpsGenie access

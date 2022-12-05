@@ -1,0 +1,9 @@
+---
+person:
+  name: Arjen Breur
+  pnl: pnl0ds7a
+  teams:
+    - team-api-platform
+    - team-customer-interaction-data
+  roles:
+    - product-owner

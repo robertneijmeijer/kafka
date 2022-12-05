@@ -1,0 +1,12 @@
+---
+person:
+  name: Michel van Gelderen
+  pnl: pnl0l74o
+  teams:
+    - team-sre
+    - team-sre-dxc
+    - team-sre-database-admins
+    - team-sre-db-and-streaming
+  roles:
+    - sre-engineer
+    - opsgenie-standby

@@ -1,0 +1,9 @@
+---
+person:
+  name: Levi Gibson
+  pnl: pnl0rm3b
+  teams:
+    - team-foff
+  roles:
+    - backend-developer
+    - opsgenie-standby

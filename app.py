@@ -143,6 +143,22 @@ def add_value(key):
       YAML_DATA['containers'][0][key] = "Azure Cloud"
     elif(key == 'team'):
       YAML_DATA['containers'][0][key] = find_team()
+    elif(key == 'productOwner'):
+      YAML_DATA['containers'][0][key] = find_product_owner()
+    elif(key == 'maxSeverityLevel'):
+        mcv = YAML_DATA['containers'][0]["mcv"]
+        if mcv == "Highly business critical":
+            YAML_DATA['containers'][0][key] = 1
+        elif mcv == "Business critical":
+            YAML_DATA['containers'][0][key] = 2
+        elif mcv == "Not business critical":
+            YAML_DATA['containers'][0][key] = 3
+        else :
+            YAML_DATA['containers'][0][key] = 4
+
+def find_product_owner():
+
+    return None
 
 def find_team():
     log.info('finding team')
@@ -164,22 +180,26 @@ schema_val = {
 
     "containers": [{
         "name": str,
-        "sysnonyms": str,
+        "synonyms": str,
         "description": str,
         Optional("technology", default= lambda : add_value('technology')): str,
         Optional("team", default= lambda : add_value('team')): str,
+        Optional("productOwner", default= lambda : add_value('productOwner')): str,
         "applicationType": Or("Business", "Customer Facing", "External Service", "Infrastructure", "Interface", "Office", "Tool", "Unknown"),
         Optional("hostedAt", default = lambda : add_value('hostedAt')): Or("Amazon Web Services (AWS Cloud)", "AT&T", "Azure CF1", "Azure CF2", "Azure Cloud", "DXC", "Equinix", "Google Cloud Platform", "Hybric", "Inlumi", "Local server", "Multi-Cloud", "Not Applicable", "Other", "Salesforce", "ServiceNow", "Solvinity", "Unit4", "Unknown", "User device", "Azure"),
         "deploymentModel": Or("BPO", "CaaS", "IaaS", "On-Premise", "PaaS", "SaaS"),
-        "personalData": bool,
-        "confidentiality": str,
-        "mcv": Or("Highly business critical", "Business critical", "Not business critical", "Not applicable"),
-        "maxSeverityLevel": Or(1,2,3,4, "Not applicable"),
+        "dataConfidentiality" : {
+            "containsPersonalData": bool,
+            "containsFinancialData": bool,
+            "publiclyExposed": bool,
+            "restrictedAccess": bool,
+        },
+        "missionCriticality": Or("Highly business critical", "Business critical", "Not business critical", "Not applicable"),
+        Optional("maxSeverityLevel", default= lambda : add_value('maxSeverityLevel')): Or(1,2,3,4, "Not applicable"),
         Optional("icfr", default= lambda : add_value('icfr')): bool,
         "assignementGroup": str,
         # operational = deployed to prod, pipelined = in development not yet released
         "operationalStatus": Or("Pipelined", "Operational", "Non-Operational", "Submitted for decommissioning", "Decommissioned", "In decommissioning process"),
-        "environments": Or("nl", "be"),
         "components": {
             "name": str,
             "description": str,

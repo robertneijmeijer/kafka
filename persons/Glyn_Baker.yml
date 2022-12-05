@@ -1,0 +1,11 @@
+---
+person:
+  name: Glyn Baker
+  pnl: pnl0mz9h
+  teams:
+    - team-checkout-and-receipts
+    - team-payments
+    - team-checkout-and-payments
+  roles:
+    - test-engineer
+    - opsgenie-standby

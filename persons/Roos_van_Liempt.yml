@@ -1,0 +1,10 @@
+---
+person:
+  name: Roos van Liempt
+  pnl: PNL0so56
+  teams:
+    - team-checkout-and-receipts
+    - team-payments
+    - team-checkout-and-payments
+  roles:
+    - product-owner

@@ -1,0 +1,11 @@
+---
+person:
+  name: Reinier Timmer
+  pnl: pnlrt168
+  teams:
+    - team-sre-re
+    - team-sre
+    - team-sre-core
+  roles:
+    - sre-engineer
+    - opsgenie-standby

@@ -1,0 +1,11 @@
+---
+person:
+  name: Eric Valk
+  pnl: pnl0nh96
+  teams:
+    - team-fulfillment-zaandam
+  roles:
+    - database-developer
+    - backend-developer-logistics
+    - backend-developer
+    - opsgenie-standby

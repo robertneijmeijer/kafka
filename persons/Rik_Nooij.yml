@@ -1,0 +1,9 @@
+---
+person:
+  name: Rik Nooij
+  pnl: pnl0er4p
+  teams:
+    - team-delivery
+  roles:
+    - product-owner
+    - opsgenie-standby

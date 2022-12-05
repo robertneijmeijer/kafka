@@ -1,0 +1,10 @@
+---
+person:
+  name: Ruben de Vries
+  pnl: pnl0NA16
+  teams:
+    - team-order-management
+  roles:
+    - database-developer
+    - backend-developer
+    - opsgenie-standby

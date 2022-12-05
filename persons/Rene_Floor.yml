@@ -1,0 +1,10 @@
+---
+person:
+  name: Rene Floor
+  pnl: pnl0n00k
+  teams:
+    - team-ah-compact
+    - team-ah-compact-fe
+  roles:
+    - flutter-developer
+    - opsgenie-standby

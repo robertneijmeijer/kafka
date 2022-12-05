@@ -1,0 +1,10 @@
+---
+person:
+  name: Keung Yuen
+  pnl: pnl0mr8a
+  teams:
+    - team-fulfillment-zaandam
+  roles:
+    - database-developer
+    - backend-developer
+    - opsgenie-standby

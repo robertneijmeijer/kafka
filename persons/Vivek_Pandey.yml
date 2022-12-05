@@ -1,0 +1,9 @@
+---
+person:
+  name: Vivek Pandey
+  pnl: pnl0rm82
+  teams:
+    - team-salesforce-platform
+  roles:
+    - salesforce-developer
+    - opsgenie-standby

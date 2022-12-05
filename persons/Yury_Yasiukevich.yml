@@ -1,0 +1,9 @@
+---
+person:
+  name: Yury Yasiukevich
+  pnl: pnl0g102
+  teams:
+    - team-messaging
+  roles:
+    - backend-developer
+    - opsgenie-standby

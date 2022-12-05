@@ -1,0 +1,10 @@
+---
+person:
+  name: Menno Luiten
+  pnl: pnl0eu25
+  teams:
+    - team-delivery
+  roles:
+    - database-developer
+    - backend-developer
+    - opsgenie-standby

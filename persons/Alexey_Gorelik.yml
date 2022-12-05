@@ -1,0 +1,9 @@
+---
+person:
+  name: Alexey Gorelik
+  pnl: pnl0hy28
+  teams:
+    - team-payments-and-subscriptions
+  roles:
+    - backend-developer
+    - opsgenie-standby

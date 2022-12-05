@@ -1,0 +1,10 @@
+---
+person:
+  name: Alex Sijm
+  pnl: pnl08m4d
+  teams:
+    - team-lists-orders-checkout
+    - team-customer-interaction-data
+  roles:
+    - test-engineer
+    - opsgenie-standby

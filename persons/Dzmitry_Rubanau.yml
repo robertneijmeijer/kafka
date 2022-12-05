@@ -1,0 +1,10 @@
+---
+person:
+  name: Dzmitry Rubanau
+  pnl: pnl0qh3p
+  teams:
+    - team-messaging
+  roles:
+    - agile-lead
+    - scrum-master
+    - opsgenie-standby

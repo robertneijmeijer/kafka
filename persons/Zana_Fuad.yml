@@ -1,0 +1,9 @@
+---
+person:
+  name: Zana Fuad
+  pnl: pnl0lo8f
+  teams:
+    - team-foff
+  roles:
+    - database-developer
+    - opsgenie-standby

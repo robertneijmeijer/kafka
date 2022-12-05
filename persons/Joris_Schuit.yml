@@ -1,0 +1,12 @@
+---
+person:
+  name: Joris Schuit
+  pnl: pnljs07t
+  teams:
+    - team-sre
+    - team-sre-incident-command
+    - team-sre-security
+  roles:
+    - incident-commander
+    - security-engineer
+    - opsgenie-standby

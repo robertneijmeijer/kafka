@@ -1,0 +1,10 @@
+---
+person:
+  name: Pavel Sulimau
+  pnl: pnl0gx9c
+  teams:
+    - team-ah-compact
+    - team-ah-compact-fe
+  roles:
+    - flutter-developer
+    - opsgenie-standby

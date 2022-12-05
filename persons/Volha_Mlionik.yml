@@ -1,0 +1,9 @@
+---
+person:
+  name: Volha Mlionik
+  pnl: pnl0j20p
+  teams:
+    - team-food-first-network
+  roles:
+    - backend-developer
+    - opsgenie-standby

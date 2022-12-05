@@ -1,0 +1,9 @@
+---
+person:
+  name: Mark Rutter
+  pnl: pnl0u02e
+  teams:
+    - team-mechanization
+  roles:
+    - test-engineer
+    - opsgenie-standby

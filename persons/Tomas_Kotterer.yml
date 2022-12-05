@@ -1,0 +1,9 @@
+---
+person:
+  name: Tomas Kotterer
+  pnl: pnl0py5a
+  teams:
+    - team-profile-and-onboarding
+  roles:
+    - test-engineer
+    - opsgenie-standby

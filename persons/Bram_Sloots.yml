@@ -1,0 +1,11 @@
+---
+person:
+  name: Bram Sloots
+  pnl: pnl0g82c
+  teams:
+    - team-fulfillment-zaandam
+  roles:
+    - agile-lead
+    - scrum-master
+    - opsgenie-standby
+    - database-developer

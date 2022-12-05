@@ -1,0 +1,12 @@
+---
+person:
+  name: Thijs van Tol
+  pnl: pnl0nr50
+  teams:
+    - team-subscriptions
+  roles:
+    - standby-area-loyalty
+    - labs-ci-cd
+    - backend-developer
+    - opsgenie-standby
+    - backend-core-developer

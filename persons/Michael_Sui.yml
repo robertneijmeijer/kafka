@@ -1,0 +1,9 @@
+---
+person:
+  name: Michael Sui
+  pnl: pnl0730b
+  teams:
+    - team-subscriptions
+  roles:
+    - frontend-developer
+    - opsgenie-standby

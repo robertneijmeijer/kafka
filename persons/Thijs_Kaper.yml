@@ -1,0 +1,9 @@
+---
+person:
+  name: Thijs Kaper
+  pnl: iecm268
+  teams:
+    - team-api-platform
+  roles:
+    - backend-developer
+    - opsgenie-standby

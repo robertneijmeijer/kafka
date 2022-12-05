@@ -1,0 +1,10 @@
+---
+person:
+  name: Dmytro Fesyk
+  pnl: pnl0qh46
+  teams:
+    - team-simplification
+    - team-bisons
+  roles:
+    - backend-developer
+    - opsgenie-standby

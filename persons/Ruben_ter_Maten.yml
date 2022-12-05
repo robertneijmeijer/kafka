@@ -1,0 +1,8 @@
+---
+person:
+  name: Ruben ter Maten
+  pnl: pnl0s08i
+  teams:
+    - team-sre-qa-enablement
+  roles:
+    - test-engineer

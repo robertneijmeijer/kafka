@@ -1,0 +1,10 @@
+---
+person:
+  name: Philipp Gayret
+  pnl: pnl0mm5q
+  teams:
+    - team-sre-re
+    - team-sre
+  roles:
+    - sre-engineer
+    - opsgenie-standby

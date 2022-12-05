@@ -1,0 +1,12 @@
+---
+person:
+  name: Daniel Molenaar
+  pnl: pnl0219h
+  teams:
+    - team-api-platform
+    - team-sre
+  roles:
+    - backend-developer
+    - sre-engineer
+    - opsgenie-standby
+    - backend-core-developer

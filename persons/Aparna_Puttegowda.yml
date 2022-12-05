@@ -1,0 +1,11 @@
+---
+person:
+  name: Aparna Puttegowda
+  pnl: pnl0rm7t
+  teams:
+    - team-checkout-and-receipts
+    - team-payments
+    - team-checkout-and-payments
+  roles:
+    - backend-developer
+    - opsgenie-standby

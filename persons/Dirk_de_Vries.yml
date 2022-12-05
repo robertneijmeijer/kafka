@@ -1,0 +1,10 @@
+---
+person:
+  name: Dirk de Vries
+  pnl: itsa009
+  teams:
+    - team-fulfillment-minsk
+    - team-fulfillment-zaandam
+  roles:
+    - product-owner
+    - opsgenie-standby

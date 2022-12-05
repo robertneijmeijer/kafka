@@ -1,0 +1,9 @@
+---
+person:
+  name: Gleb Kabyshev
+  pnl: pnl0sn6a
+  teams:
+    - team-food-first-network
+  roles:
+    - test-engineer
+    - opsgenie-standby

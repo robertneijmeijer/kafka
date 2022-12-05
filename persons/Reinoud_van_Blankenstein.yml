@@ -1,0 +1,10 @@
+---
+person:
+  name: Reinoud van Blankenstein
+  pnl: pnl0922y
+  teams:
+    - team-finance-hr
+  roles:
+    - database-developer
+    - backend-developer
+    - opsgenie-standby

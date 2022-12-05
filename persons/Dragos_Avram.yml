@@ -1,0 +1,9 @@
+---
+person:
+  name: Dragos Avram
+  pnl: pnl0ll1p
+  teams:
+    - team-salesforce-platform
+  roles:
+    - salesforce-developer
+    - opsgenie-standby

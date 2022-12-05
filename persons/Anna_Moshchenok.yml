@@ -1,0 +1,9 @@
+---
+person:
+  name: Anna Moshchenok
+  pnl: pnl0tb30
+  teams:
+    - team-lists-orders-checkout
+  roles:
+    - test-engineer
+    - opsgenie-standby

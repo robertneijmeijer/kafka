@@ -1,0 +1,9 @@
+---
+person:
+  name: Boris Duijndam
+  pnl: pnl0nh97
+  teams:
+    - team-forms-migration
+  roles:
+    - scrum-master
+    - opsgenie-standby

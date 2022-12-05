@@ -1,0 +1,11 @@
+---
+person:
+  name: Stephan Ditmar
+  pnl: pnl0oi6d
+  teams:
+    - team-checkout-and-receipts
+    - team-payments
+    - team-checkout-and-payments
+  roles:
+    - test-engineer
+    - opsgenie-standby

@@ -1,0 +1,11 @@
+---
+person:
+  name: Paul Schunck
+  pnl: pnl0tr48
+  teams:
+    - team-subscriptions
+  roles:
+    - ios-developer
+    - android-developer
+    - flutter-developer
+    - opsgenie-standby

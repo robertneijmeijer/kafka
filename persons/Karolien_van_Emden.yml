@@ -1,0 +1,9 @@
+---
+person:
+  name: Karolien van Emden
+  pnl: pnl0l41o
+  teams:
+    - team-whats-for-dinner
+  roles:
+    - scrum-master
+    - opsgenie-standby

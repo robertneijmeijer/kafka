@@ -1,0 +1,10 @@
+---
+person:
+  name: Mustafa Karci
+  pnl: pnl0sp42
+  teams:
+    - team-sre
+    - team-sre-core
+  roles:
+    - sre-engineer
+    - opsgenie-standby

@@ -1,0 +1,11 @@
+---
+person:
+  name: Oleksii Kostyliev
+  pnl: pnl0s441
+  teams:
+    - team-checkout-and-receipts
+    - team-payments
+    - team-checkout-and-payments
+  roles:
+    - backend-developer
+    - opsgenie-standby

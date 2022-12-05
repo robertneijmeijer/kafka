@@ -1,0 +1,9 @@
+---
+person:
+  name: Aryadna Sauchyts
+  pnl: pnl0922o
+  teams:
+    - team-api-platform
+  roles:
+    - backend-developer
+    - opsgenie-standby

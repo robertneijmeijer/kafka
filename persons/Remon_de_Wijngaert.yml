@@ -1,0 +1,9 @@
+---
+person:
+  name: Remon de Wijngaert
+  pnl: pnlrw106
+  teams:
+    - team-foff
+  roles:
+    - database-developer
+    - opsgenie-standby

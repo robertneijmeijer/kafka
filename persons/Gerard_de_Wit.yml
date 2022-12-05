@@ -1,0 +1,10 @@
+---
+person:
+  name: Gerard de Wit
+  pnl: pnl0mb3f
+  teams:
+    - team-devices-apps
+  roles:
+    - backend-developer
+    - backend-developer-logistics
+    - opsgenie-standby

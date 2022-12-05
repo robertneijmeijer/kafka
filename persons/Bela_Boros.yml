@@ -1,0 +1,10 @@
+---
+person:
+  name: Bela Boros
+  pnl: pnl0a044
+  teams:
+    - team-messaging
+  roles:
+    - architect
+    - backend-developer-logistics
+    - opsgenie-standby

@@ -1,0 +1,9 @@
+---
+person:
+  name: Andrei Krukouski
+  pnl: pnl0kc94
+  teams:
+    - team-lists-orders-checkout
+  roles:
+    - backend-developer
+    - opsgenie-standby

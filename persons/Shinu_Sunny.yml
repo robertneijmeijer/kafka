@@ -1,0 +1,9 @@
+---
+person:
+  name: Shinu Sunny
+  pnl: PNL06t8d
+  teams:
+    - team-pos
+  roles:
+    - opsgenie-standby
+    - backend-developer

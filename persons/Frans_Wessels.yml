@@ -1,0 +1,10 @@
+---
+person:
+  name: Frans Wessels
+  pnl: pnl0ml17
+  teams:
+    - team-devices-apps
+  roles:
+    - backend-developer
+    - outsystems-developer
+    - opsgenie-standby

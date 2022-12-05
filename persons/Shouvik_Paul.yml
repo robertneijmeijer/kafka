@@ -1,0 +1,10 @@
+---
+person:
+  name: Shouvik Paul
+  pnl: pnl0e65c
+  teams:
+    - team-waar
+    - team-loyalty-connect
+  roles:
+    - backend-developer
+    - opsgenie-standby

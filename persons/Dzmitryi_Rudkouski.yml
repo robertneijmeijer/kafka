@@ -1,0 +1,10 @@
+---
+person:
+  name: Dzmitryi Rudkouski
+  pnl: pnl0r37h
+  teams:
+    - team-messaging
+    - team-sre-db-and-streaming
+  roles:
+    - backend-developer
+    - sre-engineer

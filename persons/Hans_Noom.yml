@@ -1,0 +1,10 @@
+---
+person:
+  name: Hans Noom
+  pnl: pnlhn063
+  teams:
+    - team-delivery
+  roles:
+    - database-developer
+    - backend-developer
+    - opsgenie-standby

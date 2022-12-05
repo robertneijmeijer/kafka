@@ -1,0 +1,11 @@
+---
+person:
+  name: Siarhei Bareika
+  pnl: pnl0ga5a
+  teams:
+    - team-sre-pi
+    - team-sre
+    - team-sre-core
+  roles:
+    - sre-engineer
+    - opsgenie-standby

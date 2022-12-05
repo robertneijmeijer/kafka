@@ -1,0 +1,9 @@
+---
+person:
+  name: Martin Walraven
+  pnl: pnl0k04s
+  teams:
+    - team-replenishment
+  roles:
+    - database-developer
+    - opsgenie-standby

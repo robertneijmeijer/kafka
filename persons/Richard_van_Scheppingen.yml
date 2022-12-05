@@ -1,0 +1,10 @@
+---
+person:
+  name: Richard van Scheppingen
+  pnl: pnl0nh95
+  teams:
+    - team-replenishment
+  roles:
+    - scrum-master
+    - database-developer
+    - opsgenie-standby

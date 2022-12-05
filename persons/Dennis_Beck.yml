@@ -1,0 +1,9 @@
+---
+person:
+  name: Dennis Beck
+  pnl: pnl0ft8w
+  teams:
+    - team-foff
+  roles:
+    - database-developer
+    - opsgenie-standby
