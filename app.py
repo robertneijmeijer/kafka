@@ -169,7 +169,6 @@ def find_product_owner(role):
     return None
 
 def find_team():
-    log.info('finding team')
     path = Path(os.getcwd() + '/CODEOWNERS')
     if not path.is_file():
         log.error("CODEOWNERS file could not be found, please manually fill in team")
