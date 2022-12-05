@@ -163,7 +163,7 @@ def find_product_owner(role):
     for k, v in data.items():
         if v['teams'] is None:
             continue
-        if YAML_DATA['containers'][0]['team'] in v['teams']:
+        if find_team() in v['teams']:
             if role in v['roles']:
                 return k
     return None
