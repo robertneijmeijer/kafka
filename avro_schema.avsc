@@ -85,7 +85,7 @@
             },
             {
               "name": "maxSeverityLevel",
-              "type": "string"
+              "type": "int"
             },
             {
               "name": "icfr",
