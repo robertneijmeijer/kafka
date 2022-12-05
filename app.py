@@ -42,7 +42,7 @@ KAFKA_TOPIC_DEFAULT_KEY = 'topic2'
 KAFKA_SECURITY_PROTOCOL = 'PLAINTEXT'
 KAFKA_SASL_MECHANISM = 'SCRAM-SHA-512'
 
-TOPIC_NAME = 'topic12'
+TOPIC_NAME = 'topic13'
 BOOTSTRAP_SERVERS_URL = '10.152.183.52:9094'
 SCHEMA_REGISTRY_URL = 'http://10.152.183.242:8081'
 
@@ -268,7 +268,7 @@ def replace_key(data, keys, index = 0):
 
 
 def translate_keys(data):
-    with open('avro_schema.avsc') as f:
+    with open('/avro_schema.avsc') as f:
       schema_str = f.read()
 
     schema_str = re.findall('(?<=\"name"\ : ")(.*?)(?=\")',schema_str)
