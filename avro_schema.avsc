@@ -1,149 +1,186 @@
 {
-      "type" : "record",
-      "name" : "SystemModel",
-      "namespace" : "org.example.models.SystemModel",
-      "fields" : [ {
-        "name" : "name",
-        "type" : "string"
-      }, {
-        "name" : "description",
-        "type" : "string"
-      }, {
-        "name" : "containers",
-        "type" : {
-          "type" : "array",
-          "items" : {
-          "name" : "containers",
+  "type": "record",
+  "name": "SystemModel",
+  "namespace": "org.example.models.SystemModel",
+  "fields": [
+    {
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "name": "description",
+      "type": "string"
+    },
+    {
+      "name": "containers",
+      "type": {
+        "type": "array",
+        "items": {
+          "name": "containers",
           "type": "record",
-          "fields": [ 
+          "fields": [
             {
-            "name" : "name",
-            "type" : "string"
-          }, {
-            "name" : "synonyms",
-            "type" : "string"
-          }, {
-            "name" : "description",
-            "type" : "string"
-          }, {
-            "name" : "technology",
-            "type" : "string"
-          }, {
-            "name" : "team",
-            "type" : "string"
-          },{
-            "name" : "productOwner",
-            "type" : "string"
-          }, {
-            "name" : "applicationType",
-            "type" : "string"
-          }, {
-            "name" : "hostedAt",
-            "type" : "string"
-          }, {
-            "name" : "deploymentModel",
-            "type" : "string"
-          }, {
-            "name" : "dataConfidentiality",
-            "type" : "record",
-            "fields": [
-              {
-            "name" : "containsPersonalData",
-            "type" : "boolean"
-          },{
-            "name" : "containsFinancialData",
-            "type" : "boolean"
-          },{
-            "name" : "publiclyExposed",
-            "type" : "boolean"
-          },{
-            "name" : "restrictedAccess",
-            "type" : "boolean"
-          }]},
-          {
-            "name" : "missionCriticality",
-            "type" : "string"
-          },{
-            "name" : "maxSeverityLevel",
-            "type" : "string"
-          }, {
-            "name" : "icfr",
-            "type" : "boolean"
-          }, {
-            "name" : "assignementGroup",
-            "type" : "string"
-          }, {
-            "name" : "operationalStatus",
-            "type" : "string"
-          }, {
-            "name" : "components",
-            "type" : {
-              "type" : "record",
-              "name" : "components",
-              "fields" : [ {
-                "name" : "name",
-                "type" : "string"
-              }, {
-                "name" : "description",
-                "type" : "string"
-              }, {
-                "name" : "exposedAPIs",
-                "type" : {
-                  "type" : "array",
-                  "items" : {
-                    "name": "ExposedAPIModel",
-                    "type": "record",
-                    "fields" : [
-                      {
-                    "name" : "name",
-                    "type" : "string"
-                  }, {
-                    "name" : "description",
-                    "type" : "string"
-                  }, {
-                    "name" : "type",
-                    "type" : "string"
-                  }, {
-                    "name" : "status",
-                    "type" : "string"
-                  }
-                    ]
-                  }
+              "name": "name",
+              "type": "string"
+            },
+            {
+              "name": "synonyms",
+              "type": "string"
+            },
+            {
+              "name": "description",
+              "type": "string"
+            },
+            {
+              "name": "technology",
+              "type": "string"
+            },
+            {
+              "name": "team",
+              "type": "string"
+            },
+            {
+              "name": "productOwner",
+              "type": "string"
+            },
+            {
+              "name": "applicationType",
+              "type": "string"
+            },
+            {
+              "name": "hostedAt",
+              "type": "string"
+            },
+            {
+              "name": "deploymentModel",
+              "type": "string"
+            },
+            {
+              "name": "dataConfidentiality",
+              "type": "record",
+              "fields": [
+                {
+                  "name": "containsPersonalData",
+                  "type": "boolean"
+                },
+                {
+                  "name": "containsFinancialData",
+                  "type": "boolean"
+                },
+                {
+                  "name": "publiclyExposed",
+                  "type": "boolean"
+                },
+                {
+                  "name": "restrictedAccess",
+                  "type": "boolean"
                 }
-              }, {
-                "name" : "consumedAPIs",
-                "type" : {
-                  "type" : "array",
-                  "items" : {
-                    "name": "ConsumedAPIModel",
-                    "type": "record",
-                    "fields" : [
-                      {
-                    "name" : "name",
-                    "type" : "string"
-                  }, {
-                    "name" : "description",
-                    "type" : "string"
-                  }, {
-                    "name" : "status",
-                    "type" : "string"
-                  }, {
-                    "name" : "read",
-                    "type" : "boolean"
-                  }, {
-                    "name" : "write",
-                    "type" : "boolean"
-                  }, {
-                    "name" : "execute",
-                    "type" : "boolean"
+              ]
+            },
+            {
+              "name": "missionCriticality",
+              "type": "string"
+            },
+            {
+              "name": "maxSeverityLevel",
+              "type": "string"
+            },
+            {
+              "name": "icfr",
+              "type": "boolean"
+            },
+            {
+              "name": "assignementGroup",
+              "type": "string"
+            },
+            {
+              "name": "operationalStatus",
+              "type": "string"
+            },
+            {
+              "name": "components",
+              "type": {
+                "type": "record",
+                "name": "components",
+                "fields": [
+                  {
+                    "name": "name",
+                    "type": "string"
+                  },
+                  {
+                    "name": "description",
+                    "type": "string"
+                  },
+                  {
+                    "name": "exposedAPIs",
+                    "type": {
+                      "type": "array",
+                      "items": {
+                        "name": "ExposedAPIModel",
+                        "type": "record",
+                        "fields": [
+                          {
+                            "name": "name",
+                            "type": "string"
+                          },
+                          {
+                            "name": "description",
+                            "type": "string"
+                          },
+                          {
+                            "name": "type",
+                            "type": "string"
+                          },
+                          {
+                            "name": "status",
+                            "type": "string"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "name": "consumedAPIs",
+                    "type": {
+                      "type": "array",
+                      "items": {
+                        "name": "ConsumedAPIModel",
+                        "type": "record",
+                        "fields": [
+                          {
+                            "name": "name",
+                            "type": "string"
+                          },
+                          {
+                            "name": "description",
+                            "type": "string"
+                          },
+                          {
+                            "name": "status",
+                            "type": "string"
+                          },
+                          {
+                            "name": "read",
+                            "type": "boolean"
+                          },
+                          {
+                            "name": "write",
+                            "type": "boolean"
+                          },
+                          {
+                            "name": "execute",
+                            "type": "boolean"
+                          }
+                        ]
+                      }
+                    }
                   }
-                    ]
-                  }
-                }
-              } ]
+                ]
+              }
             }
-          } ]
+          ]
         }
       }
-} ]
+    }
+  ]
 }
