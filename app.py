@@ -158,7 +158,7 @@ def add_value(key):
 
 def find_product_owner(role):
     global YAML_DATA
-    with open("persons.yml", mode='r', encoding='utf-8') as file:
+    with open("/persons.yml", mode='r', encoding='utf-8') as file:
         data = yaml.safe_load(file)
     for k, v in data.items():
         if v['teams'] is None:
