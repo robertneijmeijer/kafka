@@ -144,7 +144,7 @@ def add_value(key):
     elif(key == 'team'):
       YAML_DATA['containers'][0][key] = find_team()
     elif(key == 'productOwner'):
-      YAML_DATA['containers'][0][key] = find_product_owner()
+      YAML_DATA['containers'][0][key] = find_product_owner('product-owner')
     elif(key == 'maxSeverityLevel'):
         mcv = YAML_DATA['containers'][0]["missionCriticality"]
         if mcv == "Highly business critical":
@@ -156,9 +156,17 @@ def add_value(key):
         else :
             YAML_DATA['containers'][0][key] = 4
 
-def find_product_owner():
-
-    return 'test'
+def find_product_owner(role):
+    global YAML_DATA
+    with open("persons.yml", mode='r', encoding='utf-8') as file:
+        data = yaml.safe_load(file)
+    for k, v in data.items():
+        if v['teams'] is None:
+            continue
+        if YAML_DATA['containers'][0]['team'] in v['teams']:
+            if role in v['roles']:
+                return k
+    return None
 
 def find_team():
     log.info('finding team')
