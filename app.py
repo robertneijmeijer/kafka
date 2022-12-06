@@ -181,11 +181,12 @@ def find_team():
 
     return matches[0][-1]
 
-schema_val = {
+first_schema_val = {
     "name": str,
     "description": str,
-
-    "containers": [{
+}
+container_schema_val = {
+    "containers": {
         "name": str,
         "synonyms": str,
         "description": str,
@@ -225,13 +226,14 @@ schema_val = {
                 "execute": bool,
             }]
         },
-    }]
+    }
 }
 
 def validate_yaml(yaml_data, verbose = False):
-    validator = Schema(schema_val)
+    first_validator = Schema(first_schema_val)
+    container_validator = Schema(container_schema_val)
     try:
-        validator.validate(yaml_data)
+        first_validator.validate(yaml_data[:2])
         if(verbose):
           print('YML valid')
         return True
