@@ -132,29 +132,29 @@ def send_to_kafka(settings: dict, data: dict):
 
     producer.flush()
 
-def add_value(key, index = 0):
+def add_value(key, container_index = 0):
     log.info('add value ' + str(key))
     global YAML_DATA
     if(key == 'technology'):
-      YAML_DATA['containers'][index][key] = str(find_main_language())
+      YAML_DATA['containers'][container_index][key] = str(find_main_language())
     elif(key == 'icfr'):
-      YAML_DATA['containers'][index][key] = False
+      YAML_DATA['containers'][container_index][key] = False
     elif(key == 'hostedAt'):
-      YAML_DATA['containers'][index][key] = "Azure Cloud"
+      YAML_DATA['containers'][container_index][key] = "Azure Cloud"
     elif(key == 'team'):
-      YAML_DATA['containers'][index][key] = find_team()
+      YAML_DATA['containers'][container_index][key] = find_team()
     elif(key == 'productOwner'):
-      YAML_DATA['containers'][index][key] = find_product_owner('product-owner')
+      YAML_DATA['containers'][container_index][key] = find_product_owner('product-owner')
     elif(key == 'maxSeverityLevel'):
-        mcv = YAML_DATA['containers'][index]["missionCriticality"]
+        mcv = YAML_DATA['containers'][container_index]["missionCriticality"]
         if mcv == "Highly business critical":
-            YAML_DATA['containers'][index][key] = 1
+            YAML_DATA['containers'][container_index][key] = 1
         elif mcv == "Business critical":
-            YAML_DATA['containers'][index][key] = 2
+            YAML_DATA['containers'][container_index][key] = 2
         elif mcv == "Not business critical":
-            YAML_DATA['containers'][index][key] = 3
+            YAML_DATA['containers'][container_index][key] = 3
         else :
-            YAML_DATA['containers'][index][key] = 4
+            YAML_DATA['containers'][container_index][key] = 4
 
 def find_product_owner(role):
     global YAML_DATA
@@ -198,7 +198,7 @@ def validate_yaml(yaml_data, verbose = False):
         Optional("productOwner", default= lambda : add_value('productOwner', counter)): str,
         "applicationType": Or("Business", "Customer Facing", "External Service", "Infrastructure", "Interface", "Office", "Tool", "Unknown"),
         Optional("hostedAt", default = lambda : add_value('hostedAt', counter)): Or("Amazon Web Services (AWS Cloud)", "AT&T", "Azure CF1", "Azure CF2", "Azure Cloud", "DXC", "Equinix", "Google Cloud Platform", "Hybric", "Inlumi", "Local server", "Multi-Cloud", "Not Applicable", "Other", "Salesforce", "ServiceNow", "Solvinity", "Unit4", "Unknown", "User device", "Azure"),
-        "deploymentModel": Or("BPO", "CaaS", "IaaS", "On-Premise", "PaaS", "SaaS"),
+        "deploymentModel": Or("BPO", "CaaS", "IaaS", "Custom", "PaaS", "SaaS"),
         "dataConfidentiality" : {
             "containsPersonalData": bool,
             "containsFinancialData": bool,
