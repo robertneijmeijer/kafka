@@ -190,7 +190,6 @@ def validate_yaml(yaml_data, verbose = False):
     counter = 0
 
     container_schema_val = {
-    "containers": {
         "name": str,
         "synonyms": str,
         "description": str,
@@ -231,7 +230,6 @@ def validate_yaml(yaml_data, verbose = False):
             }]
         },
     }
-}
     first_validator = Schema(first_schema_val)
     container_validator = Schema(container_schema_val)
 
