@@ -187,8 +187,6 @@ first_schema_val = {
 }
 
 def validate_yaml(yaml_data, verbose = False):
-    first_validator = Schema(first_schema_val)
-    container_validator = Schema(container_schema_val)
     counter = 0
 
     container_schema_val = {
@@ -234,6 +232,8 @@ def validate_yaml(yaml_data, verbose = False):
         },
     }
 }
+    first_validator = Schema(first_schema_val)
+    container_validator = Schema(container_schema_val)
 
     try:
         first_validator.validate(dict(islice(yaml_data.items(), 0, 2)))
