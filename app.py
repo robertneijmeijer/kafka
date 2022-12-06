@@ -284,17 +284,9 @@ def replace_key(data, keys, index = 0):
 
 
 def translate_keys(data):
-    with open('/avro_schema.avsc') as f:
-      schema_str = f.read()
-    
-    schema_str = re.findall('(?<=\"name"\: ")(.*?)(?=\")',schema_str)
-    
-    del schema_str[0]
-    del schema_str[3]
-    del schema_str[13]
-    
-    first_data = replace_key(dict(islice(data.items(), 2)), schema_str)
+    first_data = replace_key(dict(islice(data.items(), 2)), ['name', 'description'])
     containers = list()
+    
     for container in data["containers"]:
         first_container = replace_key(dict(islice(container.items(), 0,10)), ['name', 'synonyms', 'description', 'technology', 'team', 'productOwner', 'applicationType', 'hostedAt', 'deploymentModel', 'dataConfidentiality'])
         first_container['dataConfidentiality'] = replace_key(first_container['dataConfidentiality'], ['containsPersonalData','containsFinancialData','publiclyExposed','restrictedAccess'])
