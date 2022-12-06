@@ -17,8 +17,8 @@ containers:
     hostedAt: Azure Cloud
     deploymentModel: On-Premise # rename on premise to custom software of iets en zet die als default
     dataConfidentiality:
-        containsPersonalData: false
-        containsFinancialData: false
+        tcontainsPersonalData: false
+        tcontainsFinancialData: false
         #application or data or both?
         publiclyExposed: false
         restrictedAccess: true

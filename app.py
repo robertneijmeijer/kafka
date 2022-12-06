@@ -286,47 +286,42 @@ def replace_key(data, keys, index = 0):
 def translate_keys(data):
     with open('/avro_schema.avsc') as f:
       schema_str = f.read()
-
-    schema_str = re.findall('(?<=\"name"\ : ")(.*?)(?=\")',schema_str)
+    
+    schema_str = re.findall('(?<=\"name"\: ")(.*?)(?=\")',schema_str)
+    
     del schema_str[0]
     del schema_str[3]
+    del schema_str[13]
+    
     first_data = replace_key(dict(islice(data.items(), 2)), schema_str)
-    second_data = replace_key(dict(islice(data.items(), 2, 3)), schema_str, 2)
     containers = list()
-    for container in second_data["containers"]:
-
-        container_object = replace_key(container, schema_str, 3)
+    for container in data["containers"]:
         first_container = replace_key(dict(islice(container.items(), 0,10)), ['name', 'synonyms', 'description', 'technology', 'team', 'productOwner', 'applicationType', 'hostedAt', 'deploymentModel', 'dataConfidentiality'])
         first_container['dataConfidentiality'] = replace_key(first_container['dataConfidentiality'], ['containsPersonalData','containsFinancialData','publiclyExposed','restrictedAccess'])
-        second_container = replace_key(dict(islice(container_object.items(), 10, 14)), ['missionCriticality', 'assignementGroup', 'operationalStatus', 'components'])
-
-        for key in first_container.keys():
-            container_object[key] = first_container[key]
-
-
-        for key in second_container.keys():
-            container_object[key] = second_container[key]
+        second_container = replace_key(dict(islice(container.items(), 10, 14)), ['missionCriticality', 'assignementGroup', 'operationalStatus', 'components'])
         
-        fourth_data = replace_key(container_object["components"], ["name", "description", "exposedAPIs", "consumedAPIs"])
-        fifth_data = list()
-
-        for value in fourth_data["exposedAPIs"]:
-            fifth_data.append(replace_key(value, ["name", "description", "type", "status"]))
-        fourth_data["exposedAPIs"] = fifth_data
-
-        sixth_data = list()
-
-        for value in fourth_data["consumedAPIs"]:
-            sixth_data.append(replace_key(value, ["name", "description", "status", "read", "write", "execute"]))
-
-        fourth_data["consumedAPIs"] = sixth_data
-
-        data = first_data 
-        containers.append(container_object)
+        second_container['components'] = replace_key(second_container["components"], ["name", "description", "exposedAPIs", "consumedAPIs"])
         
-    data["containers"] = containers
+        exposedAPI_list = list()
+        
+        for value in second_container['components']["exposedAPIs"]:
+            exposedAPI_list.append(replace_key(value, ["name", "description", "type", "status"]))
 
-    return data
+        second_container['components']["exposedAPIs"] = exposedAPI_list
+        
+        consumedAPI_list = list()
+        for value in second_container['components']["consumedAPIs"]:
+            consumedAPI_list.append(replace_key(value, ["name", "description", "status", "read", "write", "execute"]))
+
+        second_container['components']["consumedAPIs"] = consumedAPI_list
+
+        first_container.update(second_container)
+
+        containers.append(first_container)
+        
+    first_data["containers"] = containers
+
+    return first_data
 
 def validate_names():
     global YAML_DATA 
@@ -393,7 +388,7 @@ def main():
     # log.info("Validationcheck " + str(os.getenv(KAFKA_VALIDATION_CHECK_ENV_VAR)))
     log.info('Data: %s', YAML_DATA)
     # Validate before translate 
-    # YAML_DATA = translate_keys(YAML_DATA)
+    YAML_DATA = translate_keys(YAML_DATA)
     YAML_DATA = remove_none(YAML_DATA)
     
     validate_yaml(YAML_DATA)

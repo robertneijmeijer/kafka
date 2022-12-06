@@ -17,11 +17,11 @@ containers:
     hostedAt: Azure Cloud
     deploymentModel: On-Premise # rename on premise to custom software of iets en zet die als default
     dataConfidentiality:
-        containsPersonalData: false
-        containsFinancialData: false
+        test: false
+        test1: false
         #application or data or both?
-        publiclyExposed: false
-        restrictedAccess: true
+        test2: false
+        test3: true
     #Highly business critical", "Business critical", "Not business critical", "Not applicable"
     missionCriticality: Not business critical
     # If the repository has a helm file leave like this, otherwise fill in
@@ -29,10 +29,10 @@ containers:
     #Pipelined or operational
     operationalStatus: Pipelined
     components:
-        name: Component name
-        description: what the system does
-        exposedAPIs:
-            - name: Unique API name
+        testname: Component name
+        testdescription: what the system does
+        testexposedAPIs:
+            - testname: Unique API name
               description: What it can be used for
               type: HTTP/JSON
               status: TO_BE_IMPLEMENTED
@@ -41,7 +41,7 @@ containers:
               type: HTTP/JSON2
               status: TO_BE_IMPLEMENTED2
         consumedAPIs:
-            - name: Unique API name
+            - testname: Unique API name
               description: What is it used for
               status: TO_BE_IMPLEMENTED
               read: true
