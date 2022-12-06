@@ -286,7 +286,7 @@ def replace_key(data, keys, index = 0):
 def translate_keys(data):
     first_data = replace_key(dict(islice(data.items(), 2)), ['name', 'description'])
     containers = list()
-    
+
     for container in data["containers"]:
         first_container = replace_key(dict(islice(container.items(), 0,10)), ['name', 'synonyms', 'description', 'technology', 'team', 'productOwner', 'applicationType', 'hostedAt', 'deploymentModel', 'dataConfidentiality'])
         first_container['dataConfidentiality'] = replace_key(first_container['dataConfidentiality'], ['containsPersonalData','containsFinancialData','publiclyExposed','restrictedAccess'])
@@ -385,7 +385,7 @@ def main():
     
     validate_yaml(YAML_DATA)
     
-    validate_names()
+    # validate_names()
 
     if os.getenv(KAFKA_VALIDATION_CHECK_ENV_VAR):
         validate_yaml(YAML_DATA)
