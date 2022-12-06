@@ -147,11 +147,11 @@ def add_value(key, container_index = 0):
       YAML_DATA['containers'][container_index][key] = find_product_owner('product-owner')
     elif(key == 'maxSeverityLevel'):
         mcv = YAML_DATA['containers'][container_index]["missionCriticality"]
-        if mcv == "Highly business critical":
+        if mcv == "High":
             YAML_DATA['containers'][container_index][key] = 1
-        elif mcv == "Business critical":
+        elif mcv == "Medium":
             YAML_DATA['containers'][container_index][key] = 2
-        elif mcv == "Not business critical":
+        elif mcv == "Low":
             YAML_DATA['containers'][container_index][key] = 3
         else :
             YAML_DATA['containers'][container_index][key] = 4
@@ -205,8 +205,8 @@ def validate_yaml(yaml_data, verbose = False):
             "publiclyExposed": bool,
             "restrictedAccess": bool,
         },
-        "missionCriticality": Or("Highly business critical", "Business critical", "Not business critical", "Not applicable"),
-        Optional("maxSeverityLevel", default= lambda : add_value('maxSeverityLevel', counter)): Or(1,2,3,4, "Not applicable"),
+        "missionCriticality": Or("High", "Medium", "Low", "None"),
+        Optional("maxSeverityLevel", default= lambda : add_value('maxSeverityLevel', counter)): Or(1,2,3,4, "None"),
         Optional("icfr", default= lambda : add_value('icfr', counter)): bool,
         "assignementGroup": str,
         # operational = deployed to prod, pipelined = in development not yet released
