@@ -132,29 +132,29 @@ def send_to_kafka(settings: dict, data: dict):
 
     producer.flush()
 
-def add_value(key):
+def add_value(key, index = 0):
     log.info('add value ' + str(key))
     global YAML_DATA
     if(key == 'technology'):
-      YAML_DATA['containers'][0][key] = str(find_main_language())
+      YAML_DATA['containers'][index][key] = str(find_main_language())
     elif(key == 'icfr'):
-      YAML_DATA['containers'][0][key] = False
+      YAML_DATA['containers'][index][key] = False
     elif(key == 'hostedAt'):
-      YAML_DATA['containers'][0][key] = "Azure Cloud"
+      YAML_DATA['containers'][index][key] = "Azure Cloud"
     elif(key == 'team'):
-      YAML_DATA['containers'][0][key] = find_team()
+      YAML_DATA['containers'][index][key] = find_team()
     elif(key == 'productOwner'):
-      YAML_DATA['containers'][0][key] = find_product_owner('product-owner')
+      YAML_DATA['containers'][index][key] = find_product_owner('product-owner')
     elif(key == 'maxSeverityLevel'):
-        mcv = YAML_DATA['containers'][0]["missionCriticality"]
+        mcv = YAML_DATA['containers'][index]["missionCriticality"]
         if mcv == "Highly business critical":
-            YAML_DATA['containers'][0][key] = 1
+            YAML_DATA['containers'][index][key] = 1
         elif mcv == "Business critical":
-            YAML_DATA['containers'][0][key] = 2
+            YAML_DATA['containers'][index][key] = 2
         elif mcv == "Not business critical":
-            YAML_DATA['containers'][0][key] = 3
+            YAML_DATA['containers'][index][key] = 3
         else :
-            YAML_DATA['containers'][0][key] = 4
+            YAML_DATA['containers'][index][key] = 4
 
 def find_product_owner(role):
     global YAML_DATA
@@ -185,16 +185,22 @@ first_schema_val = {
     "name": str,
     "description": str,
 }
-container_schema_val = {
+
+def validate_yaml(yaml_data, verbose = False):
+    first_validator = Schema(first_schema_val)
+    container_validator = Schema(container_schema_val)
+    counter = 0
+
+    container_schema_val = {
     "containers": {
         "name": str,
         "synonyms": str,
         "description": str,
-        Optional("technology", default= lambda : add_value('technology')): str,
-        Optional("team", default= lambda : add_value('team')): str,
-        Optional("productOwner", default= lambda : add_value('productOwner')): str,
+        Optional("technology", default= lambda : add_value('technology', counter)): str,
+        Optional("team", default= lambda : add_value('team', counter)): str,
+        Optional("productOwner", default= lambda : add_value('productOwner', counter)): str,
         "applicationType": Or("Business", "Customer Facing", "External Service", "Infrastructure", "Interface", "Office", "Tool", "Unknown"),
-        Optional("hostedAt", default = lambda : add_value('hostedAt')): Or("Amazon Web Services (AWS Cloud)", "AT&T", "Azure CF1", "Azure CF2", "Azure Cloud", "DXC", "Equinix", "Google Cloud Platform", "Hybric", "Inlumi", "Local server", "Multi-Cloud", "Not Applicable", "Other", "Salesforce", "ServiceNow", "Solvinity", "Unit4", "Unknown", "User device", "Azure"),
+        Optional("hostedAt", default = lambda : add_value('hostedAt', counter)): Or("Amazon Web Services (AWS Cloud)", "AT&T", "Azure CF1", "Azure CF2", "Azure Cloud", "DXC", "Equinix", "Google Cloud Platform", "Hybric", "Inlumi", "Local server", "Multi-Cloud", "Not Applicable", "Other", "Salesforce", "ServiceNow", "Solvinity", "Unit4", "Unknown", "User device", "Azure"),
         "deploymentModel": Or("BPO", "CaaS", "IaaS", "On-Premise", "PaaS", "SaaS"),
         "dataConfidentiality" : {
             "containsPersonalData": bool,
@@ -203,8 +209,8 @@ container_schema_val = {
             "restrictedAccess": bool,
         },
         "missionCriticality": Or("Highly business critical", "Business critical", "Not business critical", "Not applicable"),
-        Optional("maxSeverityLevel", default= lambda : add_value('maxSeverityLevel')): Or(1,2,3,4, "Not applicable"),
-        Optional("icfr", default= lambda : add_value('icfr')): bool,
+        Optional("maxSeverityLevel", default= lambda : add_value('maxSeverityLevel', counter)): Or(1,2,3,4, "Not applicable"),
+        Optional("icfr", default= lambda : add_value('icfr', counter)): bool,
         "assignementGroup": str,
         # operational = deployed to prod, pipelined = in development not yet released
         "operationalStatus": Or("Pipelined", "Operational", "Non-Operational", "Submitted for decommissioning", "Decommissioned", "In decommissioning process"),
@@ -229,11 +235,14 @@ container_schema_val = {
     }
 }
 
-def validate_yaml(yaml_data, verbose = False):
-    first_validator = Schema(first_schema_val)
-    container_validator = Schema(container_schema_val)
     try:
         first_validator.validate(dict(islice(yaml_data.items(), 0, 2)))
+
+        # Validate each container seperatly for replacing the values
+        for container in yaml_data["containers"]:
+            container_validator.validate(container)
+            counter += 1
+
         if(verbose):
           print('YML valid')
         return True
