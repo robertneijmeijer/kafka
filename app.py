@@ -233,7 +233,7 @@ def validate_yaml(yaml_data, verbose = False):
     first_validator = Schema(first_schema_val)
     container_validator = Schema(container_schema_val)
     try:
-        first_validator.validate(yaml_data[:2])
+        first_validator.validate(dict(islice(yaml_data, 0, 2)))
         if(verbose):
           print('YML valid')
         return True
