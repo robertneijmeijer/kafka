@@ -211,27 +211,30 @@ def validate_yaml(yaml_data, verbose = False):
         "assignementGroup": str,
         # operational = deployed to prod, pipelined = in development not yet released
         "operationalStatus": Or("Pipelined", "Operational", "Non-Operational", "Submitted for decommissioning", "Decommissioned", "In decommissioning process"),
+    }
+    component_schema_val = {
         "components": {
+        "name": str,
+        "description": str,
+        "exposedAPIs": [{
             "name": str,
             "description": str,
-            "exposedAPIs": [{
-                "name": str,
-                "description": str,
-                "type": str,
-                "status": str,
-            }],
-            "consumedAPIs": [{
-                "name": str,
-                "description": str,
-                "status": str,
-                "read": bool,
-                "write": bool,
-                "execute": bool,
-            }]
-        },
+            "type": str,
+            "status": str,
+        }],
+        "consumedAPIs": [{
+            "name": str,
+            "description": str,
+            "status": str,
+            "read": bool,
+            "write": bool,
+            "execute": bool,
+        }]
+    },
     }
     first_validator = Schema(first_schema_val)
     container_validator = Schema(container_schema_val)
+    component_validator = Schema(component_schema_val)
 
     try:
         first_validator.validate(dict(islice(yaml_data.items(), 0, 2)))
@@ -240,6 +243,8 @@ def validate_yaml(yaml_data, verbose = False):
         for container in yaml_data["containers"]:
             container_validator.validate(container)
             counter += 1
+            for component in container["components"]:
+                component_validator.validate(component)
 
         if(verbose):
           print('YML valid')

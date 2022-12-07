@@ -102,9 +102,9 @@
             {
               "name": "components",
               "type": {
-                "type": "record",
+                "type": "array",
                 "name": "components",
-                "fields": [
+                "items": [
                   {
                     "name": "name",
                     "type": "string"
