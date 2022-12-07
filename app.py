@@ -405,7 +405,7 @@ def main():
     try:
         if(validate_yaml(YAML_DATA, True)):
             send_to_kafka(settings=kafka_settings, data=YAML_DATA)
-            log.info('Data successfully sent')
+            log.info('Data successfully sent, data: %s', YAML_DATA)
             exit(0)
         else:
             # Exit code 2 since the data is missing or invalid
