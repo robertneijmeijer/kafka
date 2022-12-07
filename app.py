@@ -231,7 +231,7 @@ def validate_yaml(yaml_data, verbose = False):
             "execute": bool,
         }]
     }
-    
+
     first_validator = Schema(first_schema_val)
     container_validator = Schema(container_schema_val)
     component_validator = Schema(component_schema_val)
@@ -244,6 +244,8 @@ def validate_yaml(yaml_data, verbose = False):
             container_validator.validate(container)
             counter += 1
             for component in container["components"]:
+                print('component')
+                log.info(component)
                 component_validator.validate(component)
 
         if(verbose):
