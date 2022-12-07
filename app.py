@@ -115,7 +115,6 @@ def write_ca_file(content: str, filename: str=DEFAULT_CA_FILE):
         file.write(content)
 
 def send_to_kafka(settings: dict, data: dict):
-    print('kafka')
     global YAML_DATA
 
     with open('/avro_schema.avsc') as f:
@@ -212,29 +211,27 @@ def validate_yaml(yaml_data, verbose = False):
         "assignementGroup": str,
         # operational = deployed to prod, pipelined = in development not yet released
         "operationalStatus": Or("Pipelined", "Operational", "Non-Operational", "Submitted for decommissioning", "Decommissioned", "In decommissioning process"),
-    }
-    component_schema_val = {
-        "name": str,
-        "description": str,
-        "exposedAPIs": [{
+        "components": [{
             "name": str,
             "description": str,
-            "type": str,
-            "status": str,
+            "exposedAPIs": [{
+                "name": str,
+                "description": str,
+                "type": str,
+                "status": str,
+            }],
+            "consumedAPIs": [{
+                "name": str,
+                "description": str,
+                "status": str,
+                "read": bool,
+                "write": bool,
+                "execute": bool,
+            }]
         }],
-        "consumedAPIs": [{
-            "name": str,
-            "description": str,
-            "status": str,
-            "read": bool,
-            "write": bool,
-            "execute": bool,
-        }]
     }
-
     first_validator = Schema(first_schema_val)
     container_validator = Schema(container_schema_val)
-    component_validator = Schema(component_schema_val)
 
     try:
         first_validator.validate(dict(islice(yaml_data.items(), 0, 2)))
@@ -243,10 +240,6 @@ def validate_yaml(yaml_data, verbose = False):
         for container in yaml_data["containers"]:
             container_validator.validate(container)
             counter += 1
-            for component in container["components"]:
-                print('component')
-                log.info(component)
-                component_validator.validate(component)
 
         if(verbose):
           print('YML valid')
@@ -388,11 +381,9 @@ def main():
     log.info('Data: %s', YAML_DATA)
     # Validate before translate 
     # YAML_DATA = translate_keys(YAML_DATA)
-    print('remove none')
     YAML_DATA = remove_none(YAML_DATA)
     
-    print('validate 1')
-    validate_yaml(YAML_DATA, True)
+    validate_yaml(YAML_DATA)
     
     # validate_names()
 
@@ -404,7 +395,6 @@ def main():
     #ca_content = os.getenv(KAFKA_CA_ENV_VAR)
     #write_ca_file(ca_content, DEFAULT_CA_FILE)
     try:
-        print('validate 2')
         if(validate_yaml(YAML_DATA, True)):
             send_to_kafka(settings=kafka_settings, data=YAML_DATA)
             log.info('Data successfully sent')
