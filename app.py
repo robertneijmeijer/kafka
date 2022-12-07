@@ -115,6 +115,7 @@ def write_ca_file(content: str, filename: str=DEFAULT_CA_FILE):
         file.write(content)
 
 def send_to_kafka(settings: dict, data: dict):
+    print('kafka')
     global YAML_DATA
 
     with open('/avro_schema.avsc') as f:
