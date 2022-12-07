@@ -358,14 +358,15 @@ def validate_names():
                             explosedAPIs.append(exposed)
 
         for containers in YAML_DATA["containers"]:
-            for consumedAPI in containers["components"]["consumedAPIs"]:
-                found = False
-                for exposedAPI in explosedAPIs:
-                    if consumedAPI["name"] == exposedAPI["name"]:
-                        found = True
-                        continue 
-                if not found:
-                    log.error("consumed API: " + consumedAPI["name"] + " Not found in system")
+            for component in containers['components']:
+                for consumedAPI in component["consumedAPIs"]:
+                    found = False
+                    for exposedAPI in explosedAPIs:
+                        if consumedAPI["name"] == exposedAPI["name"]:
+                            found = True
+                            continue 
+                    if not found:
+                        log.error("consumed API: " + consumedAPI["name"] + " Not found in system")
     finally:
         consumer.close()
     return True
