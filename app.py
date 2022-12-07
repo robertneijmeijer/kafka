@@ -360,8 +360,9 @@ def validate_names():
                     return 
                 else:
                     for containers in message.value()["containers"]:
-                        for exposed in containers["components"]["exposedAPIs"]:
-                            explosedAPIs.append(exposed)
+                        for component in containers["components"]:
+                            for exposed in component["exposedAPIs"]:
+                                explosedAPIs.append(exposed)
 
         for containers in YAML_DATA["containers"]:
             for component in containers['components']:
