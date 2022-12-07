@@ -199,7 +199,7 @@ def validate_yaml(yaml_data, verbose = False):
         "applicationType": Or("Business", "Customer Facing", "External Service", "Infrastructure", "Interface", "Office", "Tool", "Unknown"),
         Optional("hostedAt", default = lambda : add_value('hostedAt', counter)): Or("Amazon Web Services (AWS Cloud)", "AT&T", "Azure CF1", "Azure CF2", "Azure Cloud", "DXC", "Equinix", "Google Cloud Platform", "Hybric", "Inlumi", "Local server", "Multi-Cloud", "Not Applicable", "Other", "Salesforce", "ServiceNow", "Solvinity", "Unit4", "Unknown", "User device", "Azure"),
         "deploymentModel": Or("BPO", "CaaS", "IaaS", "Custom", "PaaS", "SaaS"),
-        "dataConfidentiality" : {
+        "dataClassification" : {
             "containsPersonalData": bool,
             "containsFinancialData": bool,
             "publiclyExposed": bool,
@@ -288,8 +288,8 @@ def translate_keys(data):
     containers = list()
 
     for container in data["containers"]:
-        first_container = replace_key(dict(islice(container.items(), 0,10)), ['name', 'synonyms', 'description', 'technology', 'team', 'productOwner', 'applicationType', 'hostedAt', 'deploymentModel', 'dataConfidentiality'])
-        first_container['dataConfidentiality'] = replace_key(first_container['dataConfidentiality'], ['containsPersonalData','containsFinancialData','publiclyExposed','restrictedAccess'])
+        first_container = replace_key(dict(islice(container.items(), 0,10)), ['name', 'synonyms', 'description', 'technology', 'team', 'productOwner', 'applicationType', 'hostedAt', 'deploymentModel', 'dataClassification'])
+        first_container['dataClassification'] = replace_key(first_container['dataClassification'], ['containsPersonalData','containsFinancialData','publiclyExposed','restrictedAccess'])
         second_container = replace_key(dict(islice(container.items(), 10, 14)), ['missionCriticality', 'assignementGroup', 'operationalStatus', 'components'])
         
         component_list = list()

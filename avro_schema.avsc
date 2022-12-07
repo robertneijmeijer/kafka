@@ -55,10 +55,10 @@
               "type": "string"
             },
             {
-              "name": "dataConfidentiality",
+              "name": "dataClassification",
               "type": {
                 "type": "record",
-                "name": "dataConfidentiality",
+                "name": "dataClassification",
                 "fields": [
                   {
                     "name": "containsPersonalData",
