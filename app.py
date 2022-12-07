@@ -214,7 +214,6 @@ def validate_yaml(yaml_data, verbose = False):
         "operationalStatus": Or("Pipelined", "Operational", "Non-Operational", "Submitted for decommissioning", "Decommissioned", "In decommissioning process"),
     }
     component_schema_val = {
-        "components": {
         "name": str,
         "description": str,
         "exposedAPIs": [{
@@ -231,8 +230,8 @@ def validate_yaml(yaml_data, verbose = False):
             "write": bool,
             "execute": bool,
         }]
-    },
     }
+    
     first_validator = Schema(first_schema_val)
     container_validator = Schema(container_schema_val)
     component_validator = Schema(component_schema_val)
