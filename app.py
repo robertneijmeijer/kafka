@@ -391,7 +391,7 @@ def main():
     YAML_DATA = remove_none(YAML_DATA)
     
     print('validate 1')
-    validate_yaml(YAML_DATA)
+    validate_yaml(YAML_DATA, True)
     
     # validate_names()
 
