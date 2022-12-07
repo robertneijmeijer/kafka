@@ -103,8 +103,10 @@
               "name": "components",
               "type": {
                 "type": "array",
-                "name": "components",
-                "items": [
+                "items": {
+                  "name": "components",
+                  type: "record",
+                  "fields":[
                   {
                     "name": "name",
                     "type": "string"
@@ -178,6 +180,7 @@
                     }
                   }
                 ]
+                }
               }
             }
           ]
