@@ -386,8 +386,10 @@ def main():
     log.info('Data: %s', YAML_DATA)
     # Validate before translate 
     # YAML_DATA = translate_keys(YAML_DATA)
+    print('remove none')
     YAML_DATA = remove_none(YAML_DATA)
     
+    print('validate 1')
     validate_yaml(YAML_DATA)
     
     # validate_names()
@@ -400,6 +402,7 @@ def main():
     #ca_content = os.getenv(KAFKA_CA_ENV_VAR)
     #write_ca_file(ca_content, DEFAULT_CA_FILE)
     try:
+        print('validate 2')
         if(validate_yaml(YAML_DATA, True)):
             send_to_kafka(settings=kafka_settings, data=YAML_DATA)
             log.info('Data successfully sent')
