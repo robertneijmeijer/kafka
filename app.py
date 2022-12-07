@@ -374,6 +374,8 @@ def validate_names():
                             continue 
                     if not found:
                         log.error("consumed API: " + consumedAPI["name"] + " Not found in system")
+    except Exception as e:
+        log.error(e)
     finally:
         consumer.close()
     return True
