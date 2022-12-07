@@ -242,11 +242,11 @@ def validate_yaml(yaml_data, verbose = False):
             counter += 1
 
         if(verbose):
-          print('YML valid')
+          log.info('YML valid')
         return True
     except SchemaError as se:
         if(verbose):
-          print(se)
+          log.error(se)
         return False
 
 def find_main_language(full_output = False):
@@ -292,20 +292,26 @@ def translate_keys(data):
         first_container['dataConfidentiality'] = replace_key(first_container['dataConfidentiality'], ['containsPersonalData','containsFinancialData','publiclyExposed','restrictedAccess'])
         second_container = replace_key(dict(islice(container.items(), 10, 14)), ['missionCriticality', 'assignementGroup', 'operationalStatus', 'components'])
         
-        second_container['components'] = replace_key(second_container["components"], ["name", "description", "exposedAPIs", "consumedAPIs"])
-        
-        exposedAPI_list = list()
-        
-        for value in second_container['components']["exposedAPIs"]:
-            exposedAPI_list.append(replace_key(value, ["name", "description", "type", "status"]))
+        component_list = list()
+        for component in container['components']:
 
-        second_container['components']["exposedAPIs"] = exposedAPI_list
+            component = replace_key(component, ["name", "description", "exposedAPIs", "consumedAPIs"])
         
-        consumedAPI_list = list()
-        for value in second_container['components']["consumedAPIs"]:
-            consumedAPI_list.append(replace_key(value, ["name", "description", "status", "read", "write", "execute"]))
+            exposedAPI_list = list()
+            
+            for value in second_container['components']["exposedAPIs"]:
+                exposedAPI_list.append(replace_key(value, ["name", "description", "type", "status"]))
 
-        second_container['components']["consumedAPIs"] = consumedAPI_list
+            component["exposedAPIs"] = exposedAPI_list
+            
+            consumedAPI_list = list()
+            for value in second_container['components']["consumedAPIs"]:
+                consumedAPI_list.append(replace_key(value, ["name", "description", "status", "read", "write", "execute"]))
+
+            component["consumedAPIs"] = consumedAPI_list
+            component_list.append(component)
+        
+        second_container['components'] = component_list
 
         first_container.update(second_container)
 
