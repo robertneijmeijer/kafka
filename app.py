@@ -299,13 +299,13 @@ def translate_keys(data):
         
             exposedAPI_list = list()
             
-            for value in second_container['components']["exposedAPIs"]:
+            for value in component["exposedAPIs"]:
                 exposedAPI_list.append(replace_key(value, ["name", "description", "type", "status"]))
 
             component["exposedAPIs"] = exposedAPI_list
             
             consumedAPI_list = list()
-            for value in second_container['components']["consumedAPIs"]:
+            for value in component["consumedAPIs"]:
                 consumedAPI_list.append(replace_key(value, ["name", "description", "status", "read", "write", "execute"]))
 
             component["consumedAPIs"] = consumedAPI_list
