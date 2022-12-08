@@ -333,7 +333,7 @@ def validate_url_name(value):
     global YAML_DATA 
     for containers in YAML_DATA['containers']:
         for container in value['containers']:
-            if(container['name'] == containers['name'] and container['githubURL'] == containers['githubURL']):
+            if(container['name'] == containers['name'] or container['githubURL'] == containers['githubURL']):
                 return True
     return False
 
@@ -378,7 +378,7 @@ def validate_names():
                     log.info('Data is already present and validated')
                     return 
                 elif validate_url_name(message.value()):
-                    log.error('Combination of name and github url Already exist')
+                    log.error('Combination of name or github url already exist')
                 else:
                     for containers in message.value()["containers"]:
                         for component in containers["components"]:
