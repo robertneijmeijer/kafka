@@ -177,6 +177,7 @@ def find_team():
     with open(os.getcwd() + '/CODEOWNERS') as f:
         code = f.read()
 
+
     matches = re.findall(r"(CODEOWNERS|\*)[ \t]+(@RoyalAholdDelhaize\/)(.*)", code)
 
     return matches[0][-1]
@@ -196,6 +197,13 @@ def validate_yaml(yaml_data, verbose = False):
         Optional("technology", default= lambda : add_value('technology', counter)): str,
         Optional("team", default= lambda : add_value('team', counter)): str,
         Optional("productOwner", default= lambda : add_value('productOwner', counter)): str,
+        "targetAudience":{
+            "customer": bool,
+            "service": bool,
+            "thirdParty": bool,
+            "business": bool,
+            "internal": bool,
+        },
         "applicationType": Or("Business", "Customer Facing", "External Service", "Infrastructure", "Interface", "Office", "Tool", "Unknown"),
         Optional("hostedAt", default = lambda : add_value('hostedAt', counter)): Or("Amazon Web Services (AWS Cloud)", "AT&T", "Azure CF1", "Azure CF2", "Azure Cloud", "DXC", "Equinix", "Google Cloud Platform", "Hybric", "Inlumi", "Local server", "Multi-Cloud", "Not Applicable", "Other", "Salesforce", "ServiceNow", "Solvinity", "Unit4", "Unknown", "User device", "Azure"),
         "deploymentModel": Or("BPO", "CaaS", "IaaS", "Custom", "PaaS", "SaaS"),
@@ -406,7 +414,7 @@ def main():
     #write_ca_file(ca_content, DEFAULT_CA_FILE)
     try:
         if(validate_yaml(YAML_DATA, True)):
-            send_to_kafka(settings=kafka_settings, data=YAML_DATA)
+            # send_to_kafka(settings=kafka_settings, data=YAML_DATA)
             log.info('Data successfully sent, data: %s', YAML_DATA)
             exit(0)
         else:
