@@ -183,14 +183,13 @@ def find_team():
 
     return matches[0][-1]
 
-first_schema_val = {
-    "name": str,
-    "description": str,
-}
-
 def validate_yaml(yaml_data, verbose = False):
     counter = 0
 
+    parent_schema_val = {
+    "name": str,
+    "description": str,
+    }
     container_schema_val = {
         "name": str,
         "synonyms": str,
@@ -239,7 +238,7 @@ def validate_yaml(yaml_data, verbose = False):
             }]
         }],
     }
-    first_validator = Schema(first_schema_val)
+    first_validator = Schema(parent_schema_val)
     container_validator = Schema(container_schema_val)
 
     try:
