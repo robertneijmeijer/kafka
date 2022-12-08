@@ -364,6 +364,9 @@ def validate_names():
         low, high = consumer.get_watermark_offsets(topic_partition)
         current_offset = 0
 
+        if high == 0:
+            return
+
         log.info('Consuming data to see if data is already present')
         while current_offset < high:
             message = consumer.poll(timeout=1.0)
