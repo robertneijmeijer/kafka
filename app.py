@@ -197,6 +197,7 @@ def validate_yaml(yaml_data, verbose = False):
         Optional("technology", default= lambda : add_value('technology', counter)): str,
         Optional("team", default= lambda : add_value('team', counter)): str,
         Optional("productOwner", default= lambda : add_value('productOwner', counter)): str,
+        "githubURL": str,
         "targetAudience":{
             "customer": bool,
             "service": bool,
