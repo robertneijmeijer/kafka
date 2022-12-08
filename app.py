@@ -330,7 +330,6 @@ def translate_keys(data):
     return first_data
 
 def validate_url_name(value):
-    return False
     global YAML_DATA 
     for containers in YAML_DATA['containers']:
         for container in value['containers']:

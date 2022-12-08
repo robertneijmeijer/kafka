@@ -37,7 +37,7 @@ containers:
     #Options: High, Medium, Low, None
     missionCriticality: Low
     # If the repository has a helm file leave like this, otherwise remove value and fill in the assignmentGroup
-    assignementGroup: !include [/helm/values.yml, labels, devops.ah.it/support-assignment-group] # vanuit teams halen uiteindelijk
+    assignementGroup: test
     #Pipelined or operational
     operationalStatus: Pipelined
     components:
