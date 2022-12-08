@@ -43,8 +43,36 @@
               "type": "string"
             },
             {
-              "name": "applicationType",
+              "name": "githubURL",
               "type": "string"
+            },{
+              "name": "targetAudience",
+              "type": {
+                "type": "record",
+                "name": "targetAudience",
+                "fields": [
+                  {
+                    "name": "customer",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "service",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "thirdParty",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "business",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "internal",
+                    "type": "boolean"
+                  }
+                ]
+              }
             },
             {
               "name": "hostedAt",
