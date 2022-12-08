@@ -329,6 +329,15 @@ def translate_keys(data):
 
     return first_data
 
+def validate_url_name(value):
+    return False
+    global YAML_DATA 
+    for containers in YAML_DATA['containers']:
+        for container in value['containers']:
+            if(container['name'] == containers['name'] and container['githubURL'] == containers['githubURL']):
+                return True
+    return False
+
 def validate_names():
     global YAML_DATA 
     with open('/avro_schema.avsc') as f:
@@ -366,6 +375,8 @@ def validate_names():
                 if message.value() == YAML_DATA:
                     log.info('Data is already present and validated')
                     return 
+                elif validate_url_name(message.value()):
+                    log.error('Combination of name and github url Already exist')
                 else:
                     for containers in message.value()["containers"]:
                         for component in containers["components"]:

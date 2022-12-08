@@ -1,6 +1,8 @@
 name: 'poc-git-to-cmdb'
 description: 'POC to send information about the app to Kafka'
-
+# naam/url erin zetten, als zelfde combinatie al in kafka staat met andere inhoud, error gooien
+#reference metdata origin, link, url, naam
+#targetaudience
 containers:
   - name: 'poc-git-to-cmdb'
     synonyms: poc-git-to-kafka-cmdb-sync
@@ -11,13 +13,22 @@ containers:
     team:
     #Optional if not specified in SRE-Team config https://github.com/RoyalAholdDelhaize/sre-teams-configuration
     productOwner: 
+    #Optional
+    githubURL: http
+    #What is the target for this application
+    targetAudience:
+        customer: false
+        service: false
+        thirdParty: false
+        business: true
+        internal: true
     # "Business", "Customer Facing", "External Service", "Infrastructure", "Interface", "Office", "Tool", "Unknown"
-    applicationType: Tool # Remame to make more sense/categorize to more fitting names
+    #applicationType: Tool # Remame to make more sense/categorize to more fitting names
     # Default value azure, only fill in if application is not hosted at azure
-    hostedAt: Azure Cloud
-    #Options: BPO, CaaS, IaaS, PaaS, SaaS if none of these apply fill in Custom
-    deploymentModel: Custom # rename on premise to custom software of iets en zet die als default
-    dataConfidentiality:
+    hostedAt: Azure Cloud # uit deployment halen
+    #Options: BPO, CaaS, IaaS, PaaS, SaaS. If none of these apply fill in Custom
+    deploymentModel: Custom 
+    dataClassification:
         containsPersonalData: false
         containsFinancialData: false
         #application or data or both?
@@ -26,7 +37,7 @@ containers:
     #Options: High, Medium, Low, None
     missionCriticality: Low
     # If the repository has a helm file leave like this, otherwise remove value and fill in the assignmentGroup
-    assignementGroup: test
+    assignementGroup: !include [/helm/values.yml, labels, devops.ah.it/support-assignment-group] # vanuit teams halen uiteindelijk
     #Pipelined or operational
     operationalStatus: Pipelined
     components:
@@ -42,8 +53,8 @@ containers:
               type: HTTP/JSON2
               status: TO_BE_IMPLEMENTED2
         consumedAPIs:
-            - test: Unique API name
-              test2: What is it used for
+            - name: Unique API name
+              description: What is it used for
               status: TO_BE_IMPLEMENTED
               read: true
               write: true
@@ -53,4 +64,4 @@ containers:
               status: TO_BE_IMPLEMENTED2
               read: true
               write: false
-              execute: true
+              execute: false
