@@ -35,7 +35,8 @@ KAFKA_BOOTSTRAP_ENV_VAR = 'KAFKA_BOOTSTRAP_SERVERS'
 KAFKA_PASSWD_ENV_VAR = 'KAFKA_PASSWORD'
 KAFKA_USERNAME_ENV_VAR = 'KAFKA_USERNAME'
 KAFKA_CA_ENV_VAR = 'KAFKA_CA_CONTENT'
-KAFKA_VALIDATION_CHECK_ENV_VAR ='KAFKA_VALIDATION_CHECK' 
+KAFKA_VALIDATION_CHECK_ENV_VAR ='KAFKA_VALIDATION_CHECK'
+KAFKA_BYPASS_MODE_ENV_VAR = 'KAFKA_BYPASS_MODE_ENV_VAR'
 
 # Kafka settings
 KAFKA_TOPIC_DEFAULT_KEY = 'topic2'
@@ -331,6 +332,9 @@ def translate_keys(data):
 
 def validate_url_name(value):
     global YAML_DATA 
+    if os.getenv(KAFKA_BYPASS_MODE_ENV_VAR):
+        return
+
     for containers in YAML_DATA['containers']:
         for container in value['containers']:
             if(container['name'] == containers['name'] or container['githubURL'] == containers['githubURL']):
@@ -426,7 +430,7 @@ def main():
     #ca_content = os.getenv(KAFKA_CA_ENV_VAR)
     #write_ca_file(ca_content, DEFAULT_CA_FILE)
     try:
-        if(validate_yaml(YAML_DATA, True)):
+        if(validate_yaml(YAML_DATA, True) or os.getenv(KAFKA_BYPASS_MODE_ENV_VAR)):
             send_to_kafka(settings=kafka_settings, data=YAML_DATA)
             log.info('Data successfully sent, data: %s', YAML_DATA)
             exit(0)
