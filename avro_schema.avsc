@@ -68,7 +68,7 @@
                     "type": "boolean"
                   },
                   {
-                    "name": "internal",
+                    "name": "developers",
                     "type": "boolean"
                   }
                 ]
