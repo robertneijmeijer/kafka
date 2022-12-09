@@ -24,6 +24,7 @@ from itertools import islice
 from pathlib import Path
 import time
 import uuid
+from github import Github
 
 DEFAULT_DATA_FILE = 'system.yml'
 DEFAULT_CA_FILE = 'ca.crt'
@@ -37,7 +38,7 @@ KAFKA_USERNAME_ENV_VAR = 'KAFKA_USERNAME'
 KAFKA_CA_ENV_VAR = 'KAFKA_CA_CONTENT'
 KAFKA_VALIDATION_CHECK_ENV_VAR ='KAFKA_VALIDATION_CHECK'
 KAFKA_BYPASS_MODE_ENV_VAR = 'KAFKA_BYPASS_MODE_ENV_VAR'
-TEAMS_AS_CODE = 'TEAMS_AS_CODE'
+TOKEN_GITHUB = 'TOKEN_GITHUB'
 
 # Kafka settings
 KAFKA_TOPIC_DEFAULT_KEY = 'topic2'
@@ -157,6 +158,10 @@ def add_value(key, container_index = 0):
             YAML_DATA['containers'][container_index][key] = 3
         else :
             YAML_DATA['containers'][container_index][key] = 4
+
+def update_product_owners():
+
+    return 
 
 def find_product_owner(role):
     global YAML_DATA
@@ -413,8 +418,8 @@ def main():
     YAML_DATA = data
 
     try:
-        log.info('Teams as code content: ')
-        log.info(os.getenv(TEAMS_AS_CODE))
+        log.info('GITHUB TOKEN: ')
+        log.info(os.getenv(TOKEN_GITHUB))
     except Exception as e:
         log.error(e)
     
