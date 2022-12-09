@@ -48,6 +48,8 @@ KAFKA_SASL_MECHANISM = 'SCRAM-SHA-512'
 TOPIC_NAME = 'topic18'
 BOOTSTRAP_SERVERS_URL = '10.152.183.52:9094'
 SCHEMA_REGISTRY_URL = 'http://10.152.183.242:8081'
+ORGANIZATION_NAME = 'RoyalAholdDelhaize'
+TEAMS_AS_CODE_REPO_NAME = 'sre-teams-configuration'
 
 global YAML_DATA
 
@@ -160,7 +162,10 @@ def add_value(key, container_index = 0):
             YAML_DATA['containers'][container_index][key] = 4
 
 def update_product_owners():
-
+    github_client = Github(os.getenv(TOKEN_GITHUB))
+    teams_as_code = github_client.get_organization(ORGANIZATION_NAME).get_repo(TEAMS_AS_CODE_REPO_NAME)
+    log.info('repo content')
+    log.info(teams_as_code)
     return 
 
 def find_product_owner(role):
@@ -416,12 +421,6 @@ def main():
     data = parse_yaml(kafka_settings['data_file'])
     global YAML_DATA 
     YAML_DATA = data
-
-    try:
-        log.info('GITHUB TOKEN: ')
-        log.info(os.getenv(TOKEN_GITHUB))
-    except Exception as e:
-        log.error(e)
     
     # log.info("Validationcheck " + str(os.getenv(KAFKA_VALIDATION_CHECK_ENV_VAR)))
     log.info('Data: %s', YAML_DATA)
@@ -432,6 +431,7 @@ def main():
     validate_yaml(YAML_DATA)
     
     # validate_names()
+    update_product_owners()
 
     if os.getenv(KAFKA_VALIDATION_CHECK_ENV_VAR):
         validate_yaml(YAML_DATA)
