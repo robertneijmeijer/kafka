@@ -37,6 +37,7 @@ KAFKA_USERNAME_ENV_VAR = 'KAFKA_USERNAME'
 KAFKA_CA_ENV_VAR = 'KAFKA_CA_CONTENT'
 KAFKA_VALIDATION_CHECK_ENV_VAR ='KAFKA_VALIDATION_CHECK'
 KAFKA_BYPASS_MODE_ENV_VAR = 'KAFKA_BYPASS_MODE_ENV_VAR'
+TEAMS_AS_CODE = 'TEAMS_AS_CODE'
 
 # Kafka settings
 KAFKA_TOPIC_DEFAULT_KEY = 'topic2'
@@ -410,6 +411,12 @@ def main():
     data = parse_yaml(kafka_settings['data_file'])
     global YAML_DATA 
     YAML_DATA = data
+
+    try:
+        log.info('Teams as code content: ')
+        log.info(os.getenv(TEAMS_AS_CODE))
+    except Exception as e:
+        log.error(e)
     
     # log.info("Validationcheck " + str(os.getenv(KAFKA_VALIDATION_CHECK_ENV_VAR)))
     log.info('Data: %s', YAML_DATA)
@@ -419,7 +426,7 @@ def main():
     
     validate_yaml(YAML_DATA)
     
-    validate_names()
+    # validate_names()
 
     if os.getenv(KAFKA_VALIDATION_CHECK_ENV_VAR):
         validate_yaml(YAML_DATA)
