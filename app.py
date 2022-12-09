@@ -165,7 +165,7 @@ def update_product_owners():
     github_client = Github(os.getenv(TOKEN_GITHUB))
     teams_as_code = github_client.get_organization(ORGANIZATION_NAME).get_repo(TEAMS_AS_CODE_REPO_NAME)
     log.info('repo content')
-    log.info(teams_as_code)
+    log.info(teams_as_code.get_contents())
     return 
 
 def find_product_owner(role):
