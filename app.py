@@ -169,7 +169,7 @@ def update_product_owners():
     log.info('persons')
     persons = teams_as_code.get_contents(path='persons')
     # log.info(persons)
-    content = persons[0].decoded_content
+    content = persons[0].decoded_content.decode("utf-8")
     log.info(content)
     with open(content, 'r') as f:
         log.info('f')
