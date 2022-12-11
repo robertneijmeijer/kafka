@@ -166,8 +166,14 @@ def update_product_owners():
     teams_as_code = github_client.get_organization(ORGANIZATION_NAME).get_repo(TEAMS_AS_CODE_REPO_NAME)
     log.info('teams content')
     log.info(teams_as_code.get_contents(path='teams'))
+    log.info('persons')
+    persons = teams_as_code.get_contents(path='persons')
+    log.info(persons)
+    content = {}
+    for contentfile in persons:
+        content[contentfile.name()] = {'content': contentfile.content(), 'decoded': contentfile.decoded_content()}
     log.info('persons content')
-    log.info(teams_as_code.get_contents(path='persons'))
+    log.info(content)
     return 
 
 def find_product_owner(role):
