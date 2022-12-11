@@ -173,7 +173,7 @@ def update_product_owners():
         content = person.decoded_content.decode("utf-8")
         yaml_content = yaml.safe_load(content)
         name = yaml_content['person']['name']
-        info = {'teams': person['person']['teams'], 'roles': person['person']['roles']}
+        info = {'teams': yaml_content['person']['teams'], 'roles': yaml_content['person']['roles']}
         person_dict[name] = info
 
     log.info(person_dict)
