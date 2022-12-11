@@ -174,7 +174,7 @@ def update_product_owners():
     #     content[contentfile.name()] = contentfile.decoded_content.decode()
     # log.info('persons content')
     log.info('single')
-    log.info(persons[0].decoded_content.strip())
+    log.info(persons[0].decoded_content.replace('\n', ''))
 
     for person in persons:
         content.append(person.decoded_content)
