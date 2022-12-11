@@ -170,10 +170,11 @@ def update_product_owners():
     persons = teams_as_code.get_contents(path='persons')
     log.info(persons)
     content = {}
-    for contentfile in persons:
-        content[contentfile.name()] = contentfile.decoded_content.decode()
-    log.info('persons content')
-    log.info(content)
+    # for contentfile in persons:
+    #     content[contentfile.name()] = contentfile.decoded_content.decode()
+    # log.info('persons content')
+    # log.info(content)
+    log.info(help(persons[0]))
     return 
 
 def find_product_owner(role):
