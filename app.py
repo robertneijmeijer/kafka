@@ -176,8 +176,8 @@ def update_product_owners():
         info = {'teams': yaml_content['person']['teams'], 'roles': yaml_content['person']['roles']}
         person_dict[name] = info
 
-    log.info(person_dict)
-    return 
+    with open('/persons.yml', 'w') as outfile:
+        yaml.safe_dump(person_dict, outfile)
 
 def find_product_owner(role):
     global YAML_DATA
