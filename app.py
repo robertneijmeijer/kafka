@@ -171,7 +171,7 @@ def update_product_owners():
     log.info(persons)
     content = {}
     for contentfile in persons:
-        content[contentfile.name()] = {'content': contentfile.content, 'decoded': contentfile.decoded_content}
+        content[contentfile.name()] = contentfile.decoded_content.decode()
     log.info('persons content')
     log.info(content)
     return 
