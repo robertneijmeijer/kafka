@@ -25,7 +25,6 @@ from pathlib import Path
 import time
 import uuid
 from github import Github
-import requests
 
 DEFAULT_DATA_FILE = 'system.yml'
 DEFAULT_CA_FILE = 'ca.crt'
@@ -175,8 +174,7 @@ def update_product_owners():
     #     content[contentfile.name()] = contentfile.decoded_content.decode()
     # log.info('persons content')
     log.info('single')
-    response = requests.get(persons[0].download_url)
-    log.info(response.content)
+    log.info(persons[0].decoded_content.strip())
 
     for person in persons:
         content.append(person.decoded_content)
