@@ -170,7 +170,10 @@ def update_product_owners():
     persons = teams_as_code.get_contents(path='persons')
     # log.info(persons)
     content = persons[0].decoded_content
-    content = content.replace('\n', '')
+    log.info(content)
+    with open(content, 'r') as f:
+        log.info('f')
+        log.info(f)
     # for contentfile in persons:
     #     content[contentfile.name()] = contentfile.decoded_content.decode()
     # log.info('persons content')
