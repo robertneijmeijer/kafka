@@ -172,6 +172,9 @@ def update_product_owners():
     content = persons[0].decoded_content.decode("utf-8")
     log.info('single')
     log.info(content)
+    y = yaml.safe_load(content)
+    log.info('yml')
+    log.info(y)
 
     
     return 
