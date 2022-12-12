@@ -226,53 +226,53 @@ def validate_yaml(yaml_data, verbose = False):
         # Validate each container seperatly for replacing the values
         for index, container in enumerate(yaml_data["containers"]):
             container_schema_val = {
-        "name": str,
-        "synonyms": str,
-        "description": str,
-        Optional("technology", default= lambda : add_value('technology', index)): str,
-        Optional("team", default= lambda : add_value('team', index)): str,
-        Optional("productOwner", default= lambda : add_value('productOwner', index)): str,
-        Optional("githubURL", default= lambda : add_value('githubURL')): str,
-        "targetConsumers":{
-            "customer": bool,
-            "softwareSystem": bool,
-            "thirdParty": bool,
-            "business": bool,
-            "developer": bool,
-        },
-        Optional("hostedAt", default = lambda : add_value('hostedAt', index)): Or("Amazon Web Services (AWS Cloud)", "AT&T", "Azure CF1", "Azure CF2", "Azure Cloud", "DXC", "Equinix", "Google Cloud Platform", "Hybric", "Inlumi", "Local server", "Multi-Cloud", "Not Applicable", "Other", "Salesforce", "ServiceNow", "Solvinity", "Unit4", "Unknown", "User device", "Azure"),
-        Optional("deploymentModel", default = lambda : add_value('deploymentModel')): Or("BPO", "CaaS", "IaaS", "Custom", "PaaS", "SaaS"),
-        "dataClassification" : {
-            "containsPersonalData": bool,
-            "containsFinancialData": bool,
-            "publiclyExposed": bool,
-            "restrictedAccess": bool,
-        },
-        "missionCriticality": Or("High", "Medium", "Low", "None"),
-        Optional("maxSeverityLevel", default= lambda : add_value('maxSeverityLevel', index)): Or(1,2,3,4, "None"),
-        Optional("icfr", default= lambda : add_value('icfr', index)): bool,
-        "assignementGroup": str,
-        # operational = deployed to prod, pipelined = in development not yet released
-        "operationalStatus": Or("Pipelined", "Operational", "Non-Operational", "Submitted for decommissioning", "Decommissioned", "In decommissioning process"),
-        "components": [{
-            "name": str,
-            "description": str,
-            "exposedAPIs": [{
                 "name": str,
+                "synonyms": str,
                 "description": str,
-                "type": str,
-                "status": str,
-            }],
-            "consumedAPIs": [{
-                "name": str,
-                "description": str,
-                "status": str,
-                "read": bool,
-                "write": bool,
-                "execute": bool,
-            }]
-        }],
-    }
+                Optional("technology", default= lambda : add_value('technology', index)): str,
+                Optional("team", default= lambda : add_value('team', index)): str,
+                Optional("productOwner", default= lambda : add_value('productOwner', index)): str,
+                Optional("githubURL", default= lambda : add_value('githubURL', index)): str,
+                "targetConsumers":{
+                    "customer": bool,
+                    "softwareSystem": bool,
+                    "thirdParty": bool,
+                    "business": bool,
+                    "developer": bool,
+                },
+                Optional("hostedAt", default = lambda : add_value('hostedAt', index)): Or("Amazon Web Services (AWS Cloud)", "AT&T", "Azure CF1", "Azure CF2", "Azure Cloud", "DXC", "Equinix", "Google Cloud Platform", "Hybric", "Inlumi", "Local server", "Multi-Cloud", "Not Applicable", "Other", "Salesforce", "ServiceNow", "Solvinity", "Unit4", "Unknown", "User device", "Azure"),
+                Optional("deploymentModel", default = lambda : add_value('deploymentModel')): Or("BPO", "CaaS", "IaaS", "Custom", "PaaS", "SaaS"),
+                "dataClassification" : {
+                    "containsPersonalData": bool,
+                    "containsFinancialData": bool,
+                    "publiclyExposed": bool,
+                    "restrictedAccess": bool,
+                },
+                "missionCriticality": Or("High", "Medium", "Low", "None"),
+                Optional("maxSeverityLevel", default= lambda : add_value('maxSeverityLevel', index)): Or(1,2,3,4, "None"),
+                Optional("icfr", default= lambda : add_value('icfr', index)): bool,
+                "assignementGroup": str,
+                # operational = deployed to prod, pipelined = in development not yet released
+                "operationalStatus": Or("Pipelined", "Operational", "Non-Operational", "Submitted for decommissioning", "Decommissioned", "In decommissioning process"),
+                "components": [{
+                    "name": str,
+                    "description": str,
+                    "exposedAPIs": [{
+                        "name": str,
+                        "description": str,
+                        "type": str,
+                        "status": str,
+                    }],
+                    "consumedAPIs": [{
+                        "name": str,
+                        "description": str,
+                        "status": str,
+                        "read": bool,
+                        "write": bool,
+                        "execute": bool,
+                    }]
+                }],
+            }
             container_validator = Schema(container_schema_val)
             log.info('INDEX')
             log.info(index)
