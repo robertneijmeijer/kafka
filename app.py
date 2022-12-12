@@ -241,7 +241,7 @@ def validate_yaml(yaml_data, verbose = False):
                     "developer": bool,
                 },
                 Optional("hostedAt", default = lambda : add_value('hostedAt', index)): Or("Amazon Web Services (AWS Cloud)", "AT&T", "Azure CF1", "Azure CF2", "Azure Cloud", "DXC", "Equinix", "Google Cloud Platform", "Hybric", "Inlumi", "Local server", "Multi-Cloud", "Not Applicable", "Other", "Salesforce", "ServiceNow", "Solvinity", "Unit4", "Unknown", "User device", "Azure"),
-                Optional("deploymentModel", default = lambda : add_value('deploymentModel')): Or("BPO", "CaaS", "IaaS", "Custom", "PaaS", "SaaS"),
+                Optional("deploymentModel", default = lambda : add_value('deploymentModel', index)): Or("BPO", "CaaS", "IaaS", "Custom", "PaaS", "SaaS"),
                 "dataClassification" : {
                     "containsPersonalData": bool,
                     "containsFinancialData": bool,
