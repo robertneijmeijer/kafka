@@ -161,6 +161,8 @@ def add_value(key, container_index = 0):
         else :
             YAML_DATA['containers'][container_index][key] = 4
     elif(key == 'githubURL'):
+        log.info('GIT INFO')
+        log.info(key + ' ' + str(container_index))
         YAML_DATA['containers'][container_index][key] = 'giturl'
     elif(key == 'deploymentModel'):
         YAML_DATA['containers'][container_index][key] = 'Custom'
