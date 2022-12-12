@@ -274,6 +274,8 @@ def validate_yaml(yaml_data, verbose = False):
         }],
     }
             container_validator = Schema(container_schema_val)
+            log.info('INDEX')
+            log.info(index)
             container_validator.validate(container)
 
         if(verbose):
