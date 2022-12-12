@@ -160,6 +160,10 @@ def add_value(key, container_index = 0):
             YAML_DATA['containers'][container_index][key] = 3
         else :
             YAML_DATA['containers'][container_index][key] = 4
+    elif(key == 'githubURL'):
+        YAML_DATA['containers'][container_index][key] = 'git url'
+    elif(key == 'deploymentModel'):
+        YAML_DATA['containers'][container_index][key] = 'Custom'
 
 def update_product_owners():
     github_client = Github(os.getenv(TOKEN_GITHUB))
