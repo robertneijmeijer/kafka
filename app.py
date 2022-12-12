@@ -45,7 +45,7 @@ KAFKA_TOPIC_DEFAULT_KEY = 'topic2'
 KAFKA_SECURITY_PROTOCOL = 'PLAINTEXT'
 KAFKA_SASL_MECHANISM = 'SCRAM-SHA-512'
 
-TOPIC_NAME = 'topic18'
+TOPIC_NAME = 'topic19'
 BOOTSTRAP_SERVERS_URL = '10.152.183.52:9094'
 SCHEMA_REGISTRY_URL = 'http://10.152.183.242:8081'
 ORGANIZATION_NAME = 'RoyalAholdDelhaize'
@@ -219,8 +219,8 @@ def validate_yaml(yaml_data, verbose = False):
         Optional("technology", default= lambda : add_value('technology', counter)): str,
         Optional("team", default= lambda : add_value('team', counter)): str,
         Optional("productOwner", default= lambda : add_value('productOwner', counter)): str,
-        "githubURL": str,
-        "targetAudience":{
+        Optional("githubURL", default= lambda : add_value('githubURL')): str,
+        "targetConsumers":{
             "customer": bool,
             "service": bool,
             "thirdParty": bool,
@@ -228,7 +228,7 @@ def validate_yaml(yaml_data, verbose = False):
             "developers": bool,
         },
         Optional("hostedAt", default = lambda : add_value('hostedAt', counter)): Or("Amazon Web Services (AWS Cloud)", "AT&T", "Azure CF1", "Azure CF2", "Azure Cloud", "DXC", "Equinix", "Google Cloud Platform", "Hybric", "Inlumi", "Local server", "Multi-Cloud", "Not Applicable", "Other", "Salesforce", "ServiceNow", "Solvinity", "Unit4", "Unknown", "User device", "Azure"),
-        "deploymentModel": Or("BPO", "CaaS", "IaaS", "Custom", "PaaS", "SaaS"),
+        Optional("deploymentModel", default = lambda : add_value('deploymentModel')): Or("BPO", "CaaS", "IaaS", "Custom", "PaaS", "SaaS"),
         "dataClassification" : {
             "containsPersonalData": bool,
             "containsFinancialData": bool,

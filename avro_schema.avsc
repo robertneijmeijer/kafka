@@ -46,10 +46,10 @@
               "name": "githubURL",
               "type": "string"
             },{
-              "name": "targetAudience",
+              "name": "targetConsumers",
               "type": {
                 "type": "record",
-                "name": "targetAudience",
+                "name": "targetConsumers",
                 "fields": [
                   {
                     "name": "customer",
