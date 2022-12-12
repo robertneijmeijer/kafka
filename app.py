@@ -442,7 +442,7 @@ def main():
     validate_yaml(YAML_DATA)
     
     # validate_names()
-    # update_product_owners()
+    update_product_owners()
 
     if os.getenv(KAFKA_VALIDATION_CHECK_ENV_VAR):
         validate_yaml(YAML_DATA)
