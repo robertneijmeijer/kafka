@@ -218,7 +218,15 @@ def validate_yaml(yaml_data, verbose = False):
     "name": str,
     "description": str,
     }
-    container_schema_val = {
+    
+    first_validator = Schema(parent_schema_val)
+
+    try:
+        first_validator.validate(dict(islice(yaml_data.items(), 0, 2)))
+
+        # Validate each container seperatly for replacing the values
+        for container in yaml_data["containers"]:
+            container_schema_val = {
         "name": str,
         "synonyms": str,
         "description": str,
@@ -266,14 +274,7 @@ def validate_yaml(yaml_data, verbose = False):
             }]
         }],
     }
-    first_validator = Schema(parent_schema_val)
-    container_validator = Schema(container_schema_val)
-
-    try:
-        first_validator.validate(dict(islice(yaml_data.items(), 0, 2)))
-
-        # Validate each container seperatly for replacing the values
-        for container in yaml_data["containers"]:
+            container_validator = Schema(container_schema_val)
             container_validator.validate(container)
             counter += 1
 
