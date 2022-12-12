@@ -222,10 +222,10 @@ def validate_yaml(yaml_data, verbose = False):
         Optional("githubURL", default= lambda : add_value('githubURL')): str,
         "targetConsumers":{
             "customer": bool,
-            "service": bool,
+            "softwareSystem": bool,
             "thirdParty": bool,
             "business": bool,
-            "developers": bool,
+            "developer": bool,
         },
         Optional("hostedAt", default = lambda : add_value('hostedAt', counter)): Or("Amazon Web Services (AWS Cloud)", "AT&T", "Azure CF1", "Azure CF2", "Azure Cloud", "DXC", "Equinix", "Google Cloud Platform", "Hybric", "Inlumi", "Local server", "Multi-Cloud", "Not Applicable", "Other", "Salesforce", "ServiceNow", "Solvinity", "Unit4", "Unknown", "User device", "Azure"),
         Optional("deploymentModel", default = lambda : add_value('deploymentModel')): Or("BPO", "CaaS", "IaaS", "Custom", "PaaS", "SaaS"),

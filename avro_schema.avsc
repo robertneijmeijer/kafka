@@ -56,7 +56,7 @@
                     "type": "boolean"
                   },
                   {
-                    "name": "service",
+                    "name": "softwareSystem",
                     "type": "boolean"
                   },
                   {
@@ -68,7 +68,7 @@
                     "type": "boolean"
                   },
                   {
-                    "name": "developers",
+                    "name": "developer",
                     "type": "boolean"
                   }
                 ]
