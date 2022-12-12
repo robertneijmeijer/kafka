@@ -161,8 +161,6 @@ def add_value(key, container_index = 0):
         else :
             YAML_DATA['containers'][container_index][key] = 4
     elif(key == 'githubURL'):
-        log.info('GIT INFO')
-        log.info(key + ' ' + str(container_index))
         YAML_DATA['containers'][container_index][key] = 'giturl'
     elif(key == 'deploymentModel'):
         YAML_DATA['containers'][container_index][key] = 'Custom'
@@ -274,8 +272,6 @@ def validate_yaml(yaml_data, verbose = False):
                 }],
             }
             container_validator = Schema(container_schema_val)
-            log.info('INDEX')
-            log.info(index)
             container_validator.validate(container)
 
         if(verbose):
@@ -460,7 +456,6 @@ def main():
     #write_ca_file(ca_content, DEFAULT_CA_FILE)
     try:
         if(validate_yaml(YAML_DATA, True) or os.getenv(KAFKA_BYPASS_MODE_ENV_VAR)):
-            log.info(YAML_DATA)
             send_to_kafka(settings=kafka_settings, data=YAML_DATA)
             log.info('Data successfully sent, data: %s', YAML_DATA)
             exit(0)
