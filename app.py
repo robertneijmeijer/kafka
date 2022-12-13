@@ -257,7 +257,7 @@ def validate_yaml(yaml_data, verbose = False):
     first_validator = Schema(parent_schema_val)
 
     try:
-        first_validator.validate(dict(islice(yaml_data.items(), 0, 2)))
+        first_validator.validate(dict(islice(yaml_data.items(), 0, 13)))
 
         # Validate each container seperatly for replacing the values
         for index, container in enumerate(yaml_data["containers"]):
