@@ -51,6 +51,10 @@ SCHEMA_REGISTRY_URL = 'http://10.152.183.242:8081'
 ORGANIZATION_NAME = 'RoyalAholdDelhaize'
 TEAMS_AS_CODE_REPO_NAME = 'sre-teams-configuration'
 
+EXIT_OKAY = 0
+EXIT_ERORR = 1
+EXIT_MISSING = 2
+
 global YAML_DATA
 
 log = logging.getLogger()
@@ -195,6 +199,13 @@ def find_product_owner(role):
                 return k
     return None
 
+def validate_keys_values(object):
+    if isinstance(object, list):
+        for item in object:
+            validate_keys_values(item)
+    
+    return
+
 def find_team():
     path = Path(os.getcwd() + '/CODEOWNERS')
     if not path.is_file():
@@ -204,16 +215,43 @@ def find_team():
     with open(os.getcwd() + '/CODEOWNERS') as f:
         code = f.read()
 
-
     matches = re.findall(r"(CODEOWNERS|\*)[ \t]+(@RoyalAholdDelhaize\/)(.*)", code)
 
     return matches[0][-1]
 
+def check_value(key, container_index = 0, container = False):
+    log.info('checking value ' + str(key))
+    global YAML_DATA
+    if(not container):
+        log_error('Please add the ' + str(key) +' object/key', EXIT_MISSING)
+    elif(key == 'targetConsumers' and container):
+        for k, v in YAML_DATA.items():
+            log.info("Keys and values")
+            log.info(k)
+            log.info(v)
+    elif(key == 'dataClassification' and container):
+        
+        return
+
+
 def validate_yaml(yaml_data, verbose = False):
 
     parent_schema_val = {
-    "name": str,
-    "description": str,
+        "name": str,
+        "description": str,
+        Optional("targetConsumers", default= lambda : check_value('targetConsumers', 0, False)):{
+                        Optional("customer", default= lambda : check_value('customer', 0, False)): bool,
+                        Optional("softwareSystem", default= lambda : check_value('softwareSystem', 0, False)): bool,
+                        Optional("thirdParty", default= lambda :check_value('thirdParty', 0, False)): bool,
+                        Optional("business", default= lambda : check_value('business', 0, False)): bool,
+                        Optional("developer", default= lambda : check_value('developer', 0, False)): bool,
+        },
+        Optional("dataClassification", default= lambda : check_value('dataClassification', 0, False)) : {
+                        Optional("containsPersonalData", default= lambda : check_value('containsPersonalData', 0, False)): bool,
+                        Optional("containsFinancialData", default= lambda : check_value('containsFinancialData', 0, False)): bool,
+                        Optional("publiclyExposed", default= lambda : check_value('publiclyExposed', 0, False)): bool,
+                        Optional("restrictedAccess", default= lambda : check_value('restrictedAccess', 0, False)) : bool,
+        },
     }
     
     first_validator = Schema(parent_schema_val)
@@ -231,21 +269,21 @@ def validate_yaml(yaml_data, verbose = False):
                 Optional("team", default= lambda : add_value('team', index)): str,
                 Optional("productOwner", default= lambda : add_value('productOwner', index)): str,
                 Optional("githubURL", default= lambda : add_value('githubURL', index)): str,
-                "targetConsumers":{
-                    "customer": bool,
-                    "softwareSystem": bool,
-                    "thirdParty": bool,
-                    "business": bool,
-                    "developer": bool,
-                },
+                Optional("targetConsumers", default= lambda : check_value('targetConsumers', index, True)):{
+                        Optional("customer", default= lambda : check_value('customer', index, True)): bool,
+                        Optional("softwareSystem", default= lambda : check_value('softwareSystem', index, True)): bool,
+                        Optional("thirdParty", default= lambda :check_value('thirdParty', index, True)): bool,
+                        Optional("business", default= lambda : check_value('business', index, True)): bool,
+                        Optional("developer", default= lambda : check_value('developer', index, True)): bool,
+        },
                 Optional("hostedAt", default = lambda : add_value('hostedAt', index)): Or("Amazon Web Services (AWS Cloud)", "AT&T", "Azure CF1", "Azure CF2", "Azure Cloud", "DXC", "Equinix", "Google Cloud Platform", "Hybric", "Inlumi", "Local server", "Multi-Cloud", "Not Applicable", "Other", "Salesforce", "ServiceNow", "Solvinity", "Unit4", "Unknown", "User device", "Azure"),
                 Optional("deploymentModel", default = lambda : add_value('deploymentModel', index)): Or("BPO", "CaaS", "IaaS", "Custom", "PaaS", "SaaS"),
-                "dataClassification" : {
-                    "containsPersonalData": bool,
-                    "containsFinancialData": bool,
-                    "publiclyExposed": bool,
-                    "restrictedAccess": bool,
-                },
+                Optional("dataClassification", default= lambda : check_value('dataClassification', index, True)) : {
+                        Optional("containsPersonalData", default= lambda : check_value('containsPersonalData', index, True)): bool,
+                        Optional("containsFinancialData", default= lambda : check_value('containsFinancialData', index, True)): bool,
+                        Optional("publiclyExposed", default= lambda : check_value('publiclyExposed', index, True)): bool,
+                        Optional("restrictedAccess", default= lambda : check_value('restrictedAccess', index, True)) : bool,
+        },
                 "missionCriticality": Or("High", "Medium", "Low", "None"),
                 Optional("maxSeverityLevel", default= lambda : add_value('maxSeverityLevel', index)): Or(1,2,3,4, "None"),
                 Optional("icfr", default= lambda : add_value('icfr', index)): bool,
@@ -429,6 +467,10 @@ def validate_names():
         consumer.close()
     return True
 
+def log_error(message, exit_code):
+    log.error(str(message))
+    exit(exit_code)
+
 def main():
     kafka_settings = parse_args()
     log.info('Configuration: %s', kafka_settings)
@@ -456,7 +498,7 @@ def main():
     #write_ca_file(ca_content, DEFAULT_CA_FILE)
     try:
         if(validate_yaml(YAML_DATA, True) or os.getenv(KAFKA_BYPASS_MODE_ENV_VAR)):
-            send_to_kafka(settings=kafka_settings, data=YAML_DATA)
+            # send_to_kafka(settings=kafka_settings, data=YAML_DATA)
             log.info('Data successfully sent, data: %s', YAML_DATA)
             exit(0)
         else:
