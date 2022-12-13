@@ -225,13 +225,34 @@ def check_value(key, container_index = 0, container = False):
     if(not container):
         log_error('Please add the ' + str(key) +' object/key', EXIT_MISSING)
     elif(key == 'targetConsumers' and container):
+        found = False
         for k, v in YAML_DATA.items():
-            log.info("Keys and values")
-            log.info(k)
-            log.info(v)
+            if(k == key):
+                found = True
+        if not found:
+            log_error('Please fill in the targetConsumers object on the parent level or override it in the container', EXIT_MISSING)
     elif(key == 'dataClassification' and container):
-        
-        return
+        found = False
+        for k, v in YAML_DATA.items():
+            if(k == key):
+                found = True
+        if not found:
+            log_error('Please fill in the dataClassification object on the parent level or override it in the container', EXIT_MISSING)
+    elif(container):
+        found = False
+        for k, v in YAML_DATA['targetConsumers'].items():
+            if(k == key):
+                if YAML_DATA['targetConsumers'][key] is None:
+                    log_error('Please provide a value for ' + str(key) + ' or define it at parent level')
+                found = True
+        for k, v in YAML_DATA['dataClassification'].items():
+            if(k == key):
+                if YAML_DATA['dataClassification'][key] is None:
+                    log_error('Please provide a value for ' + str(key) + ' or define it at parent level')
+                found = True
+        if not found:
+            log_error('Please provide a value for ' + str(key) + ' or define it at parent level')
+
 
 
 def validate_yaml(yaml_data, verbose = False):
@@ -257,8 +278,6 @@ def validate_yaml(yaml_data, verbose = False):
     first_validator = Schema(parent_schema_val)
 
     try:
-        log.info('WRONG')
-        log.info(dict(islice(yaml_data.items(), 0, 4)))
         first_validator.validate(dict(islice(yaml_data.items(), 0, 4)))
         
         # Validate each container seperatly for replacing the values
