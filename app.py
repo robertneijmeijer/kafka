@@ -223,7 +223,13 @@ def check_value(key, container_index = 0, container = False):
     log.info('checking value ' + str(key))
     global YAML_DATA
     if(not container):
-        log_error('Please add the ' + str(key) +' object/key', EXIT_MISSING)
+        for container in YAML_DATA['containers']:
+            found = False
+            for k,v in container.items():
+                if k == key:
+                    found = True
+            if not found:
+                log_error('Please add the ' + str(key) +' object/key', EXIT_MISSING)
     elif(key == 'targetConsumers' and container):
         found = False
         for k, v in YAML_DATA.items():
