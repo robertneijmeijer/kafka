@@ -223,7 +223,6 @@ def check_value(key, container_index = 0, container = False):
     log.info('checking value ' + str(key) + ' container: ' + str(container))
     global YAML_DATA
     if(not container):
-        log.info(key + " " + str(YAML_DATA.items()))
         for k, v in YAML_DATA.items():
             if(k == key):
                 return
