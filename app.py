@@ -258,8 +258,8 @@ def validate_yaml(yaml_data, verbose = False):
 
     try:
         log.info('WRONG')
-        log.info(dict(islice(yaml_data.items(), 0, 13)))
-        first_validator.validate(dict(islice(yaml_data.items(), 0, 13)))
+        log.info(dict(islice(yaml_data.items(), 0, 4)))
+        first_validator.validate(dict(islice(yaml_data.items(), 0, 4)))
         
         # Validate each container seperatly for replacing the values
         for index, container in enumerate(yaml_data["containers"]):
