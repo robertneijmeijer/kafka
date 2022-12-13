@@ -223,6 +223,13 @@ def check_value(key, container_index = 0, container = False):
     log.info('checking value ' + str(key) + ' container: ' + str(container))
     global YAML_DATA
     if(not container):
+        if key in YAML_DATA.items():
+            return
+        if key in YAML_DATA['targetConsumers'].items():
+            return
+        if key in YAML_DATA['dataClassification'].items():
+            return
+
         for container in YAML_DATA['containers']:
             found = False
             for k,v in container.items():
