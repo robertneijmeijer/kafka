@@ -104,7 +104,7 @@
               "type": "string"
             },{
               "name": "containerTargetConsumers",
-              "type": "objects.target.targetConsumers"
+              "type": ["objects.target.targetConsumers", "null"]
             },
             {
               "name": "hostedAt",
@@ -116,7 +116,7 @@
             },
             {
               "name": "containerDataClassification",
-              "type": "objects.data.dataClassification"
+              "type": ["objects.data.dataClassification", "null"]
             },
             {
               "name": "missionCriticality",
