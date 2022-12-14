@@ -546,7 +546,7 @@ def main():
     #write_ca_file(ca_content, DEFAULT_CA_FILE)
     try:
         if(validate_yaml(YAML_DATA, True) or os.getenv(KAFKA_BYPASS_MODE_ENV_VAR)):
-            # send_to_kafka(settings=kafka_settings, data=YAML_DATA)
+            send_to_kafka(settings=kafka_settings, data=YAML_DATA)
             log.info('Data successfully sent, data: %s', YAML_DATA)
             exit(0)
         else:
