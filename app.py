@@ -67,7 +67,7 @@ def include_constructor(loader, node):
   path = Path(os.getcwd() + name)
   if not path.is_file():
     log.error("Values could not be found at: " + name + " please add the correct path or fill the value in manually")
-    exit(1)
+    exit(EXIT_ERORR)
 
   with open(os.getcwd() + name ) as f:
     content = yaml.safe_load(f)
@@ -210,7 +210,7 @@ def find_team():
     path = Path(os.getcwd() + '/CODEOWNERS')
     if not path.is_file():
         log.error("CODEOWNERS file could not be found, please manually fill in team")
-        exit(1)
+        exit(EXIT_ERORR)
 
     with open(os.getcwd() + '/CODEOWNERS') as f:
         code = f.read()
@@ -540,7 +540,7 @@ def main():
     if os.getenv(KAFKA_VALIDATION_CHECK_ENV_VAR):
         validate_yaml(YAML_DATA)
         
-        exit(0)
+        exit(EXIT_OKAY)
     
     #ca_content = os.getenv(KAFKA_CA_ENV_VAR)
     #write_ca_file(ca_content, DEFAULT_CA_FILE)
@@ -548,14 +548,14 @@ def main():
         if(validate_yaml(YAML_DATA, True) or os.getenv(KAFKA_BYPASS_MODE_ENV_VAR)):
             send_to_kafka(settings=kafka_settings, data=YAML_DATA)
             log.info('Data successfully sent, data: %s', YAML_DATA)
-            exit(0)
+            exit(EXIT_OKAY)
         else:
             # Exit code 2 since the data is missing or invalid
             exit(2)
     except Exception as e:
         # Print error and generic exit code 1
         raise e
-        exit(1)
+        exit(EXIT_ERORR)
         #os.remove(DEFAULT_CA_FILE)
 
 
