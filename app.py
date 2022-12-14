@@ -220,6 +220,7 @@ def find_team():
     return matches[0][-1]
 
 def check_value(key, container_index = 0, container = False):
+    log.info("Checking for key: " + str(key) + ' with container: ' + str(container))
     global YAML_DATA
     if(not container):
         found = False
