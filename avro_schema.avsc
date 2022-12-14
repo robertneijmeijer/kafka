@@ -103,7 +103,7 @@
               "name": "githubURL",
               "type": "string"
             },{
-              "name": "containerTargetConsumers",
+              "name": "targetConsumers",
               "type": ["objects.target.targetConsumers", "null"]
             },
             {
@@ -115,7 +115,7 @@
               "type": "string"
             },
             {
-              "name": "containerDataClassification",
+              "name": "dataClassification",
               "type": ["objects.data.dataClassification", "null"]
             },
             {
