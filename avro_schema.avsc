@@ -12,6 +12,7 @@
     },
     {
       "name": "targetConsumers",
+      "namespace": "objects.targetConsumers",
       "type": {
         "type": "record",
         "name": "targetConsumers",
@@ -41,6 +42,7 @@
     },
     {
       "name": "dataClassification",
+      "namespace": "objects.dataClassification",
       "type": {
         "type": "record",
         "name": "dataClassification",
@@ -103,29 +105,7 @@
               "name": "targetConsumers",
               "type": {
                 "type": "record",
-                "name": "targetConsumers",
-                "fields": [
-                  {
-                    "name": "customer",
-                    "type": "boolean"
-                  },
-                  {
-                    "name": "softwareSystem",
-                    "type": "boolean"
-                  },
-                  {
-                    "name": "thirdParty",
-                    "type": "boolean"
-                  },
-                  {
-                    "name": "business",
-                    "type": "boolean"
-                  },
-                  {
-                    "name": "developer",
-                    "type": "boolean"
-                  }
-                ]
+                "name": "objects.targetConsumers",
               }
             },
             {
@@ -140,25 +120,7 @@
               "name": "dataClassification",
               "type": {
                 "type": "record",
-                "name": "dataClassification",
-                "fields": [
-                  {
-                    "name": "containsPersonalData",
-                    "type": "boolean"
-                  },
-                  {
-                    "name": "containsFinancialData",
-                    "type": "boolean"
-                  },
-                  {
-                    "name": "publiclyExposed",
-                    "type": "boolean"
-                  },
-                  {
-                    "name": "restrictedAccess",
-                    "type": "boolean"
-                  }
-                ]
+                "name": "objects.dataClassification",
               }
             },
             {
