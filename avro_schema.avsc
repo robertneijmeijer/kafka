@@ -12,7 +12,6 @@
     },
     {
       "name": "targetConsumers",
-      "namespace": "objects.targetConsumers",
       "type": {
         "type": "record",
         "name": "targetConsumers",
@@ -42,7 +41,6 @@
     },
     {
       "name": "dataClassification",
-      "namespace": "objects.dataClassification",
       "type": {
         "type": "record",
         "name": "dataClassification",
@@ -102,11 +100,33 @@
               "name": "githubURL",
               "type": "string"
             },{
-              "name": "targetConsumers",
+              "name": "containerTargetConsumers",
               "type": {
                 "type": "record",
-                "items": "objects.targetConsumers",
-              },
+                "name": "containerTargetConsumers",
+                "fields": [
+                  {
+                    "name": "customer",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "softwareSystem",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "thirdParty",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "business",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "developer",
+                    "type": "boolean"
+                  }
+                ]
+              }
             },
             {
               "name": "hostedAt",
@@ -117,11 +137,29 @@
               "type": "string"
             },
             {
-              "name": "dataClassification",
+              "name": "containerDataClassification",
               "type": {
                 "type": "record",
-                "items": "objects.dataClassification",
-              },
+                "name": "containerDataClassification",
+                "fields": [
+                  {
+                    "name": "containsPersonalData",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "containsFinancialData",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "publiclyExposed",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "restrictedAccess",
+                    "type": "boolean"
+                  }
+                ]
+              }
             },
             {
               "name": "missionCriticality",

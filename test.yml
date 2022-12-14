@@ -1,67 +1,94 @@
-name: 'poc-git-to-cmdb'
-description: 'POC to send information about the app to Kafka'
-# naam/url erin zetten, als zelfde combinatie al in kafka staat met andere inhoud, error gooien
-#reference metdata origin, link, url, naam
-#targetaudience
-containers:
-  - name: 'poc-git-to-cmdb'
-    synonyms: poc-git-to-kafka-cmdb-sync
-    description: POC
-    # Technology used in this application e.g. Kotlin springboot or Java can be left empty
-    technology: 
-    # Optional will be fetched from CODEOWNERS file
-    team:
-    #Optional if not specified in SRE-Team config https://github.com/RoyalAholdDelhaize/sre-teams-configuration
-    productOwner: 
-    #Optional
-    githubURL: http
-    #What is the target for this application
-    targetAudience:
-        customer: false
-        service: false
+name: Product Search System
+description: Provides search functionality for products. Including matching, ranking, filtering, etc.
+targetConsumers:
+        customer: true
+        softwareSystem: false
         thirdParty: false
         business: true
-        internal: true
-    # "Business", "Customer Facing", "External Service", "Infrastructure", "Interface", "Office", "Tool", "Unknown"
-    #applicationType: Tool # Remame to make more sense/categorize to more fitting names
-    # Default value azure, only fill in if application is not hosted at azure
-    hostedAt: Azure Cloud # uit deployment halen
-    #Options: BPO, CaaS, IaaS, PaaS, SaaS. If none of these apply fill in Custom
-    deploymentModel: Custom 
-    dataClassification:
+        developer: false
+dataClassification:
         containsPersonalData: false
         containsFinancialData: false
         #application or data or both?
-        publiclyExposed: false
-        restrictedAccess: true
+        publiclyExposed: true
+        restrictedAccess: false
+
+containers:
+  - name: product-search-service-api
+    synonyms: product-search-service
+    description: Search matching and autocomplete service
+    # Technology used in this application e.g. Kotlin springboot or Java can be left empty
+    technology: Kotlin
     #Options: High, Medium, Low, None
-    missionCriticality: Low
+    missionCriticality: High
     # If the repository has a helm file leave like this, otherwise remove value and fill in the assignmentGroup
-    assignementGroup: test
+    assignementGroup: tset # vanuit teams halen uiteindelijk
     #Pipelined or operational
     operationalStatus: Pipelined
     components:
-      - name: Component name
-        description: what the system does
+      - name: Search
+        description: Searches for product matches for a given keyword for instance "kaas"
         exposedAPIs:
-            - name: Unique API name
-              description: What it can be used for
-              type: HTTP/JSON
-              status: TO_BE_IMPLEMENTED
-            - name: Unique API name2
-              description: What it can be used for2
-              type: HTTP/JSON2
-              status: TO_BE_IMPLEMENTED2
+          - name: /v1/product-search
+            description: Matching products for keyword
+            type: HTTP/JSON
+            status: TO_BE_IMPLEMENTED
         consumedAPIs:
-            - name: Unique API name
-              description: What is it used for
-              status: TO_BE_IMPLEMENTED
-              read: true
-              write: true
-              execute: false
-            - name: Unique API name2
-              description: What is it used for2
-              status: TO_BE_IMPLEMENTED2
-              read: true
-              write: false
-              execute: false
+          - name: elasticsearch-products/*
+            description: Search engine
+            status: TO_BE_IMPLEMENTED
+            read: true
+            write: false
+            execute: false
+          - name: product-search-config/*
+            description: Search configuration service
+            status: TO_BE_IMPLEMENTED
+            read: true
+            write: false
+            execute: false
+      - name: Autocomplete
+        description: Searches for matches in keywords for a prefix/suffix that can be used for product matching
+        exposedAPIs:
+          - name: /v1/product-search-autocomplete
+            description: Find keywords for a prefix/suffix
+            type: HTTP/JSON
+            status: TO_BE_IMPLEMENTED
+        consumedAPIs:
+          - name: elasticsearch-products/*
+            description: Search engine
+            status: TO_BE_IMPLEMENTED
+            read: true
+            write: false
+            execute: false
+  - name: product-search-loader
+    synonyms: product-search-service
+    description: Creates elastic search index for products and stores products in the index. The same for autocomplete
+    # Technology used in this application e.g. Kotlin springboot or Java can be left empty
+    technology: Kotlin
+    #Options: High, Medium, Low, None
+    missionCriticality: Medium
+    # If the repository has a helm file leave like this, otherwise remove value and fill in the assignmentGroup
+    assignementGroup: test # vanuit teams halen uiteindelijk
+    #Pipelined or operational
+    operationalStatus: Pipelined
+    components:
+      - name: Search loader
+        description: Creates search index and stores products in the index
+        exposedAPIs:
+          - name: /v1/product-search/reindex
+            description: Creates search index and stores products in the index
+            type: HTTP/JSON
+            status: TO_BE_IMPLEMENTED
+        consumedAPIs:
+          - name: elasticsearch-products/aliases / index API (TODO)
+            description: Search engine
+            status: TO_BE_IMPLEMENTED
+            read: true
+            write: true
+            execute: false
+          - name: Kafka TOPIC NAME
+            description: Product update events
+            status: TO_BE_IMPLEMENTED
+            read: true
+            write: false
+            execute: false
