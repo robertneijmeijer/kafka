@@ -351,9 +351,9 @@ def validate_yaml(yaml_data, verbose = False):
                         "name": str,
                         "description": str,
                         "status": str,
-                        "read": bool,
-                        "write": bool,
-                        "execute": bool,
+                        Optional("read", default= False): bool,
+                        Optional("write", default= False): bool,
+                        Optional("execute", default= False): bool,
                     }]
                 }],
             }
