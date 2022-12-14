@@ -106,7 +106,7 @@
               "type": {
                 "type": "record",
                 "items": "objects.targetConsumers",
-              }
+              },
             },
             {
               "name": "hostedAt",
@@ -121,7 +121,7 @@
               "type": {
                 "type": "record",
                 "items": "objects.dataClassification",
-              }
+              },
             },
             {
               "name": "missionCriticality",
