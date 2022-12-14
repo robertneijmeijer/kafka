@@ -12,7 +12,7 @@
     },
     {
       "name": "targetConsumers",
-      "type": {
+      "type": [{
         "type": "record",
         "name": "targetConsumers",
         "fields": [
@@ -37,11 +37,11 @@
             "type": "boolean"
           }
         ]
-      }
+      }, "null"]
     },
     {
       "name": "dataClassification",
-      "type": {
+      "type": [{
         "type": "record",
         "name": "dataClassification",
         "fields": [
@@ -62,7 +62,7 @@
             "type": "boolean"
           }
         ]
-      }
+      }, "null"]
     },
     {
       "name": "containers",
@@ -101,7 +101,7 @@
               "type": "string"
             },{
               "name": "containerTargetConsumers",
-              "type": {
+              "type": [{
                 "type": "record",
                 "name": "containerTargetConsumers",
                 "fields": [
@@ -126,7 +126,7 @@
                     "type": "boolean"
                   }
                 ]
-              }
+              }, "null"]
             },
             {
               "name": "hostedAt",
@@ -138,7 +138,7 @@
             },
             {
               "name": "containerDataClassification",
-              "type": {
+              "type": [{
                 "type": "record",
                 "name": "containerDataClassification",
                 "fields": [
@@ -159,7 +159,7 @@
                     "type": "boolean"
                   }
                 ]
-              }
+              }, "null"]
             },
             {
               "name": "missionCriticality",

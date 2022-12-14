@@ -21,6 +21,9 @@ containers:
     technology: Kotlin
     #Options: High, Medium, Low, None
     missionCriticality: High
+    team: test
+    productOwner: test
+    githubURL: test
     # If the repository has a helm file leave like this, otherwise remove value and fill in the assignmentGroup
     assignementGroup: tset # vanuit teams halen uiteindelijk
     #Pipelined or operational
@@ -65,6 +68,9 @@ containers:
     description: Creates elastic search index for products and stores products in the index. The same for autocomplete
     # Technology used in this application e.g. Kotlin springboot or Java can be left empty
     technology: Kotlin
+    team: test
+    productOwner: test
+    githubURL: test
     #Options: High, Medium, Low, None
     missionCriticality: Medium
     # If the repository has a helm file leave like this, otherwise remove value and fill in the assignmentGroup
