@@ -222,12 +222,8 @@ def find_team():
 def check_value(key, container_index = 0, container = False):
     global YAML_DATA
     if(not container):
-        log.info("KEYS")
-        log.info(YAML_DATA.items())
         found = False
         for k, v in YAML_DATA.items():
-            log.info("KEY")
-            log.info(k)
             if(k == key):
                 found = True
                 return
