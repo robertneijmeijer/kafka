@@ -526,6 +526,15 @@ def log_error(message, exit_code):
     log.error(str(message))
     exit(exit_code)
 
+def move_objects_to_container(data):
+
+    for container in data["containers"]:
+        if "targetConsumers" in container.key():
+            log.info("MOVE OBJECT")
+            log.info(container["targetConsumers"])
+
+    return data
+
 def main():
     kafka_settings = parse_args()
     log.info('Configuration: %s', kafka_settings)
