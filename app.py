@@ -312,7 +312,6 @@ def validate_yaml(yaml_data, verbose = False):
         # if 'targetConsumers' and 'dataClassification' in YAML_DATA.items():
         #     first_validator.validate(dict(islice(yaml_data.items(), 0, 4)))
         # else:
-        log.info("YAML DATA " + str(yaml_data))
         first_validator.validate(dict(islice(yaml_data.items(), 0, 2)))
         
         # Validate each container seperatly for replacing the values
@@ -574,7 +573,7 @@ def move_objects_to_container(data):
     
     del data["targetConsumers"]
     del data["dataClassification"]
-
+    log.info("RETURNING DATA " + str(data))
     return data
 
 def main():
@@ -589,7 +588,9 @@ def main():
     # Validate before translate 
     # YAML_DATA = translate_keys(YAML_DATA)
     YAML_DATA = move_objects_to_container(YAML_DATA)
+    log.info("RETURNED DATA " + str(YAML_DATA))
     YAML_DATA = remove_none(YAML_DATA)
+    log.info("NONE DATA " + str(YAML_DATA))
     
     validate_yaml(YAML_DATA)
     
