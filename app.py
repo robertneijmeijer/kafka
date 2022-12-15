@@ -571,8 +571,8 @@ def move_objects_to_container(data):
                     else:
                         log_error("Please fill in " + str(k) + " key on the container level or parent level", EXIT_MISSING)
     
-    del data["targetConsumers"]
-    del data["dataClassification"]
+    data.pop("targetConsumers")
+    data.pop("dataClassification")
     log.info("RETURNING DATA " + str(data))
     return data
 
