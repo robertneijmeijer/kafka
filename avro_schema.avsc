@@ -12,62 +12,6 @@
       "type": "string"
     },
     {
-      "name": "targetConsumers",
-      "type": [{
-        "type": "record",
-        "name": "targetConsumers",
-        "namespace": "objects.target",
-        "fields": [
-          {
-            "name": "customer",
-            "type": "boolean"
-          },
-          {
-            "name": "softwareSystem",
-            "type": "boolean"
-          },
-          {
-            "name": "thirdParty",
-            "type": "boolean"
-          },
-          {
-            "name": "business",
-            "type": "boolean"
-          },
-          {
-            "name": "developer",
-            "type": "boolean"
-          }
-        ]
-      }, "null"]
-    },
-    {
-      "name": "dataClassification",
-      "type": [{
-        "type": "record",
-        "name": "dataClassification",
-        "namespace": "objects.data",
-        "fields": [
-          {
-            "name": "containsPersonalData",
-            "type": "boolean"
-          },
-          {
-            "name": "containsFinancialData",
-            "type": "boolean"
-          },
-          {
-            "name": "publiclyExposed",
-            "type": "boolean"
-          },
-          {
-            "name": "restrictedAccess",
-            "type": "boolean"
-          }
-        ]
-      }, "null"]
-    },
-    {
       "name": "containers",
       "type": {
         "type": "array",
@@ -104,7 +48,33 @@
               "type": "string"
             },{
               "name": "targetConsumers",
-              "type": ["objects.target.targetConsumers", "null"]
+              "type": [{
+                "type": "record",
+                "name": "targetConsumers",
+                "namespace": "objects.target",
+                "fields": [
+                  {
+                    "name": "customer",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "softwareSystem",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "thirdParty",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "business",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "developer",
+                    "type": "boolean"
+                  }
+                ]
+              }, "null"]
             },
             {
               "name": "hostedAt",
@@ -116,7 +86,29 @@
             },
             {
               "name": "dataClassification",
-              "type": ["objects.data.dataClassification", "null"]
+              "type": [{
+                "type": "record",
+                "name": "dataClassification",
+                "namespace": "objects.data",
+                "fields": [
+                  {
+                    "name": "containsPersonalData",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "containsFinancialData",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "publiclyExposed",
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "restrictedAccess",
+                    "type": "boolean"
+                  }
+                ]
+              }, "null"]
             },
             {
               "name": "missionCriticality",

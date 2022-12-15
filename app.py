@@ -45,7 +45,7 @@ KAFKA_TOPIC_DEFAULT_KEY = 'topic2'
 KAFKA_SECURITY_PROTOCOL = 'PLAINTEXT'
 KAFKA_SASL_MECHANISM = 'SCRAM-SHA-512'
 
-TOPIC_NAME = 'topic22'
+TOPIC_NAME = 'topic23'
 BOOTSTRAP_SERVERS_URL = '10.152.183.52:9094'
 SCHEMA_REGISTRY_URL = 'http://10.152.183.242:8081'
 ORGANIZATION_NAME = 'RoyalAholdDelhaize'
@@ -290,20 +290,20 @@ def validate_yaml(yaml_data, verbose = False):
 
     parent_schema_val = {
         "name": str,
-        "description": str,
-        Optional("targetConsumers", default= lambda : check_value('targetConsumers', 0, False)):{
-                        Optional("customer", default= lambda : check_value('customer', 0, False)): bool,
-                        Optional("softwareSystem", default= lambda : check_value('softwareSystem', 0, False)): bool,
-                        Optional("thirdParty", default= lambda :check_value('thirdParty', 0, False)): bool,
-                        Optional("business", default= lambda : check_value('business', 0, False)): bool,
-                        Optional("developer", default= lambda : check_value('developer', 0, False)): bool,
-        },
-        Optional("dataClassification", default= lambda : check_value('dataClassification', 0, False)) : {
-                        Optional("containsPersonalData", default= lambda : check_value('containsPersonalData', 0, False)): bool,
-                        Optional("containsFinancialData", default= lambda : check_value('containsFinancialData', 0, False)): bool,
-                        Optional("publiclyExposed", default= lambda : check_value('publiclyExposed', 0, False)): bool,
-                        Optional("restrictedAccess", default= lambda : check_value('restrictedAccess', 0, False)) : bool,
-        },
+        "description": str
+        # Optional("targetConsumers", default= lambda : check_value('targetConsumers', 0, False)):{
+        #                 Optional("customer", default= lambda : check_value('customer', 0, False)): bool,
+        #                 Optional("softwareSystem", default= lambda : check_value('softwareSystem', 0, False)): bool,
+        #                 Optional("thirdParty", default= lambda :check_value('thirdParty', 0, False)): bool,
+        #                 Optional("business", default= lambda : check_value('business', 0, False)): bool,
+        #                 Optional("developer", default= lambda : check_value('developer', 0, False)): bool,
+        # },
+        # Optional("dataClassification", default= lambda : check_value('dataClassification', 0, False)) : {
+        #                 Optional("containsPersonalData", default= lambda : check_value('containsPersonalData', 0, False)): bool,
+        #                 Optional("containsFinancialData", default= lambda : check_value('containsFinancialData', 0, False)): bool,
+        #                 Optional("publiclyExposed", default= lambda : check_value('publiclyExposed', 0, False)): bool,
+        #                 Optional("restrictedAccess", default= lambda : check_value('restrictedAccess', 0, False)) : bool,
+        # },
     }
     
     first_validator = Schema(parent_schema_val)
@@ -528,10 +528,51 @@ def log_error(message, exit_code):
 
 def move_objects_to_container(data):
 
-    for container in data["containers"]:
-        if "targetConsumers" in container.key():
-            log.info("MOVE OBJECT")
-            log.info(container["targetConsumers"])
+    if "targetConsumers" and "dataClassification" not in data.keys():
+        return
+
+    if "targetConsumers" in data.keys():
+        targetConsumers = data["targetConsumers"]
+
+        for container in data["containers"]:
+            # If the container does not have a targetConsumers key, add the object from system level
+            if "targetConsumers" not in container.keys():
+                container["targetConsumers"] = targetConsumers
+            # If a key in the targetConsumers object does not have a value add the value from the parent level
+            for k, v in container["targetConsumers"]:
+                if v is None:
+                    if k in targetConsumers.keys():
+                        container["targetConsumers"][k] = targetConsumers[k]
+                    else:
+                        log_error("Please fill in " + str(k) + " key on the container level or parent level", EXIT_MISSING)
+            for k, v in targetConsumers:
+                if k not in container["targetConsumers"].keys():
+                    if v is not None:
+                        container["targetConsumers"][k] = v
+                    else:
+                        log_error("Please fill in " + str(k) + " key on the container level or parent level", EXIT_MISSING)
+
+    if "dataClassification" in data.keys():
+        dataClassification = data["dataClassification"]
+
+        for container in data["containers"]:
+            if "dataClassification" not in container.keys():
+                container["dataClassification"] = dataClassification
+            for k, v in container["dataClassification"]:
+                if v is None:
+                    if k in dataClassification.keys():
+                        container["dataClassification"][k] = dataClassification[k]
+                    else:
+                        log_error("Please fill in " + str(k) + " key on the container level or parent level", EXIT_MISSING)
+            for k, v in dataClassification:
+                if k not in container["dataClassification"].keys():
+                    if v is not None:
+                        container["dataClassification"][k] = v
+                    else:
+                        log_error("Please fill in " + str(k) + " key on the container level or parent level", EXIT_MISSING)
+    
+    del data["targetConsumers"]
+    del data["dataClassification"]
 
     return data
 
@@ -546,6 +587,7 @@ def main():
     log.info('Data: %s', YAML_DATA)
     # Validate before translate 
     # YAML_DATA = translate_keys(YAML_DATA)
+    YAML_DATA = move_objects_to_container(YAML_DATA)
     YAML_DATA = remove_none(YAML_DATA)
     
     validate_yaml(YAML_DATA)
