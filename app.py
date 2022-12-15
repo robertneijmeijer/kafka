@@ -529,7 +529,7 @@ def log_error(message, exit_code):
 def move_objects_to_container(data):
 
     if "targetConsumers" and "dataClassification" not in data.keys():
-        return
+        return data
 
     if "targetConsumers" in data.keys():
         targetConsumers = data["targetConsumers"]
