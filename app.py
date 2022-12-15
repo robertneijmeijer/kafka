@@ -309,10 +309,10 @@ def validate_yaml(yaml_data, verbose = False):
     first_validator = Schema(parent_schema_val)
 
     try:
-        if 'targetConsumers' and 'dataClassification' in YAML_DATA.items():
-            first_validator.validate(dict(islice(yaml_data.items(), 0, 4)))
-        else:
-            first_validator.validate(dict(islice(yaml_data.items(), 0, 2)))
+        # if 'targetConsumers' and 'dataClassification' in YAML_DATA.items():
+        #     first_validator.validate(dict(islice(yaml_data.items(), 0, 4)))
+        # else:
+        first_validator.validate(dict(islice(yaml_data.items(), 0, 2)))
         
         # Validate each container seperatly for replacing the values
         for index, container in enumerate(yaml_data["containers"]):
@@ -539,7 +539,7 @@ def move_objects_to_container(data):
             if "targetConsumers" not in container.keys():
                 container["targetConsumers"] = targetConsumers
             # If a key in the targetConsumers object does not have a value add the value from the parent level
-            for k, v in container["targetConsumers"]:
+            for k, v in container["targetConsumers"].items():
                 if v is None:
                     if k in targetConsumers.keys():
                         container["targetConsumers"][k] = targetConsumers[k]
@@ -558,7 +558,7 @@ def move_objects_to_container(data):
         for container in data["containers"]:
             if "dataClassification" not in container.keys():
                 container["dataClassification"] = dataClassification
-            for k, v in container["dataClassification"]:
+            for k, v in container["dataClassification"].items():
                 if v is None:
                     if k in dataClassification.keys():
                         container["dataClassification"][k] = dataClassification[k]
