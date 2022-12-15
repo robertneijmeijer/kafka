@@ -257,7 +257,7 @@ def check_value(key, container_index = 0, container = False):
         found = False
         for k, v in YAML_DATA.items():
             log.info("INDIVIDUAL KEYS AND VALUES")
-            log.info("KEY: " str(k) + " VALUE " + str(v))
+            log.info("KEY: " + str(k) + " VALUE " + str(v))
             if(k == key):
                 found = True
         if not found:
