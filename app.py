@@ -570,7 +570,7 @@ def move_objects_to_container(data):
                         container["dataClassification"][k] = v
                     else:
                         log_error("Please fill in " + str(k) + " key on the container level or parent level", EXIT_MISSING)
-    
+    log.info("BEFORE RETURNING DATA " + str(data))
     data.pop("targetConsumers")
     data.pop("dataClassification")
     log.info("RETURNING DATA " + str(data))
