@@ -312,6 +312,7 @@ def validate_yaml(yaml_data, verbose = False):
         # if 'targetConsumers' and 'dataClassification' in YAML_DATA.items():
         #     first_validator.validate(dict(islice(yaml_data.items(), 0, 4)))
         # else:
+        log.info("YAML DATA " + str(yaml_data))
         first_validator.validate(dict(islice(yaml_data.items(), 0, 2)))
         
         # Validate each container seperatly for replacing the values
