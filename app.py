@@ -224,16 +224,18 @@ def check_value(key, container_index = 0, container = False):
     global YAML_DATA
     if(not container):
         found = False
+        # Check if the keys are under the parent
         for k, v in YAML_DATA.items():
             if(k == key):
                 found = True
                 return
+        # If not under the parent check each container 
         if not found:
             for container in YAML_DATA['containers']:
                 for k, v in container.items():
                     if k == key:
                         return
-
+        # Chech if keys are under the parent objects
         for k, v in YAML_DATA['targetConsumers'].items():
             if(k == key):
                 return
@@ -248,9 +250,14 @@ def check_value(key, container_index = 0, container = False):
                     found = True
             if not found:
                 log_error('Please add the ' + str(key) +' object/key', EXIT_MISSING)
+    # TODO: FIX THIS, LOOP THROUGH CONTAINER ITEMS
     elif(key == 'targetConsumers' and container):
+        log.info("YAML KEYS")
+        log.info(YAML_DATA.items())
         found = False
         for k, v in YAML_DATA.items():
+            log.info("INDIVIDUAL KEYS AND VALUES")
+            log.info("KEY: " str(k) + " VALUE " + str(v))
             if(k == key):
                 found = True
         if not found:
