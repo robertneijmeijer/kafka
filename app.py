@@ -545,7 +545,7 @@ def move_objects_to_container(data):
                         container["targetConsumers"][k] = targetConsumers[k]
                     else:
                         log_error("Please fill in " + str(k) + " key on the container level or parent level", EXIT_MISSING)
-            for k, v in targetConsumers:
+            for k, v in targetConsumers.items():
                 if k not in container["targetConsumers"].keys():
                     if v is not None:
                         container["targetConsumers"][k] = v
@@ -564,7 +564,7 @@ def move_objects_to_container(data):
                         container["dataClassification"][k] = dataClassification[k]
                     else:
                         log_error("Please fill in " + str(k) + " key on the container level or parent level", EXIT_MISSING)
-            for k, v in dataClassification:
+            for k, v in dataClassification.items():
                 if k not in container["dataClassification"].keys():
                     if v is not None:
                         container["dataClassification"][k] = v
