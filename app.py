@@ -570,10 +570,9 @@ def move_objects_to_container(data):
                         container["dataClassification"][k] = v
                     else:
                         log_error("Please fill in " + str(k) + " key on the container level or parent level", EXIT_MISSING)
-    log.info("BEFORE RETURNING DATA " + str(data))
+    # Pop keys on the parent level
     data.pop("targetConsumers")
     data.pop("dataClassification")
-    log.info("RETURNING DATA " + str(data))
     return data
 
 def main():
@@ -588,9 +587,7 @@ def main():
     # Validate before translate 
     # YAML_DATA = translate_keys(YAML_DATA)
     YAML_DATA = move_objects_to_container(YAML_DATA)
-    log.info("RETURNED DATA " + str(YAML_DATA))
     YAML_DATA = remove_none(YAML_DATA)
-    log.info("NONE DATA " + str(YAML_DATA))
     
     validate_yaml(YAML_DATA)
     
