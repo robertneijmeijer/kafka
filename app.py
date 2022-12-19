@@ -196,7 +196,7 @@ def find_product_owner(role):
     
     # Fetch the persons file from the action repository releases
     github_client = Github(os.getenv(TOKEN_GITHUB))
-    person_repository = github_client.get_organization(ORGANIZATION_NAME).get_repo(ACTION_REPO_NAME)
+    person_repository = github_client.get_organization(ORGANIZATION_NAME)#.get_repo(ACTION_REPO_NAME)
 
     url = person_repository.get_latest_release().get_assets().get_page(0)[0].url
     header = {'Authorization': 'Bearer ' + os.getenv(TOKEN_GITHUB), 'Accept': 'application/octet-stream'}
