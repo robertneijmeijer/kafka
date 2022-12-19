@@ -301,23 +301,9 @@ def check_value(key, container_index = 0, container = False):
 
 
 def validate_yaml(yaml_data, verbose = False):
-
     parent_schema_val = {
-        "name": str,
-        "description": str
-        # Optional("targetConsumers", default= lambda : check_value('targetConsumers', 0, False)):{
-        #                 Optional("customer", default= lambda : check_value('customer', 0, False)): bool,
-        #                 Optional("softwareSystem", default= lambda : check_value('softwareSystem', 0, False)): bool,
-        #                 Optional("thirdParty", default= lambda :check_value('thirdParty', 0, False)): bool,
-        #                 Optional("business", default= lambda : check_value('business', 0, False)): bool,
-        #                 Optional("developer", default= lambda : check_value('developer', 0, False)): bool,
-        # },
-        # Optional("dataClassification", default= lambda : check_value('dataClassification', 0, False)) : {
-        #                 Optional("containsPersonalData", default= lambda : check_value('containsPersonalData', 0, False)): bool,
-        #                 Optional("containsFinancialData", default= lambda : check_value('containsFinancialData', 0, False)): bool,
-        #                 Optional("publiclyExposed", default= lambda : check_value('publiclyExposed', 0, False)): bool,
-        #                 Optional("restrictedAccess", default= lambda : check_value('restrictedAccess', 0, False)) : bool,
-        # },
+        Optional("name"): str,
+        Optional("description"): str
     }
     
     first_validator = Schema(parent_schema_val)
@@ -326,7 +312,12 @@ def validate_yaml(yaml_data, verbose = False):
         # if 'targetConsumers' and 'dataClassification' in YAML_DATA.items():
         #     first_validator.validate(dict(islice(yaml_data.items(), 0, 4)))
         # else:
-        first_validator.validate(dict(islice(yaml_data.items(), 0, 2)))
+        if "name" and "description" not in yaml_data.keys():
+            for container in yaml_data["containers"]:
+                if "parentSystemName" not in container.keys():
+                    log_error("Please define the parentSystemName key with value or fill in the parent name and description", EXIT_MISSING)
+        else:
+            first_validator.validate(dict(islice(yaml_data.items(), 0, 2)))
         
         # Validate each container seperatly for replacing the values
         for index, container in enumerate(yaml_data["containers"]):
