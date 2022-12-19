@@ -25,6 +25,7 @@ from pathlib import Path
 import time
 import uuid
 from github import Github
+import requests
 
 DEFAULT_DATA_FILE = 'system.yml'
 DEFAULT_CA_FILE = 'ca.crt'
@@ -50,6 +51,7 @@ BOOTSTRAP_SERVERS_URL = '10.152.183.52:9094'
 SCHEMA_REGISTRY_URL = 'http://10.152.183.242:8081'
 ORGANIZATION_NAME = 'RoyalAholdDelhaize'
 TEAMS_AS_CODE_REPO_NAME = 'sre-teams-configuration'
+ACTION_REPO_NAME = ''
 
 EXIT_OKAY = 0
 EXIT_ERORR = 1
@@ -189,8 +191,20 @@ def update_product_owners():
 
 def find_product_owner(role):
     global YAML_DATA
-    with open('/persons.yml') as file:
-        data = yaml.safe_load(file)
+    
+    # Fetch the persons file from the action repository releases
+    github_client = Github(os.getenv(TOKEN_GITHUB))
+    person_repository = github_client.get_organization(ORGANIZATION_NAME).get_repo(ACTION_REPO_NAME)
+
+    url = person_repository.get_latest_release().get_assets().get_page(0)[0].url
+    header = {'Authorization': 'Bearer ' + os.getenv(TOKEN_GITHUB), 'Accept': 'application/octet-stream'}
+
+    response = requests.get(url,headers=header, allow_redirects=False, stream=True)
+    #If found get the location url from the Location header
+    if response.status_code == 302:
+        response = requests.get(response.headers['Location'], allow_redirects=False, stream=True)
+    data = yaml.safe_load(response.content.decode())
+    
     for k, v in data.items():
         if v['teams'] is None:
             continue
