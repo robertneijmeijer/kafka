@@ -509,10 +509,22 @@ def validate_names():
                         containers = list()
                         for container in YAML_DATA['containers']:
                             for stored_container in message.value()['containers']:
+                                # If container is not stored, add it to the list
                                 if container != stored_container:
                                     containers.append(container)
+                                else: 
+                                    containers.append(stored_container)
+                        # Check if container is already in the containers list
                         for container in message.value()['containers']:
-                            containers.append(container)
+                            found = False
+                            for saved_container in containers:
+                                if saved_container == container:
+                                    found = True
+                                    continue
+                            # If container not in the list yet, add it
+                            if not found:
+                                containers.append(container)
+                        # Set the new containers
                         YAML_DATA['containers'] = containers
                 else:
                     for containers in message.value()["containers"]:
