@@ -191,8 +191,6 @@ def update_product_owners():
 
 def find_product_owner(role):
     global YAML_DATA
-    log.info("TOKEN")
-    log.info(os.getenv(TOKEN_GITHUB))
     
     # Fetch the persons file from the action repository releases
     github_client = Github(os.getenv(TOKEN_GITHUB))
