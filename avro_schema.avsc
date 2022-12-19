@@ -45,7 +45,7 @@
             },
             {
               "name": "parentSystemName",
-              "type": "string"
+              "type": ["string", "null"]
             },{
               "name": "targetConsumers",
               "type": [{
