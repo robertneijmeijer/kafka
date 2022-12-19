@@ -503,8 +503,17 @@ def validate_names():
                 if message.value() == YAML_DATA:
                     log.info('Data is already present and validated')
                     return 
-                elif validate_url_name(message.value()):
-                    log.error('Combination of name or github url already exist')
+                elif "name" in YAML_DATA.keys():
+                    #Check if container is already stored, if not add it
+                    if message.value()['name'] == YAML_DATA['name']:
+                        containers = list()
+                        for container in YAML_DATA['containers']:
+                            for stored_container in message.value()['containers']:
+                                if container != stored_container:
+                                    containers.append(container)
+                        for container in message.value()['containers']:
+                            containers.append(container)
+                        YAML_DATA['containers'] = containers
                 else:
                     for containers in message.value()["containers"]:
                         for component in containers["components"]:
