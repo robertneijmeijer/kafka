@@ -497,6 +497,7 @@ def validate_names():
         while current_offset < high:
             message = consumer.poll(timeout=1.0)
             current_offset += 1
+            log.info("MESSAGE : " + str(message.value()))
             if message is None: continue
             if message.error():
                 log.error('Error when handling message: ' + str(message))
