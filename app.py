@@ -639,6 +639,8 @@ def move_objects_to_container(data):
     return data
 
 def move_values_to_container(data, keys):
+    log.info("MOVING VALUE")
+    log.info(str(data))
     for key in keys:
         # Check if key is on the parent level of the data
         if key in data.keys():
