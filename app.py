@@ -502,29 +502,30 @@ def validate_names():
         log.info('Consuming data to see if data is already present')
         while current_offset < high:
             message = consumer.poll(timeout=1.0)
+            message_content = remove_none(message.value())
             current_offset += 1
-            if message is None: continue
+            if message_content is None: continue
             if message.error():
-                log.error('Error when handling message: ' + str(message))
+                log.error('Error when handling message: ' + str(message_content))
             else:
-                if message.value() == YAML_DATA:
+                if message_content == YAML_DATA:
                     log.info('Data is already present and validated')
                     return 
                 elif "name" in YAML_DATA.keys():
                     #Check if container is already stored, if not add it
-                    if message.value()['name'] == YAML_DATA['name']:
+                    if message_content['name'] == YAML_DATA['name']:
                         # Remove none since parentsystem is none for message and objects wouldn't be the same because of that
-                        message.value = remove_none(message.value())
+                        
                         containers = list()
                         for container in YAML_DATA['containers']:
-                            for stored_container in message.value()['containers']:
+                            for stored_container in message_content['containers']:
                                 # If container is not stored, add it to the list
                                 if container != stored_container:
                                     containers.append(container)
                                 else: 
                                     containers.append(stored_container)
                         # Check if container is already in the containers list
-                        for container in message.value()['containers']:
+                        for container in message_content['containers']:
                             found = False
                             for saved_container in containers:
                                 if saved_container == container:
@@ -536,12 +537,12 @@ def validate_names():
                         # Set the new containers
                         YAML_DATA['containers'] = containers
                 # Get the parent system name, find if the system exists, if so add the containers to the system object if they don't contain them already
-                for container in message.value()["containers"]:
+                for container in message_content["containers"]:
                     # Check if the message has a system name
-                    if "name" in message.value().keys():
+                    if "name" in message_content.keys():
                         for new_container in YAML_DATA["containers"]:
                             if "parentSystemName" in new_container.keys():
-                                if new_container["parentSystemName"] == message.value()["name"]:
+                                if new_container["parentSystemName"] == message_content["name"]:
                                     # check if container already is in message
                                     # if not add to message
                                     if container == new_container:
@@ -551,12 +552,12 @@ def validate_names():
                                         if not check_object_in_list(complete_containers, new_container):
                                             complete_containers.append(new_container)
 
-                if "name" in message.value().keys() and len(complete_containers) > 0:
-                    YAML_DATA = message.value()
+                if "name" in message_content.keys() and len(complete_containers) > 0:
+                    YAML_DATA = message_content
                     YAML_DATA["containers"] = complete_containers
 
 
-                for containers in message.value()["containers"]:
+                for containers in message_content["containers"]:
                     for component in containers["components"]:
                         for exposed in component["exposedAPIs"]:
                             explosedAPIs.append(exposed)
