@@ -25,6 +25,7 @@ from pathlib import Path
 import time
 import uuid
 from github import Github
+from kafka import KafkaProducer
 import requests
 
 DEFAULT_DATA_FILE = 'system.yml'
@@ -508,6 +509,7 @@ def validate_names():
                 elif "name" in YAML_DATA.keys():
                     #Check if container is already stored, if not add it
                     if message.value()['name'] == YAML_DATA['name']:
+                        # Remove none since parentsystem is none for message and objects wouldn't be the same because of that
                         message.value = remove_none(message.value())
                         containers = list()
                         for container in YAML_DATA['containers']:
@@ -529,11 +531,11 @@ def validate_names():
                                 containers.append(container)
                         # Set the new containers
                         YAML_DATA['containers'] = containers
-                else:
-                    for containers in message.value()["containers"]:
-                        for component in containers["components"]:
-                            for exposed in component["exposedAPIs"]:
-                                explosedAPIs.append(exposed)
+                # Get the parent system name, find if the system exists, if so add the containers to the system object if they don't contain them already
+                for containers in message.value()["containers"]:
+                    for component in containers["components"]:
+                        for exposed in component["exposedAPIs"]:
+                            explosedAPIs.append(exposed)
 
         for containers in YAML_DATA["containers"]:
             for component in containers['components']:
