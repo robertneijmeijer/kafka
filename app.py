@@ -654,6 +654,7 @@ def move_values_to_container(data, keys):
             for container in data["containers"]:
                 if key in container.keys():
                     log.info("key in container, key: " + str(key))
+                    log.info("current value of key " + str(container[key]))
                     # If the key is in the container object but does not have a value set the value from the parent
                     if container[key] is None or "":
                         log.info("KEY: " + str(key) + " container value: " + str(container[key]))
