@@ -513,29 +513,30 @@ def validate_names():
                     return 
                 elif "name" in YAML_DATA.keys():
                     #Check if container is already stored, if not add it
-                    if message_content['name'] == YAML_DATA['name']:
-                        # Remove none since parentsystem is none for message and objects wouldn't be the same because of that
-                        
-                        containers = list()
-                        for container in YAML_DATA['containers']:
-                            for stored_container in message_content['containers']:
-                                # If container is not stored, add it to the list
-                                if container != stored_container:
+                    if "name" in message_content.keys():
+                        if message_content['name'] == YAML_DATA['name']:
+                            # Remove none since parentsystem is none for message and objects wouldn't be the same because of that
+                            
+                            containers = list()
+                            for container in YAML_DATA['containers']:
+                                for stored_container in message_content['containers']:
+                                    # If container is not stored, add it to the list
+                                    if container != stored_container:
+                                        containers.append(container)
+                                    else: 
+                                        containers.append(stored_container)
+                            # Check if container is already in the containers list
+                            for container in message_content['containers']:
+                                found = False
+                                for saved_container in containers:
+                                    if saved_container == container:
+                                        found = True
+                                        continue
+                                # If container not in the list yet, add it
+                                if not found:
                                     containers.append(container)
-                                else: 
-                                    containers.append(stored_container)
-                        # Check if container is already in the containers list
-                        for container in message_content['containers']:
-                            found = False
-                            for saved_container in containers:
-                                if saved_container == container:
-                                    found = True
-                                    continue
-                            # If container not in the list yet, add it
-                            if not found:
-                                containers.append(container)
-                        # Set the new containers
-                        YAML_DATA['containers'] = containers
+                            # Set the new containers
+                            YAML_DATA['containers'] = containers
                 # Get the parent system name, find if the system exists, if so add the containers to the system object if they don't contain them already
                 for container in message_content["containers"]:
                     # Check if the message has a system name
