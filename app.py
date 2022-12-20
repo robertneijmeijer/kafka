@@ -662,9 +662,10 @@ def move_values_to_container(data, keys):
                         continue
                 else:
                     # If the container does not contain the key, set the value from the parent
+                    log.info("KEY NOT PRESENT IN CONTAINER, KEY: " + str(key))
                     container[key] = data[key]
-        # Finally remove the key from the parent object
-        data.pop(key)
+            # Finally remove the key from the parent object
+            data.pop(key)
     return data
 
 def main():
