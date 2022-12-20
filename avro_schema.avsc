@@ -5,11 +5,11 @@
   "fields": [
     {
       "name": "name",
-      "type": "string"
+      "type": ["string", "null"]
     },
     {
       "name": "description",
-      "type": "string"
+      "type": ["string", "null"]
     },
     {
       "name": "containers",
