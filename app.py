@@ -620,6 +620,8 @@ def main():
     validate_yaml(YAML_DATA)
     
     validate_names()
+    log.info("AFTER NAME CHECK")
+    log.info(YAML_DATA)
 
     if os.getenv(KAFKA_VALIDATION_CHECK_ENV_VAR):
         validate_yaml(YAML_DATA)
