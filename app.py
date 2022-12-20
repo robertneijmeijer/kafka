@@ -503,7 +503,6 @@ def validate_names():
         while current_offset < high:
             message = consumer.poll(timeout=1.0)
             current_offset += 1
-            log.info("MESSAGE : " + str(message.value()))
             if message is None: continue
             if message.error():
                 log.error('Error when handling message: ' + str(message))
@@ -551,7 +550,7 @@ def validate_names():
                                     elif container["name"] == new_container["name"]:
                                         if not check_object_in_list(complete_containers, new_container):
                                             complete_containers.append(new_container)
-                                            
+
                 if "name" in message.value().keys() and len(complete_containers) > 0:
                     YAML_DATA = message.value()
                     YAML_DATA["containers"] = complete_containers
@@ -656,8 +655,6 @@ def main():
     YAML_DATA = remove_none(YAML_DATA)
     
     validate_names()
-    log.info("AFTER NAME CHECK")
-    log.info(YAML_DATA)
 
     if os.getenv(KAFKA_VALIDATION_CHECK_ENV_VAR):
         validate_yaml(YAML_DATA)
