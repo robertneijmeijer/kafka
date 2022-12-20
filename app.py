@@ -139,8 +139,12 @@ def send_to_kafka(settings: dict, data: dict):
     string_serializer = StringSerializer('utf_8')
 
     producer = Producer({'bootstrap.servers': BOOTSTRAP_SERVERS_URL})
+    if "name" in YAML_DATA.keys():
+        key_value = YAML_DATA["name"]
+    else:
+        key_value = YAML_DATA["containers"][0]["parentSystemName"]
 
-    producer.produce(topic=TOPIC_NAME, key=string_serializer(YAML_DATA['name'], None), value=avro_serializer(data, SerializationContext(TOPIC_NAME, MessageField.VALUE)))
+    producer.produce(topic=TOPIC_NAME, key=string_serializer(key_value, None), value=avro_serializer(data, SerializationContext(TOPIC_NAME, MessageField.VALUE)))
     # producer.produce(topic=TOPIC_NAME, key=string_serializer(YAML_DATA['name'], None), value=data)
 
     producer.flush()
