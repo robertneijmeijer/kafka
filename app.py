@@ -551,7 +551,8 @@ def validate_names():
                                     elif container["name"] == new_container["name"]:
                                         if not check_object_in_list(complete_containers, new_container):
                                             complete_containers.append(new_container)
-                if "name" in message.value().keys():
+                                            
+                if "name" in message.value().keys() and len(complete_containers) > 0:
                     YAML_DATA = message.value()
                     YAML_DATA["containers"] = complete_containers
 
