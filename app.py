@@ -508,6 +508,7 @@ def validate_names():
                 elif "name" in YAML_DATA.keys():
                     #Check if container is already stored, if not add it
                     if message.value()['name'] == YAML_DATA['name']:
+                        message.value = remove_none(message.value())
                         containers = list()
                         for container in YAML_DATA['containers']:
                             for stored_container in message.value()['containers']:
