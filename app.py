@@ -638,6 +638,28 @@ def move_objects_to_container(data):
     data.pop("dataClassification")
     return data
 
+def move_values_to_container(data, keys):
+    for key in keys:
+        # Check if key is on the parent level of the data
+        if key in data.keys():
+            # If the key doesn't have a value remove it
+            if data[key] is None or "":
+                data.pop(key)
+                continue
+            # Check if the container contains the key
+            for container in data["containers"]:
+                if key in container.keys():
+                    # If the key is in the container object but does not have a value set the value from the parent
+                    if container[key] is None or "":
+                        container[key] = data[key]
+                        continue
+                else:
+                    # If the container does not contain the key, set the value from the parent
+                    container[key] = data[key]
+            # Finally remove the key from the parent object
+            data.pop(key)
+    return data
+
 def main():
     kafka_settings = parse_args()
     log.info('Configuration: %s', kafka_settings)
@@ -650,6 +672,7 @@ def main():
     # Validate before translate 
     # YAML_DATA = translate_keys(YAML_DATA)
     YAML_DATA = move_objects_to_container(YAML_DATA)
+    YAML_DATA = move_values_to_container(YAML_DATA, ["team","technology","productOwner"])
     YAML_DATA = remove_none(YAML_DATA)
     
     validate_yaml(YAML_DATA)
