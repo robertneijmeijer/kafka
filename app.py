@@ -644,13 +644,16 @@ def move_values_to_container(data, keys):
     for key in keys:
         # Check if key is on the parent level of the data
         if key in data.keys():
+            log.info("key in data, key: " + str(key))
             # If the key doesn't have a value remove it
             if data[key] is None or "":
+                log.info("key has no data")
                 data.pop(key)
                 continue
             # Check if the container contains the key
             for container in data["containers"]:
                 if key in container.keys():
+                    log.info("key in container, key: " + str(key))
                     # If the key is in the container object but does not have a value set the value from the parent
                     if container[key] is None or "":
                         log.info("KEY: " + str(key) + " container value: " + str(container[key]))
