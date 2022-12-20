@@ -618,6 +618,8 @@ def main():
     YAML_DATA = remove_none(YAML_DATA)
     
     validate_yaml(YAML_DATA)
+
+    YAML_DATA = remove_none(YAML_DATA)
     
     validate_names()
     log.info("AFTER NAME CHECK")
