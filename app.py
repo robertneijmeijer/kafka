@@ -681,6 +681,7 @@ def main():
     # YAML_DATA = translate_keys(YAML_DATA)
     YAML_DATA = move_objects_to_container(YAML_DATA)
     YAML_DATA = move_values_to_container(YAML_DATA, ["team","technology","productOwner"])
+    log.info("DATA AFTER MOVE " + str(YAML_DATA))
     YAML_DATA = remove_none(YAML_DATA)
     
     validate_yaml(YAML_DATA)
