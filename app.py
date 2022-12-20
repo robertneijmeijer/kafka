@@ -488,6 +488,7 @@ def validate_names():
     'key.deserializer': string_deserializer}
     consumer = DeserializingConsumer(config)
     explosedAPIs = list()
+    complete_containers = list()
     try:
         consumer.subscribe([TOPIC_NAME])
 
@@ -536,6 +537,25 @@ def validate_names():
                         # Set the new containers
                         YAML_DATA['containers'] = containers
                 # Get the parent system name, find if the system exists, if so add the containers to the system object if they don't contain them already
+                for container in message.value()["containers"]:
+                    # Check if the message has a system name
+                    if "name" in message.value().keys():
+                        for new_container in YAML_DATA["containers"]:
+                            if "parentSystemName" in new_container.keys():
+                                if new_container["parentSystemName"] == message.value()["name"]:
+                                    # check if container already is in message
+                                    # if not add to message
+                                    if container == new_container:
+                                        if not check_object_in_list(complete_containers, container):
+                                            complete_containers.append(container)
+                                    elif container["name"] == new_container["name"]:
+                                        if not check_object_in_list(complete_containers, new_container):
+                                            complete_containers.append(new_container)
+                if "name" in message.value().keys():
+                    YAML_DATA = message.value()
+                    YAML_DATA["containers"] = complete_containers
+
+
                 for containers in message.value()["containers"]:
                     for component in containers["components"]:
                         for exposed in component["exposedAPIs"]:
@@ -560,6 +580,12 @@ def validate_names():
 def log_error(message, exit_code):
     log.error(str(message))
     exit(exit_code)
+
+def check_object_in_list(object_list, object):
+    for item in object_list:
+        if item == object:
+            return True
+    return False
 
 def move_objects_to_container(data):
 
