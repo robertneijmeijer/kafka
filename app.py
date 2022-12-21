@@ -639,30 +639,22 @@ def move_objects_to_container(data):
     return data
 
 def move_values_to_container(data, keys):
-    log.info("MOVING VALUE")
-    log.info(str(data))
     for key in keys:
         # Check if key is on the parent level of the data
         if key in data.keys():
-            log.info("key in data, key: " + str(key))
             # If the key doesn't have a value remove it
             if data[key] == None:
-                log.info("key has no data")
                 data.pop(key)
                 continue
             # Check if the container contains the key
             for container in data["containers"]:
                 if key in container.keys():
-                    log.info("key in container, key: " + str(key))
-                    log.info("current value of key " + str(container[key]))
                     # If the key is in the container object but does not have a value set the value from the parent
                     if container[key] == None:
-                        log.info("KEY: " + str(key) + " container value: " + str(container[key]))
                         container[key] = data[key]
                         continue
                 else:
                     # If the container does not contain the key, set the value from the parent
-                    log.info("KEY NOT PRESENT IN CONTAINER, KEY: " + str(key))
                     container[key] = data[key]
             # Finally remove the key from the parent object
             data.pop(key)
@@ -681,7 +673,6 @@ def main():
     # YAML_DATA = translate_keys(YAML_DATA)
     YAML_DATA = move_objects_to_container(YAML_DATA)
     YAML_DATA = move_values_to_container(YAML_DATA, ["team","technology","productOwner"])
-    log.info("DATA AFTER MOVE " + str(YAML_DATA))
     YAML_DATA = remove_none(YAML_DATA)
     
     validate_yaml(YAML_DATA)
