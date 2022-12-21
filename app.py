@@ -570,8 +570,9 @@ def validate_names():
                                 for stored_container in message_content['containers']:
                                     # If container is not the same, add the new container to the list
                                     if container != stored_container:
-                                        containers.append(container)
-                                    else:
+                                        if not check_object_in_list(containers, container):
+                                            containers.append(container)
+                                    elif not check_object_in_list(containers, container):
                                         containers.append(stored_container)
                             # Loop through message containers to make sure their all in the list
                             for container in message_content['containers']:
