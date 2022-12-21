@@ -576,16 +576,8 @@ def validate_names():
                             # Loop through message containers to make sure their all in the list
                             for container in message_content['containers']:
                                 # found = False
-                                if not check_object_in_list(container, containers):
+                                if not check_object_in_list(containers, container):
                                     containers.append(container)
-
-                                # for saved_container in containers:
-                                #     if saved_container == container:
-                                #         found = True
-                                #         continue
-                                # # If container not in the list yet, add it
-                                # if not found:
-                                #     containers.append(container)
                             # Set the new containers
                             YAML_DATA['containers'] = containers
                 # Get the parent system name, find if the system exists, if so add the containers to the system object if they don't contain them already
@@ -595,6 +587,7 @@ def validate_names():
                         for new_container in YAML_DATA["containers"]:
                             if "parentSystemName" in new_container.keys():
                                 if new_container["parentSystemName"] == message_content["name"]:
+
                                     # check if container already is in message
                                     # if not add to message
                                     if container == new_container:
@@ -603,6 +596,7 @@ def validate_names():
                                                 container)
                                     elif container["name"] == new_container["name"]:
                                         if not check_object_in_list(complete_containers, new_container):
+                                            new_container.pop("parentSystemName")
                                             complete_containers.append(
                                                 new_container)
 
