@@ -576,7 +576,7 @@ def validate_names():
                             # Loop through message containers to make sure their all in the list
                             for container in message_content['containers']:
                                 # found = False
-                                if not check_object_in_list(container):
+                                if not check_object_in_list(container, containers):
                                     containers.append(container)
 
                                 # for saved_container in containers:
