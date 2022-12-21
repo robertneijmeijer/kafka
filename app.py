@@ -1,4 +1,4 @@
-#/usr/bin/env python3
+# /usr/bin/env python3
 
 import argparse
 import json
@@ -38,7 +38,7 @@ KAFKA_BOOTSTRAP_ENV_VAR = 'KAFKA_BOOTSTRAP_SERVERS'
 KAFKA_PASSWD_ENV_VAR = 'KAFKA_PASSWORD'
 KAFKA_USERNAME_ENV_VAR = 'KAFKA_USERNAME'
 KAFKA_CA_ENV_VAR = 'KAFKA_CA_CONTENT'
-KAFKA_VALIDATION_CHECK_ENV_VAR ='KAFKA_VALIDATION_CHECK'
+KAFKA_VALIDATION_CHECK_ENV_VAR = 'KAFKA_VALIDATION_CHECK'
 KAFKA_BYPASS_MODE_ENV_VAR = 'KAFKA_BYPASS_MODE_ENV_VAR'
 TOKEN_GITHUB = 'TOKEN_GITHUB'
 
@@ -63,31 +63,36 @@ global YAML_DATA
 log = logging.getLogger()
 logging.basicConfig(level=os.environ.get("LOGLEVEL", "INFO"))
 
+
 def include_constructor(loader, node):
-  selector = loader.construct_sequence(node)
-  name = selector.pop(0)
+    selector = loader.construct_sequence(node)
+    name = selector.pop(0)
 
-  path = Path(os.getcwd() + name)
-  if not path.is_file():
-    log.error("Values could not be found at: " + name + " please add the correct path or fill the value in manually")
-    exit(EXIT_ERORR)
+    path = Path(os.getcwd() + name)
+    if not path.is_file():
+        log.error("Values could not be found at: " + name +
+                  " please add the correct path or fill the value in manually")
+        exit(EXIT_ERORR)
 
-  with open(os.getcwd() + name ) as f:
-    content = yaml.safe_load(f)
-  
-  for item in selector:
-    for key, value in content.items():
-      if key == item:
-        for name in selector:
-          content = content[name] 
-        return content
+    with open(os.getcwd() + name) as f:
+        content = yaml.safe_load(f)
 
-  return None
+    for item in selector:
+        for key, value in content.items():
+            if key == item:
+                for name in selector:
+                    content = content[name]
+                return content
+
+    return None
+
 
 yaml.add_constructor('!include', include_constructor, Loader=yaml.SafeLoader)
 
+
 def parse_args() -> dict:
-    parser = argparse.ArgumentParser(description='Send system properties to Kafka topic')
+    parser = argparse.ArgumentParser(
+        description='Send system properties to Kafka topic')
     parser.add_argument('--bootstrap-servers', dest='bootstrap_servers',
                         default=os.getenv(KAFKA_BOOTSTRAP_ENV_VAR), type=str,
                         help='kafka bootstrap server url (host:port)')
@@ -116,21 +121,24 @@ def parse_args() -> dict:
         'validation_check': args.validation_check
     }
 
+
 def parse_yaml(yaml_file: str) -> dict:
     with open(yaml_file, mode='r', encoding='utf-8') as file:
         data = yaml.safe_load(file)
     return data
 
-def write_ca_file(content: str, filename: str=DEFAULT_CA_FILE):
+
+def write_ca_file(content: str, filename: str = DEFAULT_CA_FILE):
     with open(filename, mode='w', encoding='utf-8') as file:
         file.truncate()
         file.write(content)
+
 
 def send_to_kafka(settings: dict, data: dict):
     global YAML_DATA
 
     with open('/avro_schema.avsc') as f:
-      schema_str = f.read()
+        schema_str = f.read()
 
     schema_registry_client = SchemaRegistryClient({'url': SCHEMA_REGISTRY_URL})
 
@@ -144,25 +152,30 @@ def send_to_kafka(settings: dict, data: dict):
     else:
         key_value = YAML_DATA["containers"][0]["parentSystemName"]
 
-    producer.produce(topic=TOPIC_NAME, key=string_serializer(key_value, None), value=avro_serializer(data, SerializationContext(TOPIC_NAME, MessageField.VALUE)))
+    producer.produce(topic=TOPIC_NAME, key=string_serializer(key_value, None), value=avro_serializer(
+        data, SerializationContext(TOPIC_NAME, MessageField.VALUE)))
     # producer.produce(topic=TOPIC_NAME, key=string_serializer(YAML_DATA['name'], None), value=data)
 
     producer.flush()
 
-def add_value(key, container_index = 0):
-    log.info('add value ' + str(key) + ' for container: ' + str(container_index))
+
+def add_value(key, container_index=0):
+    log.info('add value ' + str(key) +
+             ' for container: ' + str(container_index))
     global YAML_DATA
-    if(key == 'technology'):
-      YAML_DATA['containers'][container_index][key] = str(find_main_language())
-    elif(key == 'icfr'):
-      YAML_DATA['containers'][container_index][key] = False
-    elif(key == 'hostedAt'):
-      YAML_DATA['containers'][container_index][key] = "Azure Cloud"
-    elif(key == 'team'):
-      YAML_DATA['containers'][container_index][key] = find_team()
-    elif(key == 'productOwner'):
-      YAML_DATA['containers'][container_index][key] = find_product_owner('product-owner')
-    elif(key == 'maxSeverityLevel'):
+    if (key == 'technology'):
+        YAML_DATA['containers'][container_index][key] = str(
+            find_main_language())
+    elif (key == 'icfr'):
+        YAML_DATA['containers'][container_index][key] = False
+    elif (key == 'hostedAt'):
+        YAML_DATA['containers'][container_index][key] = "Azure Cloud"
+    elif (key == 'team'):
+        YAML_DATA['containers'][container_index][key] = find_team()
+    elif (key == 'productOwner'):
+        YAML_DATA['containers'][container_index][key] = find_product_owner(
+            'product-owner')
+    elif (key == 'maxSeverityLevel'):
         mcv = YAML_DATA['containers'][container_index]["missionCriticality"]
         if mcv == "High":
             YAML_DATA['containers'][container_index][key] = 1
@@ -170,47 +183,56 @@ def add_value(key, container_index = 0):
             YAML_DATA['containers'][container_index][key] = 2
         elif mcv == "Low":
             YAML_DATA['containers'][container_index][key] = 3
-        else :
+        else:
             YAML_DATA['containers'][container_index][key] = 4
-    elif(key == 'githubURL'):
+    elif (key == 'githubURL'):
         YAML_DATA['containers'][container_index][key] = 'giturl'
-    elif(key == 'deploymentModel'):
+    elif (key == 'deploymentModel'):
         YAML_DATA['containers'][container_index][key] = 'Custom'
+
 
 def update_product_owners():
     github_client = Github(os.getenv(TOKEN_GITHUB))
-    teams_as_code = github_client.get_organization(ORGANIZATION_NAME).get_repo(TEAMS_AS_CODE_REPO_NAME)
+    teams_as_code = github_client.get_organization(
+        ORGANIZATION_NAME).get_repo(TEAMS_AS_CODE_REPO_NAME)
 
     persons = teams_as_code.get_contents(path='persons')
-    
+
     person_dict = {}
 
     for person in persons:
         content = person.decoded_content.decode("utf-8")
         yaml_content = yaml.safe_load(content)
         name = yaml_content['person']['name']
-        info = {'teams': yaml_content['person']['teams'], 'roles': yaml_content['person']['roles']}
+        info = {'teams': yaml_content['person']['teams'],
+                'roles': yaml_content['person']['roles']}
         person_dict[name] = info
 
     with open('/persons.yml', 'w') as outfile:
         yaml.safe_dump(person_dict, outfile)
 
+
 def find_product_owner(role):
     global YAML_DATA
-    
+
     # Fetch the persons file from the action repository releases
     github_client = Github(os.getenv(TOKEN_GITHUB))
-    person_repository = github_client.get_organization(ORGANIZATION_NAME).get_repo(ACTION_REPO_NAME)
+    person_repository = github_client.get_organization(
+        ORGANIZATION_NAME).get_repo(ACTION_REPO_NAME)
 
-    url = person_repository.get_latest_release().get_assets().get_page(0)[0].url
-    header = {'Authorization': 'Bearer ' + os.getenv(TOKEN_GITHUB), 'Accept': 'application/octet-stream'}
+    url = person_repository.get_latest_release().get_assets().get_page(0)[
+        0].url
+    header = {'Authorization': 'Bearer ' +
+              os.getenv(TOKEN_GITHUB), 'Accept': 'application/octet-stream'}
 
-    response = requests.get(url,headers=header, allow_redirects=False, stream=True)
-    #If found get the location url from the Location header
+    response = requests.get(url, headers=header,
+                            allow_redirects=False, stream=True)
+    # If found get the location url from the Location header
     if response.status_code == 302:
-        response = requests.get(response.headers['Location'], allow_redirects=False, stream=True)
+        response = requests.get(
+            response.headers['Location'], allow_redirects=False, stream=True)
     data = yaml.safe_load(response.content.decode())
-    
+
     for k, v in data.items():
         if v['teams'] is None:
             continue
@@ -219,37 +241,43 @@ def find_product_owner(role):
                 return k
     return None
 
+
 def validate_keys_values(object):
     if isinstance(object, list):
         for item in object:
             validate_keys_values(item)
-    
+
     return
+
 
 def find_team():
     path = Path(os.getcwd() + '/CODEOWNERS')
     if not path.is_file():
-        log.error("CODEOWNERS file could not be found, please manually fill in team")
+        log.error(
+            "CODEOWNERS file could not be found, please manually fill in team")
         exit(EXIT_ERORR)
 
     with open(os.getcwd() + '/CODEOWNERS') as f:
         code = f.read()
 
-    matches = re.findall(r"(CODEOWNERS|\*)[ \t]+(@RoyalAholdDelhaize\/)(.*)", code)
+    matches = re.findall(
+        r"(CODEOWNERS|\*)[ \t]+(@RoyalAholdDelhaize\/)(.*)", code)
 
     return matches[0][-1]
 
-def check_value(key, container_index = 0, container = False):
-    log.info("Checking for key: " + str(key) + ' with container: ' + str(container))
+
+def check_value(key, container_index=0, container=False):
+    log.info("Checking for key: " + str(key) +
+             ' with container: ' + str(container))
     global YAML_DATA
-    if(not container):
+    if (not container):
         found = False
         # Check if the keys are under the parent
         for k, v in YAML_DATA.items():
-            if(k == key):
+            if (k == key):
                 found = True
                 return
-        # If not under the parent check each container 
+        # If not under the parent check each container
         if not found:
             for container in YAML_DATA['containers']:
                 for k, v in container.items():
@@ -257,61 +285,66 @@ def check_value(key, container_index = 0, container = False):
                         return
         # Chech if keys are under the parent objects
         for k, v in YAML_DATA['targetConsumers'].items():
-            if(k == key):
+            if (k == key):
                 return
         for k, v in YAML_DATA['dataClassification'].items():
-            if(k == key):
+            if (k == key):
                 return
 
         for container in YAML_DATA['containers']:
             found = False
-            for k,v in container.items():
+            for k, v in container.items():
                 if k == key:
                     found = True
             if not found:
-                log_error('Please add the ' + str(key) +' object/key', EXIT_MISSING)
+                log_error('Please add the ' + str(key) +
+                          ' object/key', EXIT_MISSING)
     # TODO: FIX THIS, LOOP THROUGH CONTAINER ITEMS
-    elif(key == 'targetConsumers' and container):
+    elif (key == 'targetConsumers' and container):
         log.info("YAML KEYS")
         log.info(YAML_DATA.items())
         found = False
         for k, v in YAML_DATA.items():
             log.info("INDIVIDUAL KEYS AND VALUES")
             log.info("KEY: " + str(k) + " VALUE " + str(v))
-            if(k == key):
+            if (k == key):
                 found = True
         if not found:
-            log_error('Please fill in the targetConsumers object on the parent level or override it in the container', EXIT_MISSING)
-    elif(key == 'dataClassification' and container):
+            log_error(
+                'Please fill in the targetConsumers object on the parent level or override it in the container', EXIT_MISSING)
+    elif (key == 'dataClassification' and container):
         found = False
         for k, v in YAML_DATA.items():
-            if(k == key):
+            if (k == key):
                 found = True
         if not found:
-            log_error('Please fill in the dataClassification object on the parent level or override it in the container', EXIT_MISSING)
-    elif(container):
+            log_error(
+                'Please fill in the dataClassification object on the parent level or override it in the container', EXIT_MISSING)
+    elif (container):
         found = False
         for k, v in YAML_DATA['targetConsumers'].items():
-            if(k == key):
+            if (k == key):
                 if YAML_DATA['targetConsumers'][key] is None:
-                    log_error('Please provide a value for ' + str(key) + ' or define it at parent level')
+                    log_error('Please provide a value for ' +
+                              str(key) + ' or define it at parent level')
                 found = True
         for k, v in YAML_DATA['dataClassification'].items():
-            if(k == key):
+            if (k == key):
                 if YAML_DATA['dataClassification'][key] is None:
-                    log_error('Please provide a value for ' + str(key) + ' or define it at parent level')
+                    log_error('Please provide a value for ' +
+                              str(key) + ' or define it at parent level')
                 found = True
         if not found:
-            log_error('Please provide a value for ' + str(key) + ' or define it at parent level')
+            log_error('Please provide a value for ' +
+                      str(key) + ' or define it at parent level')
 
 
-
-def validate_yaml(yaml_data, verbose = False):
+def validate_yaml(yaml_data, verbose=False):
     parent_schema_val = {
         Optional("name"): str,
         Optional("description"): str
     }
-    
+
     first_validator = Schema(parent_schema_val)
 
     try:
@@ -321,38 +354,39 @@ def validate_yaml(yaml_data, verbose = False):
         if "name" and "description" not in yaml_data.keys():
             for container in yaml_data["containers"]:
                 if "parentSystemName" not in container.keys():
-                    log_error("Please define the parentSystemName key with value or fill in the parent name and description", EXIT_MISSING)
+                    log_error(
+                        "Please define the parentSystemName key with value or fill in the parent name and description", EXIT_MISSING)
         else:
             first_validator.validate(dict(islice(yaml_data.items(), 0, 2)))
-        
+
         # Validate each container seperatly for replacing the values
         for index, container in enumerate(yaml_data["containers"]):
             container_schema_val = {
                 "name": str,
                 "synonyms": str,
                 "description": str,
-                Optional("technology", default= lambda : add_value('technology', index)): str,
-                Optional("team", default= lambda : add_value('team', index)): str,
-                Optional("productOwner", default= lambda : add_value('productOwner', index)): str,
-                Optional("parentSystemName", default= lambda : add_value('parentSystemName', index)): str,
-                Optional("targetConsumers", default= lambda : check_value('targetConsumers', index, True)):{
-                        Optional("customer", default= lambda : check_value('customer', index, True)): bool,
-                        Optional("softwareSystem", default= lambda : check_value('softwareSystem', index, True)): bool,
-                        Optional("thirdParty", default= lambda :check_value('thirdParty', index, True)): bool,
-                        Optional("business", default= lambda : check_value('business', index, True)): bool,
-                        Optional("developer", default= lambda : check_value('developer', index, True)): bool,
-        },
-                Optional("hostedAt", default = lambda : add_value('hostedAt', index)): Or("Amazon Web Services (AWS Cloud)", "AT&T", "Azure CF1", "Azure CF2", "Azure Cloud", "DXC", "Equinix", "Google Cloud Platform", "Hybric", "Inlumi", "Local server", "Multi-Cloud", "Not Applicable", "Other", "Salesforce", "ServiceNow", "Solvinity", "Unit4", "Unknown", "User device", "Azure"),
-                Optional("deploymentModel", default = lambda : add_value('deploymentModel', index)): Or("BPO", "CaaS", "IaaS", "Custom", "PaaS", "SaaS"),
-                Optional("dataClassification", default= lambda : check_value('dataClassification', index, True)) : {
-                        Optional("containsPersonalData", default= lambda : check_value('containsPersonalData', index, True)): bool,
-                        Optional("containsFinancialData", default= lambda : check_value('containsFinancialData', index, True)): bool,
-                        Optional("publiclyExposed", default= lambda : check_value('publiclyExposed', index, True)): bool,
-                        Optional("restrictedAccess", default= lambda : check_value('restrictedAccess', index, True)) : bool,
-        },
+                Optional("technology", default=lambda: add_value('technology', index)): str,
+                Optional("team", default=lambda: add_value('team', index)): str,
+                Optional("productOwner", default=lambda: add_value('productOwner', index)): str,
+                Optional("parentSystemName", default=lambda: add_value('parentSystemName', index)): str,
+                Optional("targetConsumers", default=lambda: check_value('targetConsumers', index, True)): {
+                    Optional("customer", default=lambda: check_value('customer', index, True)): bool,
+                    Optional("softwareSystem", default=lambda: check_value('softwareSystem', index, True)): bool,
+                    Optional("thirdParty", default=lambda: check_value('thirdParty', index, True)): bool,
+                    Optional("business", default=lambda: check_value('business', index, True)): bool,
+                    Optional("developer", default=lambda: check_value('developer', index, True)): bool,
+                },
+                Optional("hostedAt", default=lambda: add_value('hostedAt', index)): Or("Amazon Web Services (AWS Cloud)", "AT&T", "Azure CF1", "Azure CF2", "Azure Cloud", "DXC", "Equinix", "Google Cloud Platform", "Hybric", "Inlumi", "Local server", "Multi-Cloud", "Not Applicable", "Other", "Salesforce", "ServiceNow", "Solvinity", "Unit4", "Unknown", "User device", "Azure"),
+                Optional("deploymentModel", default=lambda: add_value('deploymentModel', index)): Or("BPO", "CaaS", "IaaS", "Custom", "PaaS", "SaaS"),
+                Optional("dataClassification", default=lambda: check_value('dataClassification', index, True)): {
+                    Optional("containsPersonalData", default=lambda: check_value('containsPersonalData', index, True)): bool,
+                    Optional("containsFinancialData", default=lambda: check_value('containsFinancialData', index, True)): bool,
+                    Optional("publiclyExposed", default=lambda: check_value('publiclyExposed', index, True)): bool,
+                    Optional("restrictedAccess", default=lambda: check_value('restrictedAccess', index, True)): bool,
+                },
                 "missionCriticality": Or("High", "Medium", "Low", "None"),
-                Optional("maxSeverityLevel", default= lambda : add_value('maxSeverityLevel', index)): Or(1,2,3,4, "None"),
-                Optional("icfr", default= lambda : add_value('icfr', index)): bool,
+                Optional("maxSeverityLevel", default=lambda: add_value('maxSeverityLevel', index)): Or(1, 2, 3, 4, "None"),
+                Optional("icfr", default=lambda: add_value('icfr', index)): bool,
                 "assignementGroup": str,
                 # operational = deployed to prod, pipelined = in development not yet released
                 "operationalStatus": Or("Pipelined", "Operational", "Non-Operational", "Submitted for decommissioning", "Decommissioned", "In decommissioning process"),
@@ -369,48 +403,51 @@ def validate_yaml(yaml_data, verbose = False):
                         "name": str,
                         "description": str,
                         "status": str,
-                        Optional("read", default= False): bool,
-                        Optional("write", default= False): bool,
-                        Optional("execute", default= False): bool,
+                        Optional("read", default=False): bool,
+                        Optional("write", default=False): bool,
+                        Optional("execute", default=False): bool,
                     }]
                 }],
             }
             container_validator = Schema(container_schema_val)
             container_validator.validate(container)
 
-        if(verbose):
-          log.info('YML valid')
+        if (verbose):
+            log.info('YML valid')
         return True
     except SchemaError as se:
-        if(verbose):
-          log.error(se)
+        if (verbose):
+            log.error(se)
         return False
 
-def find_main_language(full_output = False):
-  languages = parse_yaml("/languages.yml")
-  matches = defaultdict(int)
-  for root, directory, filenames in os.walk(os.getcwd()):
-      for filename in filenames:
-        for key, value in languages.items():
-            for type in value:
-                if re.search(f"\.({type}$)", filename):
-                    size = os.path.getsize(root + '/' + filename)
-                    matches[key] += size
-  if(full_output):
-    return matches
-  else:
-    return max(matches, key=matches.get)
+
+def find_main_language(full_output=False):
+    languages = parse_yaml("/languages.yml")
+    matches = defaultdict(int)
+    for root, directory, filenames in os.walk(os.getcwd()):
+        for filename in filenames:
+            for key, value in languages.items():
+                for type in value:
+                    if re.search(f"\.({type}$)", filename):
+                        size = os.path.getsize(root + '/' + filename)
+                        matches[key] += size
+    if (full_output):
+        return matches
+    else:
+        return max(matches, key=matches.get)
+
 
 def remove_none(obj):
-  if isinstance(obj, (list, tuple, set)):
-    return type(obj)(remove_none(x) for x in obj if x is not None or '')
-  elif isinstance(obj, dict):
-    return type(obj)((remove_none(k), remove_none(v))
-      for k, v in obj.items() if k is not None and v is not None or '')
-  else:
-    return obj
+    if isinstance(obj, (list, tuple, set)):
+        return type(obj)(remove_none(x) for x in obj if x is not None or '')
+    elif isinstance(obj, dict):
+        return type(obj)((remove_none(k), remove_none(v))
+                         for k, v in obj.items() if k is not None and v is not None or '')
+    else:
+        return obj
 
-def replace_key(data, keys, index = 0):
+
+def replace_key(data, keys, index=0):
     temp_data = {}
 
     for i, old_key in enumerate(data):
@@ -421,58 +458,67 @@ def replace_key(data, keys, index = 0):
 
 
 def translate_keys(data):
-    first_data = replace_key(dict(islice(data.items(), 2)), ['name', 'description'])
+    first_data = replace_key(dict(islice(data.items(), 2)), [
+                             'name', 'description'])
     containers = list()
 
     for container in data["containers"]:
-        first_container = replace_key(dict(islice(container.items(), 0,10)), ['name', 'synonyms', 'description', 'technology', 'team', 'productOwner', 'applicationType', 'hostedAt', 'deploymentModel', 'dataClassification'])
-        first_container['dataClassification'] = replace_key(first_container['dataClassification'], ['containsPersonalData','containsFinancialData','publiclyExposed','restrictedAccess'])
-        second_container = replace_key(dict(islice(container.items(), 10, 14)), ['missionCriticality', 'assignementGroup', 'operationalStatus', 'components'])
-        
+        first_container = replace_key(dict(islice(container.items(), 0, 10)), [
+                                      'name', 'synonyms', 'description', 'technology', 'team', 'productOwner', 'applicationType', 'hostedAt', 'deploymentModel', 'dataClassification'])
+        first_container['dataClassification'] = replace_key(first_container['dataClassification'], [
+                                                            'containsPersonalData', 'containsFinancialData', 'publiclyExposed', 'restrictedAccess'])
+        second_container = replace_key(dict(islice(container.items(), 10, 14)), [
+                                       'missionCriticality', 'assignementGroup', 'operationalStatus', 'components'])
+
         component_list = list()
         for component in container['components']:
 
-            component = replace_key(component, ["name", "description", "exposedAPIs", "consumedAPIs"])
-        
+            component = replace_key(
+                component, ["name", "description", "exposedAPIs", "consumedAPIs"])
+
             exposedAPI_list = list()
-            
+
             for value in component["exposedAPIs"]:
-                exposedAPI_list.append(replace_key(value, ["name", "description", "type", "status"]))
+                exposedAPI_list.append(replace_key(
+                    value, ["name", "description", "type", "status"]))
 
             component["exposedAPIs"] = exposedAPI_list
-            
+
             consumedAPI_list = list()
             for value in component["consumedAPIs"]:
-                consumedAPI_list.append(replace_key(value, ["name", "description", "status", "read", "write", "execute"]))
+                consumedAPI_list.append(replace_key(
+                    value, ["name", "description", "status", "read", "write", "execute"]))
 
             component["consumedAPIs"] = consumedAPI_list
             component_list.append(component)
-        
+
         second_container['components'] = component_list
 
         first_container.update(second_container)
 
         containers.append(first_container)
-        
+
     first_data["containers"] = containers
 
     return first_data
 
+
 def validate_url_name(value):
-    global YAML_DATA 
+    global YAML_DATA
     if os.getenv(KAFKA_BYPASS_MODE_ENV_VAR):
         return
 
     for containers in YAML_DATA['containers']:
         for container in value['containers']:
-            if(container['name'] == containers['name'] or container['githubURL'] == containers['githubURL']):
+            if (container['name'] == containers['name'] or container['githubURL'] == containers['githubURL']):
                 return True
     return False
 
+
 def validate_names():
-    global YAML_DATA 
+    global YAML_DATA
     with open('/avro_schema.avsc') as f:
-      schema_str = f.read()
+        schema_str = f.read()
 
     schema_registry_client = SchemaRegistryClient({'url': SCHEMA_REGISTRY_URL})
 
@@ -480,12 +526,11 @@ def validate_names():
 
     string_deserializer = StringDeserializer('utf_8')
 
-
     config = {'bootstrap.servers': BOOTSTRAP_SERVERS_URL,
-    'group.id': str(uuid.uuid4()),
-    'auto.offset.reset': 'earliest',
-    'value.deserializer': avro_deserializer,
-    'key.deserializer': string_deserializer}
+              'group.id': str(uuid.uuid4()),
+              'auto.offset.reset': 'earliest',
+              'value.deserializer': avro_deserializer,
+              'key.deserializer': string_deserializer}
     consumer = DeserializingConsumer(config)
     explosedAPIs = list()
     complete_containers = list()
@@ -504,16 +549,18 @@ def validate_names():
             message = consumer.poll(timeout=1.0)
             message_content = remove_none(message.value())
             current_offset += 1
-            if message_content is None: continue
+            if message_content is None:
+                continue
             if message.error():
-                log.error('Error when handling message: ' + str(message_content))
+                log.error('Error when handling message: ' +
+                          str(message_content))
             else:
                 # Check if the message is the same as the current data
                 if message_content == YAML_DATA:
                     log.info('Data is already present and validated')
-                    return 
+                    return
                 elif "name" in YAML_DATA.keys():
-                    #Check if container is already stored, if not add it
+                    # Check if container is already stored, if not add it
                     if "name" in message_content.keys():
                         if message_content['name'] == YAML_DATA['name']:
                             containers = list()
@@ -524,7 +571,7 @@ def validate_names():
                                     # If container is not the same, add the new container to the list
                                     if container != stored_container:
                                         containers.append(container)
-                                    else: 
+                                    else:
                                         containers.append(stored_container)
                             # Loop through message containers to make sure their all in the list
                             for container in message_content['containers']:
@@ -552,15 +599,16 @@ def validate_names():
                                     # if not add to message
                                     if container == new_container:
                                         if not check_object_in_list(complete_containers, container):
-                                            complete_containers.append(container)
+                                            complete_containers.append(
+                                                container)
                                     elif container["name"] == new_container["name"]:
                                         if not check_object_in_list(complete_containers, new_container):
-                                            complete_containers.append(new_container)
+                                            complete_containers.append(
+                                                new_container)
 
                 if "name" in message_content.keys() and len(complete_containers) > 0:
                     YAML_DATA = message_content
                     YAML_DATA["containers"] = complete_containers
-
 
                 for containers in message_content["containers"]:
                     for component in containers["components"]:
@@ -574,24 +622,28 @@ def validate_names():
                     for exposedAPI in explosedAPIs:
                         if consumedAPI["name"] == exposedAPI["name"]:
                             found = True
-                            continue 
+                            continue
                     if not found:
-                        log.error("consumed API: " + consumedAPI["name"] + " Not found in system")
+                        log.error("consumed API: " +
+                                  consumedAPI["name"] + " Not found in system")
     except Exception as e:
         log.error(e)
     finally:
         consumer.close()
     return True
 
+
 def log_error(message, exit_code):
     log.error(str(message))
     exit(exit_code)
+
 
 def check_object_in_list(object_list, object):
     for item in object_list:
         if item == object:
             return True
     return False
+
 
 def move_objects_to_container(data):
 
@@ -611,13 +663,15 @@ def move_objects_to_container(data):
                     if k in targetConsumers.keys():
                         container["targetConsumers"][k] = targetConsumers[k]
                     else:
-                        log_error("Please fill in " + str(k) + " key on the container level or parent level", EXIT_MISSING)
+                        log_error("Please fill in " + str(k) +
+                                  " key on the container level or parent level", EXIT_MISSING)
             for k, v in targetConsumers.items():
                 if k not in container["targetConsumers"].keys():
                     if v is not None:
                         container["targetConsumers"][k] = v
                     else:
-                        log_error("Please fill in " + str(k) + " key on the container level or parent level", EXIT_MISSING)
+                        log_error("Please fill in " + str(k) +
+                                  " key on the container level or parent level", EXIT_MISSING)
 
     if "dataClassification" in data.keys():
         dataClassification = data["dataClassification"]
@@ -630,17 +684,20 @@ def move_objects_to_container(data):
                     if k in dataClassification.keys():
                         container["dataClassification"][k] = dataClassification[k]
                     else:
-                        log_error("Please fill in " + str(k) + " key on the container level or parent level", EXIT_MISSING)
+                        log_error("Please fill in " + str(k) +
+                                  " key on the container level or parent level", EXIT_MISSING)
             for k, v in dataClassification.items():
                 if k not in container["dataClassification"].keys():
                     if v is not None:
                         container["dataClassification"][k] = v
                     else:
-                        log_error("Please fill in " + str(k) + " key on the container level or parent level", EXIT_MISSING)
+                        log_error("Please fill in " + str(k) +
+                                  " key on the container level or parent level", EXIT_MISSING)
     # Pop keys on the parent level
     data.pop("targetConsumers")
     data.pop("dataClassification")
     return data
+
 
 def move_values_to_container(data, keys):
     for key in keys:
@@ -664,36 +721,38 @@ def move_values_to_container(data, keys):
             data.pop(key)
     return data
 
+
 def main():
     kafka_settings = parse_args()
     log.info('Configuration: %s', kafka_settings)
     data = parse_yaml(kafka_settings['data_file'])
-    global YAML_DATA 
+    global YAML_DATA
     YAML_DATA = data
-    
+
     # log.info("Validationcheck " + str(os.getenv(KAFKA_VALIDATION_CHECK_ENV_VAR)))
     log.info('Data: %s', YAML_DATA)
-    # Validate before translate 
+    # Validate before translate
     # YAML_DATA = translate_keys(YAML_DATA)
     YAML_DATA = move_objects_to_container(YAML_DATA)
-    YAML_DATA = move_values_to_container(YAML_DATA, ["team","technology","productOwner"])
+    YAML_DATA = move_values_to_container(
+        YAML_DATA, ["team", "technology", "productOwner"])
     YAML_DATA = remove_none(YAML_DATA)
-    
+
     validate_yaml(YAML_DATA)
 
     YAML_DATA = remove_none(YAML_DATA)
-    
+
     validate_names()
 
     if os.getenv(KAFKA_VALIDATION_CHECK_ENV_VAR):
         validate_yaml(YAML_DATA)
-        
+
         exit(EXIT_OKAY)
-    
-    #ca_content = os.getenv(KAFKA_CA_ENV_VAR)
-    #write_ca_file(ca_content, DEFAULT_CA_FILE)
+
+    # ca_content = os.getenv(KAFKA_CA_ENV_VAR)
+    # write_ca_file(ca_content, DEFAULT_CA_FILE)
     try:
-        if(validate_yaml(YAML_DATA, True) or os.getenv(KAFKA_BYPASS_MODE_ENV_VAR)):
+        if (validate_yaml(YAML_DATA, True) or os.getenv(KAFKA_BYPASS_MODE_ENV_VAR)):
             send_to_kafka(settings=kafka_settings, data=YAML_DATA)
             log.info('Data successfully sent, data: %s', YAML_DATA)
             exit(EXIT_OKAY)
@@ -704,7 +763,7 @@ def main():
         # Print error and generic exit code 1
         raise e
         exit(EXIT_ERORR)
-        #os.remove(DEFAULT_CA_FILE)
+        # os.remove(DEFAULT_CA_FILE)
 
 
 if __name__ == '__main__':
