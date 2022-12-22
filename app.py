@@ -705,7 +705,6 @@ def set_repository_name(data):
 def main():
     kafka_settings = parse_args()
     log.info('Configuration: %s', kafka_settings)
-    log.info('ENV: ' + str(os.getenv(REPOSITORY_NAME)))
     data = parse_yaml(kafka_settings['data_file'])
     global YAML_DATA
     YAML_DATA = data
