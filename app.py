@@ -695,15 +695,19 @@ def move_values_to_container(data, keys):
             data.pop(key)
     return data
 
+
 def set_repository_name(data):
 
     if not os.getenv(REPOSITORY_NAME):
         log_error("Please provide the name of the repository", EXIT_MISSING)
 
     for container in data["containers"]:
-        container["repositoryName"] = str(re.findall('\/(.*)', os.getenv(REPOSITORY_NAME))[0])
+        # The repository name comes from github in the format OWNER/REPO so regex to only get the repository name
+        container["repositoryName"] = str(re.findall(
+            '\/(.*)', os.getenv(REPOSITORY_NAME))[0])
 
     return data
+
 
 def main():
     kafka_settings = parse_args()
