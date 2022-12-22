@@ -597,7 +597,8 @@ def validate_names():
                                                 container)
                                     elif container["name"] == new_container["name"]:
                                         if not check_object_in_list(complete_containers, new_container):
-                                            new_container.pop("parentSystemName")
+                                            new_container.pop(
+                                                "parentSystemName")
                                             complete_containers.append(
                                                 new_container)
 
@@ -658,7 +659,7 @@ def move_objects_to_container(data, keys):
                         container[key][k] = temp_data[key][k]
                     else:
                         log_error("Please fill in " + str(k) +
-                                " key on the container level or parent level", EXIT_MISSING)
+                                  " key on the container level or parent level", EXIT_MISSING)
             for k, v in temp_data[key].items():
                 if k not in container[key].keys():
                     if v is not None:
@@ -755,7 +756,8 @@ def main():
     log.info('Data: %s', YAML_DATA)
     # Validate before translate
     # YAML_DATA = translate_keys(YAML_DATA)
-    YAML_DATA = move_objects_to_container(YAML_DATA)
+    YAML_DATA = move_objects_to_container(
+        YAML_DATA, ["targetConsumers", "dataClassification"])
     YAML_DATA = move_values_to_container(
         YAML_DATA, ["team", "technology", "productOwner"])
     YAML_DATA = remove_none(YAML_DATA)
