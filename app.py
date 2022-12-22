@@ -698,7 +698,7 @@ def move_values_to_container(data, keys):
 def set_repository_name(data):
 
     for container in data["containers"]:
-        container["repositoryName"] = re.findall('\/(.*)', os.getenv(REPOSITORY_NAME))[0]
+        container["repositoryName"] = str(re.findall('\/(.*)', os.getenv(REPOSITORY_NAME))[0])
 
     return data
 
