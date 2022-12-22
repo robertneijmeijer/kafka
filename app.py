@@ -640,58 +640,85 @@ def check_object_in_list(object_list, object):
     return False
 
 
-def move_objects_to_container(data):
+def move_objects_to_container(data, keys):
+    temp_data = {}
 
-    if "targetConsumers" and "dataClassification" not in data.keys():
-        return data
-
-    if "targetConsumers" in data.keys():
-        targetConsumers = data["targetConsumers"]
-
-        for container in data["containers"]:
-            # If the container does not have a targetConsumers key, add the object from system level
-            if "targetConsumers" not in container.keys():
-                container["targetConsumers"] = targetConsumers
-            # If a key in the targetConsumers object does not have a value add the value from the parent level
-            for k, v in container["targetConsumers"].items():
-                if v is None:
-                    if k in targetConsumers.keys():
-                        container["targetConsumers"][k] = targetConsumers[k]
-                    else:
-                        log_error("Please fill in " + str(k) +
-                                  " key on the container level or parent level", EXIT_MISSING)
-            for k, v in targetConsumers.items():
-                if k not in container["targetConsumers"].keys():
-                    if v is not None:
-                        container["targetConsumers"][k] = v
-                    else:
-                        log_error("Please fill in " + str(k) +
-                                  " key on the container level or parent level", EXIT_MISSING)
-
-    if "dataClassification" in data.keys():
-        dataClassification = data["dataClassification"]
+    for key in keys:
+        if key not in data.keys():
+            continue
+        temp_data[key] = data[key]
 
         for container in data["containers"]:
-            if "dataClassification" not in container.keys():
-                container["dataClassification"] = dataClassification
-            for k, v in container["dataClassification"].items():
+            if key not in container.keys():
+                container[key] = temp_data[key]
+
+            for k, v in container[key].items():
                 if v is None:
-                    if k in dataClassification.keys():
-                        container["dataClassification"][k] = dataClassification[k]
+                    if k in temp_data[key].keys():
+                        container[key][k] = temp_data[key][k]
                     else:
                         log_error("Please fill in " + str(k) +
-                                  " key on the container level or parent level", EXIT_MISSING)
-            for k, v in dataClassification.items():
-                if k not in container["dataClassification"].keys():
+                                " key on the container level or parent level", EXIT_MISSING)
+            for k, v in temp_data[key].items():
+                if k not in container[key].keys():
                     if v is not None:
-                        container["dataClassification"][k] = v
+                        container[key][k] = v
                     else:
                         log_error("Please fill in " + str(k) +
                                   " key on the container level or parent level", EXIT_MISSING)
-    # Pop keys on the parent level
-    data.pop("targetConsumers")
-    data.pop("dataClassification")
+        data.pop(key)
     return data
+
+    # if "targetConsumers" and "dataClassification" not in data.keys():
+    #     return data
+
+    # if "targetConsumers" in data.keys():
+    #     targetConsumers = data["targetConsumers"]
+
+    #     for container in data["containers"]:
+    #         # If the container does not have a targetConsumers key, add the object from system level
+    #         if "targetConsumers" not in container.keys():
+    #             container["targetConsumers"] = targetConsumers
+    #         # If a key in the targetConsumers object does not have a value add the value from the parent level
+    #         for k, v in container["targetConsumers"].items():
+    #             if v is None:
+    #                 if k in targetConsumers.keys():
+    #                     container["targetConsumers"][k] = targetConsumers[k]
+    #                 else:
+    #                     log_error("Please fill in " + str(k) +
+    #                               " key on the container level or parent level", EXIT_MISSING)
+    #         for k, v in targetConsumers.items():
+    #             if k not in container["targetConsumers"].keys():
+    #                 if v is not None:
+    #                     container["targetConsumers"][k] = v
+    #                 else:
+    #                     log_error("Please fill in " + str(k) +
+    #                               " key on the container level or parent level", EXIT_MISSING)
+
+    # if "dataClassification" in data.keys():
+    #     dataClassification = data["dataClassification"]
+
+    #     for container in data["containers"]:
+    #         if "dataClassification" not in container.keys():
+    #             container["dataClassification"] = dataClassification
+    #         for k, v in container["dataClassification"].items():
+    #             if v is None:
+    #                 if k in dataClassification.keys():
+    #                     container["dataClassification"][k] = dataClassification[k]
+    #                 else:
+    #                     log_error("Please fill in " + str(k) +
+    #                               " key on the container level or parent level", EXIT_MISSING)
+    #         for k, v in dataClassification.items():
+    #             if k not in container["dataClassification"].keys():
+    #                 if v is not None:
+    #                     container["dataClassification"][k] = v
+    #                 else:
+    #                     log_error("Please fill in " + str(k) +
+    #                               " key on the container level or parent level", EXIT_MISSING)
+    # # Pop keys on the parent level
+    # data.pop("targetConsumers")
+    # data.pop("dataClassification")
+    # return data
 
 
 def move_values_to_container(data, keys):
