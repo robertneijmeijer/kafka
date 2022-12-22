@@ -32,6 +32,10 @@
               "type": "string"
             },
             {
+              "name": "repositoryName",
+              "type": "string"
+            },
+            {
               "name": "technology",
               "type": "string"
             },

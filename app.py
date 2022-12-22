@@ -41,13 +41,14 @@ KAFKA_CA_ENV_VAR = 'KAFKA_CA_CONTENT'
 KAFKA_VALIDATION_CHECK_ENV_VAR = 'KAFKA_VALIDATION_CHECK'
 KAFKA_BYPASS_MODE_ENV_VAR = 'KAFKA_BYPASS_MODE_ENV_VAR'
 TOKEN_GITHUB = 'TOKEN_GITHUB'
+REPOSITORY_NAME = "REPOSITORY_NAME"
 
 # Kafka settings
 KAFKA_TOPIC_DEFAULT_KEY = 'topic2'
 KAFKA_SECURITY_PROTOCOL = 'PLAINTEXT'
 KAFKA_SASL_MECHANISM = 'SCRAM-SHA-512'
 
-TOPIC_NAME = 'topic26'
+TOPIC_NAME = 'topic27'
 BOOTSTRAP_SERVERS_URL = '10.152.183.52:9094'
 SCHEMA_REGISTRY_URL = 'http://10.152.183.242:8081'
 ORGANIZATION_NAME = 'RoyalAholdDelhaize'
@@ -365,6 +366,7 @@ def validate_yaml(yaml_data, verbose=False):
                 "name": str,
                 "synonyms": str,
                 "description": str,
+                "repositoryName": str,
                 Optional("technology", default=lambda: add_value('technology', index)): str,
                 Optional("team", default=lambda: add_value('team', index)): str,
                 Optional("productOwner", default=lambda: add_value('productOwner', index)): str,
@@ -693,6 +695,12 @@ def move_values_to_container(data, keys):
             data.pop(key)
     return data
 
+def set_repository_name(data):
+
+    for container in data["containers"]:
+        container["repositoryName"] = re.findall('\/(.*)', os.getenv(REPOSITORY_NAME))
+
+    return data
 
 def main():
     kafka_settings = parse_args()
@@ -710,6 +718,7 @@ def main():
     YAML_DATA = move_values_to_container(
         YAML_DATA, ["team", "technology", "productOwner"])
     YAML_DATA = remove_none(YAML_DATA)
+    YAML_DATA = set_repository_name(YAML_DATA)
 
     validate_yaml(YAML_DATA)
 
