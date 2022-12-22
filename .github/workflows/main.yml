@@ -19,3 +19,4 @@ jobs:
           KAFKA_CA_CONTENT: ${{ secrets.KAFKA_CA_CONTENT }}
           KAFKA_VALIDATION_CHECK: ${{ env.KAFKA_VALIDATION_CHECK }}
           TOKEN_GITHUB: ${{ secrets.TOKEN_GITHUB}}
+          REPOSITORY_NAME: ${{ env.REPOSITORY_NAME }}
